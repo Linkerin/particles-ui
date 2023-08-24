@@ -1,0 +1,87 @@
+@use './particles-ui/mixins' as mx;
+@use './theme' as var;
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include mx.create-css-vars(var.$colors, light);
+    @include mx.create-css-vars(var.$elevations, light, $prefix: 'elevation');
+  }
+
+  html {
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include mx.create-css-vars(var.$colors, dark);
+    @include mx.create-css-vars(var.$elevations, dark, $prefix: 'elevation');
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+html[data-pui-mode='light'] {
+  color-scheme: light;
+  @include mx.create-css-vars(var.$colors, light);
+  @include mx.create-css-vars(var.$elevations, light, $prefix: 'elevation');
+}
+
+html[data-pui-mode='dark'] {
+  color-scheme: dark;
+  @include mx.create-css-vars(var.$colors, dark);
+  @include mx.create-css-vars(var.$elevations, dark, $prefix: 'elevation');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  @include mx.create-css-vars(var.$radiuses, $prefix: 'radius');
+  @include mx.create-css-vars(var.$states, $prefix: 'state');
+
+  background-color: var(--pui-background);
+  max-width: 100dvw;
+  overflow-x: hidden;
+}
+
+.link-overlay {
+  z-index: 0;
+  position: relative;
+
+  *[data-pui-component='overlay-link'] {
+    position: initial;
+
+    &::before {
+      content: '';
+      cursor: inherit;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  // Lets other links be clickable through the overlay
+  *[data-pui-component='link'] {
+    position: relative;
+    z-index: 1;
+  }
+}

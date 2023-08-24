@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 2px 4px -3px var(--pui-primary);
+  padding-block: 0.25rem;
+  padding-inline: 2rem;
+  width: 100dvw;
+
+  @media (max-width: 600px) {
+    padding-inline: 0.5rem;
+  }
+}

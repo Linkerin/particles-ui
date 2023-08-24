@@ -1,0 +1,39 @@
+$border-width: 1px;
+$inset-margin: 1rem;
+
+%-divider {
+  border-style: solid;
+  border-color: var(--pui-outline-variant);
+  border-width: 0 0 $border-width;
+  margin: 0;
+}
+
+:where(.horizontal) {
+  @extend %-divider;
+
+  &:where(.inset) {
+    margin-left: $inset-margin;
+  }
+
+  &:where(.middle) {
+    margin: 0 $inset-margin;
+  }
+}
+
+:where(.vertical) {
+  @extend %-divider;
+  border-width: 0 0 0 $border-width;
+  margin: 0 0.25rem;
+  min-height: 1em;
+  height: auto;
+  align-self: stretch;
+
+  &:where(.inset) {
+    margin-top: $inset-margin;
+  }
+
+  &:where(.middle) {
+    margin-top: $inset-margin;
+    margin-bottom: $inset-margin;
+  }
+}

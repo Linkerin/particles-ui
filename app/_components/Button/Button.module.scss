@@ -1,0 +1,318 @@
+@use 'sass:map';
+
+@use 'sass:color';
+
+@use '../../styles/particles-ui/mixins' as mx;
+@use '../../styles/particles-ui/variables' as var;
+
+@mixin size($size) {
+  $btn-typography: map.get(var.$typography, 'label', $size);
+
+  :where(.#{$size}) {
+    font-size: map.get($btn-typography, 'font-size');
+    font-weight: map.get($btn-typography, 'font-weight');
+    line-height: map.get($btn-typography, 'line-height');
+    letter-spacing: map.get($btn-typography, 'letter-spacing');
+
+    span[data-pui-component='btn-icon'],
+    span[data-pui-component='btn-load-spinner'] {
+      $icon-dimension: map.get($btn-typography, 'line-height');
+      font-size: calc($icon-dimension - 2px);
+    }
+  }
+}
+
+@function disabled-bg-color($color-name) {
+  @return (
+    rgb(var(--pui-#{$color-name}-channels) / var(--pui-state-disabled, 0.12))
+  );
+}
+
+:where(.button) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5625rem 1.714286em;
+  user-select: none;
+  height: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+
+  & > span[data-pui-component='btn-icon'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+  }
+
+  span[data-pui-component='btn-load-spinner'] > span {
+    border-width: 1px;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    color: rgb(
+      var(--pui-on-background-channels) /
+        var(--pui-state-disabled-content, 0.38)
+    );
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 50%;
+  }
+}
+
+:where(.leftIcon) {
+  padding-left: 1.14286em;
+}
+
+:where(.rightIcon) {
+  padding-right: 1.14286em;
+}
+
+@mixin filled-color($color) {
+  @include mx.check-color-option($color);
+
+  &:where(.#{$color}) {
+    background-color: var(--pui-#{$color});
+    color: var(--pui-on-#{$color});
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(
+        var(--pui-#{$color}-state-channels) /
+          calc(100% - var(--pui-state-hover, 0.08))
+      );
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}),
+        var(--pui-black) var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: var(--pui-#{$color}-state);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}),
+        var(--pui-black) var(--pui-state-press, 0.12)
+      );
+    }
+  }
+}
+
+:where(.filled) {
+  @include filled-color('primary');
+  @include filled-color('secondary');
+  @include filled-color('tertiary');
+
+  &:disabled {
+    background-color: disabled-bg-color('on-background');
+  }
+}
+
+@mixin elevated-color($color) {
+  @include mx.check-color-option($color);
+
+  &:where(.#{$color}) {
+    color: var(--pui-#{$color});
+
+    &:hover:not(:where(.loading)) {
+      // Fallback for color-mix()
+      background-color: rgb(
+        var(--pui-#{$color}-channels) / var(--pui-state-hover, 0.08)
+      );
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}) var(--pui-state-hover, 0.08),
+        transparent
+      );
+    }
+
+    &:active:not(:where(.loading)) {
+      // Fallback for color-mix()
+      background-color: rgb(
+        var(--pui-#{$color}-channels) / var(--pui-state-press, 0.12)
+      );
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}) var(--pui-state-press, 0.12),
+        transparent
+      );
+    }
+  }
+}
+
+:where(.elevated) {
+  background-color: var(--pui-background-container-low);
+  box-shadow: var(--pui-elevation-1);
+
+  // colors
+  @include elevated-color('primary');
+  @include elevated-color('secondary');
+  @include elevated-color('tertiary');
+
+  &:hover:not(:where(.loading)):not(:disabled) {
+    box-shadow: var(--pui-elevation-2);
+  }
+
+  &:active:not(:where(.loading)):not(:disabled) {
+    box-shadow: var(--pui-elevation-1);
+  }
+
+  &:disabled {
+    background-color: disabled-bg-color('on-background');
+  }
+}
+
+:where(.filled),
+:where(.elevated) {
+  &:where(.shrink):active:not(:where(.loading)):not(:disabled) {
+    transform: scale(0.97);
+    transition: transform 100ms ease-out;
+    box-shadow: inset 0px 0px 3px 2px rgb(0 0 0 / 0.1);
+  }
+}
+
+@mixin outlined-or-text-color($color, $outlined: false) {
+  @include mx.check-color-option($color);
+
+  &:where(.#{$color}) {
+    color: var(--pui-#{$color});
+    @if ($outlined == true) {
+      border: 1px solid var(--pui-#{$color});
+    }
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(
+        var(--pui-#{$color}-channels) / var(--pui-state-hover, 0.08)
+      );
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}) var(--pui-state-hover, 0.08),
+        transparent
+      );
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(
+        var(--pui-#{$color}-channels) / var(--pui-state-press, 0.12)
+      );
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}) var(--pui-state-press, 0.12),
+        transparent
+      );
+    }
+  }
+}
+
+:where(.outlined) {
+  background: none;
+
+  // colors
+  @include outlined-or-text-color('primary', $outlined: true);
+  @include outlined-or-text-color('secondary', $outlined: true);
+  @include outlined-or-text-color('tertiary', $outlined: true);
+
+  &:disabled {
+    border-color: disabled-bg-color('outline');
+  }
+}
+
+:where(.text) {
+  background: none;
+  padding-inline: 0.85714em;
+
+  // colors
+  @include outlined-or-text-color('primary');
+  @include outlined-or-text-color('secondary');
+  @include outlined-or-text-color('tertiary');
+
+  &:where(.leftIcon) {
+    padding-right: 1.14286em;
+  }
+
+  &:where(.rightIcon) {
+    padding-left: 1.14286em;
+  }
+
+  &:where(.leftIcon.rightIcon) {
+    padding-inline: 0.85714em;
+  }
+}
+
+@mixin soft-color($color) {
+  @include mx.check-color-option($color);
+
+  &:where(.#{$color}) {
+    background-color: var(--pui-#{$color}-container-low);
+    color: var(--pui-on-#{$color}-container);
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-#{$color}-channels) / 0.3);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}-container-low),
+        var(--pui-#{$color}) var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-#{$color}-channels) / 0.36);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-#{$color}-container-low),
+        var(--pui-#{$color}) var(--pui-state-press, 0.12)
+      );
+    }
+  }
+}
+
+:where(.soft) {
+  @include soft-color('primary');
+  @include soft-color('secondary');
+  @include soft-color('tertiary');
+
+  &:disabled {
+    background-color: disabled-bg-color('on-background');
+  }
+}
+
+// sizes
+@each $size in ('xs', 'sm', 'md', 'lg', 'xl') {
+  @include size($size);
+}
+
+// radiuses
+@each $radius, $_ in var.$radiuses {
+  :where(.radius-#{$radius}) {
+    border-radius: var(--pui-radius-#{$radius});
+  }
+}

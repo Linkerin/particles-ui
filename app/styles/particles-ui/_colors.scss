@@ -1,0 +1,152 @@
+@use 'sass:color';
+@use 'sass:map';
+
+@use 'functions' as func;
+
+$primary: #5757db !default;
+$primary-dark: $primary !default;
+$secondary: #f48c4b !default;
+$secondary-dark: $secondary !default;
+$tertiary: #76ada9 !default;
+$tertiary-dark: $tertiary !default;
+
+$neutral: #1a202c !default;
+$neutral-dark: $neutral !default;
+$error: #e74b5b !default;
+$error-dark: $error !default;
+$success: #49e994 !default;
+$success-dark: $success !default;
+$warning: #fdba35 !default;
+$warning-dark: $warning !default;
+$info: #3392ff !default;
+$info-dark: $info !default;
+
+$primary-palette: func.generate-palette($primary, 'primary');
+$primary-palette-dark: func.generate-palette($primary-dark, 'primary');
+$secondary-palette: func.generate-palette($secondary, 'secondary');
+$secondary-palette-dark: func.generate-palette($secondary-dark, 'secondary');
+$tertiary-palette: func.generate-palette($tertiary, 'tertiary');
+$tertiary-palette-dark: func.generate-palette($tertiary-dark, 'tertiary');
+
+$neutral-palette: func.generate-palette($neutral, 'neutral');
+$neutral-palette-dark: func.generate-palette($neutral-dark, 'neutral');
+$error-palette: func.generate-palette($error, 'error');
+$error-palette-dark: func.generate-palette($error-dark, 'error');
+$success-palette: func.generate-palette($success, 'success');
+$success-palette-dark: func.generate-palette($success-dark, 'success');
+$warning-palette: func.generate-palette($warning, 'warning');
+$warning-palette-dark: func.generate-palette($warning-dark, 'warning');
+$info-palette: func.generate-palette($info, 'info');
+$info-palette-dark: func.generate-palette($info-dark, 'info');
+
+$-color-scheme: (
+  'light': (
+    'black': #000000,
+    'white': #ffffff,
+    'primary': $primary,
+    'primary-container': map.get($primary-palette, 'primary-90'),
+    'primary-container-low': map.get($primary-palette, 'primary-95'),
+    'primary-state': color.mix(#000, $primary, 16%),
+    'on-primary':
+      func.on-color($primary, $primary-palette, 'primary-99', 'primary-20'),
+    'on-primary-container': map.get($primary-palette, 'primary-25'),
+    'secondary': $secondary,
+    'secondary-container': map.get($secondary-palette, 'secondary-90'),
+    'secondary-container-low': map.get($secondary-palette, 'secondary-95'),
+    'secondary-state': color.mix(#000, $secondary, 16%),
+    'on-secondary':
+      func.on-color(
+        $secondary,
+        $secondary-palette,
+        'secondary-99',
+        'secondary-20'
+      ),
+    'on-secondary-container': map.get($secondary-palette, 'secondary-25'),
+    'tertiary': $tertiary,
+    'tertiary-container': map.get($tertiary-palette, 'tertiary-90'),
+    'tertiary-container-low': map.get($tertiary-palette, 'tertiary-95'),
+    'tertiary-state': color.mix(#000, $tertiary, 16%),
+    'on-tertiary':
+      func.on-color($tertiary, $tertiary-palette, 'tertiary-99', 'tertiary-20'),
+    'on-tertiary-container': map.get($tertiary-palette, 'tertiary-25'),
+    'background': map.get($primary-palette, 'primary-99'),
+    'background-container-lowest': map.get($neutral-palette, 'neutral-100'),
+    'background-container-low': map.get($neutral-palette, 'neutral-97'),
+    'background-container': map.get($neutral-palette, 'neutral-95'),
+    'background-container-high': map.get($neutral-palette, 'neutral-92'),
+    'background-container-highest': map.get($neutral-palette, 'neutral-90'),
+    'background-variant': map.get($neutral-palette, 'neutral-90'),
+    'on-background': map.get($neutral-palette, 'neutral-10'),
+    'on-background-variant': map.get($neutral-palette, 'neutral-30'),
+    'outline': map.get($neutral-palette, 'neutral-50'),
+    'outline-variant': map.get($neutral-palette, 'neutral-80'),
+    'error': map.get($error-palette, 'error-50'),
+    'error-container': map.get($error-palette, 'error-90'),
+    'on-error': map.get($error-palette, 'error-99'),
+    'on-error-container': map.get($error-palette, 'error-10'),
+    'success': map.get($success-palette, 'success-50'),
+    'success-container': map.get($success-palette, 'success-90'),
+    'on-success': map.get($success-palette, 'success-99'),
+    'on-success-container': map.get($success-palette, 'success-10'),
+    'warning': map.get($warning-palette, 'warning-50'),
+    'warning-container': map.get($warning-palette, 'warning-90'),
+    'on-warning': map.get($warning-palette, 'warning-99'),
+    'on-warning-container': map.get($warning-palette, 'warning-10'),
+    'info': map.get($info-palette, 'info-50'),
+    'info-container': map.get($info-palette, 'info-90'),
+    'on-info': map.get($info-palette, 'info-99'),
+    'on-info-container': map.get($info-palette, 'info-10')
+  ),
+  'dark': (
+    'black': #000000,
+    'white': #ffffff,
+    'primary': map.get($primary-palette-dark, 'primary-80'),
+    'primary-container': map.get($primary-palette-dark, 'primary-30'),
+    'primary-container-low': map.get($primary-palette-dark, 'primary-20'),
+    'on-primary': map.get($primary-palette-dark, 'primary-20'),
+    'on-primary-container': map.get($primary-palette-dark, 'primary-80'),
+    'secondary': map.get($secondary-palette-dark, 'secondary-80'),
+    'secondary-container': map.get($secondary-palette-dark, 'secondary-30'),
+    'secondary-container-low': map.get($secondary-palette-dark, 'secondary-20'),
+    'on-secondary': map.get($secondary-palette-dark, 'secondary-20'),
+    'on-secondary-container': map.get($secondary-palette-dark, 'secondary-80'),
+    'tertiary': map.get($tertiary-palette-dark, 'tertiary-80'),
+    'tertiary-container': map.get($tertiary-palette-dark, 'tertiary-30'),
+    'tertiary-container-low': map.get($tertiary-palette-dark, 'tertiary-20'),
+    'on-tertiary': map.get($tertiary-palette-dark, 'tertiary-20'),
+    'on-tertiary-container': map.get($tertiary-palette-dark, 'tertiary-80'),
+    'background': map.get($primary-palette-dark, 'primary-5'),
+    'background-container-lowest': map.get($neutral-palette-dark, 'neutral-5'),
+    'background-container-low': map.get($neutral-palette-dark, 'neutral-10'),
+    'background-container': map.get($neutral-palette-dark, 'neutral-12'),
+    'background-container-high': map.get($neutral-palette-dark, 'neutral-15'),
+    'background-container-highest': map.get($neutral-palette-dark, 'neutral-20'),
+    'background-variant': map.get($neutral-palette-dark, 'neutral-30'),
+    'on-background': map.get($neutral-palette-dark, 'neutral-92'),
+    'on-background-variant': map.get($neutral-palette-dark, 'neutral-80'),
+    'outline': map.get($neutral-palette-dark, 'neutral-60'),
+    'outline-variant': map.get($neutral-palette-dark, 'neutral-30'),
+    'error': map.get($error-palette-dark, 'error-60'),
+    'error-container': map.get($error-palette-dark, 'error-30'),
+    'on-error': map.get($error-palette-dark, 'error-20'),
+    'on-error-container': map.get($error-palette-dark, 'error-90'),
+    'success': map.get($success-palette-dark, 'success-60'),
+    'success-container': map.get($success-palette-dark, 'success-30'),
+    'on-success': map.get($success-palette-dark, 'success-20'),
+    'on-success-container': map.get($success-palette-dark, 'success-90'),
+    'warning': map.get($warning-palette-dark, 'warning-60'),
+    'warning-container': map.get($warning-palette-dark, 'warning-30'),
+    'on-warning': map.get($warning-palette-dark, 'warning-20'),
+    'on-warning-container': map.get($warning-palette-dark, 'warning-90'),
+    'info': map.get($info-palette-dark, 'info-60'),
+    'info-container': map.get($info-palette-dark, 'info-30'),
+    'on-info': map.get($info-palette-dark, 'info-20'),
+    'on-info-container': map.get($info-palette-dark, 'info-90')
+  )
+);
+
+$colors: $-color-scheme !default;
+$colors-light: map.get($-color-scheme, 'light') !default;
+$colors-dark: map.get($-color-scheme, 'dark') !default;
+$colors-default: $-color-scheme;
+$color-tokens: map.keys(map.get($-color-scheme, 'light'));

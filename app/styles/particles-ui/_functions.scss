@@ -1,0 +1,133 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+
+/// Converts a hex color value into a list of RGB channels
+///
+/// @param {color} $color Color value for conversion
+///
+/// @return {list} list of 3 RBG channel values
+///
+/// @example
+///   color-to-rgb(#6750a4);
+///   // 103 80 164
+///
+@function color-to-rgb($color) {
+  @if (meta.type-of($color) != 'color') {
+    @error "#{$color} is not a color value";
+  }
+
+  $channels: (color.red($color) color.green($color) color.blue($color));
+
+  @return $channels;
+}
+
+/// Generates a palette of different lightness level from the base color
+///
+/// @param {color} $color Base color value for the palette
+///
+/// @param {string} $name Token prefix name
+///
+/// @return {map} A map containing the color palette
+///
+/// @example
+///   generate-palette(#6750a4, 'primary');
+///   // (
+///   //   'primary-0': #000000,
+///   //   'primary-5': #0b0811,
+///   //   ...
+///   //   'primary-99': #fcfcfd,
+///   //   'primary-1900':#ffffff
+///   // )
+///
+@function generate-palette($color, $name) {
+  @if (meta.type-of($color) != 'color') {
+    @error "#{$color} is not a color value";
+  }
+
+  @if (meta.type-of($name) != 'string') {
+    @error "#{$name} is not a string value";
+  }
+
+  $palette: ();
+  $values: (
+    0,
+    5,
+    10,
+    12,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    92,
+    95,
+    97,
+    99,
+    100
+  );
+
+  @each $value in $values {
+    $palette: map.set(
+      $palette,
+      '#{$name}-#{$value}',
+      color.change($color, $lightness: $value)
+    );
+  }
+
+  @return $palette;
+}
+
+/// Checks background color intensity
+/// and returns a proper color for 'on' text
+/// @param {color} $color Background color value
+///
+/// @param {map} $palette Pallete that contains light and dark 'on' colors
+///
+/// @param {string} $light-value Color that is used on dark background
+///
+/// @param {string} $dark-value Color that is used on light background
+///
+/// @return {color} 'On' color value
+///
+/// @example
+///   on-color(#5757db, $primary-palette, 'primary99', 'primary20');
+///   // #fbfbfe ('primary99')
+///
+@function on-color($color, $palette, $light-value, $dark-value) {
+  @if (meta.type-of($color) != 'color') {
+    @error "#{$color} is not a color value";
+  }
+
+  @if (meta.type-of($palette) != 'map') {
+    @error "Provided palette has to be a `map` value";
+  }
+
+  @if (map.get($palette, $light-value) == null) {
+    @error "There is no '#{$light-value}' key in the palette";
+  }
+
+  @if (map.get($palette, $dark-value) == null) {
+    @error "There is no '#{$dark-value}' key in the palette";
+  }
+
+  $red: color.red($color);
+  $green: color.green($color);
+  $blue: color.blue($color);
+
+  // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+  $intensity: $red * 0.299 + $green * 0.587 + $blue * 0.114;
+
+  @if ($intensity >= 165) {
+    @return map.get($palette, $dark-value);
+  } @else {
+    @return map.get($palette, $light-value);
+  }
+}

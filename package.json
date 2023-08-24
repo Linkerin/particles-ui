@@ -1,6 +1,6 @@
 {
   "name": "particles-ui-demo",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^2.32.0",
     "@types/node": "20.5.3",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "classnames": "^2.3.2",
+    "eslint": "^8.45.0",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "eslint-config-next": "^13.4.19",
+    "sass": "^1.66.1"
   }
 }

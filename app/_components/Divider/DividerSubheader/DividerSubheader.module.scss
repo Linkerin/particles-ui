@@ -1,0 +1,22 @@
+@use 'sass:map';
+
+@use '../../../styles//particles-ui/variables' as var;
+
+$subheader-font: map.get(var.$typography, 'subtitle', 'sm');
+
+:where(.container) {
+  display: block;
+  color: var(--pui-on-background-variant);
+  margin-top: 0.25rem;
+
+  svg {
+    height: 1em;
+    min-width: 1em;
+    width: auto;
+  }
+
+  // Subheader font styles
+  @each $key, $value in $subheader-font {
+    #{$key}: $value;
+  }
+}

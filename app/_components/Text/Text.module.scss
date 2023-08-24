@@ -1,0 +1,82 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@use '../../styles/particles-ui/variables' as var;
+
+@mixin variant($variant) {
+  @if list.index(('body', 'label'), $variant) == null {
+    @error "Invalid variant: '#{$variant}'. Only 'body' and 'label' are allowed";
+  }
+
+  :where(.#{$variant}) {
+    $typography: map.get(var.$typography, $variant);
+
+    @each $size, $properties in $typography {
+      &:where(.#{$size}) {
+        @each $property, $value in $properties {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+}
+
+:where(.text) {
+  text-align: start;
+
+  & > span[data-pui-component='material-icon'],
+  & > svg {
+    vertical-align: -12.5%;
+  }
+
+  & > svg {
+    display: inline-block;
+    height: 1em;
+    min-width: 1em;
+    width: auto;
+  }
+}
+
+code:where(.text) {
+  font-family: monospace;
+  background-color: var(--pui-background-container-high);
+  border: 1px solid var(--pui-outline-variant);
+  border-radius: var(--pui-radius-xs);
+  padding: 0.5em 1em;
+}
+
+kbd:where(.text) {
+  font-family: monospace;
+  border-radius: var(--pui-radius-sm);
+  box-shadow: (
+    0px 1px 0px 1px rgba(var(--pui-outline-variant-channels) / 0.5),
+    0px 0px 3px 1px rgba(var(--pui-outline-variant-channels) / 0.3)
+  );
+  width: fit-content;
+  padding-inline: 0.5em;
+}
+
+mark:where(.text) {
+  background-color: var(--pui-primary-container);
+}
+
+@include variant('body');
+@include variant('label');
+
+// font colors
+@each $color
+  in (
+    'on-background',
+    'on-background-variant',
+    'on-primary',
+    'on-primary-container',
+    'on-secondary',
+    'on-secondary-container',
+    'on-tertiary',
+    'on-tertiary-container'
+  )
+{
+  :where(.#{$color}) {
+    color: var(--pui-#{$color});
+  }
+}

@@ -1,0 +1,70 @@
+@use '../../../styles/particles-ui/mixins' as mx;
+
+:where(.list-item) {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: var(--pui-background);
+  cursor: default;
+  min-height: var(--pui-list-item-min-height);
+  min-width: min-content;
+  padding-block: var(--pui-list-item-pd-block);
+  padding-inline: var(--pui-list-item-pl) var(--pui-list-item-pr);
+  position: relative;
+}
+
+:where(.align-items-center) {
+  align-items: center;
+}
+
+:where(.align-items-flex-start) {
+  align-items: flex-start;
+}
+
+:where(.align-items-flex-end) {
+  align-items: flex-end;
+}
+
+:where(.align-items-stretch) {
+  align-items: stretch;
+}
+
+:where(.divider-full) {
+  $border: 1px solid var(--pui-outline-variant);
+
+  &:where(.bottom) {
+    border-bottom: $border;
+  }
+
+  &:where(.top) {
+    border-top: $border;
+  }
+}
+
+:where(.divider-middle) {
+  &:where(.bottom) {
+    @include mx.pseudo-divider(
+      var(--pui-list-item-pl),
+      'bottom',
+      $pr: var(--pui-list-item-pr)
+    );
+  }
+
+  &:where(.top) {
+    @include mx.pseudo-divider(
+      var(--pui-list-item-pl),
+      'top',
+      $pr: var(--pui-list-item-pr)
+    );
+  }
+}
+
+:where(.divider-inset) {
+  &:where(.bottom) {
+    @include mx.pseudo-divider(var(--pui-list-item-pl), 'bottom', $pr: 0rem);
+  }
+
+  &:where(.top) {
+    @include mx.pseudo-divider(var(--pui-list-item-pl), 'top', $pr: 0rem);
+  }
+}
