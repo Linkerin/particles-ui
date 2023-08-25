@@ -190,6 +190,67 @@ function IconButtonDocsPage() {
           noLoadingSpinner
         />
       </DemoContainer>
+      <Divider />
+      <Heading variant="h6">Radiuses</Heading>
+      <DemoContainer>
+        <IconButton
+          aria-label="Small material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="none"
+        />
+        <IconButton
+          aria-label="Medium material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="xs"
+        />
+        <IconButton
+          aria-label="Large material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="sm"
+        />
+        <IconButton
+          aria-label="Small material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="md"
+        />
+        <IconButton
+          aria-label="Medium material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="lg"
+        />
+        <IconButton
+          aria-label="Large material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="xl"
+        />
+        <IconButton
+          aria-label="Large material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="full"
+        />
+        <IconButton
+          aria-label="Large material icon"
+          icon={<MaterialSymbolIcon icon="settings" />}
+          variant="filled"
+          color="secondary"
+          radius="round"
+        />
+      </DemoContainer>
+      <Divider />
       <Heading variant="h6">Sizes</Heading>
       <Heading as="h3" variant="subtitle-md">
         SvgIcon

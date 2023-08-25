@@ -4,4 +4,8 @@
   height: 2.5rem;
   width: fit-content;
   min-width: 180px;
+
+  &:hover {
+    color: var(--pui-primary-darker);
+  }
 }

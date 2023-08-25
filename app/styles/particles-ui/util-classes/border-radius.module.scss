@@ -1,0 +1,10 @@
+@use '../variables' as var;
+
+/// Adds classes for the following 'radius' properties support:
+/// 'none', 'xs', 'sm', 'md', 'lg', 'xl', 'full', 'round'
+///
+@each $radius, $value in var.$radiuses {
+  :where(.#{$radius}) {
+    border-radius: var(--pui-radius-#{$radius}, $value);
+  }
+}

@@ -4,8 +4,9 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import DualSpinner from '@/app/_components/DualSpinner/DualSpinner';
-import { ButtonBaseProps, RadiusType } from '@/app/_lib/types';
+import { ButtonBaseProps } from '@/app/_lib/types';
 
+import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
 
 export interface ButtonProps extends ButtonBaseProps {
@@ -56,7 +57,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         styles[variant],
         styles[color],
         styles[size],
-        styles[`radius-${radius}`],
+        radiusStyles[radius],
         { [styles.loading]: isLoading },
         { [styles.leftIcon]: !!leftIcon || (isLoading && !noLoadingSpinner) },
         {

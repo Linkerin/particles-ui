@@ -286,6 +286,34 @@ function ButtonDocsPage() {
         </Button>
       </DemoContainer>
       <Divider />
+      <Heading variant="h6">Radiuses</Heading>
+      <DemoContainer>
+        <Button color="secondary" radius="none">
+          None
+        </Button>
+        <Button color="secondary" radius="xs">
+          X-small
+        </Button>
+        <Button color="secondary" radius="sm">
+          Small
+        </Button>
+        <Button color="secondary" radius="md">
+          Medium
+        </Button>
+        <Button color="secondary" radius="lg">
+          Large
+        </Button>
+        <Button color="secondary" radius="xl">
+          X-Large
+        </Button>
+        <Button color="secondary" radius="full">
+          Full
+        </Button>
+        <Button color="secondary" radius="round">
+          X-Large
+        </Button>
+      </DemoContainer>
+      <Divider />
       <Heading variant="h6">Sizes</Heading>
       <DemoContainer>
         <Button size="xs">X-small</Button>

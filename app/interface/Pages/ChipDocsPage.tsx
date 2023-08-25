@@ -41,7 +41,7 @@ function ChipDocsPage() {
             alert('Delete try on outlined chip');
           }}
         >
-          Clickable delitable
+          Clickable deletable
         </Chip>
         <Chip radius="full">Outlined full chip</Chip>
       </DemoContainer>
@@ -72,10 +72,38 @@ function ChipDocsPage() {
             alert('Delete try on outlined chip');
           }}
         >
-          Clickable delitable
+          Clickable deletable
         </Chip>
         <Chip variant="elevated" radius="full">
           Elevated full chip
+        </Chip>
+      </DemoContainer>
+      <Divider />
+      <Heading variant="h6">Radiuses</Heading>
+      <DemoContainer>
+        <Chip variant="elevated" radius="none">
+          None
+        </Chip>
+        <Chip variant="elevated" radius="xs">
+          X-Small
+        </Chip>
+        <Chip variant="elevated" radius="sm">
+          Small
+        </Chip>
+        <Chip variant="elevated" radius="md">
+          Medium
+        </Chip>
+        <Chip variant="elevated" radius="lg">
+          Large
+        </Chip>
+        <Chip variant="elevated" radius="xl">
+          X-Large
+        </Chip>
+        <Chip variant="elevated" radius="full">
+          Full
+        </Chip>
+        <Chip variant="elevated" radius="round">
+          Round
         </Chip>
       </DemoContainer>
       <Divider />

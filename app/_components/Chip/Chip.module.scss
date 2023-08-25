@@ -119,14 +119,6 @@ $sizes-mapping: (
   padding-right: $icon-side-pd;
 }
 
-:where(.pill) {
-  border-radius: var(--pui-radius-sm);
-}
-
-:where(.full) {
-  border-radius: var(--pui-radius-full);
-}
-
 // Icon colors
 @each $color in ('primary', 'secondary', 'tertiary') {
   :where(.#{$color}) {

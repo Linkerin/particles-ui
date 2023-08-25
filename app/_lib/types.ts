@@ -5,7 +5,7 @@ export interface ButtonBaseProps extends ButtonElementProps {
   color?: 'primary' | 'secondary' | 'tertiary';
   isLoading?: boolean;
   noLoadingSpinner?: boolean;
-  radius?: RadiusType;
+  radius?: Radius;
   size?: SizesType;
 }
 
@@ -31,7 +31,7 @@ export type PuiJustifyContent = Extract<
   | 'space-evenly'
 >;
 
-export type RadiusType = SizesType | 'full' | 'round' | 'none';
+export type Radius = SizesType | 'full' | 'round' | 'none';
 
 export type ColorModeType = (typeof COLOR_MODES)[number];
 

@@ -3,10 +3,11 @@ import classNames from 'classnames';
 
 import CloseButton from '../CloseButton';
 import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { SizesType } from '@/app/_lib/types';
+import { Radius, SizesType } from '@/app/_lib/types';
 import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
 import useMergedRefs from '@/app/_hooks/useMergedRefs';
 
+import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Chip.module.scss';
 
 export interface ChipProps extends DivElementProps {
@@ -15,7 +16,7 @@ export interface ChipProps extends DivElementProps {
   interactiveStyle?: boolean;
   leftIcon?: React.ReactElement;
   onDelete?: React.MouseEventHandler<HTMLButtonElement>;
-  radius?: 'pill' | 'full';
+  radius?: Radius;
   rightIcon?: React.ReactElement;
   size?: Exclude<SizesType, 'xs' | 'xl'>;
   variant?: 'outlined' | 'elevated';
@@ -46,7 +47,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     disabled = false,
     iconColor = 'primary',
     interactiveStyle = false,
-    radius = 'pill',
+    radius = 'sm',
     size = 'md',
     variant = 'outlined'
   },
@@ -77,7 +78,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
         styles.chip,
         styles[variant],
         styles[size],
-        styles[radius],
+        radiusStyles[radius],
         { [styles.leftIcon]: !!leftIcon },
         { [styles.rightIcon]: !!rightIcon || !!onDelete },
         { [styles.static]: !clickable },
