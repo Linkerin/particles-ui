@@ -1,4 +1,4 @@
-![Particles UI Logo](./public/ParticlesLogo.svg)
+[![Particles UI Logo](./public/pui-logo.svg)](https://particles-ui.snipshot.dev)
 
 # Particles UI
 

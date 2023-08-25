@@ -1,0 +1,85 @@
+@use 'sass:map';
+
+@use '../../styles/particles-ui/variables' as var;
+
+// Padding size variable for CardHeader, CardBody and CardFooter components
+@each $size in ('sm', 'md', 'lg') {
+  :where(.#{$size}) {
+    $pd: map.get(var.$card-padding, $size);
+    --pui-card-padding: #{$pd};
+  }
+}
+
+:where(.card) {
+  display: flex;
+  border: 1px solid transparent;
+  border-radius: var(--pui-radius-md);
+  overflow-wrap: break-word;
+  text-align: start;
+  height: fit-content;
+  width: fit-content;
+  max-width: 100dvw;
+
+  &:where(.clickable):hover:not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:where(.clickable).disabled {
+    cursor: not-allowed;
+    opacity: 38%;
+    user-select: none;
+  }
+}
+
+:where(.filled) {
+  background-color: var(--pui-background-container-highest);
+
+  &:where(.clickable):hover:not(.disabled) {
+    background-color: rgba(
+      var(--pui-background-container-highest-action-channels) /
+        calc(100% - var(--pui-state-hover))
+    );
+    box-shadow: var(--pui-elevation-1);
+  }
+
+  &:where(.clickable):active:not(.disabled) {
+    background-color: var(--pui-background-container-highest-action);
+    box-shadow: none;
+  }
+}
+
+:where(.elevated) {
+  background-color: var(--pui-background-container-low);
+  box-shadow: var(--pui-elevation-1);
+
+  &:where(.clickable):hover:not(.disabled) {
+    background-color: rgba(
+      var(--pui-background-container-low-action-channels) /
+        calc(100% - var(--pui-state-hover))
+    );
+    box-shadow: var(--pui-elevation-2);
+  }
+
+  &:where(.clickable):active:not(.disabled) {
+    background-color: var(--pui-background-container-low-action);
+    box-shadow: var(--pui-elevation-1);
+  }
+}
+
+:where(.outlined) {
+  background-color: var(--pui-background);
+  border: 1px solid var(--pui-outline-variant);
+
+  &:where(.clickable):hover:not(.disabled) {
+    box-shadow: var(--pui-elevation-1);
+    background-color: rgba(
+      var(--pui-background-container-low-action-channels) /
+        calc(100% - var(--pui-state-hover))
+    );
+  }
+
+  &:where(.clickable):active:not(.disabled) {
+    background-color: var(--pui-background-container-low-action);
+    box-shadow: none;
+  }
+}

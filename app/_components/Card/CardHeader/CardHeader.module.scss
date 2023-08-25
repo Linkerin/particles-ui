@@ -1,0 +1,25 @@
+@use '../../../styles/particles-ui/mixins' as mx;
+@use '../../../styles/particles-ui/variables' as var;
+
+$pd: var(--pui-card-padding);
+
+:where(.card-header) {
+  display: flex;
+  padding: $pd $pd 0;
+  position: relative;
+}
+
+:where(.divider-full) {
+  padding-bottom: $pd;
+  border-bottom: 1px solid var(--pui-outline-variant);
+}
+
+:where(.divider-middle) {
+  padding-bottom: $pd;
+  @include mx.pseudo-divider($pd, 'bottom');
+}
+
+:where(.divider-inset) {
+  padding-bottom: $pd;
+  @include mx.pseudo-divider($pd, 'bottom', $pr: 0rem);
+}

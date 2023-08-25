@@ -1,0 +1,10 @@
+@use '../variables' as var;
+
+/// Adds classes for the following 'gap' properties support:
+/// 'xs', 'sm', 'md', 'lg', 'xl'
+///
+@each $size, $value in var.$gap {
+  :where(.#{$size}) {
+    gap: $value;
+  }
+}

@@ -1,0 +1,128 @@
+@use 'sass:map';
+
+@use '@/app/styles/variables' as var;
+
+$icon-side-pd: 0.5714286em;
+$sizes-mapping: (
+  'sm': 'md',
+  'md': 'lg',
+  'lg': 'xl'
+);
+
+@mixin size($size) {
+  $label: map.get(var.$typography, 'label', map.get($sizes-mapping, $size));
+
+  :where(.#{$size}) {
+    @each $key, $value in $label {
+      #{$key}: $value;
+    }
+
+    $dimension: map.get($label, 'line-height');
+    $pd: 1px;
+
+    & > span[data-pui-component='chip-icon'] {
+      font-size: calc($dimension - $pd * 2);
+    }
+
+    & > span[data-pui-component='icon-btn-wrapper'] {
+      padding: 0;
+
+      & > button[data-pui-component='close-btn'] {
+        font-size: map.get($label, 'font-size');
+        padding: $pd;
+      }
+    }
+  }
+}
+
+:where(.chip) {
+  border: 1px solid transparent;
+  color: var(--pui-on-surface);
+  cursor: pointer;
+  padding: 0.35714286em 1.142857em;
+  height: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+
+  &:where(.static) {
+    cursor: default;
+  }
+
+  & > span[data-pui-component='chip-icon'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+  }
+
+  &:hover:not(.disabled):not(:where(.static)) {
+    background-color: rgba(
+      var(--pui-on-surface-channels) / var(--pui-opacity-hover)
+    );
+  }
+
+  &:active:not(.disabled):not(:where(.static)) {
+    background-color: rgba(
+      var(--pui-on-surface-channels) / var(--pui-opacity-press)
+    );
+  }
+
+  &.disabled {
+    color: rgba(var(--pui-on-surface-channels) / 0.38);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+:where(.outlined) {
+  border-color: var(--pui-outline);
+
+  &.disabled {
+    border-color: rgba(var(--pui-on-surface-channels) / 0.12);
+  }
+}
+
+:where(.elevated) {
+  background-color: var(--pui-surface-container-low);
+  box-shadow: var(--pui-elevation-1);
+
+  &:hover:not(.disabled):not(:where(.static)) {
+    box-shadow: var(--pui-elevation-2);
+  }
+
+  &.disabled {
+    background-color: rgba(var(--pui-on-surface-channels / 0.12));
+  }
+}
+
+:where(.leftIcon) {
+  padding-left: $icon-side-pd;
+}
+
+:where(.rightIcon) {
+  padding-right: $icon-side-pd;
+}
+
+:where(.pill) {
+  border-radius: var(--pui-radius-sm);
+}
+
+:where(.full) {
+  border-radius: var(--pui-radius-full);
+}
+
+// Icon colors
+@each $color in ('primary', 'secondary', 'tertiary') {
+  :where(.#{$color}) {
+    color: var(--pui-#{$color});
+  }
+}
+
+@each $size in ('sm', 'md', 'lg') {
+  @include size($size);
+}

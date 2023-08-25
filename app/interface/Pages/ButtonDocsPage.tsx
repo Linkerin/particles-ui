@@ -7,7 +7,7 @@ import DemoSection from '../DemoSection';
 import Divider from '@/app/_components/Divider/Divider';
 import Heading from '@/app/_components/Heading/Heading';
 import GlobeIcon from '../GlobeIcon';
-// import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
+import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function ButtonDocsPage() {
   return (
@@ -252,7 +252,7 @@ function ButtonDocsPage() {
           Elevated
         </Button>
       </DemoContainer>
-      {/* <DemoContainer>
+      <DemoContainer>
         <Button rightIcon={<MaterialSymbolIcon icon="search" />} disabled>
           Filled
         </Button>
@@ -284,7 +284,7 @@ function ButtonDocsPage() {
         >
           Elevated
         </Button>
-      </DemoContainer> */}
+      </DemoContainer>
       <Divider />
       <Heading variant="h6">Sizes</Heading>
       <DemoContainer>
@@ -311,9 +311,7 @@ function ButtonDocsPage() {
           X-Large
         </Button>
       </DemoContainer>
-      {/* <h3>
-        Material symbol icons
-      </h3>
+      <h3>Material symbol icons</h3>
       <DemoContainer>
         <Button
           leftIcon={<MaterialSymbolIcon icon="search" />}
@@ -411,7 +409,7 @@ function ButtonDocsPage() {
         >
           X-Large
         </Button>
-      </DemoContainer> */}
+      </DemoContainer>
       <Heading as="h3" variant="subtitle-md">
         Tabler icons
       </Heading>

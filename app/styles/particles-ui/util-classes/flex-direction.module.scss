@@ -1,0 +1,8 @@
+/// Adds classes for the following 'flex-direction' properties support:
+/// 'column', 'column-reverse', 'row', 'row-reverse'
+///
+@each $value in (column, column-reverse, row, row-reverse) {
+  :where(.#{$value}) {
+    flex-direction: $value;
+  }
+}

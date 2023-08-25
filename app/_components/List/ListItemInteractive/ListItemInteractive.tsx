@@ -9,6 +9,7 @@ import ListItemIcon from '../ListItemIcon/ListItemIcon';
 import useMergedRefs from '@/app/_hooks/useMergedRefs';
 import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
 
+import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import styles from './ListItemInteractive.module.scss';
 
 export interface ListItemInteractiveProps
@@ -112,7 +113,7 @@ const ListItemInteractive = forwardRef<HTMLLIElement, ListItemInteractiveProps>(
           ref={mergedRef}
           className={classNames(
             styles['li-interactive'],
-            styles[`align-items-${alignItems}`],
+            alignItemsStyles[alignItems],
             { [styles.disabled]: disabled },
             { [styles.selected]: selected }
           )}

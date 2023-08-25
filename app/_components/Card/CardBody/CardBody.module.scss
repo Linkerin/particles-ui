@@ -1,0 +1,8 @@
+@use '../../../styles/particles-ui/variables' as var;
+
+$pd: var(--pui-card-padding);
+
+:where(.card-body) {
+  display: flex;
+  padding: $pd;
+}

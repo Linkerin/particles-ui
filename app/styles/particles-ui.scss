@@ -1,5 +1,6 @@
 @use './particles-ui/mixins' as mx;
 @use './theme' as var;
+@import './material-symbols.scss';
 
 @media (prefers-color-scheme: light) {
   :root {

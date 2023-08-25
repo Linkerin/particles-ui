@@ -1,0 +1,11 @@
+/// Adds classes for the following 'justify-content' properties support:
+/// 'center', 'flex-start', 'flex-end',
+/// 'space-between', 'space-around', 'space-evenly'
+///
+@each $value
+  in (center, flex-start, flex-end, space-between, space-around, space-evenly)
+{
+  :where(.#{$value}) {
+    justify-content: $value;
+  }
+}

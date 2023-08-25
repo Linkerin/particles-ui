@@ -55,19 +55,3 @@
     }
   }
 }
-
-:where(.align-items-center) {
-  align-items: center;
-}
-
-:where(.align-items-flex-start) {
-  align-items: flex-start;
-}
-
-:where(.align-items-flex-end) {
-  align-items: flex-end;
-}
-
-:where(.align-items-stretch) {
-  align-items: stretch;
-}

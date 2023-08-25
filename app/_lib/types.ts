@@ -10,6 +10,26 @@ export interface ButtonBaseProps extends ButtonElementProps {
 
 export type SizesType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
+export type PuiAlignItems = Extract<
+  React.CSSProperties['alignItems'],
+  'center' | 'flex-start' | 'flex-end' | 'stretch'
+>;
+
+export type PuiFlexDirection = Extract<
+  React.CSSProperties['flexDirection'],
+  'column' | 'column-reverse' | 'row' | 'row-reverse'
+>;
+
+export type PuiJustifyContent = Extract<
+  React.CSSProperties['justifyContent'],
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+>;
+
 export type RadiusType = SizesType | 'full' | 'round' | 'none';
 
 export type ColorModeType = (typeof COLOR_MODES)[number];

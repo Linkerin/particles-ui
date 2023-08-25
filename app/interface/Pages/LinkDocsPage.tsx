@@ -1,7 +1,7 @@
-// import Card from '@/app/_components/Card/Card';
-// import CardBody from '@/app/_components/Card/CardBody/CardBody';
-// import CardFooter from '@/app/_components/Card/CardFooter/CardFooter';
-// import CardHeader from '@/app/_components/Card/CardHeader/CardHeader';
+import Card from '@/app/_components/Card/Card';
+import CardBody from '@/app/_components/Card/CardBody/CardBody';
+import CardFooter from '@/app/_components/Card/CardFooter/CardFooter';
+import CardHeader from '@/app/_components/Card/CardHeader/CardHeader';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
 import Divider from '@/app/_components/Divider/Divider';
@@ -161,7 +161,7 @@ function LinkDocsPage() {
       </Text>
       <Divider />
       <Heading variant="h6">Overlay</Heading>
-      {/* <Card variant="elevated" className="link-overlay" interactiveStyle>
+      <Card variant="elevated" className="link-overlay" interactiveStyle>
         <CardHeader divider="middle">
           <Heading variant="subtitle-md">
             <Link href="/docs/components/card" overlay>
@@ -183,7 +183,7 @@ function LinkDocsPage() {
             .
           </Text>
         </CardFooter>
-      </Card> */}
+      </Card>
     </DemoSection>
   );
 }

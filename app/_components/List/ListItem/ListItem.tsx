@@ -1,16 +1,15 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
+import { PuiAlignItems } from '@/app/_lib/types';
 
 import { LiElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import ListItemIcon from '../ListItemIcon/ListItemIcon';
 
+import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import styles from './ListItem.module.scss';
 
 export interface ListItemProps extends LiElementProps {
-  alignItems?: Extract<
-    React.CSSProperties['alignItems'],
-    'center' | 'flex-start' | 'flex-end' | 'stretch'
-  >;
+  alignItems?: PuiAlignItems;
   divider?: 'full' | 'middle' | 'inset';
   dividerPosition?: 'top' | 'bottom' | 'both';
   inset?: boolean;
@@ -40,7 +39,7 @@ const ListItem = forwardRef<HTMLLIElement, ListItemProps>(function ListItem(
       ref={ref}
       className={classNames(
         styles['list-item'],
-        styles[`align-items-${alignItems}`],
+        alignItemsStyles[alignItems],
         { [styles[`divider-${divider}`]]: !!divider },
         {
           [styles.top]:
