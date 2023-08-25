@@ -1,0 +1,146 @@
+@use 'sass:map';
+
+@use '../../styles/particles-ui/mixins' as mx;
+@use '../../styles/particles-ui/variables' as var;
+
+// Font size for these buttons has to be 1 step more than the size
+$sizes-mapping: (
+  'sm': 'md',
+  'md': 'lg',
+  'lg': 'xl'
+);
+
+@mixin size($size, $dimension, $radius, $pd, $loading-border-width: 1px) {
+  $font: map.get(var.$typography, 'label', map.get($sizes-mapping, $size));
+  $icon-size: $dimension - ($pd * 2);
+
+  :where(.#{$size}) {
+    border-radius: var(--pui-radius-#{$radius});
+    height: $dimension;
+    padding: $pd;
+
+    // Button label styling
+    @each $property, $value in $font {
+      #{$property}: $value;
+    }
+
+    & > span[data-pui-component='material-icon'],
+    & > span[data-pui-component='fab-load-spinner'],
+    & > svg {
+      font-size: $icon-size;
+    }
+
+    @if ($size == 'lg') {
+      & > span[data-pui-component='fab-load-spinner'] > span {
+        border-width: $loading-border-width;
+      }
+    }
+  }
+}
+
+@mixin color($color) {
+  @include mx.check-color-option($color);
+
+  :where(.#{$color}) {
+    background-color: var(--pui-#{$color}-container);
+    color: var(--pui-on-#{$color}-container);
+
+    &:hover:not(:where(.loading)) {
+      background-color: rgb(
+        var(--pui-#{$color}-container-action-channels) /
+          calc(100% - var(--pui-state-hover, 8%))
+      );
+    }
+
+    &:active:not(:where(.loading)) {
+      background-color: var(--pui-#{$color}-container-action);
+    }
+  }
+}
+
+:where(.fab) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pui-gap-md, 0.5rem);
+  border: none;
+  box-shadow: var(--pui-elevation-3);
+  cursor: pointer;
+  width: fit-content;
+  white-space: nowrap;
+
+  svg {
+    height: 1em;
+    min-width: 1em;
+    width: auto;
+  }
+
+  & > span[data-pui-component='fab-load-spinner'] > span {
+    border-width: 1px;
+  }
+
+  &:where(.lowered) {
+    box-shadow: var(--pui-elevation-1);
+  }
+
+  &:hover {
+    box-shadow: var(--pui-elevation-4);
+
+    &:where(.lowered) {
+      box-shadow: var(--pui-elevation-2);
+    }
+  }
+
+  &:active {
+    box-shadow: var(--pui-elevation-3);
+
+    &:where(.lowered) {
+      box-shadow: var(--pui-elevation-1);
+    }
+  }
+
+  &.loading {
+    box-shadow: var(--pui-elevation-1);
+    cursor: not-allowed;
+    opacity: 50%;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:active {
+    background-color: rgb(var(--pui-on-background-channels) / 0.12);
+    box-shadow: var(--pui-elevation-1);
+    color: rgb(var(--pui-on-background-channels) / 0.38);
+    cursor: not-allowed;
+  }
+}
+
+:where(.surface) {
+  background-color: var(--pui-background-container);
+  color: var(--pui-primary);
+
+  &:hover:not(:where(.loading)) {
+    background-color: rgb(
+      var(--pui-background-container-low-action-channels) /
+        calc(100% - var(--pui-state-hover, 8%))
+    );
+  }
+
+  &:active:not(:where(.loading)) {
+    background-color: var(--pui-background-container-low-action);
+  }
+}
+
+@each $value in ('primary', 'secondary', 'tertiary') {
+  @include color($value);
+}
+
+@include size('sm', 2.5rem, $radius: 'md', $pd: 0.5rem);
+@include size('md', 3.5rem, $radius: 'lg', $pd: 1rem);
+@include size(
+  'lg',
+  6rem,
+  $radius: 'xl',
+  $pd: 1.75rem,
+  $loading-border-width: 2px
+);
