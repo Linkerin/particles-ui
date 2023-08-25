@@ -5,6 +5,7 @@ export interface ButtonBaseProps extends ButtonElementProps {
   color?: 'primary' | 'secondary' | 'tertiary';
   isLoading?: boolean;
   noLoadingSpinner?: boolean;
+  radius?: RadiusType;
   size?: SizesType;
 }
 

@@ -11,8 +11,8 @@ import styles from './Button.module.scss';
 export interface ButtonProps extends ButtonBaseProps {
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
+  loadingElement?: React.ReactElement;
   loadingText?: string;
-  radius?: RadiusType;
   shrinkOnPress?: boolean;
   variant?: 'filled' | 'outlined' | 'text' | 'elevated' | 'soft';
 }
@@ -32,6 +32,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     onClick,
     leftIcon,
     rightIcon,
+    loadingElement,
     title,
     color = 'primary',
     disabled = false,
@@ -73,9 +74,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     >
       {isLoading ? (
         <>
-          {!noLoadingSpinner && (
+          {!noLoadingSpinner && !loadingElement && (
             <DualSpinner data-pui-component="btn-load-spinner" />
           )}
+          {!!loadingElement && loadingElement}
           {loadingText || children}
         </>
       ) : (
