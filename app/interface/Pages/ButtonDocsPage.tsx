@@ -111,6 +111,138 @@ function ButtonDocsPage() {
           Elevated
         </Button>
       </DemoContainer>
+      <Heading variant="h6">Success color</Heading>
+      <DemoContainer>
+        <Button color="success">Filled</Button>
+        <Button color="success" variant="outlined">
+          Outlined
+        </Button>
+        <Button color="success" variant="text">
+          Text
+        </Button>
+        <Button color="success" variant="soft">
+          Soft
+        </Button>
+        <Button color="success" variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <DemoContainer>
+        <Button color="success" leftIcon={<GlobeIcon />}>
+          Filled
+        </Button>
+        <Button color="success" leftIcon={<GlobeIcon />} variant="outlined">
+          Outlined
+        </Button>
+        <Button color="success" leftIcon={<GlobeIcon />} variant="text">
+          Text
+        </Button>
+        <Button color="success" leftIcon={<GlobeIcon />} variant="soft">
+          Soft
+        </Button>
+        <Button color="success" leftIcon={<GlobeIcon />} variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <Heading variant="h6">Info color</Heading>
+      <DemoContainer>
+        <Button color="info">Filled</Button>
+        <Button color="info" variant="outlined">
+          Outlined
+        </Button>
+        <Button color="info" variant="text">
+          Text
+        </Button>
+        <Button color="info" variant="soft">
+          Soft
+        </Button>
+        <Button color="info" variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <DemoContainer>
+        <Button color="info" leftIcon={<GlobeIcon />}>
+          Filled
+        </Button>
+        <Button color="info" leftIcon={<GlobeIcon />} variant="outlined">
+          Outlined
+        </Button>
+        <Button color="info" leftIcon={<GlobeIcon />} variant="text">
+          Text
+        </Button>
+        <Button color="info" leftIcon={<GlobeIcon />} variant="soft">
+          Soft
+        </Button>
+        <Button color="info" leftIcon={<GlobeIcon />} variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <Heading variant="h6">Error color</Heading>
+      <DemoContainer>
+        <Button color="error">Filled</Button>
+        <Button color="error" variant="outlined">
+          Outlined
+        </Button>
+        <Button color="error" variant="text">
+          Text
+        </Button>
+        <Button color="error" variant="soft">
+          Soft
+        </Button>
+        <Button color="error" variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <DemoContainer>
+        <Button color="error" leftIcon={<GlobeIcon />}>
+          Filled
+        </Button>
+        <Button color="error" leftIcon={<GlobeIcon />} variant="outlined">
+          Outlined
+        </Button>
+        <Button color="error" leftIcon={<GlobeIcon />} variant="text">
+          Text
+        </Button>
+        <Button color="error" leftIcon={<GlobeIcon />} variant="soft">
+          Soft
+        </Button>
+        <Button color="error" leftIcon={<GlobeIcon />} variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <Heading variant="h6">Warning color</Heading>
+      <DemoContainer>
+        <Button color="warning">Filled</Button>
+        <Button color="warning" variant="outlined">
+          Outlined
+        </Button>
+        <Button color="warning" variant="text">
+          Text
+        </Button>
+        <Button color="warning" variant="soft">
+          Soft
+        </Button>
+        <Button color="warning" variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
+      <DemoContainer>
+        <Button color="warning" leftIcon={<GlobeIcon />}>
+          Filled
+        </Button>
+        <Button color="warning" leftIcon={<GlobeIcon />} variant="outlined">
+          Outlined
+        </Button>
+        <Button color="warning" leftIcon={<GlobeIcon />} variant="text">
+          Text
+        </Button>
+        <Button color="warning" leftIcon={<GlobeIcon />} variant="soft">
+          Soft
+        </Button>
+        <Button color="warning" leftIcon={<GlobeIcon />} variant="elevated">
+          Elevated
+        </Button>
+      </DemoContainer>
       <Divider />
       <Heading variant="h6">Loading</Heading>
       <DemoContainer>

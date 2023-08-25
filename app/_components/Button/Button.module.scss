@@ -1,7 +1,6 @@
 @use 'sass:map';
 
-@use 'sass:color';
-
+@use '../../styles/particles-ui/constants' as const;
 @use '../../styles/particles-ui/mixins' as mx;
 @use '../../styles/particles-ui/variables' as var;
 
@@ -14,8 +13,8 @@
     line-height: map.get($btn-typography, 'line-height');
     letter-spacing: map.get($btn-typography, 'letter-spacing');
 
-    span[data-pui-component='btn-icon'],
-    span[data-pui-component='btn-load-spinner'] {
+    :where(span[data-pui-component='btn-icon']),
+    :where(span[data-pui-component='btn-load-spinner']) {
       $icon-dimension: map.get($btn-typography, 'line-height');
       font-size: calc($icon-dimension - 2px);
     }
@@ -55,7 +54,7 @@
     }
   }
 
-  span[data-pui-component='btn-load-spinner'] > span {
+  :where(span[data-pui-component='btn-load-spinner']) > span {
     border-width: 1px;
   }
 
@@ -83,98 +82,80 @@
   padding-right: 1.14286em;
 }
 
-@mixin filled-color($color) {
-  @include mx.check-color-option($color);
-
-  &:where(.#{$color}) {
-    background-color: var(--pui-#{$color});
-    color: var(--pui-on-#{$color});
-
-    &:hover:not(:where(.loading)):not(:disabled) {
-      // Fallback for color-mix()
-      background-color: rgb(
-        var(--pui-#{$color}-state-channels) /
-          calc(100% - var(--pui-state-hover, 0.08))
-      );
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}),
-        var(--pui-black) var(--pui-state-hover, 0.08)
-      );
-    }
-
-    &:active:not(:where(.loading)):not(:disabled) {
-      // Fallback for color-mix()
-      background-color: var(--pui-#{$color}-state);
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}),
-        var(--pui-black) var(--pui-state-press, 0.12)
-      );
-    }
+// colors
+@each $color in const.$color-names {
+  :where(.#{$color}) {
+    --pui-btn-color: var(--pui-#{$color});
+    --pui-btn-color-channels: var(--pui-#{$color}-channels);
+    --pui-btn-on-color: var(--pui-on-#{$color});
+    --pui-btn-color-darker: var(--pui-#{$color}-darker);
+    --pui-btn-color-darker-channels: var(--pui-#{$color}-darker-channels);
+    --pui-btn-color-container-low: var(--pui-#{$color}-container-low);
+    --pui-btn-on-color-container: var(--pui-on-#{$color}-container);
   }
 }
 
 :where(.filled) {
-  @include filled-color('primary');
-  @include filled-color('secondary');
-  @include filled-color('tertiary');
+  background-color: var(--pui-btn-color);
+  color: var(--pui-btn-on-color);
+
+  &:hover:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(var(--pui-btn-color-darker-channels) / 82%);
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color),
+      var(--pui-black) var(--pui-state-hover, 0.08)
+    );
+  }
+
+  &:active:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(var(--pui-btn-color-darker-channels) / 86%);
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color),
+      var(--pui-black) var(--pui-state-press, 0.12)
+    );
+  }
 
   &:disabled {
     background-color: disabled-bg-color('on-background');
   }
 }
 
-@mixin elevated-color($color) {
-  @include mx.check-color-option($color);
-
-  &:where(.#{$color}) {
-    color: var(--pui-#{$color});
-
-    &:hover:not(:where(.loading)) {
-      // Fallback for color-mix()
-      background-color: rgb(
-        var(--pui-#{$color}-channels) / var(--pui-state-hover, 0.08)
-      );
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}) var(--pui-state-hover, 0.08),
-        transparent
-      );
-    }
-
-    &:active:not(:where(.loading)) {
-      // Fallback for color-mix()
-      background-color: rgb(
-        var(--pui-#{$color}-channels) / var(--pui-state-press, 0.12)
-      );
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}) var(--pui-state-press, 0.12),
-        transparent
-      );
-    }
-  }
-}
-
 :where(.elevated) {
   background-color: var(--pui-background-container-low);
   box-shadow: var(--pui-elevation-1);
-
-  // colors
-  @include elevated-color('primary');
-  @include elevated-color('secondary');
-  @include elevated-color('tertiary');
+  color: var(--pui-btn-color);
 
   &:hover:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(
+      var(--pui-btn-color-channels) / var(--pui-state-hover, 0.08)
+    );
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color) var(--pui-state-hover, 0.08),
+      transparent
+    );
     box-shadow: var(--pui-elevation-2);
   }
 
   &:active:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(
+      var(--pui-btn-color-channels) / var(--pui-state-press, 0.12)
+    );
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color) var(--pui-state-press, 0.12),
+      transparent
+    );
     box-shadow: var(--pui-elevation-1);
   }
 
@@ -192,50 +173,37 @@
   }
 }
 
-@mixin outlined-or-text-color($color, $outlined: false) {
-  @include mx.check-color-option($color);
-
-  &:where(.#{$color}) {
-    color: var(--pui-#{$color});
-    @if ($outlined == true) {
-      border: 1px solid var(--pui-#{$color});
-    }
-
-    &:hover:not(:where(.loading)):not(:disabled) {
-      // Fallback for color-mix()
-      background-color: rgb(
-        var(--pui-#{$color}-channels) / var(--pui-state-hover, 0.08)
-      );
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}) var(--pui-state-hover, 0.08),
-        transparent
-      );
-    }
-
-    &:active:not(:where(.loading)):not(:disabled) {
-      // Fallback for color-mix()
-      background-color: rgb(
-        var(--pui-#{$color}-channels) / var(--pui-state-press, 0.12)
-      );
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}) var(--pui-state-press, 0.12),
-        transparent
-      );
-    }
-  }
-}
-
 :where(.outlined) {
   background: none;
+  color: var(--pui-btn-color);
 
-  // colors
-  @include outlined-or-text-color('primary', $outlined: true);
-  @include outlined-or-text-color('secondary', $outlined: true);
-  @include outlined-or-text-color('tertiary', $outlined: true);
+  border: 1px solid var(--pui-btn-color);
+
+  &:hover:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(
+      var(--pui-btn-color-channels) / var(--pui-state-hover, 0.08)
+    );
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color) var(--pui-state-hover, 0.08),
+      transparent
+    );
+  }
+
+  &:active:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(
+      var(--pui-btn-color-channels) / var(--pui-state-press, 0.12)
+    );
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color) var(--pui-state-press, 0.12),
+      transparent
+    );
+  }
 
   &:disabled {
     border-color: disabled-bg-color('outline');
@@ -244,12 +212,34 @@
 
 :where(.text) {
   background: none;
+  color: var(--pui-btn-color);
   padding-inline: 0.85714em;
 
-  // colors
-  @include outlined-or-text-color('primary');
-  @include outlined-or-text-color('secondary');
-  @include outlined-or-text-color('tertiary');
+  &:hover:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(
+      var(--pui-btn-color-channels) / var(--pui-state-hover, 0.08)
+    );
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color) var(--pui-state-hover, 0.08),
+      transparent
+    );
+  }
+
+  &:active:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(
+      var(--pui-btn-color-channels) / var(--pui-state-press, 0.12)
+    );
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color) var(--pui-state-press, 0.12),
+      transparent
+    );
+  }
 
   &:where(.leftIcon) {
     padding-right: 1.14286em;
@@ -264,41 +254,31 @@
   }
 }
 
-@mixin soft-color($color) {
-  @include mx.check-color-option($color);
-
-  &:where(.#{$color}) {
-    background-color: var(--pui-#{$color}-container-low);
-    color: var(--pui-on-#{$color}-container);
-
-    &:hover:not(:where(.loading)):not(:disabled) {
-      // Fallback for color-mix()
-      background-color: rgb(var(--pui-#{$color}-channels) / 0.3);
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}-container-low),
-        var(--pui-#{$color}) var(--pui-state-hover, 0.08)
-      );
-    }
-
-    &:active:not(:where(.loading)):not(:disabled) {
-      // Fallback for color-mix()
-      background-color: rgb(var(--pui-#{$color}-channels) / 0.36);
-
-      background-color: color-mix(
-        in oklab,
-        var(--pui-#{$color}-container-low),
-        var(--pui-#{$color}) var(--pui-state-press, 0.12)
-      );
-    }
-  }
-}
-
 :where(.soft) {
-  @include soft-color('primary');
-  @include soft-color('secondary');
-  @include soft-color('tertiary');
+  background-color: var(--pui-btn-color-container-low);
+  color: var(--pui-btn-on-color-container);
+
+  &:hover:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(var(--pui-btn-color-channels) / 0.3);
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color-container-low),
+      var(--pui-btn-color) var(--pui-state-hover, 0.08)
+    );
+  }
+
+  &:active:not(:where(.loading)):not(:disabled) {
+    // Fallback for color-mix()
+    background-color: rgb(var(--pui-btn-color-channels) / 0.36);
+
+    background-color: color-mix(
+      in oklab,
+      var(--pui-btn-color-container-low),
+      var(--pui-btn-color) var(--pui-state-press, 0.12)
+    );
+  }
 
   &:disabled {
     background-color: disabled-bg-color('on-background');
@@ -306,6 +286,6 @@
 }
 
 // sizes
-@each $size in ('xs', 'sm', 'md', 'lg', 'xl') {
+@each $size in const.$sizes {
   @include size($size);
 }

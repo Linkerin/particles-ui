@@ -2,7 +2,7 @@ import { ButtonElementProps } from './puiHTMLPropTypes';
 import { COLOR_MODES } from './constants';
 
 export interface ButtonBaseProps extends ButtonElementProps {
-  color?: 'primary' | 'secondary' | 'tertiary';
+  color?: PuiColorNames;
   isLoading?: boolean;
   noLoadingSpinner?: boolean;
   radius?: Radius;
@@ -34,6 +34,15 @@ export type PuiJustifyContent = Extract<
 export type Radius = SizesType | 'full' | 'round' | 'none';
 
 export type ColorModeType = (typeof COLOR_MODES)[number];
+
+export type PuiColorNames =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'error'
+  | 'success'
+  | 'warning'
+  | 'info';
 
 export type ColorTokensType =
   | 'primary'
