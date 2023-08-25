@@ -5,6 +5,6 @@
 ///
 @each $size, $value in var.$gap {
   :where(.#{$size}) {
-    gap: $value;
+    gap: var(--pui-gap-#{$size}, $value);
   }
 }

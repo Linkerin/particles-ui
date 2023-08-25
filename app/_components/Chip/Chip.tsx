@@ -74,8 +74,6 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     <div
       ref={mergedRefs}
       className={classNames(
-        'display-flex flex-direction-row',
-        'align-items-center justify-content-center gap-md',
         styles.chip,
         styles[variant],
         styles[size],

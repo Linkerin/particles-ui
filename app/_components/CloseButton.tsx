@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import CrossIcon from './CrossIcon';
+import CloseIcon from './CloseIcon/CloseIcon';
 import IconButton, { IconButtonProps } from './IconButton/IconButton';
 
 type CloseButtonProps = Omit<
@@ -14,7 +14,7 @@ const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
       <IconButton
         ref={ref}
         aria-label="Close"
-        icon={<CrossIcon />}
+        icon={<CloseIcon />}
         data-pui-component="close-btn"
         {...props}
       />

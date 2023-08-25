@@ -53,6 +53,7 @@ svg {
 }
 
 body {
+  @include mx.create-css-vars(var.$gap, $prefix: 'gap');
   @include mx.create-css-vars(var.$radiuses, $prefix: 'radius');
   @include mx.create-css-vars(var.$states, $prefix: 'state');
 

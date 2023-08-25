@@ -1,0 +1,290 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+
+@use '../../styles/particles-ui/mixins' as mx;
+@use '../../styles/particles-ui/variables' as var;
+
+@mixin thumb-box-shadow($thumb-dimension, $color, $state) {
+  @if (
+    list.index(
+        ('calculation', 'number', 'string'),
+        meta.type-of($thumb-dimension)
+      ) ==
+      null
+  ) {
+    @error "`thumb-dimension` value has to be a number or a calculation";
+  }
+
+  @if (meta.type-of($color) != 'string') {
+    @error "#{$color}: invalid color value";
+  }
+
+  @if (list.index(('hover', 'focus', 'press'), $state) == null) {
+    @error "`state` value has to be 'hover', 'focus' or 'press'";
+  }
+
+  box-shadow: 0 0 0
+    calc((var(--thumb-box-shadow-diametr, 2.5rem) - $thumb-dimension) / 2)
+    rgb(var(--pui-#{$color}-channels) / var(--pui-state-#{$state}));
+}
+
+@mixin color($color) {
+  @include mx.check-color-option($color);
+
+  input[type='checkbox']:checked ~ :where(.track.#{$color}) {
+    background-color: var(--pui-#{$color});
+
+    &:hover:not(.disabled) > :where(.thumb) {
+      background-color: var(--pui-#{$color}-container);
+      @include thumb-box-shadow(
+        var(--thumb-selected-dimension),
+        $color,
+        'hover'
+      );
+    }
+
+    &:active:not(.disabled) > :where(.thumb) {
+      @include thumb-box-shadow(var(--thumb-active-dimension), $color, 'press');
+    }
+
+    & > :where(.thumb) {
+      background-color: var(--pui-on-#{$color});
+      color: var(--pui-on-#{$color}-container);
+    }
+  }
+}
+
+@mixin label-size($size) {
+  $font: map.get(var.$typography, 'label', $size);
+
+  &:where(.label) {
+    font-size: map.get($font, 'font-size');
+    line-height: map.get($font, 'line-height');
+    letter-spacing: map.get($font, 'letter-spacing');
+  }
+}
+
+// Apply colors classes
+@each $value in ('primary', 'secondary', 'tertiary') {
+  @include color($value);
+}
+
+:where(.label) {
+  display: flex;
+  align-items: center;
+  gap: var(--pui-gap-md, 0.5rem);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: var(--pui-state-disabled-content, 0.38);
+  }
+}
+
+// sizes
+.sm {
+  --switch-height: 1.4rem;
+  --switch-border-width: 1px;
+  @include label-size('sm');
+}
+
+.md,
+.lg {
+  --switch-border-width: 2px;
+}
+
+.md {
+  --switch-height: 2rem;
+  @include label-size('md');
+}
+
+.lg {
+  --switch-height: 2.4rem;
+  @include label-size('lg');
+}
+
+:where(.thumb) {
+  position: relative;
+  background-color: var(--pui-outline);
+  border-radius: var(--pui-radius-full);
+  height: var(--thumb-base-dimension);
+  width: var(--thumb-base-dimension);
+  transition: transform 150ms linear, height 120ms linear, width 120ms linear;
+  user-select: none;
+}
+
+:where(.track) {
+  --switch-width: calc(var(--switch-height, 2rem) * 1.625);
+  --thumb-base-dimension: calc(var(--switch-height) / 2);
+  --thumb-selected-dimension: calc(var(--thumb-base-dimension) * 1.5);
+  --thumb-active-dimension: calc(var(--thumb-base-dimension) * 1.75);
+  --thumb-box-shadow-diametr: calc(var(--thumb-base-dimension) * 2.5);
+  --track-padding: calc(
+    (
+        var(--switch-height) - (var(--switch-border-width) * 2) -
+          var(--thumb-base-dimension)
+      ) / 2
+  );
+  --track-selected-padding: calc(
+    (var(--switch-height) - var(--thumb-selected-dimension)) / 2
+  );
+  --track-min-padding: calc(
+    (var(--switch-height) - var(--thumb-active-dimension)) / 2
+  );
+  --thumb-selected-translateX: calc(
+    var(--switch-width) - var(--thumb-selected-dimension) -
+      var(--track-selected-padding) * 2
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--pui-background-container-highest);
+  border: var(--switch-border-width, 2px) solid var(--pui-outline);
+  border-radius: var(--pui-radius-full);
+  cursor: pointer;
+  height: var(--switch-height, 2rem);
+  width: var(--switch-width, 3.25rem);
+  padding: var(--track-padding);
+  transition: background-color 150ms linear, padding 120ms linear;
+
+  &:hover:not(.disabled) > :where(.thumb) {
+    background-color: var(--pui-on-background-variant);
+    @include thumb-box-shadow(
+      var(--thumb-base-dimension),
+      'on-background',
+      'hover'
+    );
+  }
+
+  &:where(.unselected-icon) {
+    color: var(--pui-background-container-highest);
+    padding: var(--track-min-padding);
+
+    & > :where(.thumb) {
+      width: var(--thumb-selected-dimension);
+      height: var(--thumb-selected-dimension);
+    }
+
+    &:hover:not(.disabled) > :where(.thumb) {
+      @include thumb-box-shadow(
+        var(--thumb-selected-dimension),
+        'on-background',
+        'hover'
+      );
+    }
+  }
+
+  &:active:not(.disabled),
+  &:where(.unselected-icon):active:not(.disabled) {
+    padding: 0;
+
+    & > :where(.thumb) {
+      height: var(--thumb-active-dimension);
+      width: var(--thumb-active-dimension);
+      @include thumb-box-shadow(
+        var(--thumb-active-dimension),
+        'on-background',
+        'press'
+      );
+    }
+  }
+
+  &:where(.unselected-icon) > :where(.thumb),
+  &:where(.selected-icon) > :where(.thumb) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & > :where(.thumb) > span[data-pui-component='unselected-icon'] {
+    display: inline-flex;
+  }
+
+  & > :where(.thumb) > span[data-pui-component='selected-icon'] {
+    display: none;
+  }
+
+  &:where(.unselected-icon)
+    > :where(.thumb)
+    > span[data-pui-component='unselected-icon'],
+  &:where(.selected-icon)
+    > :where(.thumb)
+    > span[data-pui-component='selected-icon'] {
+    align-items: center;
+    justify-content: center;
+
+    // icons size
+    font-size: var(--thumb-base-dimension);
+
+    svg {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+  }
+
+  &.disabled {
+    background-color: rgb(
+      var(--pui-background-container-highest-channels) /
+        var(--pui-state-disabled, 0.12)
+    );
+    border-color: rgb(
+      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
+    );
+    cursor: not-allowed;
+
+    &:where(.unselected-icon)
+      > :where(.thumb)
+      > span[data-pui-component='unselected-icon'] {
+      & > svg,
+      & > span[data-pui-component='material-icon'] {
+        opacity: var(--pui-state-disabled-content, 0.38);
+      }
+    }
+  }
+}
+
+input[type='checkbox']:checked ~ :where(.track) {
+  border: none;
+  padding: var(--track-selected-padding);
+
+  & > :where(.thumb) {
+    height: var(--thumb-selected-dimension);
+    width: var(--thumb-selected-dimension);
+    transform: translateX(var(--thumb-selected-translateX));
+
+    & > span[data-pui-component='unselected-icon'] {
+      display: none;
+    }
+    & > span[data-pui-component='selected-icon'] {
+      display: inline-flex;
+    }
+  }
+
+  &:active:not(.disabled) {
+    padding: var(--track-min-padding);
+
+    & > :where(.thumb) {
+      height: var(--thumb-active-dimension);
+      width: var(--thumb-active-dimension);
+    }
+  }
+
+  &.disabled {
+    background-color: rgb(
+      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
+    );
+
+    & > :where(.thumb) > span[data-pui-component='selected-icon'] {
+      & > svg,
+      & > span[data-pui-component='material-icon'] {
+        opacity: var(--pui-state-disabled-content, 0.38);
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@use '@/app/styles/variables' as var;
+@use '../../styles/particles-ui/variables' as var;
 
 $icon-side-pd: 0.5714286em;
 $sizes-mapping: (
@@ -24,20 +24,24 @@ $sizes-mapping: (
       font-size: calc($dimension - $pd * 2);
     }
 
-    & > span[data-pui-component='icon-btn-wrapper'] {
-      padding: 0;
+    & > button[data-pui-component='close-btn'] {
+      padding: $pd;
 
-      & > button[data-pui-component='close-btn'] {
+      & > span[data-pui-component='btn-icon'] {
         font-size: map.get($label, 'font-size');
-        padding: $pd;
       }
     }
   }
 }
 
 :where(.chip) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pui-gap-md, 0.5rem);
   border: 1px solid transparent;
-  color: var(--pui-on-surface);
+  color: var(--pui-on-background);
   cursor: pointer;
   padding: 0.35714286em 1.142857em;
   height: fit-content;
@@ -61,19 +65,22 @@ $sizes-mapping: (
   }
 
   &:hover:not(.disabled):not(:where(.static)) {
-    background-color: rgba(
-      var(--pui-on-surface-channels) / var(--pui-opacity-hover)
+    background-color: rgb(
+      var(--pui-on-background-channels) / var(--pui-state-hover, 0.08)
     );
   }
 
   &:active:not(.disabled):not(:where(.static)) {
-    background-color: rgba(
-      var(--pui-on-surface-channels) / var(--pui-opacity-press)
+    background-color: rgb(
+      var(--pui-on-background-channels) / var(--pui-state-press, 0.12)
     );
   }
 
   &.disabled {
-    color: rgba(var(--pui-on-surface-channels) / 0.38);
+    color: rgb(
+      var(--pui-on-background-channels) /
+        var(--pui-state-disabled-content, 0.38)
+    );
     cursor: not-allowed;
     box-shadow: none;
   }
@@ -83,12 +90,14 @@ $sizes-mapping: (
   border-color: var(--pui-outline);
 
   &.disabled {
-    border-color: rgba(var(--pui-on-surface-channels) / 0.12);
+    border-color: rgb(
+      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
+    );
   }
 }
 
 :where(.elevated) {
-  background-color: var(--pui-surface-container-low);
+  background-color: var(--pui-background-container-low);
   box-shadow: var(--pui-elevation-1);
 
   &:hover:not(.disabled):not(:where(.static)) {
@@ -96,7 +105,9 @@ $sizes-mapping: (
   }
 
   &.disabled {
-    background-color: rgba(var(--pui-on-surface-channels / 0.12));
+    background-color: rgb(
+      var(--pui-on-background-channels / var(--pui-state-disabled, 0.12))
+    );
   }
 }
 
