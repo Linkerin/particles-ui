@@ -3,7 +3,7 @@
     $dimension - $pd * 2 - 2px
   ); // 2px - doubled button's default border-width
 
-  :where(.#{$size}) {
+  button:where(.#{$size}) {
     padding: $pd;
 
     :where(span[data-pui-component='btn-icon']),

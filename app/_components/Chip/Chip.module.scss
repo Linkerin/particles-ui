@@ -20,14 +20,14 @@ $sizes-mapping: (
     $dimension: map.get($label, 'line-height');
     $pd: 1px;
 
-    & > :where(span[data-pui-component='chip-icon']) {
+    & > span:where([data-pui-component='chip-icon']) {
       font-size: calc($dimension - $pd * 2);
     }
 
-    & > :where(button[data-pui-component='close-btn']) {
+    & > button:where([data-pui-component='close-btn']) {
       padding: $pd;
 
-      & > :where(span[data-pui-component='btn-icon']) {
+      & > span:where([data-pui-component='btn-icon']) {
         font-size: map.get($label, 'font-size');
       }
     }
