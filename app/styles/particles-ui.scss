@@ -61,29 +61,3 @@ body {
   max-width: 100dvw;
   overflow-x: hidden;
 }
-
-.link-overlay {
-  z-index: 0;
-  position: relative;
-
-  *[data-pui-component='overlay-link'] {
-    position: initial;
-
-    &::before {
-      content: '';
-      cursor: inherit;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
-  }
-
-  // Lets other links be clickable through the overlay
-  *[data-pui-component='link'] {
-    position: relative;
-    z-index: 1;
-  }
-}

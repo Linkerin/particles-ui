@@ -12,6 +12,8 @@ import Link from '@/app/_components/Link/Link';
 import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
 import Text from '@/app/_components/Text/Text';
 
+import linkOverlayStyles from '../../styles/particles-ui/util-classes/link-overlay.module.scss';
+
 function LinkDocsPage() {
   return (
     <DemoSection>
@@ -161,7 +163,11 @@ function LinkDocsPage() {
       </Text>
       <Divider />
       <Heading variant="h6">Overlay</Heading>
-      <Card variant="elevated" className="link-overlay" interactiveStyle>
+      <Card
+        variant="elevated"
+        className={linkOverlayStyles.overlay}
+        interactiveStyle
+      >
         <CardHeader divider="middle">
           <Heading variant="subtitle-md">
             <Link href="/docs/components/card" overlay>
