@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { ButtonElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import DualSpinner from '../DualSpinner/DualSpinner';
-import { SizesType } from '@/app/_lib/types';
+import { PuiSize } from '@/app/_lib/types';
 
 import styles from './FloatingButton.module.scss';
 
@@ -16,7 +16,7 @@ export interface FloatingButtonProps extends ButtonElementProps {
   loadingText?: string;
   lowered?: boolean;
   noLoadingSpinner?: boolean;
-  size?: Exclude<SizesType, 'xs' | 'xl'>;
+  size?: Exclude<PuiSize, 'xs' | 'xl'>;
   title: React.HTMLAttributes<HTMLButtonElement>['title'];
 }
 

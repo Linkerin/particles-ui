@@ -8,7 +8,7 @@ import {
   PuiAlignItems,
   PuiFlexDirection,
   PuiJustifyContent,
-  SizesType
+  PuiSize
 } from '@/app/_lib/types';
 import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
 import useMergedRefs from '@/app/_hooks/useMergedRefs';
@@ -23,14 +23,14 @@ export interface CardContentProps extends HtmlElementProps {
   children: React.ReactNode;
   alignItems?: PuiAlignItems;
   flexDirection?: PuiFlexDirection;
-  gap?: SizesType;
+  gap?: PuiSize;
   justifyContent?: PuiJustifyContent;
 }
 
 interface CardStaticProps extends CardContentProps {
   disabled?: boolean;
   interactiveStyle?: boolean;
-  size?: Exclude<SizesType, 'xs' | 'xl'>;
+  size?: Exclude<PuiSize, 'xs' | 'xl'>;
   variant?: 'filled' | 'outlined' | 'elevated';
   onClickCapture?: React.MouseEventHandler<HTMLElement>;
   onKeyDown?: React.KeyboardEventHandler<HTMLElement>;

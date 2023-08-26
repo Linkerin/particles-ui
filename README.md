@@ -36,7 +36,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 - **Important**: no prefetch for `Nav` (proper link typing);
 - **Link**: proper typing for `as` value.
-- **Buttons**: types for `as` prop, different colors for `soft` variant? consider using react `lazy()`;
+- **Buttons**: types for `as` prop, consider using react `lazy()`;
 - **Card**: think about pseudo divider colors;
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component;

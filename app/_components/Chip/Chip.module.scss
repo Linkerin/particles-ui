@@ -20,14 +20,14 @@ $sizes-mapping: (
     $dimension: map.get($label, 'line-height');
     $pd: 1px;
 
-    & > span[data-pui-component='chip-icon'] {
+    & > :where(span[data-pui-component='chip-icon']) {
       font-size: calc($dimension - $pd * 2);
     }
 
-    & > button[data-pui-component='close-btn'] {
+    & > :where(button[data-pui-component='close-btn']) {
       padding: $pd;
 
-      & > span[data-pui-component='btn-icon'] {
+      & > :where(span[data-pui-component='btn-icon']) {
         font-size: map.get($label, 'font-size');
       }
     }
@@ -52,12 +52,12 @@ $sizes-mapping: (
     cursor: default;
   }
 
-  & > span[data-pui-component='chip-icon'] {
+  & > :where(span[data-pui-component='chip-icon']) {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    svg {
+    :where(svg) {
       height: 1em;
       min-width: 1em;
       width: auto;

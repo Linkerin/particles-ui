@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import CloseButton from '../CloseButton';
 import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { Radius, SizesType } from '@/app/_lib/types';
+import { PuiRadius, PuiSize } from '@/app/_lib/types';
 import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
 import useMergedRefs from '@/app/_hooks/useMergedRefs';
 
@@ -16,9 +16,9 @@ export interface ChipProps extends DivElementProps {
   interactiveStyle?: boolean;
   leftIcon?: React.ReactElement;
   onDelete?: React.MouseEventHandler<HTMLButtonElement>;
-  radius?: Radius;
+  radius?: PuiRadius;
   rightIcon?: React.ReactElement;
-  size?: Exclude<SizesType, 'xs' | 'xl'>;
+  size?: Exclude<PuiSize, 'xs' | 'xl'>;
   variant?: 'outlined' | 'elevated';
 }
 

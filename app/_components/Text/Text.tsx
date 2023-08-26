@@ -2,7 +2,7 @@ import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { HtmlElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { TypographyColorsType, SizesType } from '@/app/_lib/types';
+import { PuiTypographyColors, PuiSize } from '@/app/_lib/types';
 
 import styles from './Text.module.scss';
 
@@ -25,8 +25,8 @@ export interface TextProps extends HtmlElementProps {
     | 'samp'
     | 'sub'
     | 'sup';
-  color?: TypographyColorsType;
-  size?: Exclude<SizesType, 'xs'>;
+  color?: PuiTypographyColors;
+  size?: Exclude<PuiSize, 'xs'>;
   variant?: 'body' | 'label';
 }
 

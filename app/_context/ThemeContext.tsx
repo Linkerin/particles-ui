@@ -3,16 +3,16 @@
 import { createContext, useCallback, useState, useEffect } from 'react';
 
 import { COLOR_MODES } from '@/app/_lib/constants';
-import { ColorModeType } from '@/app/_lib/types';
+import { PuiColorMode } from '@/app/_lib/types';
 
-type ThemeModeContextValue = Exclude<ColorModeType, 'system'> | null;
+type ThemeModeContextValue = Exclude<PuiColorMode, 'system'> | null;
 
 /**
  * Changes the value of the `html[data-pui-mode]` attribute
  * @param mode `light` or `dark` color mode
  * @returns `true` in case of successful changes, otherwise `false`
  */
-function changePuiModeHtmlAttr(mode: Exclude<ColorModeType, 'system'>) {
+function changePuiModeHtmlAttr(mode: Exclude<PuiColorMode, 'system'>) {
   const html = document.documentElement;
   const htmlPuiMode = html.attributes.getNamedItem('data-pui-mode');
   if (!htmlPuiMode) return false;
@@ -58,7 +58,7 @@ export default function ThemeProvider({
 
       const html = document.documentElement;
       const htmlPuiMode = html.attributes.getNamedItem('data-pui-mode');
-      const puiMode = htmlPuiMode?.value as ColorModeType;
+      const puiMode = htmlPuiMode?.value as PuiColorMode;
 
       if (!puiMode) {
         throw new Error('html element should have a `data-pui-mode` attribute');
@@ -93,16 +93,16 @@ export default function ThemeProvider({
 
 // import { createContext, useCallback, useState, useEffect } from 'react';
 
-// import { ColorModeType } from '@/app/_lib/types';
+// import { PuiColorMode } from '@/app/_lib/types';
 
-// type ThemeModeValue = Exclude<ColorModeType, 'system'> | null;
+// type ThemeModeValue = Exclude<PuiColorMode, 'system'> | null;
 
 // /**
 //  * Changes the value of the `html[data-pui-mode]` attribute
 //  * @param mode `light` or `dark` color mode
 //  * @returns `true` in case of successful changes, otherwise `false`
 //  */
-// function changePuiModeHtmlAttr(mode: Exclude<ColorModeType, 'system'>) {
+// function changePuiModeHtmlAttr(mode: Exclude<PuiColorMode, 'system'>) {
 //   if (typeof document === 'undefined') return false;
 
 //   const html = document.documentElement;
@@ -126,7 +126,7 @@ export default function ThemeProvider({
 //   mode = 'system'
 // }: {
 //   children: React.ReactNode;
-//   mode?: ColorModeType;
+//   mode?: PuiColorMode;
 // }) {
 //   const [colorMode, setColorMode] = useState<ThemeModeValue>(null);
 

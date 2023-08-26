@@ -3,15 +3,15 @@
     $dimension - $pd * 2 - 2px
   ); // 2px - doubled button's default border-width
 
-  button:where(.#{$size}) {
+  :where(.#{$size}) {
     padding: $pd;
 
-    span[data-pui-component='btn-icon'],
-    span[data-pui-component='btn-load-spinner'] {
+    :where(span[data-pui-component='btn-icon']),
+    :where(span[data-pui-component='btn-load-spinner']) {
       font-size: $content;
     }
 
-    span[data-pui-component='btn-load-spinner'] > span {
+    :where(span[data-pui-component='btn-load-spinner']) > :where(span) {
       border-width: $loading-border-width;
     }
   }

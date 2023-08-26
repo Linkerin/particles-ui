@@ -2,7 +2,7 @@ import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { HeadingElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { TypographyColorsType } from '@/app/_lib/types';
+import { PuiTypographyColors } from '@/app/_lib/types';
 
 import styles from './Heading.module.scss';
 
@@ -10,7 +10,7 @@ type HeaderElements = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps extends HeadingElementProps {
   as?: HeaderElements | 'span';
-  color?: TypographyColorsType;
+  color?: PuiTypographyColors;
   variant?: HeaderElements | 'subtitle-lg' | 'subtitle-md' | 'subtitle-sm';
 }
 

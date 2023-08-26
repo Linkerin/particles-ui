@@ -1,26 +1,53 @@
 import { ButtonElementProps } from './puiHTMLPropTypes';
 import { COLOR_MODES } from './constants';
 
+/**
+ * Common props for Buttom-like components
+ */
 export interface ButtonBaseProps extends ButtonElementProps {
   color?: PuiColorNames;
   isLoading?: boolean;
   noLoadingSpinner?: boolean;
-  radius?: Radius;
-  size?: SizesType;
+  radius?: PuiRadius;
+  size?: PuiSize;
 }
 
-export type SizesType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+/**
+ * Theme color mode values type
+ */
+export type PuiColorMode = (typeof COLOR_MODES)[number];
 
+/**
+ * Main color values used as props
+ */
+export type PuiColorNames =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'error'
+  | 'success'
+  | 'warning'
+  | 'info';
+
+/**
+ * 'alignItems' prop type
+ */
 export type PuiAlignItems = Extract<
   React.CSSProperties['alignItems'],
   'center' | 'flex-start' | 'flex-end' | 'stretch'
 >;
 
+/**
+ * 'flexDirection' prop type
+ */
 export type PuiFlexDirection = Extract<
   React.CSSProperties['flexDirection'],
   'column' | 'column-reverse' | 'row' | 'row-reverse'
 >;
 
+/**
+ * 'justifyContent' prop type
+ */
 export type PuiJustifyContent = Extract<
   React.CSSProperties['justifyContent'],
   | 'center'
@@ -31,47 +58,20 @@ export type PuiJustifyContent = Extract<
   | 'space-evenly'
 >;
 
-export type Radius = SizesType | 'full' | 'round' | 'none';
+/**
+ * Radiuses sizes used as prop value
+ */
+export type PuiRadius = PuiSize | 'full' | 'round' | 'none';
 
-export type ColorModeType = (typeof COLOR_MODES)[number];
+/**
+ * Values that are used as sizes value
+ */
+export type PuiSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-export type PuiColorNames =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'error'
-  | 'success'
-  | 'warning'
-  | 'info';
-
-export type ColorTokensType =
-  | 'primary'
-  | 'primary-container'
-  | 'on-primary'
-  | 'on-primary-container'
-  | 'secondary'
-  | 'secondary-container'
-  | 'on-secondary'
-  | 'on-secondary-container'
-  | 'tertiary'
-  | 'tertiary-container'
-  | 'on-tertiary'
-  | 'on-tertiaty-container'
-  | 'background'
-  | 'background-dim'
-  | 'background-bright'
-  | 'background-container-lowest'
-  | 'background-container-low'
-  | 'background-container'
-  | 'background-container-high'
-  | 'background-container-highest'
-  | 'background-variant'
-  | 'on-background-variant'
-  | 'on-background'
-  | 'outline'
-  | 'outline-variant';
-
-export type TypographyColorsType =
+/**
+ * Color values for typography components like `Heading` and `Text`
+ */
+export type PuiTypographyColors =
   | 'on-background'
   | 'on-background-variant'
   | 'on-primary'

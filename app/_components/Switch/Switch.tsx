@@ -7,7 +7,7 @@ import {
   InputElementProps,
   LabelElementProps
 } from '@/app/_lib/puiHTMLPropTypes';
-import { SizesType } from '@/app/_lib/types';
+import { PuiSize } from '@/app/_lib/types';
 
 import styles from './Switch.module.scss';
 
@@ -16,7 +16,7 @@ interface SwitchProps extends Omit<InputElementProps, 'size'> {
   labelProps?: LabelElementProps;
   labelText?: string;
   selectedIcon?: React.ReactNode;
-  size?: Exclude<SizesType, 'xs' | 'xl'>;
+  size?: Exclude<PuiSize, 'xs' | 'xl'>;
   tabIndex?: number;
   unselectedIcon?: React.ReactNode;
 }

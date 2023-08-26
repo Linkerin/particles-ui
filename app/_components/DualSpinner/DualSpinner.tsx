@@ -1,13 +1,13 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { SizesType } from '@/app/_lib/types';
+import { PuiSize } from '@/app/_lib/types';
 import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
 
 import styles from './DualSpinner.module.scss';
 
 export interface DualSpinnerProps extends Omit<SpanElementProps, 'color'> {
-  size?: SizesType | 'xxl';
+  size?: PuiSize | 'xxl';
   speed?: React.CSSProperties['animationDuration'];
 }
 
