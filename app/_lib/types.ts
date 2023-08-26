@@ -27,7 +27,8 @@ export type PuiColorNames =
   | 'error'
   | 'success'
   | 'warning'
-  | 'info';
+  | 'info'
+  | 'none';
 
 /**
  * 'alignItems' prop type
@@ -67,6 +68,11 @@ export type PuiRadius = PuiSize | 'full' | 'round' | 'none';
  * Values that are used as sizes value
  */
 export type PuiSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+/**
+ * Base values for the most 'variant' props
+ */
+export type PuiStyleVariant = 'filled' | 'outlined' | 'elevated' | 'soft';
 
 /**
  * Color values for typography components like `Heading` and `Text`

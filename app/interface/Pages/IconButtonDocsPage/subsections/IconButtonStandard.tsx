@@ -15,45 +15,51 @@ function IconButtonStandard() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: primary"
             icon={<GlobeIcon />}
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+          />
+          <IconButton
+            aria-label="Globe standard icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
           />
         </DemoContainer>
       </>
@@ -63,51 +69,58 @@ function IconButtonStandard() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             disabled
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
             disabled
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
             disabled
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
             disabled
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
             disabled
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
             disabled
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            disabled
+          />
+          <IconButton
+            aria-label="Globe standard icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             disabled
           />
         </DemoContainer>
@@ -118,51 +131,58 @@ function IconButtonStandard() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             isLoading
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
             isLoading
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
             isLoading
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
             isLoading
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
             isLoading
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
             isLoading
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            isLoading
+          />
+          <IconButton
+            aria-label="Globe standard icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             isLoading
           />
         </DemoContainer>
@@ -173,14 +193,14 @@ function IconButtonStandard() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             isLoading
             noLoadingSpinner
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
@@ -188,7 +208,7 @@ function IconButtonStandard() {
             noLoadingSpinner
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
@@ -196,7 +216,7 @@ function IconButtonStandard() {
             noLoadingSpinner
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
@@ -204,7 +224,7 @@ function IconButtonStandard() {
             noLoadingSpinner
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
@@ -212,7 +232,7 @@ function IconButtonStandard() {
             noLoadingSpinner
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
@@ -220,10 +240,18 @@ function IconButtonStandard() {
             noLoadingSpinner
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe standard icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            isLoading
+            noLoadingSpinner
+          />
+          <IconButton
+            aria-label="Globe standard icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             isLoading
             noLoadingSpinner
           />

@@ -15,51 +15,58 @@ function IconButtonFilled() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<AtomIcon />}
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<AtomIcon />}
             color="secondary"
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<AtomIcon />}
             color="tertiary"
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<AtomIcon />}
             color="success"
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<AtomIcon />}
             color="info"
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<AtomIcon />}
             color="warning"
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<AtomIcon />}
             color="error"
+            variant="filled"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<AtomIcon />}
+            color="none"
             variant="filled"
           />
         </DemoContainer>
@@ -70,14 +77,14 @@ function IconButtonFilled() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<AtomIcon />}
             disabled
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<AtomIcon />}
             color="secondary"
@@ -85,7 +92,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<AtomIcon />}
             color="tertiary"
@@ -93,7 +100,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<AtomIcon />}
             color="success"
@@ -101,7 +108,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<AtomIcon />}
             color="info"
@@ -109,7 +116,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<AtomIcon />}
             color="warning"
@@ -117,10 +124,18 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<AtomIcon />}
             color="error"
+            disabled
+            variant="filled"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<AtomIcon />}
+            color="none"
             disabled
             variant="filled"
           />
@@ -132,14 +147,14 @@ function IconButtonFilled() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<AtomIcon />}
             isLoading
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<AtomIcon />}
             color="secondary"
@@ -147,7 +162,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<AtomIcon />}
             color="tertiary"
@@ -155,7 +170,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<AtomIcon />}
             color="success"
@@ -163,7 +178,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<AtomIcon />}
             color="info"
@@ -171,7 +186,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<AtomIcon />}
             color="warning"
@@ -179,10 +194,18 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<AtomIcon />}
             color="error"
+            isLoading
+            variant="filled"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<AtomIcon />}
+            color="none"
             isLoading
             variant="filled"
           />
@@ -194,7 +217,7 @@ function IconButtonFilled() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<AtomIcon />}
             isLoading
@@ -202,7 +225,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<AtomIcon />}
             color="secondary"
@@ -211,7 +234,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<AtomIcon />}
             color="tertiary"
@@ -220,7 +243,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<AtomIcon />}
             color="success"
@@ -229,7 +252,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<AtomIcon />}
             color="info"
@@ -238,7 +261,7 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<AtomIcon />}
             color="warning"
@@ -247,10 +270,19 @@ function IconButtonFilled() {
             variant="filled"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<AtomIcon />}
             color="error"
+            isLoading
+            noLoadingSpinner
+            variant="filled"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<AtomIcon />}
+            color="none"
             isLoading
             noLoadingSpinner
             variant="filled"

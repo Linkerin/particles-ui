@@ -15,51 +15,58 @@ function IconButtonSoft() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="settings" />}
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="secondary"
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="tertiary"
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="success"
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="info"
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="warning"
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="error"
+            variant="soft"
+          />
+          <IconButton
+            aria-label="Globe soft icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="settings" />}
+            color="none"
             variant="soft"
           />
         </DemoContainer>
@@ -70,14 +77,14 @@ function IconButtonSoft() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="settings" />}
             disabled
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="secondary"
@@ -85,7 +92,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="tertiary"
@@ -93,7 +100,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="success"
@@ -101,7 +108,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="info"
@@ -109,7 +116,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="warning"
@@ -117,10 +124,18 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="error"
+            disabled
+            variant="soft"
+          />
+          <IconButton
+            aria-label="Globe soft icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="settings" />}
+            color="none"
             disabled
             variant="soft"
           />
@@ -132,14 +147,14 @@ function IconButtonSoft() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="settings" />}
             isLoading
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="secondary"
@@ -147,7 +162,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="tertiary"
@@ -155,7 +170,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="success"
@@ -163,7 +178,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="info"
@@ -171,7 +186,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="warning"
@@ -179,10 +194,18 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="error"
+            isLoading
+            variant="soft"
+          />
+          <IconButton
+            aria-label="Globe soft icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="settings" />}
+            color="none"
             isLoading
             variant="soft"
           />
@@ -194,7 +217,7 @@ function IconButtonSoft() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="settings" />}
             isLoading
@@ -202,7 +225,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="secondary"
@@ -211,7 +234,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="tertiary"
@@ -220,7 +243,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="success"
@@ -229,7 +252,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="info"
@@ -238,7 +261,7 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="warning"
@@ -247,10 +270,19 @@ function IconButtonSoft() {
             variant="soft"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe soft icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="settings" />}
             color="error"
+            isLoading
+            noLoadingSpinner
+            variant="soft"
+          />
+          <IconButton
+            aria-label="Globe soft icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="settings" />}
+            color="none"
             isLoading
             noLoadingSpinner
             variant="soft"

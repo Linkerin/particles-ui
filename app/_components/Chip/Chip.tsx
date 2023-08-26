@@ -3,7 +3,12 @@ import classNames from 'classnames';
 
 import CloseButton from '../CloseButton';
 import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { PuiRadius, PuiSize } from '@/app/_lib/types';
+import {
+  PuiColorNames,
+  PuiRadius,
+  PuiSize,
+  PuiStyleVariant
+} from '@/app/_lib/types';
 import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
 import useMergedRefs from '@/app/_hooks/useMergedRefs';
 
@@ -12,14 +17,14 @@ import styles from './Chip.module.scss';
 
 export interface ChipProps extends DivElementProps {
   disabled?: boolean;
-  iconColor?: 'primary' | 'secondary' | 'tertiary';
+  color?: PuiColorNames;
   interactiveStyle?: boolean;
   leftIcon?: React.ReactElement;
   onDelete?: React.MouseEventHandler<HTMLButtonElement>;
   radius?: PuiRadius;
   rightIcon?: React.ReactElement;
-  size?: Exclude<PuiSize, 'xs' | 'xl'>;
-  variant?: 'outlined' | 'elevated';
+  size?: PuiSize;
+  variant?: PuiStyleVariant;
 }
 
 /**
@@ -45,7 +50,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     onKeyDown,
     style,
     disabled = false,
-    iconColor = 'primary',
+    color = 'primary',
     interactiveStyle = false,
     radius = 'sm',
     size = 'md',
@@ -77,6 +82,8 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       className={classNames(
         styles.chip,
         styles[variant],
+        { [styles[color]]: !!color && color !== 'none' && !disabled },
+        { [styles.uncolored]: !color || color === 'none' },
         styles[size],
         radiusStyles[radius],
         { [styles.leftIcon]: !!leftIcon },
@@ -93,30 +100,17 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       tabIndex={clickable && !disabled ? 0 : undefined}
       role={clickable ? 'button' : undefined}
     >
-      {!!leftIcon && (
-        <span
-          data-pui-component="chip-icon"
-          className={classNames({ [styles[iconColor]]: !disabled })}
-        >
-          {leftIcon}
-        </span>
-      )}
+      {!!leftIcon && <span data-pui-component="chip-icon">{leftIcon}</span>}
       {children}
       {!!onDelete ? (
         <CloseButton
           ref={deleteBtnRef}
-          onClick={onDelete}
           disabled={disabled}
+          color="none"
+          onClick={onDelete}
         />
       ) : (
-        !!rightIcon && (
-          <span
-            data-pui-component="chip-icon"
-            className={classNames({ [styles[iconColor]]: !disabled })}
-          >
-            {rightIcon}
-          </span>
-        )
+        !!rightIcon && <span data-pui-component="chip-icon">{rightIcon}</span>
       )}
     </div>
   );

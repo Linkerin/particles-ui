@@ -78,6 +78,72 @@ function ChipDocsPage() {
           Elevated full chip
         </Chip>
       </DemoContainer>
+      <DemoContainer>
+        <Chip variant="filled">Filled chip</Chip>
+        <Chip
+          onClick={e => {
+            console.log('Outlined chip clicked');
+          }}
+          variant="filled"
+        >
+          Filled clickable chip
+        </Chip>
+        <Chip
+          onDelete={e => {
+            alert('Delete try on outlined chip');
+          }}
+          variant="filled"
+        >
+          Deletable chip
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Deletable chip clicked');
+          }}
+          onDelete={e => {
+            alert('Delete try on outlined chip');
+          }}
+          variant="filled"
+        >
+          Clickable deletable
+        </Chip>
+        <Chip radius="full" variant="filled">
+          Filled full chip
+        </Chip>
+      </DemoContainer>
+      <DemoContainer>
+        <Chip variant="soft">Soft chip</Chip>
+        <Chip
+          onClick={e => {
+            console.log('Outlined chip clicked');
+          }}
+          variant="soft"
+        >
+          Soft clickable chip
+        </Chip>
+        <Chip
+          onDelete={e => {
+            alert('Delete try on outlined chip');
+          }}
+          variant="soft"
+        >
+          Deletable chip
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Deletable chip clicked');
+          }}
+          onDelete={e => {
+            alert('Delete try on outlined chip');
+          }}
+          variant="soft"
+        >
+          Clickable deletable
+        </Chip>
+        <Chip radius="full" variant="soft">
+          Soft full chip
+        </Chip>
+      </DemoContainer>
       <Divider />
       <Heading variant="h6">Radiuses</Heading>
       <DemoContainer>
@@ -113,6 +179,12 @@ function ChipDocsPage() {
         <Chip disabled variant="elevated">
           Elevated chip
         </Chip>
+        <Chip disabled variant="filled">
+          Filled chip
+        </Chip>
+        <Chip disabled variant="soft">
+          Soft chip
+        </Chip>
         <Chip
           disabled
           onDelete={e => {
@@ -129,6 +201,24 @@ function ChipDocsPage() {
           }}
         >
           Elevated deletable chip
+        </Chip>
+        <Chip
+          disabled
+          variant="filled"
+          onDelete={e => {
+            alert('Delete try on elevated chip!');
+          }}
+        >
+          Filled deletable chip
+        </Chip>
+        <Chip
+          disabled
+          variant="soft"
+          onDelete={e => {
+            alert('Delete try on elevated chip!');
+          }}
+        >
+          Soft deletable chip
         </Chip>
         <Chip disabled leftIcon={<GlobeIcon />}>
           Svg chip
@@ -250,7 +340,7 @@ function ChipDocsPage() {
             console.log('Clicked secondary color');
           }}
           leftIcon={<GlobeIcon />}
-          iconColor="secondary"
+          color="secondary"
         >
           Secondary
         </Chip>
@@ -259,7 +349,7 @@ function ChipDocsPage() {
             console.log('Clicked tertiary color');
           }}
           leftIcon={<GlobeIcon />}
-          iconColor="tertiary"
+          color="tertiary"
         >
           Tertiary
         </Chip>
@@ -280,7 +370,38 @@ function ChipDocsPage() {
           }}
           leftIcon={<MaterialSymbolIcon icon="code" />}
           variant="elevated"
-          iconColor="secondary"
+          color="secondary"
+        >
+          Secondary
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked tertiary color');
+          }}
+          leftIcon={<MaterialSymbolIcon icon="edit" />}
+          variant="elevated"
+          color="tertiary"
+        >
+          Tertiary
+        </Chip>
+      </DemoContainer>
+      <DemoContainer>
+        <Chip
+          onClick={e => {
+            console.log('Clicked primary color');
+          }}
+          leftIcon={<MaterialSymbolIcon icon="edit" />}
+          variant="filled"
+        >
+          Primary
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked secondary color');
+          }}
+          leftIcon={<MaterialSymbolIcon icon="edit" />}
+          variant="filled"
+          color="secondary"
         >
           Secondary
         </Chip>
@@ -289,20 +410,106 @@ function ChipDocsPage() {
             console.log('Clicked tertiary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="code" />}
-          variant="elevated"
-          iconColor="tertiary"
+          variant="filled"
+          color="tertiary"
         >
           Tertiary
+        </Chip>
+      </DemoContainer>
+      <DemoContainer>
+        <Chip
+          onClick={e => {
+            console.log('Clicked primary color');
+          }}
+          leftIcon={<GlobeIcon />}
+          variant="soft"
+        >
+          Primary
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked secondary color');
+          }}
+          leftIcon={<GlobeIcon />}
+          color="secondary"
+          variant="soft"
+        >
+          Secondary
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked tertiary color');
+          }}
+          leftIcon={<GlobeIcon />}
+          color="tertiary"
+          variant="soft"
+        >
+          Tertiary
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked success color');
+          }}
+          leftIcon={<GlobeIcon />}
+          variant="soft"
+          color="success"
+        >
+          Success
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked info color');
+          }}
+          leftIcon={<GlobeIcon />}
+          color="info"
+          variant="soft"
+        >
+          Info
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked warning color');
+          }}
+          leftIcon={<GlobeIcon />}
+          color="warning"
+          variant="soft"
+        >
+          Warning
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked error color');
+          }}
+          leftIcon={<GlobeIcon />}
+          color="error"
+          variant="soft"
+        >
+          Error
+        </Chip>
+        <Chip
+          onClick={e => {
+            console.log('Clicked none color');
+          }}
+          leftIcon={<GlobeIcon />}
+          color="none"
+          variant="soft"
+        >
+          None
         </Chip>
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Sizes</Heading>
       <DemoContainer>
+        <Chip size="xs">X-Small chip</Chip>
         <Chip size="sm">Small chip</Chip>
         <Chip>Medium chip</Chip>
         <Chip size="lg">Large chip</Chip>
+        <Chip size="xl">X-Large chip</Chip>
       </DemoContainer>
       <DemoContainer>
+        <Chip radius="full" size="xs">
+          X-Small full chip
+        </Chip>
         <Chip radius="full" size="sm">
           Small full chip
         </Chip>
@@ -310,8 +517,14 @@ function ChipDocsPage() {
         <Chip radius="full" size="lg">
           Large full chip
         </Chip>
+        <Chip radius="full" size="xl">
+          X-Large full chip
+        </Chip>
       </DemoContainer>
       <DemoContainer>
+        <Chip leftIcon={<GlobeIcon />} size="xs">
+          X-Small chip
+        </Chip>
         <Chip leftIcon={<GlobeIcon />} size="sm">
           Small chip
         </Chip>
@@ -319,8 +532,14 @@ function ChipDocsPage() {
         <Chip leftIcon={<GlobeIcon />} size="lg">
           Large chip
         </Chip>
+        <Chip leftIcon={<GlobeIcon />} size="xl">
+          X-Large chip
+        </Chip>
       </DemoContainer>
       <DemoContainer>
+        <Chip leftIcon={<MaterialSymbolIcon icon="local_taxi" />} size="xs">
+          X-Small chip
+        </Chip>
         <Chip leftIcon={<MaterialSymbolIcon icon="local_taxi" />} size="sm">
           Small chip
         </Chip>
@@ -330,14 +549,23 @@ function ChipDocsPage() {
         <Chip leftIcon={<MaterialSymbolIcon icon="local_taxi" />} size="lg">
           Large chip
         </Chip>
+        <Chip leftIcon={<MaterialSymbolIcon icon="local_taxi" />} size="xl">
+          X-Large chip
+        </Chip>
       </DemoContainer>
       <DemoContainer>
+        <Chip leftIcon={<IconHeart />} size="xs">
+          X-Small chip
+        </Chip>
         <Chip leftIcon={<IconHeart />} size="sm">
           Small chip
         </Chip>
         <Chip leftIcon={<IconHeart />}>Medium chip</Chip>
         <Chip leftIcon={<IconHeart />} size="lg">
           Large chip
+        </Chip>
+        <Chip leftIcon={<IconHeart />} size="xl">
+          X-Large chip
         </Chip>
       </DemoContainer>
       <DemoContainer>
@@ -366,6 +594,15 @@ function ChipDocsPage() {
           size="lg"
         >
           Large deletable
+        </Chip>
+        <Chip
+          radius="full"
+          onDelete={e => {
+            alert('Delete try on large chip');
+          }}
+          size="xl"
+        >
+          X-Large deletable
         </Chip>
       </DemoContainer>
     </DemoSection>

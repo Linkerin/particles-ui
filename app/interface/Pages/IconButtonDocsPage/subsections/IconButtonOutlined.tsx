@@ -15,51 +15,58 @@ function IconButtonOutlined() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            variant="outlined"
+          />
+          <IconButton
+            aria-label="Globe outlined icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             variant="outlined"
           />
         </DemoContainer>
@@ -70,14 +77,14 @@ function IconButtonOutlined() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             disabled
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
@@ -85,7 +92,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
@@ -93,7 +100,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
@@ -101,7 +108,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
@@ -109,7 +116,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
@@ -117,10 +124,18 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            disabled
+            variant="outlined"
+          />
+          <IconButton
+            aria-label="Globe outlined icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             disabled
             variant="outlined"
           />
@@ -132,14 +147,14 @@ function IconButtonOutlined() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             isLoading
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
@@ -147,7 +162,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
@@ -155,7 +170,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
@@ -163,7 +178,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
@@ -171,7 +186,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
@@ -179,10 +194,18 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            isLoading
+            variant="outlined"
+          />
+          <IconButton
+            aria-label="Globe outlined icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             isLoading
             variant="outlined"
           />
@@ -194,7 +217,7 @@ function IconButtonOutlined() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: primary"
             icon={<GlobeIcon />}
             isLoading
@@ -202,7 +225,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: secondary"
             icon={<GlobeIcon />}
             color="secondary"
@@ -211,7 +234,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: tertiary"
             icon={<GlobeIcon />}
             color="tertiary"
@@ -220,7 +243,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: success"
             icon={<GlobeIcon />}
             color="success"
@@ -229,7 +252,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: info"
             icon={<GlobeIcon />}
             color="info"
@@ -238,7 +261,7 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: warning"
             icon={<GlobeIcon />}
             color="warning"
@@ -247,10 +270,19 @@ function IconButtonOutlined() {
             variant="outlined"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe outlined icon"
             title="Color: error"
             icon={<GlobeIcon />}
             color="error"
+            isLoading
+            noLoadingSpinner
+            variant="outlined"
+          />
+          <IconButton
+            aria-label="Globe outlined icon"
+            title="Color: none"
+            icon={<GlobeIcon />}
+            color="none"
             isLoading
             noLoadingSpinner
             variant="outlined"

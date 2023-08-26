@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import DualSpinner from '@/app/_components/DualSpinner/DualSpinner';
-import { ButtonBaseProps } from '@/app/_lib/types';
+import { ButtonBaseProps, PuiStyleVariant } from '@/app/_lib/types';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
@@ -15,7 +15,7 @@ export interface ButtonProps extends ButtonBaseProps {
   loadingElement?: React.ReactElement;
   loadingText?: string;
   shrinkOnPress?: boolean;
-  variant?: 'filled' | 'outlined' | 'text' | 'elevated' | 'soft';
+  variant?: PuiStyleVariant | 'text';
 }
 
 /**
@@ -55,10 +55,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       className={classNames(
         styles.button,
         styles[variant],
-        styles[color],
         styles[size],
         radiusStyles[radius],
         { [styles.loading]: isLoading },
+        { [styles[color]]: !!color && color !== 'none' },
+        { [styles.uncolored]: !color || color === 'none' },
         { [styles.leftIcon]: !!leftIcon || (isLoading && !noLoadingSpinner) },
         {
           [styles.rightIcon]:

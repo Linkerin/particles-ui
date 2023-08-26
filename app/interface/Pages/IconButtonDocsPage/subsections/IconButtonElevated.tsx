@@ -15,51 +15,58 @@ function IconButtonElevated() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="edit" />}
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="secondary"
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="tertiary"
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="success"
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="info"
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="warning"
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="error"
+            variant="elevated"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="edit" />}
+            color="none"
             variant="elevated"
           />
         </DemoContainer>
@@ -70,14 +77,14 @@ function IconButtonElevated() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="edit" />}
             disabled
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="secondary"
@@ -85,7 +92,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="tertiary"
@@ -93,7 +100,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="success"
@@ -101,7 +108,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="info"
@@ -109,7 +116,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="warning"
@@ -117,10 +124,18 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="error"
+            disabled
+            variant="elevated"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="edit" />}
+            color="none"
             disabled
             variant="elevated"
           />
@@ -132,14 +147,14 @@ function IconButtonElevated() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="edit" />}
             isLoading
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="secondary"
@@ -147,7 +162,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="tertiary"
@@ -155,7 +170,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="success"
@@ -163,7 +178,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="info"
@@ -171,7 +186,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="warning"
@@ -179,10 +194,18 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="error"
+            isLoading
+            variant="elevated"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="edit" />}
+            color="none"
             isLoading
             variant="elevated"
           />
@@ -194,7 +217,7 @@ function IconButtonElevated() {
         </Heading>
         <DemoContainer>
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="edit" />}
             isLoading
@@ -202,7 +225,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: secondary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="secondary"
@@ -211,7 +234,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: tertiary"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="tertiary"
@@ -220,7 +243,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: success"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="success"
@@ -229,7 +252,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: info"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="info"
@@ -238,7 +261,7 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: warning"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="warning"
@@ -247,10 +270,19 @@ function IconButtonElevated() {
             variant="elevated"
           />
           <IconButton
-            aria-label="Globe text icon"
+            aria-label="Globe elevated icon"
             title="Color: error"
             icon={<MaterialSymbolIcon icon="edit" />}
             color="error"
+            isLoading
+            noLoadingSpinner
+            variant="elevated"
+          />
+          <IconButton
+            aria-label="Globe elevated icon"
+            title="Color: none"
+            icon={<MaterialSymbolIcon icon="edit" />}
+            color="none"
             isLoading
             noLoadingSpinner
             variant="elevated"

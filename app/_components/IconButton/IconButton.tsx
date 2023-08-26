@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import Button from '../Button/Button';
-import { ButtonBaseProps } from '@/app/_lib/types';
+import { ButtonBaseProps, PuiStyleVariant } from '@/app/_lib/types';
 
 import styles from './IconButton.module.scss';
 
@@ -10,7 +10,7 @@ export interface IconButtonProps
   extends Omit<ButtonBaseProps, 'children' | 'aria-label' | 'ref'> {
   'aria-label': React.AriaAttributes['aria-label'];
   icon: React.ReactElement;
-  variant?: 'standard' | 'filled' | 'outlined' | 'soft' | 'elevated';
+  variant?: PuiStyleVariant | 'standard';
 }
 
 /**
