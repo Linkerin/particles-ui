@@ -55,11 +55,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       className={classNames(
         styles.button,
         styles[variant],
+        styles[color],
         styles[size],
         radiusStyles[radius],
         { [styles.loading]: isLoading },
-        { [styles[color]]: !!color && color !== 'none' },
-        { [styles.uncolored]: !color || color === 'none' },
         { [styles.leftIcon]: !!leftIcon || (isLoading && !noLoadingSpinner) },
         {
           [styles.rightIcon]:

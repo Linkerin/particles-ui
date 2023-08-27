@@ -119,27 +119,27 @@ function FloatingButtonsDocsPage() {
         </FloatingButton>
       </DemoContainer>
       <Heading as="h3" variant="subtitle-md">
-        Surface
+        Background
       </Heading>
       <DemoContainer>
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
         >
           <GlobeIcon />
         </FloatingButton>
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
         >
           <MaterialSymbolIcon icon="edit" />
         </FloatingButton>
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
         >
           <MaterialSymbolIcon icon="edit" />
           Compose
@@ -147,7 +147,43 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
+          disabled
+        >
+          <MaterialSymbolIcon icon="edit" />
+          Compose
+        </FloatingButton>
+      </DemoContainer>
+      <Heading as="h3" variant="subtitle-md">
+        None
+      </Heading>
+      <DemoContainer>
+        <FloatingButton
+          aria-label="Floating button"
+          title="Floating button"
+          color="uncolored"
+        >
+          <GlobeIcon />
+        </FloatingButton>
+        <FloatingButton
+          aria-label="Floating button"
+          title="Floating button"
+          color="uncolored"
+        >
+          <MaterialSymbolIcon icon="edit" />
+        </FloatingButton>
+        <FloatingButton
+          aria-label="Floating button"
+          title="Floating button"
+          color="uncolored"
+        >
+          <MaterialSymbolIcon icon="edit" />
+          Compose
+        </FloatingButton>
+        <FloatingButton
+          aria-label="Floating button"
+          title="Floating button"
+          color="uncolored"
           disabled
         >
           <MaterialSymbolIcon icon="edit" />
@@ -203,7 +239,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
           lowered
         >
           <GlobeIcon />
@@ -211,7 +247,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
           lowered
         >
           <MaterialSymbolIcon icon="edit" />
@@ -219,7 +255,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
           lowered
         >
           <MaterialSymbolIcon icon="edit" />
@@ -228,7 +264,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
           lowered
           disabled
         >
@@ -238,7 +274,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button"
-          color="surface"
+          color="background"
           lowered
           isLoading
           loadingText="Surface..."
@@ -337,7 +373,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           title="Floating button"
           aria-label="Floating button"
-          color="surface"
+          color="background"
           isLoading
         >
           <GlobeIcon />
@@ -345,7 +381,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           title="Floating button"
           aria-label="Floating button"
-          color="surface"
+          color="background"
           isLoading
           noLoadingSpinner
         >
@@ -354,12 +390,80 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           title="Floating button"
           aria-label="Floating button"
-          color="surface"
+          color="background"
           isLoading
           loadingText="Loading..."
         >
           <MaterialSymbolIcon icon="edit" />
           Compose
+        </FloatingButton>
+      </DemoContainer>
+      <Divider />
+      <Heading variant="h6">Radiuses</Heading>
+      <DemoContainer>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="none"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="xs"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="sm"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="md"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="lg"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="xl"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="full"
+        >
+          <MaterialSymbolIcon icon="add" />
+        </FloatingButton>
+        <FloatingButton
+          title="Floating button"
+          aria-label="Floating button"
+          color="secondary"
+          radius="round"
+        >
+          <MaterialSymbolIcon icon="add" />
         </FloatingButton>
       </DemoContainer>
       <Divider />

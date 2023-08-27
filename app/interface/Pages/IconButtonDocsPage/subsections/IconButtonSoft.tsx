@@ -66,7 +66,7 @@ function IconButtonSoft() {
             aria-label="Globe soft icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="settings" />}
-            color="none"
+            color="uncolored"
             variant="soft"
           />
         </DemoContainer>
@@ -135,7 +135,7 @@ function IconButtonSoft() {
             aria-label="Globe soft icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="settings" />}
-            color="none"
+            color="uncolored"
             disabled
             variant="soft"
           />
@@ -205,7 +205,7 @@ function IconButtonSoft() {
             aria-label="Globe soft icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="settings" />}
-            color="none"
+            color="uncolored"
             isLoading
             variant="soft"
           />
@@ -282,7 +282,7 @@ function IconButtonSoft() {
             aria-label="Globe soft icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="settings" />}
-            color="none"
+            color="uncolored"
             isLoading
             noLoadingSpinner
             variant="soft"

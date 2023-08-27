@@ -491,7 +491,7 @@ function ChipDocsPage() {
             console.log('Clicked none color');
           }}
           leftIcon={<GlobeIcon />}
-          color="none"
+          color="uncolored"
           variant="soft"
         >
           None

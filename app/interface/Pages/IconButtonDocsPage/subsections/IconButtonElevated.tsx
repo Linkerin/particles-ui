@@ -66,7 +66,7 @@ function IconButtonElevated() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="edit" />}
-            color="none"
+            color="uncolored"
             variant="elevated"
           />
         </DemoContainer>
@@ -135,7 +135,7 @@ function IconButtonElevated() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="edit" />}
-            color="none"
+            color="uncolored"
             disabled
             variant="elevated"
           />
@@ -205,7 +205,7 @@ function IconButtonElevated() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="edit" />}
-            color="none"
+            color="uncolored"
             isLoading
             variant="elevated"
           />
@@ -282,7 +282,7 @@ function IconButtonElevated() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<MaterialSymbolIcon icon="edit" />}
-            color="none"
+            color="uncolored"
             isLoading
             noLoadingSpinner
             variant="elevated"

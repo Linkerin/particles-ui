@@ -28,7 +28,7 @@ export type PuiColorNames =
   | 'success'
   | 'warning'
   | 'info'
-  | 'none';
+  | 'uncolored';
 
 /**
  * 'alignItems' prop type

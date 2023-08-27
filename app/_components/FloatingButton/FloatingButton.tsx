@@ -3,20 +3,20 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { ButtonElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import DualSpinner from '../DualSpinner/DualSpinner';
-import { PuiSize } from '@/app/_lib/types';
+import { ButtonBaseProps } from '@/app/_lib/types';
 
+import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './FloatingButton.module.scss';
 
-export interface FloatingButtonProps extends ButtonElementProps {
+export interface FloatingButtonProps
+  extends Omit<ButtonBaseProps, 'aria-label' | 'color' | 'size' | 'title'> {
   'aria-label': React.AriaAttributes['aria-label'];
-  color?: 'primary' | 'secondary' | 'tertiary' | 'surface';
-  isLoading?: boolean;
+  color?: ButtonBaseProps['color'] | 'background';
   loadingText?: string;
   lowered?: boolean;
-  noLoadingSpinner?: boolean;
-  size?: Exclude<PuiSize, 'xs' | 'xl'>;
+  // radius?: PuiRadius;
+  size?: Exclude<ButtonBaseProps['size'], 'xs' | 'xl'>;
   title: React.HTMLAttributes<HTMLButtonElement>['title'];
 }
 
@@ -33,8 +33,8 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       children,
       className,
       onClick,
-      style,
       title,
+      radius,
       color = 'primary',
       disabled = false,
       isLoading = false,
@@ -51,13 +51,13 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
         ref={ref}
         className={classNames(
           styles.fab,
-          styles[color],
           styles[size],
+          styles[color],
           { [styles.lowered]: lowered },
           { [styles.loading]: isLoading },
+          { [radiusStyles[`${radius}`]]: !!radius },
           className
         )}
-        style={style}
         title={title}
         disabled={disabled}
         aria-disabled={disabled || isLoading}

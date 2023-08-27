@@ -66,7 +66,7 @@ function IconButtonFilled() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<AtomIcon />}
-            color="none"
+            color="uncolored"
             variant="filled"
           />
         </DemoContainer>
@@ -135,7 +135,7 @@ function IconButtonFilled() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<AtomIcon />}
-            color="none"
+            color="uncolored"
             disabled
             variant="filled"
           />
@@ -205,7 +205,7 @@ function IconButtonFilled() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<AtomIcon />}
-            color="none"
+            color="uncolored"
             isLoading
             variant="filled"
           />
@@ -282,7 +282,7 @@ function IconButtonFilled() {
             aria-label="Globe elevated icon"
             title="Color: none"
             icon={<AtomIcon />}
-            color="none"
+            color="uncolored"
             isLoading
             noLoadingSpinner
             variant="filled"

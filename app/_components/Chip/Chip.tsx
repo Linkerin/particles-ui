@@ -82,8 +82,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       className={classNames(
         styles.chip,
         styles[variant],
-        { [styles[color]]: !!color && color !== 'none' && !disabled },
-        { [styles.uncolored]: !color || color === 'none' },
+        styles[color],
         styles[size],
         radiusStyles[radius],
         { [styles.leftIcon]: !!leftIcon },
@@ -106,7 +105,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
         <CloseButton
           ref={deleteBtnRef}
           disabled={disabled}
-          color="none"
+          color="uncolored"
           onClick={onDelete}
         />
       ) : (

@@ -59,7 +59,7 @@ function IconButtonStandard() {
             aria-label="Globe standard icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
           />
         </DemoContainer>
       </>
@@ -120,7 +120,7 @@ function IconButtonStandard() {
             aria-label="Globe standard icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             disabled
           />
         </DemoContainer>
@@ -182,7 +182,7 @@ function IconButtonStandard() {
             aria-label="Globe standard icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             isLoading
           />
         </DemoContainer>
@@ -251,7 +251,7 @@ function IconButtonStandard() {
             aria-label="Globe standard icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             isLoading
             noLoadingSpinner
           />

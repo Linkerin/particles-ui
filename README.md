@@ -8,7 +8,7 @@ Components are fully compatible with [Next.js 13 server component](https://nextj
 ## Top priotity components for implementation
 
 - [x] [Buttons](https://m3.material.io/components/buttons/overview)
-- [ ] [Floating action buttons](https://m3.material.io/components/floating-action-button/overview)
+- [x] [Floating action buttons](https://m3.material.io/components/floating-action-button/overview)
 - [x] [Icon buttons](https://m3.material.io/components/icon-buttons/overview)
 - [ ] [Cards](https://m3.material.io/components/cards/overview)
 - [x] [Chips](https://m3.material.io/components/chips/overview)

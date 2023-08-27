@@ -1,7 +1,7 @@
 @mixin size($size, $dimension, $border-width) {
   :where(.#{$size}) {
     font-size: $dimension;
-    & > span {
+    & > :where(span) {
       border-width: $border-width;
     }
   }
@@ -13,7 +13,7 @@
   height: 1em;
   width: 1em;
 
-  & > span {
+  & > :where(span) {
     border-radius: 50%;
     border-width: 2px;
     border-style: solid;

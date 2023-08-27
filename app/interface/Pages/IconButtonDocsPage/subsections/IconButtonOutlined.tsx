@@ -66,7 +66,7 @@ function IconButtonOutlined() {
             aria-label="Globe outlined icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             variant="outlined"
           />
         </DemoContainer>
@@ -135,7 +135,7 @@ function IconButtonOutlined() {
             aria-label="Globe outlined icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             disabled
             variant="outlined"
           />
@@ -205,7 +205,7 @@ function IconButtonOutlined() {
             aria-label="Globe outlined icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             isLoading
             variant="outlined"
           />
@@ -282,7 +282,7 @@ function IconButtonOutlined() {
             aria-label="Globe outlined icon"
             title="Color: none"
             icon={<GlobeIcon />}
-            color="none"
+            color="uncolored"
             isLoading
             noLoadingSpinner
             variant="outlined"
