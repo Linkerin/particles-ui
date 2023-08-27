@@ -47,7 +47,7 @@ const Link = forwardRef<
       ref,
       className: classNames(
         styles.link,
-        styles[color],
+        { [styles[color]]: !!color && color !== 'inherit' },
         { [styles.external]: isExternal },
         {
           [styles[`underline-${underline}`]]: underline && underline !== 'none'

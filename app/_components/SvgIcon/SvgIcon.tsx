@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
 export interface SvgIconProps {
-  className?: string;
+  className?: React.SVGAttributes<SVGSVGElement>['className'];
   color?: React.SVGAttributes<SVGSVGElement>['color'];
   id: string;
   role?: React.AriaRole;

@@ -13,7 +13,7 @@ Components are fully compatible with [Next.js 13 server component](https://nextj
 - [ ] [Cards](https://m3.material.io/components/cards/overview)
 - [x] [Chips](https://m3.material.io/components/chips/overview)
 - [ ] [Lists](https://m3.material.io/components/lists/overview)
-- [ ] Links
+- [x] Links
 - [ ] [Menus](https://m3.material.io/components/menus/guidelines)
 - [ ] [Switch](https://m3.material.io/components/switch/overview)
 - [ ] [Snackbar](https://m3.material.io/components/snackbar/overview)

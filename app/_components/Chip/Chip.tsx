@@ -1,7 +1,7 @@
 import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 
-import CloseButton from '../CloseButton';
+import CloseButton from '../CloseButton/CloseButton';
 import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import {
   PuiColorNames,

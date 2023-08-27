@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
-import CloseIcon from './CloseIcon/CloseIcon';
-import IconButton, { IconButtonProps } from './IconButton/IconButton';
+import CloseIcon from '../CloseIcon/CloseIcon';
+import IconButton, { IconButtonProps } from '../IconButton/IconButton';
 
 type CloseButtonProps = Omit<
   IconButtonProps,
