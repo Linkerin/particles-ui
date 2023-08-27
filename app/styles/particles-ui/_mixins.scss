@@ -76,7 +76,7 @@
 ///
 /// @param {string} $pr [$pl] Right padding value for the divider
 ///
-@mixin pseudo-divider($pl, $position: 'bottom', $pr: $pl) {
+@mixin pseudo-divider($pl, $position: 'bottom', $pr: $pl, $separated: false) {
   $position-values: ('bottom', 'top');
   @if not $pl {
     @error "Padding value for middle divider has to be provided";
@@ -89,10 +89,25 @@
   &::after {
     content: '';
     position: absolute;
-    #{$position}: 0;
     left: $pl;
     width: calc(100% - ($pl + $pr));
-    border-#{$position}: 1px solid var(--pui-outline-variant);
+
+    @if ($separated == false) {
+      #{$position}: 0;
+      border-#{$position}: 1px solid var(--pui-outline-variant);
+    }
+  }
+
+  @if ($separated == true) {
+    &:where(.bottom)::after {
+      bottom: 0;
+      border-bottom: 1px solid var(--pui-outline-variant);
+    }
+
+    &:where(.top)::after {
+      top: 0;
+      border-top: 1px solid var(--pui-outline-variant);
+    }
   }
 }
 

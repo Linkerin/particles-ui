@@ -31,26 +31,14 @@
   }
 
   &.disabled {
-    // Fallback for color-mix()
     background-color: rgb(
       var(--pui-on-background-channels) / var(--pui-state-disabled)
-    );
-    background-color: color-mix(
-      in oklab,
-      var(--pui-on-background) var(--pui-state-disabled),
-      transparent
     );
     cursor: not-allowed;
 
     * {
-      // Fallback for color-mix()
       color: rgb(
         var(--pui-on-background-channels) / var(--pui-state-disabled-content)
-      );
-      color: color-mix(
-        in oklab,
-        var(--pui-on-background) var(--pui-state-disabled-content),
-        transparent
       );
     }
   }

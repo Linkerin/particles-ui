@@ -7,7 +7,7 @@ import styles from './List.module.scss';
 
 interface ListComponentProps {
   dense?: boolean;
-  noPdInline?: boolean;
+  noInlinePd?: boolean;
 }
 
 export type ListProps =
@@ -28,7 +28,7 @@ const List = forwardRef<HTMLUListElement | HTMLOListElement, ListProps>(
       className,
       as = 'ol',
       dense = false,
-      noPdInline = false,
+      noInlinePd = false,
       ...props
     },
     ref
@@ -40,7 +40,7 @@ const List = forwardRef<HTMLUListElement | HTMLOListElement, ListProps>(
         className: classNames(
           styles.list,
           { [styles.dense]: dense },
-          { [styles['no-pd-inline']]: noPdInline },
+          { [styles['no-pd-inline']]: noInlinePd },
           className
         ),
         ...props

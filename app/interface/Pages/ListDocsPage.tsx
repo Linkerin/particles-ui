@@ -79,6 +79,9 @@ function ListDocsPage() {
         <ListItem>
           <ListItemText primary="No dividers" />
         </ListItem>
+        <ListItem divider="inset" dividerPosition="both">
+          <ListItemText primary="Inset both dividers" />
+        </ListItem>
         <ListItem>
           <ListItemText primary="No dividers" />
         </ListItem>
@@ -129,7 +132,7 @@ function ListDocsPage() {
         </ListItem>
       </List>
       <Heading variant="subtitle-md">Without inline paddings</Heading>
-      <List noPdInline>
+      <List noInlinePd>
         <ListItem>
           <ListItemText primary="First item" secondary="Simple list example" />
         </ListItem>
@@ -257,7 +260,7 @@ function ListDocsPage() {
         </ListItemInteractive>
       </List>
       <Heading variant="subtitle-md">Without inline paddings</Heading>
-      <List noPdInline>
+      <List noInlinePd>
         <ListItemInteractive>
           <ListItemText primary="First item" secondary="Simple list example" />
         </ListItemInteractive>

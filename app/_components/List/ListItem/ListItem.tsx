@@ -25,7 +25,6 @@ const ListItem = forwardRef<HTMLLIElement, ListItemProps>(function ListItem(
   {
     children,
     className,
-    style,
     divider,
     alignItems = 'center',
     dividerPosition = 'bottom',
@@ -53,7 +52,6 @@ const ListItem = forwardRef<HTMLLIElement, ListItemProps>(function ListItem(
         },
         className
       )}
-      style={style}
       {...props}
     >
       {inset && <ListItemIcon />}

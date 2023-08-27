@@ -26,29 +26,17 @@
 }
 
 :where(.divider-middle) {
-  &:where(.bottom) {
-    @include mx.pseudo-divider(
-      var(--pui-list-item-pl),
-      'bottom',
-      $pr: var(--pui-list-item-pr)
-    );
-  }
-
-  &:where(.top) {
-    @include mx.pseudo-divider(
-      var(--pui-list-item-pl),
-      'top',
-      $pr: var(--pui-list-item-pr)
-    );
-  }
+  @include mx.pseudo-divider(
+    var(--pui-list-item-pl),
+    $pr: var(--pui-list-item-pr),
+    $separated: true
+  );
 }
 
 :where(.divider-inset) {
-  &:where(.bottom) {
-    @include mx.pseudo-divider(var(--pui-list-item-pl), 'bottom', $pr: 0rem);
-  }
-
-  &:where(.top) {
-    @include mx.pseudo-divider(var(--pui-list-item-pl), 'top', $pr: 0rem);
-  }
+  @include mx.pseudo-divider(
+    var(--pui-list-item-pl),
+    $pr: 0rem,
+    $separated: true
+  );
 }

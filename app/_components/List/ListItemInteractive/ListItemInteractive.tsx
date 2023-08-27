@@ -40,7 +40,6 @@ const ListItemInteractive = forwardRef<HTMLLIElement, ListItemInteractiveProps>(
     {
       children,
       className,
-      style,
       onClick,
       onClickCapture,
       onKeyDown,
@@ -105,7 +104,6 @@ const ListItemInteractive = forwardRef<HTMLLIElement, ListItemInteractiveProps>(
       <ListItem
         ref={ref}
         className={classNames(styles.reset, className)}
-        style={style}
         data-pui-component="li-interactive"
         {...props}
       >
