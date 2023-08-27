@@ -18,7 +18,7 @@ Components are fully compatible with [Next.js 13 server component](https://nextj
 - [ ] [Switch](https://m3.material.io/components/switch/overview)
 - [ ] [Snackbar](https://m3.material.io/components/snackbar/overview)
 - [x] [Divider](https://m3.material.io/components/divider/overview)
-- [ ] [Typography](https://m3.material.io/styles/typography/overview)
+- [x] [Typography](https://m3.material.io/styles/typography/overview)
 
 ## Demo
 

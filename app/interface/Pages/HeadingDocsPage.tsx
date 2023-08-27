@@ -126,6 +126,28 @@ function HeadingDocsPage() {
         </div>
       </DemoContainer>
       <Divider />
+      <Heading variant="h6">Truncate</Heading>
+      <div style={{ width: '20ch' }}>
+        <Heading variant="subtitle-md" truncate>
+          Here is a long text that we want to truncate to 20 characters
+        </Heading>
+      </div>
+      <Divider />
+      <Heading variant="h6">Inherit variant</Heading>
+      <div style={{ color: 'var(--pui-secondary, green)' }}>
+        <Heading variant="subtitle-lg">
+          Here is secondary color text with{' '}
+          <Heading
+            as="span"
+            variant="inherit"
+            style={{ color: 'var(--pui-tertiary)' }}
+          >
+            highlighted
+          </Heading>{' '}
+          text
+        </Heading>
+      </div>
+      <Divider />
       <Heading variant="h6">Colors</Heading>
       <>
         <Heading as="span" color="on-background">
@@ -133,24 +155,6 @@ function HeadingDocsPage() {
         </Heading>
         <Heading as="span" color="on-background-variant">
           <GlobeIcon /> On background variant
-        </Heading>
-        <Heading as="span" color="on-primary">
-          <GlobeIcon /> On primary
-        </Heading>
-        <Heading as="span" color="on-primary-container">
-          <GlobeIcon /> On primary container
-        </Heading>
-        <Heading as="span" color="on-secondary">
-          <MaterialSymbolIcon icon="delete" /> On secondary
-        </Heading>
-        <Heading as="span" color="on-secondary-container">
-          <MaterialSymbolIcon icon="delete" /> On secondary container
-        </Heading>
-        <Heading as="span" color="on-tertiary">
-          <MaterialSymbolIcon icon="delete" /> On tertiary
-        </Heading>
-        <Heading as="span" color="on-tertiary-container">
-          <MaterialSymbolIcon icon="delete" /> On tertiary container
         </Heading>
       </>
     </DemoSection>

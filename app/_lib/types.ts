@@ -73,16 +73,3 @@ export type PuiSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
  * Base values for the most 'variant' props
  */
 export type PuiStyleVariant = 'filled' | 'outlined' | 'elevated' | 'soft';
-
-/**
- * Color values for typography components like `Heading` and `Text`
- */
-export type PuiTypographyColors =
-  | 'on-background'
-  | 'on-background-variant'
-  | 'on-primary'
-  | 'on-primary-container'
-  | 'on-secondary'
-  | 'on-secondary-container'
-  | 'on-tertiary'
-  | 'on-tertiary-container';

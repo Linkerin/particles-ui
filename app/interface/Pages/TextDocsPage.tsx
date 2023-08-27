@@ -141,6 +141,29 @@ function TextDocsPage() {
         </div>
       </DemoContainer>
       <Divider />
+      <Heading variant="h6">Truncate</Heading>
+      <div style={{ maxWidth: '25ch' }}>
+        <Text truncate>
+          We have got a long text here that we want to truncate after 25
+          characters
+        </Text>
+      </div>
+      <Divider />
+      <Heading variant="h6">Inherit variant</Heading>
+      <div style={{ color: 'var(--pui-secondary, green)' }}>
+        <Text size="sm">
+          Here is secondary color text with{' '}
+          <Text
+            as="span"
+            variant="inherit"
+            style={{ color: 'var(--pui-tertiary)' }}
+          >
+            highlighted
+          </Text>{' '}
+          text
+        </Text>
+      </div>
+      <Divider />
       <Heading variant="h6">Colors</Heading>
       <>
         <Text size="lg" color="on-background">
@@ -148,24 +171,6 @@ function TextDocsPage() {
         </Text>
         <Text size="lg" color="on-background-variant">
           <GlobeIcon /> On background variant
-        </Text>
-        <Text size="lg" color="on-primary">
-          <GlobeIcon /> On primary
-        </Text>
-        <Text size="lg" color="on-primary-container">
-          <GlobeIcon /> On primary container
-        </Text>
-        <Text size="lg" color="on-secondary">
-          <MaterialSymbolIcon icon="delete" /> On secondary
-        </Text>
-        <Text size="lg" color="on-secondary-container">
-          <MaterialSymbolIcon icon="delete" /> On secondary container
-        </Text>
-        <Text size="lg" color="on-tertiary">
-          <MaterialSymbolIcon icon="delete" /> On tertiary
-        </Text>
-        <Text size="lg" color="on-tertiary-container">
-          <MaterialSymbolIcon icon="delete" /> On tertiary container
         </Text>
       </>
       <Divider />

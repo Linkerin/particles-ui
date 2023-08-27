@@ -22,9 +22,14 @@
 }
 
 :where(.text) {
-  text-align: start;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  font-weight: inherit;
+  text-align: inherit;
 
-  & > span[data-pui-component='material-icon'],
+  & > span:where([data-pui-component='material-icon']),
   & > svg {
     vertical-align: -12.5%;
   }
@@ -35,6 +40,12 @@
     min-width: 1em;
     width: auto;
   }
+}
+
+:where(.truncate) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 code:where(.text) {
@@ -63,20 +74,11 @@ mark:where(.text) {
 @include variant('body');
 @include variant('label');
 
-// font colors
-@each $color
-  in (
-    'on-background',
-    'on-background-variant',
-    'on-primary',
-    'on-primary-container',
-    'on-secondary',
-    'on-secondary-container',
-    'on-tertiary',
-    'on-tertiary-container'
-  )
-{
-  :where(.#{$color}) {
-    color: var(--pui-#{$color});
-  }
+// base colors
+:where(.on-background) {
+  color: var(--pui-on-background);
+}
+
+:where(.on-background-variant) {
+  color: var(--pui-on-background-variant);
 }

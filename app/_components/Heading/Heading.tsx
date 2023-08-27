@@ -2,16 +2,21 @@ import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { HeadingElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { PuiTypographyColors } from '@/app/_lib/types';
 
 import styles from './Heading.module.scss';
 
-type HeaderElements = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingElements = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps extends HeadingElementProps {
-  as?: HeaderElements | 'span';
-  color?: PuiTypographyColors;
-  variant?: HeaderElements | 'subtitle-lg' | 'subtitle-md' | 'subtitle-sm';
+  as?: HeadingElements | 'span';
+  color?: 'on-background' | 'on-background-variant' | 'inherit';
+  truncate?: boolean;
+  variant?:
+    | HeadingElements
+    | 'subtitle-lg'
+    | 'subtitle-md'
+    | 'subtitle-sm'
+    | 'inherit';
 }
 
 /**
@@ -28,7 +33,8 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function Heading(
     className,
     style,
     as = 'h2',
-    color = 'on-background',
+    color = 'inherit',
+    truncate = false,
     variant = as !== 'span' ? as : 'subtitle-md',
     ...props
   },
@@ -40,8 +46,9 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function Heading(
       ref,
       className: classNames(
         styles.heading,
-        styles[variant],
-        styles[color],
+        { [styles.truncate]: truncate },
+        { [styles[variant]]: variant !== 'inherit' },
+        { [styles[color]]: color !== 'inherit' },
         className
       ),
       style,

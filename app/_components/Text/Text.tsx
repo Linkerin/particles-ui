@@ -2,7 +2,7 @@ import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { HtmlElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { PuiTypographyColors, PuiSize } from '@/app/_lib/types';
+import { PuiSize } from '@/app/_lib/types';
 
 import styles from './Text.module.scss';
 
@@ -25,9 +25,10 @@ export interface TextProps extends HtmlElementProps {
     | 'samp'
     | 'sub'
     | 'sup';
-  color?: PuiTypographyColors;
+  color?: 'on-background' | 'on-background-variant' | 'inherit';
   size?: Exclude<PuiSize, 'xs'>;
-  variant?: 'body' | 'label';
+  truncate?: boolean;
+  variant?: 'body' | 'label' | 'inherit';
 }
 
 /**
@@ -42,8 +43,9 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(
     className,
     style,
     as = 'p',
-    color = 'on-background',
+    color = 'inherit',
     size = 'md',
+    truncate = false,
     variant = 'body',
     ...props
   },
@@ -55,9 +57,10 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(
       ref,
       className: classNames(
         styles.text,
-        styles[variant],
-        styles[color],
         styles[size],
+        { [styles.truncate]: truncate },
+        { [styles[variant]]: variant !== 'inherit' },
+        { [styles[color]]: color !== 'inherit' },
         className
       ),
       style,
