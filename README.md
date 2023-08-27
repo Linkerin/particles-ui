@@ -8,17 +8,17 @@ Components are fully compatible with [Next.js 13 server component](https://nextj
 ## Top priotity components for implementation
 
 - [x] [Buttons](https://m3.material.io/components/buttons/overview)
-- [x] [Floating action buttons](https://m3.material.io/components/floating-action-button/overview)
+- [ ] [Floating action buttons](https://m3.material.io/components/floating-action-button/overview)
 - [x] [Icon buttons](https://m3.material.io/components/icon-buttons/overview)
-- [x] [Cards](https://m3.material.io/components/cards/overview)
+- [ ] [Cards](https://m3.material.io/components/cards/overview)
 - [x] [Chips](https://m3.material.io/components/chips/overview)
-- [x] [Lists](https://m3.material.io/components/lists/overview)
-- [x] Links
+- [ ] [Lists](https://m3.material.io/components/lists/overview)
+- [ ] Links
 - [ ] [Menus](https://m3.material.io/components/menus/guidelines)
-- [x] [Switch](https://m3.material.io/components/switch/overview)
+- [ ] [Switch](https://m3.material.io/components/switch/overview)
 - [ ] [Snackbar](https://m3.material.io/components/snackbar/overview)
 - [x] [Divider](https://m3.material.io/components/divider/overview)
-- [x] [Typography](https://m3.material.io/styles/typography/overview)
+- [ ] [Typography](https://m3.material.io/styles/typography/overview)
 
 ## Demo
 

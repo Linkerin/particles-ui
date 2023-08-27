@@ -4,7 +4,7 @@
 
 $subheader-font: map.get(var.$typography, 'subtitle', 'sm');
 
-:where(.container) {
+:where(.divider-subheader) {
   display: block;
   color: var(--pui-on-background-variant);
   margin-top: 0.25rem;

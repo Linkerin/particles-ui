@@ -7,7 +7,10 @@ import styles from './DividerSubheader.module.scss';
 /** Separate component from Divider's subheader */
 function DividerSubheader({ children, className, ...props }: SpanElementProps) {
   return (
-    <span className={classNames(styles.container, className)} {...props}>
+    <span
+      className={classNames(styles['divider-subheader'], className)}
+      {...props}
+    >
       {children}
     </span>
   );

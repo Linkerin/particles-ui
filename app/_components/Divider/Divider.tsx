@@ -1,19 +1,15 @@
 import { forwardRef, lazy, Suspense } from 'react';
-import classNames from 'classnames';
 
-import { HrElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import DividerHr, { DividerHrProps } from './DividerHr/DividerHr';
 
 const DividerSubheader = lazy(
   () => import('./DividerSubheader/DividerSubheader')
 );
 
-import styles from './Divider.module.scss';
-
-export interface DividerProps extends HrElementProps {
-  orientation?: 'horizontal' | 'vertical';
+export interface DividerProps extends DividerHrProps {
   subheader?: string;
   subheaderClassName?: string;
-  variant?: 'full' | 'inset' | 'middle';
+  subheaderRef?: React.Ref<HTMLSpanElement>;
 }
 
 /**
@@ -24,12 +20,10 @@ export interface DividerProps extends HrElementProps {
  */
 const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
   {
-    className,
-    style,
     subheader,
     subheaderClassName,
+    subheaderRef,
     orientation = 'horizontal',
-    variant = 'full',
     ...props
   },
   ref
@@ -38,33 +32,23 @@ const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
     typeof subheader === 'string' &&
     subheader.length > 0 ? (
     <span>
-      <hr
+      <DividerHr
         ref={ref}
         aria-orientation={orientation}
-        className={classNames(
-          styles[orientation],
-          { [styles[variant]]: ['inset', 'middle'].includes(variant) },
-          className
-        )}
-        style={style}
+        orientation={orientation}
         {...props}
       />
       <Suspense fallback={subheader}>
-        <DividerSubheader className={subheaderClassName}>
+        <DividerSubheader ref={subheaderRef} className={subheaderClassName}>
           {subheader}
         </DividerSubheader>
       </Suspense>
     </span>
   ) : (
-    <hr
+    <DividerHr
       ref={ref}
       aria-orientation={orientation}
-      className={classNames(
-        styles[orientation],
-        { [styles[variant]]: ['inset', 'middle'].includes(variant) },
-        className
-      )}
-      style={style}
+      orientation={orientation}
       {...props}
     />
   );
