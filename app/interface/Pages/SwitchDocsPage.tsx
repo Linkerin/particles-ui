@@ -1,6 +1,6 @@
 'use client';
 
-import CloseIcon from '@/app/_components/CloseIcon/CloseIcon';
+import CloseIcon from '@/app/_components/PuiIcons/CloseIcon/CloseIcon';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
 import Divider from '@/app/_components/Divider/Divider';

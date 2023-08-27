@@ -6,10 +6,11 @@ import { PuiSize } from '@/app/_lib/types';
 
 import styles from './Text.module.scss';
 
-export interface TextProps extends HtmlElementProps {
+export interface TextProps extends Omit<HtmlElementProps, 'ref'> {
   as?:
     | 'p'
     | 'span'
+    | 'strong'
     | 'b'
     | 'i'
     | 'u'

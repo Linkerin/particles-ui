@@ -11,6 +11,7 @@ import linkOverlayStyle from '../../styles/particles-ui/util-classes/link-overla
 import styles from './Nav.module.scss';
 
 const components = [
+  { name: 'Alert', link: 'alert' },
   { name: 'Button', link: 'button' },
   { name: 'Chip', link: 'chip' },
   { name: 'Card', link: 'card' },
