@@ -19,11 +19,11 @@
   padding-inline: var(--pui-list-item-pl) var(--pui-list-item-pr);
 
   &:hover:not(.disabled):not(:where(.static)) {
-    background-color: var(--pui-primary-container-low);
+    background-color: var(--pui-background-container);
   }
 
   &:active:not(.disabled):not(:where(.static)) {
-    background-color: var(--pui-primary-container);
+    background-color: var(--pui-background-container-high);
   }
 
   &:where(.selected):not(.disabled) {
