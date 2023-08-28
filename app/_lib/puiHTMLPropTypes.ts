@@ -47,6 +47,14 @@ export type HrElementProps = React.DetailedHTMLProps<
 >;
 
 /**
+ * `<img>` HTML element props type
+ */
+export type ImgElementProps = React.DetailedHTMLProps<
+  React.ImgHTMLAttributes<HTMLImageElement>,
+  HTMLImageElement
+>;
+
+/**
  * `<input>` HTML element props type
  */
 export type InputElementProps = React.DetailedHTMLProps<
