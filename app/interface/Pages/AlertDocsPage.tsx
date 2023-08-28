@@ -1,6 +1,6 @@
 'use client';
 
-import Alert from '@/app/_components/Alert/Alert';
+import Alert, { AlertProps } from '@/app/_components/Alert/Alert';
 import Button, { ButtonProps } from '@/app/_components/Button/Button';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
@@ -9,6 +9,31 @@ import GlobeIcon from '../GlobeIcon';
 import Heading from '@/app/_components/Heading/Heading';
 import { IconHeart } from '@tabler/icons-react';
 import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
+
+const colors: Array<AlertProps['color']> = [
+  'success',
+  'info',
+  'warning',
+  'error',
+  'primary',
+  'secondary',
+  'tertiary',
+  'uncolored'
+];
+
+const radiuses: Array<AlertProps['radius']> = [
+  'none',
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  'full'
+];
+
+const capitalise = ([first, ...rest]: string) => {
+  return first.toUpperCase() + rest.join('');
+};
 
 function ActionElement({ color }: { color?: ButtonProps['color'] }) {
   return (
@@ -33,111 +58,57 @@ function AlertDocsPage() {
       <Divider />
       <Heading variant="h6">Soft</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
-        <Alert alertTitle="Success!" color="success">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Info!" color="info">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Warning!" color="warning">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Error!" color="error">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Primary!" color="primary">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Secondary!" color="secondary">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Tertiary!" color="tertiary">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Uncolored!" color="uncolored">
-          Here is an important message for you
-        </Alert>
+        {colors.map(color => (
+          <Alert
+            key={color}
+            alertTitle={`${color && capitalise(color)}!`}
+            color={color}
+          >
+            Here is an important message for you
+          </Alert>
+        ))}
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Outlined</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
-        <Alert alertTitle="Success!" color="success" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Info!" color="info" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Warning!" color="warning" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Error!" color="error" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Primary!" color="primary" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Secondary!" color="secondary" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Tertiary!" color="tertiary" variant="outlined">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Uncolored!" color="uncolored" variant="outlined">
-          Here is an important message for you
-        </Alert>
+        {colors.map(color => (
+          <Alert
+            key={color}
+            alertTitle={`${color && capitalise(color)}!`}
+            color={color}
+            variant="outlined"
+          >
+            Here is an important message for you
+          </Alert>
+        ))}
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Filled</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
-        <Alert alertTitle="Success!" color="success" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Info!" color="info" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Warning!" color="warning" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Error!" color="error" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Primary!" color="primary" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Secondary!" color="secondary" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Tertiary!" color="tertiary" variant="filled">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Uncolored!" color="uncolored" variant="filled">
-          Here is an important message for you
-        </Alert>
+        {colors.map(color => (
+          <Alert
+            key={color}
+            alertTitle={`${color && capitalise(color)}!`}
+            color={color}
+            variant="filled"
+          >
+            Here is an important message for you
+          </Alert>
+        ))}
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Radiuses</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
-        <Alert alertTitle="None" color="success" radius="none">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="X-small" color="success" radius="xs">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Small" color="success" radius="sm">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Medium" color="success" radius="md">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Large" color="success" radius="lg">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="X-Large" color="success" radius="xl">
-          Here is an important message for you
-        </Alert>
-        <Alert alertTitle="Full" color="success" radius="full">
-          Here is an important message for you
-        </Alert>
+        {radiuses.map(radius => (
+          <Alert
+            key={radius}
+            alertTitle={radius}
+            color="success"
+            radius={radius}
+          >
+            Here is an important message for you
+          </Alert>
+        ))}
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Other icons</Heading>
