@@ -56,12 +56,16 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
         { [styles.action]: !!onClose || !!actionElement },
         className
       )}
-      aria-labelledby={titleId}
+      aria-labelledby={!!alertTitle ? titleId : undefined}
       aria-describedby={textId}
       role={role}
       {...props}
     >
-      <span className={styles['alert-icon']}>
+      <span
+        className={classNames(styles['alert-icon'], {
+          [styles['with-title']]: !!alertTitle
+        })}
+      >
         {!!icon ? icon : <AlertIcon type={color} />}
       </span>
       <span className={styles['alert-text']}>
@@ -81,18 +85,16 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
           {children}
         </Text>
       </span>
-      <span data-pui-component="pui-alert-action">
-        {!!onClose && !actionElement && (
-          <CloseButton
-            onClick={onClose}
-            aria-label={closeButtonLabel}
-            color={color}
-            size="xs"
-            radius="round"
-          />
-        )}
-        {!!actionElement && actionElement}
-      </span>
+      {!!onClose && !actionElement && (
+        <CloseButton
+          aria-label={closeButtonLabel}
+          color={color}
+          onClick={onClose}
+          radius="round"
+          size="xs"
+        />
+      )}
+      {!!actionElement && actionElement}
     </section>
   );
 });

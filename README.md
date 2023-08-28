@@ -2,7 +2,7 @@
 
 # Particles UI
 
-React components based on [Material Design 3](https://m3.material.io).
+React components inspired by [Material Design 3](https://m3.material.io) and [Fluent 2](https://fluent2.microsoft.design/).
 Components are fully compatible with [Next.js 13 server component](https://nextjs.org/docs/getting-started/react-essentials#server-components). Uses [Sass](https://sass-lang.com) for styling.
 
 ## Top priotity components for implementation
@@ -38,7 +38,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **Important**: no prefetch for `Nav` (proper link typing);
 - **Link**: proper typing for `as` value.
 - **Buttons**: types for `as` prop, consider using react `lazy()`;
-- **Alert**: close button hover/active colors for filled alert;
+- **Alert**: close button hover/active colors for filled alert, action and text aligns;
 - **Card**: think about pseudo divider colors;
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component;

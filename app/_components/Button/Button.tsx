@@ -10,6 +10,7 @@ import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.m
 import styles from './Button.module.scss';
 
 export interface ButtonProps extends ButtonBaseProps {
+  dense?: boolean;
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
   loadingElement?: React.ReactElement;
@@ -36,6 +37,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     loadingElement,
     title,
     color = 'primary',
+    dense = false,
     disabled = false,
     isLoading = false,
     loadingText = '',
@@ -58,6 +60,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         styles[color],
         styles[size],
         radiusStyles[radius],
+        { [styles.dense]: dense },
         { [styles.loading]: isLoading },
         { [styles.leftIcon]: !!leftIcon || (isLoading && !noLoadingSpinner) },
         {

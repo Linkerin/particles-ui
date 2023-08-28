@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-pui-mode="light">
+    <html lang="en" data-pui-mode="system">
       <body className={nunito.className}>
         <ThemeProvider>
           <Header />

@@ -21,7 +21,7 @@ export interface ChipProps extends DivElementProps {
   interactiveStyle?: boolean;
   leftIcon?: React.ReactElement;
   onDelete?: React.MouseEventHandler<HTMLButtonElement>;
-  radius?: PuiRadius;
+  radius?: Exclude<PuiRadius, 'round'>;
   rightIcon?: React.ReactElement;
   size?: PuiSize;
   variant?: PuiStyleVariant;

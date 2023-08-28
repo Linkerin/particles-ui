@@ -83,6 +83,18 @@
   padding-right: 1.14286em;
 }
 
+:where(.dense) {
+  padding: 0.375rem 1em;
+
+  &:where(.leftIcon) {
+    padding-left: 0.75em;
+  }
+
+  &:where(.rightIcon) {
+    padding-right: 0.75em;
+  }
+}
+
 // colors
 @each $color in const.$color-names {
   :where(.#{$color}) {
@@ -193,7 +205,7 @@
   }
 }
 
-:where(.text) {
+:where(.text):not(:where(.dense)) {
   padding-inline: 0.85714em;
 
   &:where(.leftIcon) {

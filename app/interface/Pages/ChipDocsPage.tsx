@@ -168,9 +168,6 @@ function ChipDocsPage() {
         <Chip variant="elevated" radius="full">
           Full
         </Chip>
-        <Chip variant="elevated" radius="round">
-          Round
-        </Chip>
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Disabled</Heading>
@@ -569,6 +566,15 @@ function ChipDocsPage() {
         </Chip>
       </DemoContainer>
       <DemoContainer>
+        <Chip
+          radius="full"
+          onDelete={e => {
+            alert('Delete try on small chip');
+          }}
+          size="xs"
+        >
+          X-Small deletable
+        </Chip>
         <Chip
           radius="full"
           onDelete={e => {

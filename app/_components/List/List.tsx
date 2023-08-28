@@ -29,6 +29,7 @@ const List = forwardRef<HTMLUListElement | HTMLOListElement, ListProps>(
       as = 'ol',
       dense = false,
       noInlinePd = false,
+      role = 'list',
       ...props
     },
     ref
@@ -43,6 +44,7 @@ const List = forwardRef<HTMLUListElement | HTMLOListElement, ListProps>(
           { [styles['no-pd-inline']]: noInlinePd },
           className
         ),
+        role,
         ...props
       },
       children

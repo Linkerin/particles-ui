@@ -471,7 +471,123 @@ function ButtonDocsPage() {
           X-Large
         </Button>
       </DemoContainer>
-      <h3>Material symbol icons</h3>
+      <Heading as="h3" variant="subtitle-md">
+        Dense padding: 0.5625rem 1.714286em;
+      </Heading>
+      <DemoContainer>
+        <Button size="xs" color="tertiary" dense>
+          X-small
+        </Button>
+        <Button size="sm" color="tertiary" dense>
+          Small
+        </Button>
+        <Button size="md" color="tertiary" dense>
+          Medium
+        </Button>
+        <Button size="lg" color="tertiary" dense>
+          Large
+        </Button>
+        <Button size="xl" color="tertiary" dense>
+          X-Large
+        </Button>
+      </DemoContainer>
+      <DemoContainer>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="xs"
+          color="secondary"
+          variant="elevated"
+          dense
+        >
+          Small
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="sm"
+          color="secondary"
+          variant="elevated"
+          dense
+        >
+          Small
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="md"
+          color="secondary"
+          variant="elevated"
+          dense
+        >
+          Medium
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="lg"
+          color="secondary"
+          variant="elevated"
+          dense
+        >
+          Large
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="xl"
+          color="secondary"
+          variant="elevated"
+          dense
+        >
+          X-Large
+        </Button>
+      </DemoContainer>
+      <DemoContainer>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="xs"
+          color="primary"
+          variant="text"
+          dense
+        >
+          Small
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="sm"
+          color="primary"
+          variant="text"
+          dense
+        >
+          Small
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="md"
+          color="primary"
+          variant="text"
+          dense
+        >
+          Medium
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="lg"
+          color="primary"
+          variant="text"
+          dense
+        >
+          Large
+        </Button>
+        <Button
+          leftIcon={<GlobeIcon />}
+          size="xl"
+          color="primary"
+          variant="text"
+          dense
+        >
+          X-Large
+        </Button>
+      </DemoContainer>
+      <Heading as="h3" variant="subtitle-md">
+        Material symbol icons
+      </Heading>
       <DemoContainer>
         <Button
           leftIcon={<MaterialSymbolIcon icon="search" />}

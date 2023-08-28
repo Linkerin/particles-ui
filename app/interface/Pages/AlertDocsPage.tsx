@@ -12,8 +12,14 @@ import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSym
 
 function ActionElement({ color }: { color?: ButtonProps['color'] }) {
   return (
-    <Button variant="soft" size="sm" color={color}>
-      UNDO
+    <Button
+      variant="soft"
+      size="sm"
+      color={color}
+      style={{ fontWeight: 600 }}
+      dense
+    >
+      Undo
     </Button>
   );
 }
@@ -52,6 +58,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
       </DemoContainer>
+      <Divider />
       <Heading variant="h6">Outlined</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert alertTitle="Success!" color="success" variant="outlined">
@@ -79,6 +86,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
       </DemoContainer>
+      <Divider />
       <Heading variant="h6">Filled</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert alertTitle="Success!" color="success" variant="filled">
@@ -106,8 +114,9 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
       </DemoContainer>
+      <Divider />
       <Heading variant="h6">Radiuses</Heading>
-      <DemoContainer>
+      <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert alertTitle="None" color="success" radius="none">
           Here is an important message for you
         </Alert>
@@ -130,6 +139,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
       </DemoContainer>
+      <Divider />
       <Heading variant="h6">Other icons</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert alertTitle="SvgIcon" color="secondary" icon={<GlobeIcon />}>
@@ -152,6 +162,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
       </DemoContainer>
+      <Divider />
       <Heading variant="h6">Actions</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert
@@ -216,6 +227,38 @@ function AlertDocsPage() {
           }}
           variant="filled"
           actionElement={<ActionElement color="success" />}
+        >
+          Here is an important message for you
+          <br />
+          Second line
+          <br />
+          Third line
+        </Alert>
+      </DemoContainer>
+      <Divider />
+      <Heading variant="h6">Without title</Heading>
+      <DemoContainer style={{ flexWrap: 'wrap' }}>
+        <Alert color="info" onClose={() => {}}>
+          Here is an important message for you
+        </Alert>
+        <Alert color="warning" variant="outlined" onClose={() => {}}>
+          Here is an important message for you
+        </Alert>
+        <Alert color="error" variant="filled">
+          Here is an important message for you
+        </Alert>
+        <Alert color="success" onClose={() => {}}>
+          Here is an important message for you and it is a long one.
+          <br />
+          Some more text describing the issue. Wow, soooooo long.
+          <br />
+          And a bit more text here
+        </Alert>
+        <Alert
+          color="tertiary"
+          variant="outlined"
+          onClose={() => {}}
+          actionElement={<ActionElement color="tertiary" />}
         >
           Here is an important message for you
         </Alert>
