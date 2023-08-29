@@ -10,7 +10,7 @@ describe('DualSpinner', () => {
 
     const spinner = screen.getByRole('status');
 
-    expect(spinner).toHaveClass('display-flex dual-spinner');
+    expect(spinner).toHaveClass('dual-spinner');
   });
 
   it('renders in xl size', () => {
