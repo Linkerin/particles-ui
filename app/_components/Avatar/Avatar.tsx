@@ -45,6 +45,14 @@ interface AvatarBaseProps extends Omit<ImgElementProps, 'ref' | 'src' | 'alt'> {
 
 export type AvatarProps = AvatarBaseProps & AvatarContentProps;
 
+/**
+ * Avatar component displays user's profile image, initials or fallback icon.
+ *
+ * Always add `alt` description with `src` provided image
+ * and `iconLabel` description with `icon`.
+ * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
+ * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
+ */
 const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   {
     className,
