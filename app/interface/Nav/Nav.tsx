@@ -13,6 +13,7 @@ import styles from './Nav.module.scss';
 const components = [
   { name: 'Alert', link: 'alert' },
   { name: 'Avatar', link: 'avatar' },
+  { name: 'Badge', link: 'badge' },
   { name: 'Button', link: 'button' },
   { name: 'Chip', link: 'chip' },
   { name: 'Card', link: 'card' },

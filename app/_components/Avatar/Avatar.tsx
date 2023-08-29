@@ -89,7 +89,10 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const initials = useMemo(() => generateInitials(name), [name]);
-  const fallbackElement = fallback ?? icon ?? initials ?? <UserIcon />;
+  const fallbackElement = useMemo(
+    () => fallback ?? icon ?? initials ?? <UserIcon aria-label={alt} />,
+    [alt, fallback, icon, initials]
+  );
 
   const loadImage = useCallback(() => {
     if (!src || noFallback) return;
