@@ -57,6 +57,7 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
     name,
     spanWrapperProps,
     color = 'primary',
+    loading = 'lazy',
     radius = 'full',
     size = 'md',
     ...props
@@ -89,6 +90,7 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
             { [styles[`radius-${radius}`]]: bordered },
             className
           )}
+          loading={loading}
           {...props}
         />
       )}

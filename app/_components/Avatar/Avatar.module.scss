@@ -34,12 +34,7 @@
       padding: $pd;
 
       & > img {
-        // Image calculated border-radiuses
-        @each $radius, $value in var.$radiuses {
-          &:where(.radius-#{$radius}) {
-            border-radius: calc(var(--pui-radius-#{$radius}, $value) - $pd);
-          }
-        }
+        border-radius: calc(var(--pui-curr-elem-radius) - $pd);
       }
     }
   }
@@ -67,6 +62,13 @@
   text-align: center;
   text-transform: uppercase;
   user-select: none;
+  aspect-ratio: 1 / 1;
+
+  :where(img) {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 
   :where(svg) {
     height: 1em;

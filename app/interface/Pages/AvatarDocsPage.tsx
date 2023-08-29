@@ -14,6 +14,10 @@ import avatar2 from '@/public/avatar-2.jpeg';
 import avatar3 from '@/public/avatar-3.jpeg';
 import avatar4 from '@/public/avatar-4.jpeg';
 
+const avatarLink = 'https://avatars.githubusercontent.com/u/130695447?v=4';
+const bigImgLink =
+  'https://img.freepik.com/free-photo/big-waves-stormy-ocean-with-sun-rays-pouring-through-water-sunrise-sunset-clouds-background_90220-1129.jpg?w=1380&t=st=1693296597~exp=1693297197~hmac=73d2a6e33d750b3ffae89a7895fa8271a2ee5a1f38517ccc33b57a0e101372a6';
+
 const colors: Array<AvatarProps['color']> = [
   'primary',
   'secondary',
@@ -102,6 +106,30 @@ function AvatarDocsPage() {
           ))}
         </DemoContainer>
       </>
+      <Divider />
+      <Heading variant="h6">Outside link</Heading>
+      <DemoContainer style={{ flexWrap: 'wrap' }}>
+        {sizes.map(size => (
+          <Avatar
+            key={size}
+            src={avatarLink}
+            alt={`Github avatar, size ${size}`}
+            title={`Size: ${size}`}
+            size={size}
+          />
+        ))}
+      </DemoContainer>
+      <DemoContainer style={{ flexWrap: 'wrap' }}>
+        {sizes.map(size => (
+          <Avatar
+            key={size}
+            src={bigImgLink}
+            alt={`Freepik big image, size ${size}`}
+            title={`Size: ${size}`}
+            size={size}
+          />
+        ))}
+      </DemoContainer>
       <Divider />
       <>
         <Heading variant="h6">Bordered</Heading>

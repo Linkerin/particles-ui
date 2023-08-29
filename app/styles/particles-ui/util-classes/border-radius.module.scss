@@ -5,6 +5,7 @@
 ///
 @each $radius, $value in var.$radiuses {
   :where(.#{$radius}) {
+    --pui-curr-elem-radius: var(--pui-radius-#{$radius}, #{$value});
     border-radius: var(--pui-radius-#{$radius}, $value);
   }
 }
