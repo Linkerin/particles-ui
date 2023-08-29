@@ -34,7 +34,7 @@
       padding: $pd;
 
       & > img {
-        border-radius: calc(var(--pui-curr-elem-radius) - $pd);
+        border-radius: calc(var(--pui-curr-elem-radius) - $pd - 1px);
       }
     }
   }

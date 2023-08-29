@@ -106,14 +106,6 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - Mantine: [Text](https://mantine.dev/core/text/) and [Title](https://mantine.dev/core/title/)
   - Chakra UI: [Text](https://chakra-ui.com/docs/components/text) and [Heading](https://chakra-ui.com/docs/components/heading)
 
-- [ ] Snackbar
-
-  - [Material 3](https://m3.material.io/components/snackbar/overview)
-  - [Ant Design](https://ant.design/components/message)
-  - [MUI](https://mui.com/material-ui/react-snackbar/)
-  - [Mantine](https://mantine.dev/core/notification/)
-  - [Chakra UI](https://chakra-ui.com/docs/components/toast)
-
 ## Secondary components
 
 - [x] Alert:
@@ -132,7 +124,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/avatar)
   - [Next UI](https://nextui.org/docs/components/avatar)
 
-- [ ] Badge:
+- [x] Badge:
 
   - [Material 3](https://m3.material.io/components/badges/overview)
   - [Fluent 2](https://fluent2.microsoft.design/components/web/react/badge/usage)
@@ -141,6 +133,14 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Mantine](https://mantine.dev/core/badge/)
   - [Chakra UI](https://chakra-ui.com/docs/components/badge)
   - [Next UI](https://nextui.org/docs/components/badge)
+
+  - [ ] Snackbar
+
+  - [Material 3](https://m3.material.io/components/snackbar/overview)
+  - [Ant Design](https://ant.design/components/message)
+  - [MUI](https://mui.com/material-ui/react-snackbar/)
+  - [Mantine](https://mantine.dev/core/notification/)
+  - [Chakra UI](https://chakra-ui.com/docs/components/toast)
 
 - [ ] Menu:
   - [Material 3](https://m3.material.io/components/menus/guidelines)
