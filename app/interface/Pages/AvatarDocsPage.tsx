@@ -1,5 +1,7 @@
 'use client';
 
+import { Fragment } from 'react';
+
 import Avatar, { AvatarProps } from '@/app/_components/Avatar/Avatar';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
@@ -131,6 +133,58 @@ function AvatarDocsPage() {
         ))}
       </DemoContainer>
       <Divider />
+      <Heading variant="h6">Fallbacks</Heading>
+      <DemoContainer style={{ flexWrap: 'wrap' }}>
+        <Avatar
+          src="./broken"
+          alt="Broken link"
+          onError={e => {
+            console.warn('Load failed: Broken link');
+          }}
+        />
+        <Avatar
+          src="./broken"
+          alt="Broken link no fallback"
+          noFallback
+          onError={e => {
+            console.warn('Load failed: Broken link no fallback');
+          }}
+        />
+        <Avatar src="./broken" alt="Broken link with name" name="Kate" />
+        <Avatar
+          src="./broken"
+          alt="Broken link with name and fallback"
+          fallback={<MaterialSymbolIcon icon="headphones" />}
+          name="Kate"
+          onError={e => {
+            console.warn('Load failed: Broken link with name and fallback');
+          }}
+        />
+        <Avatar
+          src="./broken"
+          alt="Broken link with name and fallback element and noFallback"
+          fallback={<MaterialSymbolIcon icon="headphones" />}
+          name="Kate"
+          noFallback
+          onError={e => {
+            console.warn(
+              'Load failed: Broken link with name and fallback element and noFallback'
+            );
+          }}
+        />
+        <Avatar
+          src={avatar3.src}
+          alt="Normal image, avatar-3, icon fallback"
+          fallback={<MaterialSymbolIcon icon="headphones" />}
+          name="Ed"
+        />
+        <Avatar
+          src={avatar3.src}
+          alt="Normal image, avatar-3, with name"
+          name="Ed"
+        />
+      </DemoContainer>
+      <Divider />
       <>
         <Heading variant="h6">Bordered</Heading>
         <DemoContainer style={{ flexWrap: 'wrap' }}>
@@ -162,11 +216,11 @@ function AvatarDocsPage() {
       <>
         <Heading variant="h6">Colors</Heading>
         {colors.map(color => (
-          <>
+          <Fragment key={color}>
             <Heading as="h3" variant="subtitle-md">
               {color}
             </Heading>
-            <DemoContainer key={color} style={{ flexWrap: 'wrap' }}>
+            <DemoContainer style={{ flexWrap: 'wrap' }}>
               <Avatar
                 src={avatar4.src}
                 alt={`First avatar photo, color: ${color}`}
@@ -212,7 +266,7 @@ function AvatarDocsPage() {
                 name="John Dorian"
               />
             </DemoContainer>
-          </>
+          </Fragment>
         ))}
       </>
       <Divider />
@@ -275,11 +329,11 @@ function AvatarDocsPage() {
       <>
         <Heading variant="h6">Radiuses</Heading>
         {sizes.map(size => (
-          <>
+          <Fragment key={size}>
             <Heading as="h3" variant="subtitle-md">
               {size}
             </Heading>
-            <DemoContainer key={size} style={{ flexWrap: 'wrap' }}>
+            <DemoContainer style={{ flexWrap: 'wrap' }}>
               {radiuses.map(radius => (
                 <Avatar
                   key={radius}
@@ -292,7 +346,7 @@ function AvatarDocsPage() {
                 />
               ))}
             </DemoContainer>
-          </>
+          </Fragment>
         ))}
       </>
     </DemoSection>

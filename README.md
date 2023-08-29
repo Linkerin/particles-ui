@@ -161,4 +161,4 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component, focus-visible styling;
 - **Switch**: think about `outlined` version;
-- **Avatar**: fallback options.
+- **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`;

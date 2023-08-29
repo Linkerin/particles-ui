@@ -1,15 +1,18 @@
-import { forwardRef } from 'react';
+'use client';
+
+import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames';
 
 import { PuiColorNames, PuiRadius, PuiSize } from '@/app/_lib/types';
 import { ImgElementProps, SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import UserIcon from '../PuiIcons/UserIcon/UserIcon';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Avatar.module.scss';
 
 const generateInitials = (name?: string) => {
   if (!name || typeof name !== 'string') {
-    return '';
+    return null;
   }
 
   const splitted = name.toUpperCase().split(' ');
@@ -32,12 +35,16 @@ type AvatarContentProps =
       iconLabel?: undefined;
     };
 
-interface AvatarBaseProps extends Omit<ImgElementProps, 'ref' | 'src' | 'alt'> {
+interface AvatarBaseProps
+  extends Omit<ImgElementProps, 'ref' | 'src' | 'alt' | 'onError'> {
   bordered?: boolean;
   color?: PuiColorNames;
   disabled?: boolean;
+  fallback?: React.ReactNode;
   icon?: React.ReactElement;
   name?: string;
+  noFallback?: boolean;
+  onError?: OnErrorEventHandler;
   radius?: PuiRadius;
   size?: PuiSize | 'xxl';
   spanWrapperProps?: SpanElementProps;
@@ -57,21 +64,56 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   {
     className,
     alt,
-    disabled,
+    crossOrigin,
     src,
+    srcSet,
+    sizes,
     bordered,
+    disabled,
+    fallback,
     icon,
     iconLabel,
     name,
+    onError,
+    onLoad,
     spanWrapperProps,
     color = 'primary',
     loading = 'lazy',
+    noFallback = false,
     radius = 'full',
     size = 'md',
     ...props
   },
   ref
 ) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const initials = useMemo(() => generateInitials(name), [name]);
+  const fallbackElement = fallback ?? icon ?? initials ?? <UserIcon />;
+
+  const loadImage = useCallback(() => {
+    if (!src || noFallback) return;
+
+    const img = new Image();
+    img.src = src;
+    img.loading = loading;
+    if (crossOrigin) img.crossOrigin = crossOrigin;
+    if (srcSet) img.srcset = srcSet;
+    if (sizes) img.sizes = sizes;
+
+    img.onload = e => {
+      console.log('loaded');
+      setImageLoaded(true);
+      onLoad?.(e as any);
+    };
+
+    if (onError) img.onerror = onError;
+  }, [src, srcSet, sizes, noFallback, crossOrigin, loading, onError, onLoad]);
+
+  useEffect(() => {
+    loadImage();
+  }, [loadImage]);
+
   return (
     <span
       ref={ref}
@@ -89,11 +131,13 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
       }
       {...spanWrapperProps}
     >
-      {!!icon && !src && icon}
-      {!icon && !!src && (
+      {!!src && (noFallback || imageLoaded) ? (
         <img
           alt={alt}
           src={src}
+          srcSet={srcSet}
+          crossOrigin={crossOrigin}
+          sizes={sizes}
           className={classNames(
             { [styles[`radius-${radius}`]]: bordered },
             className
@@ -101,8 +145,9 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
           loading={loading}
           {...props}
         />
+      ) : (
+        fallbackElement
       )}
-      {!src && !icon && name && generateInitials(name)}
     </span>
   );
 });
