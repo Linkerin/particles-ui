@@ -5,6 +5,18 @@
 React components inspired by [Material Design 3](https://m3.material.io) and [Fluent 2](https://fluent2.microsoft.design/).
 Components are fully compatible with [Next.js 13 server component](https://nextjs.org/docs/getting-started/react-essentials#server-components). Uses [Sass](https://sass-lang.com) for styling.
 
+## Demo
+
+```bash
+git clone https://github.com/Linkerin/particles-ui-demo.git
+
+npm i
+
+npm run dev
+```
+
+Recommended icons library: [tabler icons](https://tabler-icons.io/)
+
 ## Top priority components for implementation
 
 - [x] Button:
@@ -111,7 +123,7 @@ Components are fully compatible with [Next.js 13 server component](https://nextj
   - [Mantine](https://mantine.dev/core/alert/)
   - [Chakra UI](https://chakra-ui.com/docs/components/alert)
 
-- [ ] Avatar:
+- [x] Avatar:
 
   - Fluent 2: [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage) and [Avatar Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
   - [Ant Design](https://ant.design/components/avatar)
@@ -139,18 +151,6 @@ Components are fully compatible with [Next.js 13 server component](https://nextj
   - [Chakra UI](https://chakra-ui.com/docs/components/menu)
   - [Next UI](https://nextui.org/docs/components/dropdown)
 
-## Demo
-
-```bash
-git clone https://github.com/Linkerin/particles-ui-demo.git
-
-npm i
-
-npm run dev
-```
-
-Recommended icons library: [tabler icons](https://tabler-icons.io/)
-
 ## To-Do
 
 - **Important**: no prefetch for `Nav` (proper link typing);
@@ -161,3 +161,4 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component, focus-visible styling;
 - **Switch**: think about `outlined` version;
+- **Avatar**: fallback options.
