@@ -53,7 +53,7 @@
   }
 }
 
-:where(.filled):not(:where(.uncolored)) {
+:where(.filled) {
   background-color: var(--pui-alert-color);
 
   &,
@@ -75,7 +75,7 @@
   }
 }
 
-:where(.outlined):not(:where(.uncolored)) {
+:where(.outlined) {
   background: none;
   border: 1px solid var(--pui-alert-color);
 
@@ -85,11 +85,23 @@
   }
 }
 
-:where(.soft):not(:where(.uncolored)) {
+:where(.soft) {
   background-color: var(--pui-alert-color-container);
 
   &,
   span:where([data-pui-component='btn-icon']) {
     color: var(--pui-alert-on-color-container);
+  }
+}
+
+:where(.minimal) {
+  background-color: var(--pui-background-container-low);
+  color: var(--pui-on-background-variant);
+
+  border-left: 4px solid var(--pui-alert-color);
+
+  svg,
+  span:where([data-pui-component='btn-icon']) {
+    color: var(--pui-alert-color-darker);
   }
 }

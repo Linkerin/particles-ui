@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
-export interface SvgIconProps {
+export interface SvgIconProps
+  extends Pick<React.ComponentPropsWithRef<'svg'>, 'ref'> {
   className?: React.SVGAttributes<SVGSVGElement>['className'];
   color?: React.SVGAttributes<SVGSVGElement>['color'];
   id: string;

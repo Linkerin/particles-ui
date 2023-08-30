@@ -3,14 +3,13 @@ import classNames from 'classnames';
 
 import AlertIcon from './AlertIcon/AlertIcon';
 import CloseButton, { CloseButtonProps } from '../CloseButton/CloseButton';
-import { HtmlElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import { PuiColorNames, PuiRadius, PuiStyleVariant } from '@/app/_lib/types';
 import Text, { TextProps } from '../Text/Text';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Alert.module.scss';
 
-export interface AlertProps extends Omit<HtmlElementProps, 'ref'> {
+export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
   alertTitle?: string | React.ReactNode;
   actionElement?: React.ReactNode;
   closeButtonLabel?: CloseButtonProps['aria-label'];
@@ -20,7 +19,7 @@ export interface AlertProps extends Omit<HtmlElementProps, 'ref'> {
   radius?: Exclude<PuiRadius, 'round'>;
   textProps?: TextProps;
   titleProps?: TextProps;
-  variant?: Exclude<PuiStyleVariant, 'elevated'>;
+  variant?: Exclude<PuiStyleVariant, 'elevated'> | 'minimal';
 }
 
 /**
@@ -55,9 +54,9 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
       ref={ref}
       className={classNames(
         styles.alert,
-        styles[variant],
-        styles[color],
         radiusStyles[radius],
+        { [styles[variant]]: color !== 'uncolored' },
+        { [styles[color]]: color !== 'uncolored' },
         { [styles.action]: !!onClose || !!actionElement },
         className
       )}

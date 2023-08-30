@@ -162,3 +162,4 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **Chip**: develop `ToggleChip` component, focus-visible styling;
 - **Switch**: think about `outlined` version;
 - **Avatar**: investigate: lazy loading doesn't work inside `useEffect()` and bug with initial load due to Next prefetch;
+- **Badge**: inline Badge, see: [Tabler](https://preview.tabler.io/badges.html) and [Mantine](https://mantine.dev/core/badge).

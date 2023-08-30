@@ -97,6 +97,21 @@ function AlertDocsPage() {
         ))}
       </DemoContainer>
       <Divider />
+      <Heading variant="h6">Minimal</Heading>
+      <DemoContainer style={{ flexWrap: 'wrap' }}>
+        {colors.map(color => (
+          <Alert
+            key={color}
+            alertTitle={`${color && capitalise(color)}!`}
+            color={color}
+            variant="minimal"
+            radius="sm"
+          >
+            Here is an important message for you
+          </Alert>
+        ))}
+      </DemoContainer>
+      <Divider />
       <Heading variant="h6">Radiuses</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         {radiuses.map(radius => (
@@ -231,6 +246,9 @@ function AlertDocsPage() {
           onClose={() => {}}
           actionElement={<ActionElement color="tertiary" />}
         >
+          Here is an important message for you
+        </Alert>
+        <Alert color="info" variant="minimal" onClose={() => {}}>
           Here is an important message for you
         </Alert>
       </DemoContainer>
