@@ -1,5 +1,8 @@
-import Badge, { BadgeProps } from '@/app/_components/Badge/Badge';
 import Avatar from '@/app/_components/Avatar/Avatar';
+import Badge, { BadgeProps } from '@/app/_components/Badge/Badge';
+import BadgeInline from '@/app/_components/BadgeInline/BadgeInline';
+import Button from '@/app/_components/Button/Button';
+import Chip from '@/app/_components/Chip/Chip';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
 import Divider from '@/app/_components/Divider/Divider';
@@ -440,6 +443,28 @@ function BadgeDocsPage() {
           ))}
         </DemoContainer>
       </>
+      <Divider />
+      <Heading variant="h6">Inline badge</Heading>
+      <DemoContainer>
+        <Button variant="outlined" radius="sm">
+          Show messages{' '}
+          <BadgeInline
+            aria-label="Messages number"
+            content={16}
+            radius="xs"
+            variant="soft"
+          />
+        </Button>
+        <Chip size="lg" radius="full" variant="elevated" color="tertiary">
+          JavaScript{' '}
+          <BadgeInline
+            aria-label="New content"
+            content="NEW"
+            size="sm"
+            color="tertiary"
+          ></BadgeInline>
+        </Chip>
+      </DemoContainer>
     </DemoSection>
   );
 }

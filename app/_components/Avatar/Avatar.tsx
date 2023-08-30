@@ -105,7 +105,6 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
     if (sizes) img.sizes = sizes;
 
     img.onload = e => {
-      console.log('loaded');
       setImageLoaded(true);
       onLoad?.(e as any);
     };

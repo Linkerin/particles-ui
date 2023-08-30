@@ -157,9 +157,8 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **Link**: proper typing for `as` value, focus-visible styling.
 - **Buttons**: types for `as` prop, consider using react `lazy()`, focus-visible styling;
 - **Alert**: close button hover/active colors for filled alert, action and text aligns;
-- **Card**: think about pseudo divider colors, focus-visible styling;
+- **Card**: think about pseudo divider colors, focus-visible styling, separate static and clickable versions;
 - **IconButtons**: develop `ToggleIconButton` component;
-- **Chip**: develop `ToggleChip` component, focus-visible styling;
+- **Chip**: develop `ToggleChip` component, focus-visible styling, separate static and clickable versions;
 - **Switch**: think about `outlined` version;
-- **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`;
-- **Badge**: inline Badge, see: [Tabler](https://preview.tabler.io/badges.html) and [Mantine](https://mantine.dev/core/badge).
+- **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
