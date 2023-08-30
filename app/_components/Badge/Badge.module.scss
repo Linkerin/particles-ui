@@ -59,6 +59,7 @@ $sizes-mapping: (
   position: absolute;
   width: fit-content;
   text-align: center;
+  white-space: nowrap;
 
   &:not(:where(.dot)):not(:where(.single)) {
     padding-inline: 0.5em;

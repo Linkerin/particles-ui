@@ -231,7 +231,8 @@ function BadgeDocsPage() {
               key={size}
               aria-label="Number of new messages"
               size={size}
-              content="999+"
+              content="1635"
+              maxChars={3}
               shape="circle"
             >
               <Avatar
@@ -248,7 +249,8 @@ function BadgeDocsPage() {
               key={size}
               aria-label="Number of new messages"
               size={size}
-              content="999+"
+              content={1223.9}
+              maxChars={3}
               variant="soft"
               color="success"
             >
@@ -272,7 +274,8 @@ function BadgeDocsPage() {
               key={size}
               aria-label="Number of new messages"
               size={size}
-              content="99+"
+              content={123.9}
+              maxChars={2}
             >
               <GlobeIcon />
             </Badge>
@@ -289,7 +292,8 @@ function BadgeDocsPage() {
               key={size}
               aria-label="Number of new messages"
               size={size}
-              content="99+"
+              content={123.9}
+              maxChars={2}
             >
               <MaterialSymbolIcon icon="shopping_cart" />
             </Badge>
@@ -304,7 +308,8 @@ function BadgeDocsPage() {
               key={size}
               aria-label="Number of new messages"
               size={size}
-              content="99+"
+              content={123.9}
+              maxChars={2}
             >
               <IconBell />
             </Badge>
@@ -395,7 +400,8 @@ function BadgeDocsPage() {
               key={radius}
               aria-label={`Radius: ${radius}`}
               color="warning"
-              content="NEW"
+              content="NEW USER"
+              maxChars={3}
               shape="circle"
               radius={radius}
             >
@@ -420,7 +426,8 @@ function BadgeDocsPage() {
               key={size}
               aria-label="Number of new messages"
               size={size}
-              content="999+"
+              content={1536}
+              maxChars={3}
               shape="circle"
               outlined
             >

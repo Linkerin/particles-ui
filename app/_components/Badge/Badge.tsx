@@ -1,13 +1,14 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import {
   PuiColorNames,
   PuiRadius,
   PuiSize,
   PuiStyleVariant
 } from '@/app/_lib/types';
+import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import truncateContent from './truncateContent';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Badge.module.scss';
@@ -18,9 +19,10 @@ export interface BadgeProps
   color?: PuiColorNames;
   content?: string | number | React.ReactNode;
   invisible?: boolean;
-  outlined?: boolean;
-  vertical?: 'top' | 'bottom';
   horizontal?: 'left' | 'right';
+  vertical?: 'top' | 'bottom';
+  maxChars?: number;
+  outlined?: boolean;
   radius?: PuiRadius;
   shape?: 'circle' | 'rectangle';
   singleElement?: boolean;
@@ -33,6 +35,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
     children,
     className,
     content,
+    maxChars,
     color = 'primary',
     invisible = false,
     vertical = 'top',
@@ -47,6 +50,14 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
   },
   ref
 ) {
+  let badgeContent = content;
+  if (
+    typeof maxChars === 'number' &&
+    (typeof content === 'number' || typeof content === 'string')
+  ) {
+    badgeContent = truncateContent(content, maxChars);
+  }
+
   return (
     <span className={classNames(styles['badge-container'])}>
       {children}
@@ -68,7 +79,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
         )}
         {...props}
       >
-        {size !== 'dot' && content}
+        {size !== 'dot' && badgeContent}
       </span>
     </span>
   );
