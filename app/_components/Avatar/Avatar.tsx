@@ -114,6 +114,8 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   }, [src, srcSet, sizes, noFallback, crossOrigin, loading, onError, onLoad]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     loadImage();
   }, [loadImage]);
 
