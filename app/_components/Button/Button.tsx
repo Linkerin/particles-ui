@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import DualSpinner from '@/app/_components/DualSpinner/DualSpinner';
+import DualSpinner from '..//DualSpinner/DualSpinner';
 import { ButtonBaseProps, PuiStyleVariant } from '@/app/_lib/types';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';

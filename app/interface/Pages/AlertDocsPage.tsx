@@ -61,7 +61,7 @@ function AlertDocsPage() {
         {colors.map(color => (
           <Alert
             key={color}
-            alertTitle={`${color && capitalise(color)}!`}
+            heading={`${color && capitalise(color)}!`}
             color={color}
           >
             Here is an important message for you
@@ -74,7 +74,7 @@ function AlertDocsPage() {
         {colors.map(color => (
           <Alert
             key={color}
-            alertTitle={`${color && capitalise(color)}!`}
+            heading={`${color && capitalise(color)}!`}
             color={color}
             variant="outlined"
           >
@@ -88,7 +88,7 @@ function AlertDocsPage() {
         {colors.map(color => (
           <Alert
             key={color}
-            alertTitle={`${color && capitalise(color)}!`}
+            heading={`${color && capitalise(color)}!`}
             color={color}
             variant="filled"
           >
@@ -102,7 +102,7 @@ function AlertDocsPage() {
         {colors.map(color => (
           <Alert
             key={color}
-            alertTitle={`${color && capitalise(color)}!`}
+            heading={`${color && capitalise(color)}!`}
             color={color}
             variant="minimal"
             radius="sm"
@@ -115,12 +115,7 @@ function AlertDocsPage() {
       <Heading variant="h6">Radiuses</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         {radiuses.map(radius => (
-          <Alert
-            key={radius}
-            alertTitle={radius}
-            color="success"
-            radius={radius}
-          >
+          <Alert key={radius} heading={radius} color="success" radius={radius}>
             Here is an important message for you
           </Alert>
         ))}
@@ -128,11 +123,11 @@ function AlertDocsPage() {
       <Divider />
       <Heading variant="h6">Other icons</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
-        <Alert alertTitle="SvgIcon" color="secondary" icon={<GlobeIcon />}>
+        <Alert heading="SvgIcon" color="secondary" icon={<GlobeIcon />}>
           Here is an important message for you
         </Alert>
         <Alert
-          alertTitle="Material Symbol icon"
+          heading="Material Symbol icon"
           color="tertiary"
           icon={<MaterialSymbolIcon icon="rocket" />}
           variant="filled"
@@ -140,7 +135,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
         <Alert
-          alertTitle="Tabler icon"
+          heading="Tabler icon"
           color="primary"
           icon={<IconHeart />}
           variant="outlined"
@@ -152,7 +147,7 @@ function AlertDocsPage() {
       <Heading variant="h6">Actions</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert
-          alertTitle="onClose function"
+          heading="onClose function"
           color="info"
           onClose={e => {
             console.log('Clicked alert close');
@@ -161,7 +156,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
         <Alert
-          alertTitle="onClose function"
+          heading="onClose function"
           color="warning"
           onClose={e => {
             console.log('Clicked alert close');
@@ -171,7 +166,7 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
         <Alert
-          alertTitle="onClose function"
+          heading="onClose function"
           color="error"
           onClose={e => {
             console.log('Clicked alert close');
@@ -183,7 +178,7 @@ function AlertDocsPage() {
       </DemoContainer>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
         <Alert
-          alertTitle="With action element"
+          heading="With action element"
           color="warning"
           onClose={e => {
             console.log('Clicked alert close');
@@ -193,20 +188,20 @@ function AlertDocsPage() {
           Here is an important message for you
         </Alert>
         <Alert
-          alertTitle="With action element"
+          heading="With action element"
           color="secondary"
           onClose={e => {
             console.log('Clicked alert close');
           }}
           variant="outlined"
           actionElement={<ActionElement color="secondary" />}
-          titleProps={{ color: 'on-background' }}
+          headingProps={{ color: 'on-background' }}
           textProps={{ size: 'md' }}
         >
           Also checking text and title props
         </Alert>
         <Alert
-          alertTitle="With action element"
+          heading="With action element"
           color="success"
           onClose={e => {
             console.log('Clicked alert close');

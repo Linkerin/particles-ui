@@ -3,22 +3,52 @@ import classNames from 'classnames';
 
 import AlertIcon from './AlertIcon/AlertIcon';
 import CloseButton, { CloseButtonProps } from '../CloseButton/CloseButton';
-import { PuiColorNames, PuiRadius, PuiStyleVariant } from '@/app/_lib/types';
+import { PuiColorNames, PuiRadius, PuiStyleVariant } from '../../_lib/types';
 import Text, { TextProps } from '../Text/Text';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Alert.module.scss';
 
 export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
-  alertTitle?: string | React.ReactNode;
+  /**
+   * Alert's message heading
+   */
+  heading?: string | React.ReactNode;
+  /**
+   * Interactive component on the right
+   */
   actionElement?: React.ReactNode;
+  /**
+   * `aria-label` value for a close button
+   */
   closeButtonLabel?: CloseButtonProps['aria-label'];
+  /**
+   * Alert's main color
+   */
   color?: PuiColorNames;
+  /**
+   * Icon component on the left
+   */
   icon?: React.ReactNode;
+  /**
+   * `onClick` handler for a close button
+   */
   onClose?: CloseButtonProps['onClick'];
+  /**
+   * Radius value
+   */
   radius?: Exclude<PuiRadius, 'round'>;
+  /**
+   * `Text` properties for alert's message component
+   */
   textProps?: TextProps;
-  titleProps?: TextProps;
+  /**
+   * `Text` properties for alert's heading component
+   */
+  headingProps?: TextProps;
+  /**
+   * Styling variant
+   */
   variant?: Exclude<PuiStyleVariant, 'elevated'> | 'minimal';
 }
 
@@ -32,11 +62,11 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
     children,
     className,
     actionElement,
-    alertTitle,
+    heading,
     icon,
     onClose,
     textProps,
-    titleProps,
+    headingProps,
     closeButtonLabel = 'Close alert',
     color = 'success',
     radius = 'sm',
@@ -60,29 +90,29 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
         { [styles.action]: !!onClose || !!actionElement },
         className
       )}
-      aria-labelledby={!!alertTitle ? titleId : undefined}
+      aria-labelledby={!!heading ? titleId : undefined}
       aria-describedby={textId}
       role={role}
       {...props}
     >
       <span
         className={classNames(styles['alert-icon'], {
-          [styles['with-title']]: !!alertTitle
+          [styles['with-heading']]: !!heading
         })}
       >
         {!!icon ? icon : <AlertIcon type={color} />}
       </span>
       <span className={styles['alert-text']}>
-        {!!alertTitle && (
+        {!!heading && (
           <Text
             id={titleId}
             as="strong"
             variant="label"
             size="lg"
             truncate
-            {...titleProps}
+            {...headingProps}
           >
-            {alertTitle}
+            {heading}
           </Text>
         )}
         <Text id={textId} variant="body" size="sm" {...textProps}>

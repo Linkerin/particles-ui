@@ -22,62 +22,50 @@ export interface BadgeInlineProps
    * Background color
    */
   color?: PuiColorNames;
-
   /**
    * Badge content
    */
   content?: string | number | React.ReactNode;
-
   /**
    * Shows whether the badge is an inline component or not
    */
   inline?: boolean;
-
   /**
    * Sets `opacity` to `0` to hide the badge
    */
   invisible?: boolean;
-
   /**
    * Horizontal position (works when `inline` = `false`)
    */
   horizontal?: 'left' | 'right';
-
   /**
    * Vertical position (works when `inline` = `false`)
    */
   vertical?: 'top' | 'bottom';
-
   /**
    * Maximum content's length
    */
   maxChars?: number;
-
   /**
    * Adds `outline` around the badge
    */
   outlined?: boolean;
-
   /**
    * Radius value
    */
   radius?: PuiRadius;
-
   /**
    * Shape of the underlying component
    */
   shape?: 'circle' | 'rectangle';
-
   /**
    * Adjusts paddings when the content consists only of 1 element
    */
   singleElement?: boolean;
-
   /**
    * Size value
    */
   size?: Extract<PuiSize, 'sm' | 'md' | 'lg'> | 'dot';
-
   /**
    * Styling variant
    */
