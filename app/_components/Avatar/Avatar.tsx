@@ -99,7 +99,7 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
 
     const img = new Image();
     img.src = src;
-    img.loading = loading;
+    // img.loading = loading; // TODO: fix lazy loading issue
     if (crossOrigin) img.crossOrigin = crossOrigin;
     if (srcSet) img.srcset = srcSet;
     if (sizes) img.sizes = sizes;
