@@ -1,16 +1,4 @@
-import { ButtonElementProps } from './puiHTMLPropTypes';
 import { COLOR_MODES } from './constants';
-
-/**
- * Common props for Buttom-like components
- */
-export interface ButtonBaseProps extends ButtonElementProps {
-  color?: PuiColorNames;
-  isLoading?: boolean;
-  noLoadingSpinner?: boolean;
-  radius?: PuiRadius;
-  size?: PuiSize;
-}
 
 /**
  * Theme color mode values type

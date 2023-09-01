@@ -154,12 +154,12 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 ## To-Do
 
 - **Important**: no prefetch for `Nav` (proper link typing);
-- **Link**: proper typing for `as` value, focus-visible styling.
-- **Buttons**: types for `as` prop, consider using react `lazy()`, focus-visible styling;
-- **Alert**: add support for both close and action elements;
-- **Badge**: re-consoder props for BadgeInline and Badge;
-- **Card**: think about pseudo divider colors, focus-visible styling, separate static and clickable versions;
-- **IconButtons**: develop `ToggleIconButton` component;
-- **Chip**: develop `ToggleChip` component, focus-visible styling, separate static and clickable versions;
-- **Switch**: think about `outlined` version;
 - **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
+- **Link**: proper typing for `as` value.
+- **Buttons**: types for `as` prop, consider using react `lazy()`;
+- **Badge**: re-consoder props for BadgeInline and Badge;
+- **Card**: think about pseudo divider colors, separate static and clickable versions;
+- **IconButtons**: develop `ToggleIconButton` component;
+- **Chip**: develop `ToggleChip` component, separate static and clickable versions;
+- **Switch**: think about `outlined` version;
+- Keyboard focus styling for: Button, FloatingButton, Link, Chip, Card, ListInteractive, Switch.

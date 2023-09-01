@@ -2,16 +2,11 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import Button from '../Button/Button';
-import { ButtonBaseProps, PuiStyleVariant } from '@/app/_lib/types';
+import { IconButtonProps } from './IconButton.types';
 
 import styles from './IconButton.module.scss';
 
-export interface IconButtonProps
-  extends Omit<ButtonBaseProps, 'children' | 'aria-label' | 'ref'> {
-  'aria-label': React.AriaAttributes['aria-label'];
-  icon: React.ReactElement;
-  variant?: PuiStyleVariant | 'standard';
-}
+export type { IconButtonProps };
 
 /**
  * Icon button component is used to display actions in a compact layout.

@@ -2,55 +2,14 @@ import { forwardRef, useId } from 'react';
 import classNames from 'classnames';
 
 import AlertIcon from './AlertIcon/AlertIcon';
-import CloseButton, { CloseButtonProps } from '../CloseButton/CloseButton';
-import { PuiColorNames, PuiRadius, PuiStyleVariant } from '../../_lib/types';
-import Text, { TextProps } from '../Text/Text';
+import { AlertProps } from './Alert.types';
+import CloseButton from '../CloseButton/CloseButton';
+import Text from '../Text/Text';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Alert.module.scss';
 
-export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
-  /**
-   * Alert's message heading
-   */
-  heading?: string | React.ReactNode;
-  /**
-   * Interactive component on the right
-   */
-  actionElement?: React.ReactNode;
-  /**
-   * `aria-label` value for a close button
-   */
-  closeButtonLabel?: CloseButtonProps['aria-label'];
-  /**
-   * Alert's main color
-   */
-  color?: PuiColorNames;
-  /**
-   * Icon component on the left
-   */
-  icon?: React.ReactNode;
-  /**
-   * `onClick` handler for a close button
-   */
-  onClose?: CloseButtonProps['onClick'];
-  /**
-   * Radius value
-   */
-  radius?: Exclude<PuiRadius, 'round'>;
-  /**
-   * `Text` properties for alert's message component
-   */
-  textProps?: TextProps;
-  /**
-   * `Text` properties for alert's heading component
-   */
-  headingProps?: TextProps;
-  /**
-   * Styling variant
-   */
-  variant?: Exclude<PuiStyleVariant, 'elevated'> | 'minimal';
-}
+export type { AlertProps };
 
 /**
  * Alert component displays a shot message that attracts user's attention.
@@ -119,7 +78,8 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
           {children}
         </Text>
       </span>
-      {!!onClose && !actionElement && (
+      {!!actionElement && actionElement}
+      {!!onClose && (
         <CloseButton
           aria-label={closeButtonLabel}
           color={color}
@@ -128,7 +88,6 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
           size="xs"
         />
       )}
-      {!!actionElement && actionElement}
     </section>
   );
 });

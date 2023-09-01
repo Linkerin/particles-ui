@@ -4,20 +4,13 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import DualSpinner from '..//DualSpinner/DualSpinner';
-import { ButtonBaseProps, PuiStyleVariant } from '@/app/_lib/types';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
 
-export interface ButtonProps extends ButtonBaseProps {
-  dense?: boolean;
-  leftIcon?: React.ReactElement;
-  rightIcon?: React.ReactElement;
-  loadingElement?: React.ReactElement;
-  loadingText?: string;
-  shrinkOnPress?: boolean;
-  variant?: PuiStyleVariant | 'text';
-}
+import { ButtonProps } from './Button.types';
+
+export type { ButtonProps };
 
 /**
  * Button component that enables users to trigger an action or event,

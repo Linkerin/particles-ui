@@ -1,20 +1,11 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { PuiSize } from '@/app/_lib/types';
-import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { DualSpinnerProps, StyleObj } from './DualSpinner.types';
 
 import styles from './DualSpinner.module.scss';
 
-export interface DualSpinnerProps extends Omit<SpanElementProps, 'color'> {
-  size?: PuiSize | 'xxl';
-  speed?: React.CSSProperties['animationDuration'];
-}
-
-type StyleObjType = Pick<
-  React.CSSProperties,
-  'borderColor' | 'animationDuration'
->;
+export type { DualSpinnerProps };
 
 /**
  * Dual Spinner component
@@ -22,8 +13,8 @@ type StyleObjType = Pick<
  */
 const DualSpinner = forwardRef<HTMLSpanElement, DualSpinnerProps>(
   function DualSpinner({ className, style, speed, size = '', ...props }, ref) {
-    const styleObj: StyleObjType = {};
-    if (!!speed) styleObj.animationDuration = speed;
+    const styleObj: StyleObj = {};
+    if (speed) styleObj.animationDuration = speed;
 
     return (
       <span

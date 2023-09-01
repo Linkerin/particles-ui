@@ -4,21 +4,12 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import DualSpinner from '../DualSpinner/DualSpinner';
-import { ButtonBaseProps } from '@/app/_lib/types';
+import { FloatingButtonProps } from './FloatingButton.types';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './FloatingButton.module.scss';
 
-export interface FloatingButtonProps
-  extends Omit<ButtonBaseProps, 'aria-label' | 'color' | 'size' | 'title'> {
-  'aria-label': React.AriaAttributes['aria-label'];
-  color?: ButtonBaseProps['color'] | 'background';
-  loadingText?: string;
-  lowered?: boolean;
-  // radius?: PuiRadius;
-  size?: Exclude<ButtonBaseProps['size'], 'xs' | 'xl'>;
-  title: React.HTMLAttributes<HTMLButtonElement>['title'];
-}
+export type { FloatingButtonProps };
 
 /**
  * Floating action button component for the most common or important action on a screen.

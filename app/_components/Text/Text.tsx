@@ -44,7 +44,7 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(
     className,
     style,
     as = 'p',
-    color = 'on-background',
+    color = 'inherit',
     size = 'md',
     truncate = false,
     variant = 'body',
