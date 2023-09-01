@@ -33,7 +33,7 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function Heading(
     className,
     style,
     as = 'h2',
-    color = 'inherit',
+    color = 'on-background',
     truncate = false,
     variant = as !== 'span' ? as : 'subtitle-md',
     ...props

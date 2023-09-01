@@ -25,6 +25,7 @@ const components = [
   { name: 'Link', link: 'link' },
   { name: 'List', link: 'list' },
   { name: 'MaterialSymbolIcon', link: 'material-symbol-icon' },
+  { name: 'Palette', link: 'palette' },
   { name: 'SvgIcon', link: 'svg-icon' },
   { name: 'Switch', link: 'switch' },
   { name: 'Text', link: 'text' }

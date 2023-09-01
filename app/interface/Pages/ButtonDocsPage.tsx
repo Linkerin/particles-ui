@@ -472,7 +472,7 @@ function ButtonDocsPage() {
         </Button>
       </DemoContainer>
       <Heading as="h3" variant="subtitle-md">
-        Dense padding: 0.5625rem 1.714286em;
+        Dense
       </Heading>
       <DemoContainer>
         <Button size="xs" color="tertiary" dense>

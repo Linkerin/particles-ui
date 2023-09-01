@@ -38,7 +38,7 @@
 ///   //   'primary-5': #0b0811,
 ///   //   ...
 ///   //   'primary-99': #fcfcfd,
-///   //   'primary-1900':#ffffff
+///   //   'primary-100':#ffffff
 ///   // )
 ///
 @function generate-palette($color, $name) {
@@ -78,11 +78,37 @@
     $palette: map.set(
       $palette,
       '#{$name}-#{$value}',
-      color.change($color, $lightness: $value)
+      color.change($color, $lightness: $value * 1%)
     );
   }
 
   @return $palette;
+}
+
+/// Adjusts the saturation level.
+/// By default, desaturates by 10% for dark palette
+/// @param {color} $color Color value
+///
+/// @param {number} $saturation [-10%] Saturation value
+///
+@function desaturate($color, $saturation: -10%) {
+  @if (meta.type-of($color) != 'color') {
+    @error "#{$color} is not a color value";
+  }
+
+  @return color.adjust($color, $saturation: $saturation);
+}
+
+/// Generates neutral color from the given
+/// by setting saturation equal to 14%
+/// @param {color} $color Color value
+///
+@function generate-neutral($color) {
+  @if (meta.type-of($color) != 'color') {
+    @error "#{$color} is not a color value";
+  }
+
+  @return color.change($color, $saturation: 14%);
 }
 
 /// Checks background color intensity

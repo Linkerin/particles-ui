@@ -1,0 +1,108 @@
+@use '../../styles/particles-ui/variables' as var;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.palette-container {
+  display: flex;
+  text-align: center;
+  gap: var(--pui-gap-sm);
+}
+
+.color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--pui-radius-sm);
+  color: var(--pui-outline);
+  font-size: 0.8rem;
+  margin-bottom: 0.125rem;
+  height: 2.25rem;
+  width: 6rem;
+}
+
+@each $key, $value in var.$primary-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$secondary-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$tertiary-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$neutral-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$info-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$success-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$warning-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$error-palette {
+  .#{$key} {
+    background-color: $value;
+  }
+}
+
+@each $key, $value in var.$primary-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$secondary-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$tertiary-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$neutral-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$info-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$success-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$warning-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
+@each $key, $value in var.$error-palette-dark {
+  .#{$key}-dark {
+    background-color: $value;
+  }
+}
