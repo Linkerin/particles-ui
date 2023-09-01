@@ -1,23 +1,10 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { MaterialSymbolIconProps } from './MaterialSymbolIcon.types';
+import parseCode from './parseCode';
 
-function parseIcon(icon?: string) {
-  if (!icon) return null;
-
-  const parsed = Number.parseInt(icon, 16);
-  if (Number.isNaN(parsed)) {
-    return icon;
-  }
-  return String.fromCharCode(parsed);
-}
-
-type IconProp =
-  | { icon: string; code?: undefined }
-  | { icon?: undefined; code: string };
-
-type MaterialSymbolIconProps = IconProp & Omit<SpanElementProps, 'children'>;
+export type { MaterialSymbolIconProps };
 
 /**
  * Material Symbol component is a wrapper for Material Symbols font.
@@ -29,7 +16,7 @@ const MaterialSymbolIcon = forwardRef<HTMLSpanElement, MaterialSymbolIconProps>(
     { className, icon, code, role = 'presentation', ...props },
     ref
   ) {
-    const codeIcon = parseIcon(code);
+    const codeIcon = parseCode(code);
 
     return (
       <span

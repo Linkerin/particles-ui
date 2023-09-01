@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 
-import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
-
 import styles from './DividerSubheader.module.scss';
 
-/** Separate component from Divider's subheader */
-function DividerSubheader({ children, className, ...props }: SpanElementProps) {
+function DividerSubheader({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<'span'>) {
   return (
     <span
       className={classNames(styles['divider-subheader'], className)}

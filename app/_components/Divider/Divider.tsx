@@ -1,16 +1,13 @@
 import { forwardRef, lazy, Suspense } from 'react';
 
-import DividerHr, { DividerHrProps } from './DividerHr/DividerHr';
+import DividerHr from './DividerHr/DividerHr';
+import { DividerProps } from './Divider.types';
 
 const DividerSubheader = lazy(
   () => import('./DividerSubheader/DividerSubheader')
 );
 
-export interface DividerProps extends DividerHrProps {
-  subheader?: string;
-  subheaderClassName?: string;
-  subheaderRef?: React.Ref<HTMLSpanElement>;
-}
+export type { DividerProps };
 
 /**
  * Divider component that renders as an `<hr>` element.

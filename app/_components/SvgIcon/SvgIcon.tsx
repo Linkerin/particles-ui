@@ -1,15 +1,9 @@
 import { forwardRef } from 'react';
 
-export interface SvgIconProps
-  extends Pick<React.ComponentPropsWithRef<'svg'>, 'ref'> {
-  className?: React.SVGAttributes<SVGSVGElement>['className'];
-  color?: React.SVGAttributes<SVGSVGElement>['color'];
-  id: string;
-  role?: React.AriaRole;
-  size?: string | number;
-  src: any;
-  strokeWidth?: React.SVGAttributes<SVGSVGElement>['strokeWidth'];
-}
+import { SvgIconProps } from './SvgIcon.types';
+
+export type { SvgIconProps };
+
 /**
  * SvgIcon component: wrapper around static imported SVG elements.
  * Default `size` is `1em`.

@@ -1,20 +1,13 @@
 import { createElement, forwardRef, lazy, Suspense } from 'react';
 import classNames from 'classnames';
 
-import { AnchorElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { LinkProps } from './Link.types';
 
 const ExternalIcon = lazy(() => import('../ExternalIcon/ExternalIcon'));
 
 import styles from './Link.module.scss';
 
-export interface LinkProps<T> extends AnchorElementProps {
-  as?: T;
-  color?: 'primary' | 'inherit';
-  isExternal?: boolean;
-  noExternalIcon?: boolean;
-  overlay?: boolean;
-  underline?: 'none' | 'hover' | 'always';
-}
+export type { LinkProps };
 
 /**
  * Link component that wraps an HTML `<a>` element.

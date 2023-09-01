@@ -1,7 +1,9 @@
 /**
  * Takes an array of refs and returns a ref callback that merges all the
  * refs together.
+ *
  * @param refs - An array of references
+ *
  * @returns A `React.RefCallback<T>`
  */
 function useMergedRefs<T>(

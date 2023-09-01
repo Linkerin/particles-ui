@@ -1,14 +1,11 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { HrElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { DividerHrProps } from './DividerHr.types';
 
 import styles from './DividerHr.module.scss';
 
-export interface DividerHrProps extends Omit<HrElementProps, 'ref'> {
-  orientation?: 'horizontal' | 'vertical';
-  variant?: 'full' | 'inset' | 'middle';
-}
+export type { DividerHrProps };
 
 const DividerHr = forwardRef<HTMLHRElement, DividerHrProps>(function DividerHr(
   { className, orientation = 'horizontal', variant = 'full', ...props },

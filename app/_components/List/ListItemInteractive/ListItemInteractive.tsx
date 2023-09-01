@@ -3,28 +3,16 @@
 import { forwardRef, useCallback, useRef } from 'react';
 import classNames from 'classnames';
 
-import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import ListItem, { ListItemProps } from '../ListItem/ListItem';
+import ListItem from '../ListItem/ListItem';
 import ListItemIcon from '../ListItemIcon/ListItemIcon';
-import useMergedRefs from '@/app/_hooks/useMergedRefs';
-import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
+import { ListItemInteractiveProps } from './ListItemInteractive.types';
+import useMergedRefs from '../../../_hooks/useMergedRefs';
+import useInteractivityHandlers from '../../../_hooks/useInteractivityHandlers';
 
 import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import styles from './ListItemInteractive.module.scss';
 
-export interface ListItemInteractiveProps
-  extends Omit<
-    ListItemProps,
-    'ref' | 'role' | 'onClick' | 'onClickCapture' | 'onKeyDown'
-  > {
-  disabled?: boolean;
-  interactiveDivRef?: DivElementProps['ref'];
-  onClick?: DivElementProps['onClick'];
-  onClickCapture?: DivElementProps['onClickCapture'];
-  onKeyDown?: DivElementProps['onKeyDown'];
-  role?: DivElementProps['role'];
-  selected?: boolean;
-}
+export type { ListItemInteractiveProps };
 
 /**
  * ListItemInteractive is an `<li>` element wrapper with additional features.

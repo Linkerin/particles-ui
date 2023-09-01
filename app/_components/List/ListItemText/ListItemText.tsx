@@ -1,19 +1,12 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import Text, { TextProps } from '../../Text/Text';
+import { ListItemTextProps } from './ListItemText.types';
+import Text from '../../Text/Text';
 
 import styles from './ListItemText.module.scss';
 
-export interface ListItemTextProps extends Omit<DivElementProps, 'children'> {
-  primary?: TextProps['children'];
-  primaryProps?: Omit<TextProps, 'as' | 'children' | 'ref'>;
-  primaryAs?: TextProps['as'];
-  secondary?: TextProps['children'];
-  secondaryAs?: TextProps['as'];
-  secondaryProps?: Omit<TextProps, 'as' | 'children' | 'ref'>;
-}
+export type { ListItemTextProps };
 
 /**
  * ListItemText component groups text inside a `List` component.

@@ -1,12 +1,10 @@
 import { forwardRef } from 'react';
 
 import CloseIcon from '../PuiIcons/CloseIcon/CloseIcon';
-import IconButton, { IconButtonProps } from '../IconButton/IconButton';
+import { CloseButtonProps } from './CloseButton.types';
+import IconButton from '../IconButton/IconButton';
 
-export type CloseButtonProps = Omit<
-  IconButtonProps,
-  'ref' | 'data-pui-component' | 'icon' | 'aria-label'
-> & { 'aria-label'?: string };
+export type { CloseButtonProps };
 
 const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
   function CloseButton({ 'aria-label': ariaLabel = 'Close', ...props }, ref) {

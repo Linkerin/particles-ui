@@ -3,31 +3,15 @@
 import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 
+import { ChipProps } from './Chip.types';
 import CloseButton from '../CloseButton/CloseButton';
-import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import {
-  PuiColorNames,
-  PuiRadius,
-  PuiSize,
-  PuiStyleVariant
-} from '@/app/_lib/types';
-import useInteractivityHandlers from '@/app/_hooks/useInteractivityHandlers';
-import useMergedRefs from '@/app/_hooks/useMergedRefs';
+import useInteractivityHandlers from '../../_hooks/useInteractivityHandlers';
+import useMergedRefs from '../../_hooks/useMergedRefs';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Chip.module.scss';
 
-export interface ChipProps extends DivElementProps {
-  disabled?: boolean;
-  color?: PuiColorNames;
-  interactiveStyle?: boolean;
-  leftIcon?: React.ReactElement;
-  onDelete?: React.MouseEventHandler<HTMLButtonElement>;
-  radius?: Exclude<PuiRadius, 'round'>;
-  rightIcon?: React.ReactElement;
-  size?: PuiSize;
-  variant?: PuiStyleVariant;
-}
+export type { ChipProps };
 
 /**
  * Chip component that is used to represent element of a data set

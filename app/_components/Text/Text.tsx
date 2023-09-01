@@ -1,36 +1,11 @@
 import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { HtmlElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import { PuiSize } from '@/app/_lib/types';
+import { TextProps } from './Text.types';
 
 import styles from './Text.module.scss';
 
-export interface TextProps extends Omit<HtmlElementProps, 'ref'> {
-  as?:
-    | 'p'
-    | 'span'
-    | 'strong'
-    | 'b'
-    | 'i'
-    | 'u'
-    | 'abbr'
-    | 'cite'
-    | 'code'
-    | 'del'
-    | 'em'
-    | 'ins'
-    | 'kbd'
-    | 'mark'
-    | 's'
-    | 'samp'
-    | 'sub'
-    | 'sup';
-  color?: 'on-background' | 'on-background-variant' | 'inherit';
-  size?: Exclude<PuiSize, 'xs'>;
-  truncate?: boolean;
-  variant?: 'body' | 'label' | 'inherit';
-}
+export type { TextProps };
 
 /**
  * Text component is used to render text and paragraphs.

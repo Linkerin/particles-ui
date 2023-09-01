@@ -6,8 +6,8 @@ import classNames from 'classnames';
 import {
   InputElementProps,
   LabelElementProps
-} from '@/app/_lib/puiHTMLPropTypes';
-import { PuiSize } from '@/app/_lib/types';
+} from '../../_lib/puiHTMLPropTypes';
+import { PuiSize } from '../../_lib/types';
 
 import styles from './Switch.module.scss';
 

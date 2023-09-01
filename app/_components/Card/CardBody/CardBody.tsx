@@ -1,8 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { CardContentProps } from '../Card';
-import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { CardBodyProps } from './CardBody.types';
 
 import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import flexDirectionStyles from '../../../styles/particles-ui/util-classes/flex-direction.module.scss';
@@ -10,7 +9,7 @@ import gapStyles from '../../../styles/particles-ui/util-classes/gap.module.scss
 import justifyContentStyles from '../../../styles/particles-ui/util-classes/justify-content.module.scss';
 import styles from './CardBody.module.scss';
 
-type CardBodyProps = CardContentProps & DivElementProps;
+export type { CardBodyProps };
 
 /**
  * CardBody component that wraps card's main content.

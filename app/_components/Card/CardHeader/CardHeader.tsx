@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { CardContentProps } from '../Card';
+import { CardHeaderProps } from './CardHeader.types';
 
 import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import flexDirectionStyles from '../../../styles/particles-ui/util-classes/flex-direction.module.scss';
@@ -9,9 +9,7 @@ import gapStyles from '../../../styles/particles-ui/util-classes/gap.module.scss
 import justifyContentStyles from '../../../styles/particles-ui/util-classes/justify-content.module.scss';
 import styles from './CardHeader.module.scss';
 
-export interface CardHeaderProps extends CardContentProps {
-  divider?: 'full' | 'middle' | 'inset';
-}
+export type { CardHeaderProps };
 
 /**
  * CardHeader component that wraps card's header. Should be used inside `Card` component.

@@ -1,19 +1,13 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
-import { PuiAlignItems } from '@/app/_lib/types';
 
-import { LiElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import ListItemIcon from '../ListItemIcon/ListItemIcon';
+import { ListItemProps } from './ListItem.types';
 
 import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import styles from './ListItem.module.scss';
 
-export interface ListItemProps extends LiElementProps {
-  alignItems?: PuiAlignItems;
-  divider?: 'full' | 'middle' | 'inset';
-  dividerPosition?: 'top' | 'bottom' | 'both';
-  inset?: boolean;
-}
+export type { ListItemProps };
 
 /**
  * ListItem is an `<li>` element wrapper with additional features.

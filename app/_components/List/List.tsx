@@ -1,18 +1,11 @@
 import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { UlElementProps, OlElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { ListProps } from './List.types';
 
 import styles from './List.module.scss';
 
-interface ListComponentProps {
-  dense?: boolean;
-  noInlinePd?: boolean;
-}
-
-export type ListProps =
-  | ({ as?: 'ol' } & OlElementProps & ListComponentProps)
-  | ({ as?: 'ul' } & UlElementProps & ListComponentProps);
+export type { ListProps };
 
 /**
  * List component: vertically organized groups of text and images.

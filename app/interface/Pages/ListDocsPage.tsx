@@ -24,7 +24,7 @@ function ListDocsPage() {
       <Divider />
       <Heading variant="h6">Static lists</Heading>
       <Heading variant="subtitle-md">Base list</Heading>
-      <List>
+      <List as="ul">
         <ListItem>
           <ListItemText primary="First item" secondary="Simple list example" />
         </ListItem>

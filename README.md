@@ -87,6 +87,15 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/divider)
   - [Next UI](https://nextui.org/docs/components/divider)
 
+- [x] [Typography]()
+
+  - [Material 3](https://m3.material.io/styles/typography/overview)
+  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/text/usage)
+  - [Ant Design](https://ant.design/components/typography)
+  - [MUI](https://mui.com/material-ui/react-typography/)
+  - Mantine: [Text](https://mantine.dev/core/text/) and [Title](https://mantine.dev/core/title/)
+  - Chakra UI: [Text](https://chakra-ui.com/docs/components/text) and [Heading](https://chakra-ui.com/docs/components/heading)
+
 - [ ] Switch
 
   - [Material 3](https://m3.material.io/components/switch/overview)
@@ -97,15 +106,6 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/switch)
   - [Next UI](https://nextui.org/docs/components/switch)
 
-- [x] [Typography]()
-
-  - [Material 3](https://m3.material.io/styles/typography/overview)
-  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/text/usage)
-  - [Ant Design](https://ant.design/components/typography)
-  - [MUI](https://mui.com/material-ui/react-typography/)
-  - Mantine: [Text](https://mantine.dev/core/text/) and [Title](https://mantine.dev/core/title/)
-  - Chakra UI: [Text](https://chakra-ui.com/docs/components/text) and [Heading](https://chakra-ui.com/docs/components/heading)
-
 ## Secondary components
 
 - [x] Alert:
@@ -114,15 +114,6 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [MUI](https://mui.com/material-ui/react-alert/)
   - [Mantine](https://mantine.dev/core/alert/)
   - [Chakra UI](https://chakra-ui.com/docs/components/alert)
-
-- [x] Avatar:
-
-  - Fluent 2: [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage) and [Avatar Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
-  - [Ant Design](https://ant.design/components/avatar)
-  - [MUI](https://mui.com/material-ui/react-avatar/)
-  - [Mantine](https://mantine.dev/core/avatar/)
-  - [Chakra UI](https://chakra-ui.com/docs/components/avatar)
-  - [Next UI](https://nextui.org/docs/components/avatar)
 
 - [x] Badge:
 
@@ -134,7 +125,24 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/badge)
   - [Next UI](https://nextui.org/docs/components/badge)
 
-  - [ ] Snackbar
+- [ ] Avatar:
+
+  - Fluent 2: [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage) and [Avatar Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
+  - [Ant Design](https://ant.design/components/avatar)
+  - [MUI](https://mui.com/material-ui/react-avatar/)
+  - [Mantine](https://mantine.dev/core/avatar/)
+  - [Chakra UI](https://chakra-ui.com/docs/components/avatar)
+  - [Next UI](https://nextui.org/docs/components/avatar)
+
+- [ ] Image
+
+  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/image/usage)
+  - [Ant Design](https://ant.design/components/image)
+  - [Mantine](https://mantine.dev/core/image/)
+  - [Chakra UI](https://chakra-ui.com/docs/components/image)
+  - [Next UI](https://nextui.org/docs/components/image)
+
+- [ ] Snackbar
 
   - [Material 3](https://m3.material.io/components/snackbar/overview)
   - [Ant Design](https://ant.design/components/message)
@@ -153,7 +161,6 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 ## To-Do
 
-- **Important**: no prefetch for `Nav` (proper link typing);
 - **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
 - **Link**: proper typing for `as` value.
 - **Buttons**: types for `as` prop, consider using react `lazy()`;

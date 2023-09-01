@@ -1,23 +1,11 @@
 import { createElement, forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { HeadingElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { HeadingProps } from './Heading.types';
 
 import styles from './Heading.module.scss';
 
-type HeadingElements = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-
-export interface HeadingProps extends HeadingElementProps {
-  as?: HeadingElements | 'span';
-  color?: 'on-background' | 'on-background-variant' | 'inherit';
-  truncate?: boolean;
-  variant?:
-    | HeadingElements
-    | 'subtitle-lg'
-    | 'subtitle-md'
-    | 'subtitle-sm'
-    | 'inherit';
-}
+export type { HeadingProps };
 
 /**
  * Heading component is used to render semantic HTML heading elements.

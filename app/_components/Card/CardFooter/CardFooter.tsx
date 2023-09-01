@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { CardContentProps } from '../Card';
+import { CardFooterProps } from './CardFooter.types';
 
 import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import flexDirectionStyles from '../../../styles/particles-ui/util-classes/flex-direction.module.scss';
@@ -9,9 +9,7 @@ import gapStyles from '../../../styles/particles-ui/util-classes/gap.module.scss
 import justifyContentStyles from '../../../styles/particles-ui/util-classes/justify-content.module.scss';
 import styles from './CardFooter.module.scss';
 
-export interface CardFooterProps extends CardContentProps {
-  divider?: 'full' | 'middle' | 'inset';
-}
+export type { CardFooterProps };
 
 /**
  * CardFooter component that wraps card's footer. Usually contains action elements.

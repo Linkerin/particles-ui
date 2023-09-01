@@ -1,11 +1,11 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
+import { ListItemIconProps } from './ListItemIcon.types';
 
 import styles from './ListItemIcon.module.scss';
 
-export interface ListItemIconProps extends SpanElementProps {}
+export type { ListItemIconProps };
 
 /**
  * ListItemIcon component is a wrapper around icon components
