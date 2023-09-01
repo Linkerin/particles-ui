@@ -41,12 +41,6 @@ $sizes-mapping: (
 }
 
 :where(.badge) {
-  --pui-badge-position: 0;
-
-  &:where(.circle) {
-    --pui-badge-position: 14%;
-  }
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -73,42 +67,37 @@ $sizes-mapping: (
   outline: 2px solid var(--pui-background);
 }
 
-:where(.top),
-:where(.bottom) {
-  position: absolute;
-}
+// :where(.top) {
+//   top: var(--pui-badge-position, 0);
 
-:where(.top) {
-  top: var(--pui-badge-position, 0);
+//   &:where(.right) {
+//     transform: translate(50%, -50%);
+//   }
 
-  &:where(.right) {
-    transform: translate(50%, -50%);
-  }
+//   &:where(.left) {
+//     transform: translate(-50%, -50%);
+//   }
+// }
 
-  &:where(.left) {
-    transform: translate(-50%, -50%);
-  }
-}
+// :where(.bottom) {
+//   bottom: var(--pui-badge-position, 0);
 
-:where(.bottom) {
-  bottom: var(--pui-badge-position, 0);
+//   &:where(.right) {
+//     transform: translate(50%, 50%);
+//   }
 
-  &:where(.right) {
-    transform: translate(50%, 50%);
-  }
+//   &:where(.left) {
+//     transform: translate(-50%, 50%);
+//   }
+// }
 
-  &:where(.left) {
-    transform: translate(-50%, 50%);
-  }
-}
+// :where(.left) {
+//   left: var(--pui-badge-position, 0);
+// }
 
-:where(.left) {
-  left: var(--pui-badge-position, 0);
-}
-
-:where(.right) {
-  right: var(--pui-badge-position, 0);
-}
+// :where(.right) {
+//   right: var(--pui-badge-position, 0);
+// }
 
 @each $color in const.$color-names {
   .#{$color} {

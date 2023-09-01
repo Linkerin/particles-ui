@@ -1,76 +1,13 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import {
-  PuiColorNames,
-  PuiRadius,
-  PuiSize,
-  PuiStyleVariant
-} from '@/app/_lib/types';
+import { BadgeInlineProps } from './BadgeInline.types';
 import truncateContent from './truncateContent';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './BadgeInline.module.scss';
 
-export interface BadgeInlineProps
-  extends Omit<
-    React.ComponentPropsWithoutRef<'span'>,
-    'content' | 'aria-label'
-  > {
-  'aria-label': Required<React.ComponentProps<'span'>['aria-label']>;
-  /**
-   * Background color
-   */
-  color?: PuiColorNames;
-  /**
-   * Badge content
-   */
-  content?: string | number | React.ReactNode;
-  /**
-   * Shows whether the badge is an inline component or not
-   */
-  inline?: boolean;
-  /**
-   * Sets `opacity` to `0` to hide the badge
-   */
-  invisible?: boolean;
-  /**
-   * Horizontal position (works when `inline` = `false`)
-   */
-  horizontal?: 'left' | 'right';
-  /**
-   * Vertical position (works when `inline` = `false`)
-   */
-  vertical?: 'top' | 'bottom';
-  /**
-   * Maximum content's length
-   */
-  maxChars?: number;
-  /**
-   * Adds `outline` around the badge
-   */
-  outlined?: boolean;
-  /**
-   * Radius value
-   */
-  radius?: PuiRadius;
-  /**
-   * Shape of the underlying component
-   */
-  shape?: 'circle' | 'rectangle';
-  /**
-   * Adjusts paddings when the content consists only of 1 element
-   */
-  singleElement?: boolean;
-  /**
-   * Size value
-   */
-  size?: Extract<PuiSize, 'sm' | 'md' | 'lg'> | 'dot';
-  /**
-   * Styling variant
-   */
-  variant?: Extract<PuiStyleVariant, 'filled' | 'soft'>;
-}
+export type { BadgeInlineProps };
 
 /**
  * BadgeInline component is a small visual indicator for a notification,
@@ -88,13 +25,13 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
       content,
       maxChars,
       color = 'primary',
-      inline = true,
+      // inline = true,
       invisible = false,
-      vertical = 'top',
-      horizontal = 'right',
+      // vertical = 'top',
+      // horizontal = 'right',
       outlined = false,
       radius = 'lg',
-      shape = 'rectangle',
+      // shape = 'rectangle',
       singleElement = false,
       size = 'md',
       variant = 'filled',
@@ -118,15 +55,16 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
           styles[variant],
           styles[size],
           radiusStyles[radius],
-          { [styles[vertical]]: !inline },
-          { [styles[horizontal]]: !inline },
+          // { [styles[vertical]]: !inline },
+          // { [styles[horizontal]]: !inline },
           { [styles[color]]: color !== 'uncolored' },
           { [styles.invisible]: invisible },
           { [styles.outlined]: outlined },
           { [styles.single]: singleElement },
-          { [styles.circle]: shape === 'circle' },
+          // { [styles.circle]: shape === 'circle' },
           className
         )}
+        data-pui-component="inline-badge"
         {...props}
       >
         {size !== 'dot' && badgeContent}

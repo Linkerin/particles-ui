@@ -1,11 +1,12 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import BadgeInline, { BadgeInlineProps } from '../BadgeInline/BadgeInline';
+import BadgeInline from '../BadgeInline/BadgeInline';
+import { BadgeProps } from './Badge.types';
 
 import styles from './Badge.module.scss';
 
-export type BadgeProps = Omit<BadgeInlineProps, 'inline'>;
+export type { BadgeProps };
 
 /**
  * Badge component is a small visual indicator for a notification,
@@ -19,13 +20,33 @@ export type BadgeProps = Omit<BadgeInlineProps, 'inline'>;
  * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
  */
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
-  { children, ...props },
+  {
+    children,
+    className,
+    vertical = 'top',
+    horizontal = 'right',
+    shape = 'rectangle',
+    ...props
+  },
   ref
 ) {
   return (
-    <span className={classNames(styles['badge-container'])}>
+    <span
+      className={classNames(styles['badge-container'], {
+        [styles.circle]: shape === 'circle'
+      })}
+    >
       {children}
-      <BadgeInline ref={ref} inline={false} {...props} />
+      <BadgeInline
+        ref={ref}
+        className={classNames(
+          styles[vertical],
+          styles[horizontal],
+          { [styles.circle]: shape === 'circle' },
+          className
+        )}
+        {...props}
+      />
     </span>
   );
 });
