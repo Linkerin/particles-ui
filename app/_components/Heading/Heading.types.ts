@@ -10,7 +10,11 @@ export interface HeadingProps extends HeadingElementProps {
   /**
    * Font color
    */
-  color?: 'on-background' | 'on-background-variant' | 'inherit';
+  color?:
+    | 'on-background'
+    | 'on-background-variant'
+    | 'on-background-low'
+    | 'inherit';
   /**
    * Show ellipsis instead of hidden overflow content
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow | MDN | text-overflow - CSS}

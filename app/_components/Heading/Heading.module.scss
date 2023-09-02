@@ -60,3 +60,7 @@
 :where(.on-background-variant) {
   color: var(--pui-on-background-variant);
 }
+
+:where(.on-background-low) {
+  color: var(--pui-on-background-low);
+}

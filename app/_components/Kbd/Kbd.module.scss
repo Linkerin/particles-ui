@@ -1,0 +1,31 @@
+:where(.kbd) {
+  padding-inline: 0.5em;
+  width: fit-content;
+
+  & > kbd:where([data-pui-component='kbd-glyphs']) {
+    letter-spacing: 0.2em;
+  }
+}
+
+:where(.dimensional) {
+  border-radius: var(--pui-radius-sm);
+  box-shadow: (
+    0px 1px 0px 1px rgba(var(--pui-outline-variant-channels) / 0.5),
+    0px 0px 3px 1px rgba(var(--pui-outline-variant-channels) / 0.3)
+  );
+  font-family: monospace;
+
+  & > kbd:where([data-pui-component='kbd-glyphs']) {
+    font-family: sans-serif;
+    font-size: 0.8em;
+  }
+}
+
+:where(.flat) {
+  background-color: var(--pui-background-container);
+  border-radius: var(--pui-radius-xs);
+  box-shadow: none;
+  font-family: sans-serif;
+  font-weight: 400;
+  padding-block: 0.125em;
+}

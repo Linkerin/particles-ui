@@ -48,7 +48,7 @@
   white-space: nowrap;
 }
 
-code:where(.text) {
+:where(code.text) {
   font-family: monospace;
   background-color: var(--pui-background-container-high);
   border: 1px solid var(--pui-outline-variant);
@@ -56,7 +56,7 @@ code:where(.text) {
   padding: 0.5em 1em;
 }
 
-kbd:where(.text) {
+:where(kbd.text) {
   font-family: monospace;
   border-radius: var(--pui-radius-sm);
   box-shadow: (
@@ -67,7 +67,7 @@ kbd:where(.text) {
   padding-inline: 0.5em;
 }
 
-mark:where(.text) {
+:where(mark.text) {
   background-color: var(--pui-primary-container);
 }
 
@@ -81,4 +81,8 @@ mark:where(.text) {
 
 :where(.on-background-variant) {
   color: var(--pui-on-background-variant);
+}
+
+:where(.on-background-low) {
+  color: var(--pui-on-background-low);
 }

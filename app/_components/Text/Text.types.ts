@@ -27,7 +27,11 @@ export interface TextProps extends Omit<HtmlElementProps, 'ref'> {
   /**
    * Font color
    */
-  color?: 'on-background' | 'on-background-variant' | 'inherit';
+  color?:
+    | 'on-background'
+    | 'on-background-variant'
+    | 'on-background-low'
+    | 'inherit';
   /**
    * Size value
    */

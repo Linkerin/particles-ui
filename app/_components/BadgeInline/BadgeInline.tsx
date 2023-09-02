@@ -25,13 +25,9 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
       content,
       maxChars,
       color = 'primary',
-      // inline = true,
       invisible = false,
-      // vertical = 'top',
-      // horizontal = 'right',
       outlined = false,
       radius = 'lg',
-      // shape = 'rectangle',
       singleElement = false,
       size = 'md',
       variant = 'filled',
@@ -55,16 +51,12 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
           styles[variant],
           styles[size],
           radiusStyles[radius],
-          // { [styles[vertical]]: !inline },
-          // { [styles[horizontal]]: !inline },
           { [styles[color]]: color !== 'uncolored' },
           { [styles.invisible]: invisible },
           { [styles.outlined]: outlined },
           { [styles.single]: singleElement },
-          // { [styles.circle]: shape === 'circle' },
           className
         )}
-        data-pui-component="inline-badge"
         {...props}
       >
         {size !== 'dot' && badgeContent}
