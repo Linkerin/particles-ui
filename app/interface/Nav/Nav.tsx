@@ -22,6 +22,7 @@ const components = [
   { name: 'FloatingButton', link: 'floating-button' },
   { name: 'Heading', link: 'heading' },
   { name: 'IconButton', link: 'icon-button' },
+  { name: 'Kbd', link: 'kbd' },
   { name: 'Link', link: 'link' },
   { name: 'List', link: 'list' },
   { name: 'MaterialSymbolIcon', link: 'material-symbol-icon' },

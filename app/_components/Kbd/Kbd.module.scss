@@ -1,5 +1,6 @@
 :where(.kbd) {
   padding-inline: 0.5em;
+  height: fit-content;
   width: fit-content;
 
   & > kbd:where([data-pui-component='kbd-glyphs']) {

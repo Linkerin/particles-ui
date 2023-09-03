@@ -24,7 +24,7 @@ const Kbd = forwardRef<HTMLElement, KbdProps>(function Kbd(
       ref={ref}
       as="kbd"
       className={classNames(styles.kbd, styles[type], className)}
-      color={type === 'flat' ? 'on-background-low' : 'on-background-variant'}
+      color={'on-background-variant'}
       {...props}
     >
       {glyphsContent?.length && glyphsContent?.length > 0 && (
