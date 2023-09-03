@@ -4,7 +4,6 @@ import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames';
 
 import { PuiColorNames, PuiRadius, PuiSize } from '@/app/_lib/types';
-import { ImgElementProps, SpanElementProps } from '@/app/_lib/puiHTMLPropTypes';
 import UserIcon from '../PuiIcons/UserIcon/UserIcon';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
@@ -26,17 +25,20 @@ type AvatarContentProps =
       icon?: React.ReactElement;
       iconLabel: React.AriaAttributes['aria-label'];
       src?: undefined;
-      alt?: ImgElementProps['alt'];
+      alt?: React.ComponentProps<'img'>['alt'];
     }
   | {
-      src?: ImgElementProps['src'];
-      alt: ImgElementProps['alt'];
+      src?: React.ComponentProps<'img'>['src'];
+      alt: React.ComponentProps<'img'>['alt'];
       icon?: undefined;
       iconLabel?: undefined;
     };
 
 interface AvatarBaseProps
-  extends Omit<ImgElementProps, 'ref' | 'src' | 'alt' | 'onError'> {
+  extends Omit<
+    React.ComponentPropsWithoutRef<'img'>,
+    'src' | 'alt' | 'onError'
+  > {
   bordered?: boolean;
   color?: PuiColorNames;
   disabled?: boolean;
@@ -47,7 +49,7 @@ interface AvatarBaseProps
   onError?: OnErrorEventHandler;
   radius?: PuiRadius;
   size?: PuiSize | 'xxl';
-  spanWrapperProps?: SpanElementProps;
+  spanWrapperProps?: React.ComponentPropsWithoutRef<'span'>;
 }
 
 export type AvatarProps = AvatarBaseProps & AvatarContentProps;

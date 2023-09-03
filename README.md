@@ -125,6 +125,13 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/badge)
   - [Next UI](https://nextui.org/docs/components/badge)
 
+- [x] Kbd:
+
+  - [Ant Design](https://ant.design/components/typography)
+  - [Mantine](https://mantine.dev/core/kbd/)
+  - [Chakra UI](https://chakra-ui.com/docs/components/kbd)
+  - [Next UI](https://nextui.org/docs/components/kbd)
+
 - [ ] Avatar:
 
   - Fluent 2: [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage) and [Avatar Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
@@ -164,7 +171,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
 - **Link**: proper typing for `as` value.
 - **Buttons**: types for `as` prop, consider using react `lazy()`;
-- **Card**: think about pseudo divider colors, separate static and clickable versions;
+- **Card**: think about pseudo divider colors;
 - **IconButtons**: develop `ToggleIconButton` component;
-- **Chip**: develop `ToggleChip` component, separate static and clickable versions;
+- **Chip**: develop `ToggleChip` component;
 - **Switch**: think about `outlined` version;

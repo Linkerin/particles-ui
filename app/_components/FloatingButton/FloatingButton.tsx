@@ -34,7 +34,7 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       isLoading = false,
       loadingText = '',
       lowered = false,
-      noLoadingSpinner = false,
+      loadingSpinner = true,
       size = 'md',
       ...props
     },
@@ -66,10 +66,10 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       >
         {isLoading ? (
           <>
-            {!noLoadingSpinner && (
+            {loadingSpinner && (
               <DualSpinner data-pui-component="fab-load-spinner" />
             )}
-            {noLoadingSpinner && !loadingText ? children : loadingText}
+            {!loadingSpinner && !loadingText ? children : loadingText}
           </>
         ) : (
           children

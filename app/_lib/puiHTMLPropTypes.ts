@@ -1,20 +1,4 @@
 /**
- * `<a>` HTML element props type
- */
-export type AnchorElementProps = React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
-
-/**
- * `<button>` HTML element props type
- */
-export type ButtonElementProps = React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
-
-/**
  * `<div>` HTML element props type
  */
 export type DivElementProps = React.DetailedHTMLProps<
@@ -39,22 +23,6 @@ export type HtmlElementProps = React.DetailedHTMLProps<
 >;
 
 /**
- * `<hr>` HTML element props type
- */
-export type HrElementProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLHRElement>,
-  HTMLHRElement
->;
-
-/**
- * `<img>` HTML element props type
- */
-export type ImgElementProps = React.DetailedHTMLProps<
-  React.ImgHTMLAttributes<HTMLImageElement>,
-  HTMLImageElement
->;
-
-/**
  * `<input>` HTML element props type
  */
 export type InputElementProps = React.DetailedHTMLProps<
@@ -71,41 +39,9 @@ export type LabelElementProps = React.DetailedHTMLProps<
 >;
 
 /**
- * `<li>` HTML element props type
- */
-export type LiElementProps = React.DetailedHTMLProps<
-  React.LiHTMLAttributes<HTMLLIElement>,
-  HTMLLIElement
->;
-
-/**
- * `<ol>` HTML element props type
- */
-export type OlElementProps = React.DetailedHTMLProps<
-  React.OlHTMLAttributes<HTMLOListElement>,
-  HTMLOListElement
->;
-
-/**
- * `<p>` HTML element props type
- */
-export type ParagraphElementProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLParagraphElement>,
-  HTMLParagraphElement
->;
-
-/**
  * `<span>` HTML element props type
  */
 export type SpanElementProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLSpanElement>,
   HTMLSpanElement
->;
-
-/**
- * `<ul>` HTML element props type
- */
-export type UlElementProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLUListElement>,
-  HTMLUListElement
 >;

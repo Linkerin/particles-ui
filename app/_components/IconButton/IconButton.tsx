@@ -19,7 +19,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     {
       className,
       icon,
-      noLoadingSpinner,
+      loadingSpinner,
       size = 'md',
       variant = 'standard',
       ...props
@@ -32,11 +32,11 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         className={classNames(styles[size], className)}
         leftIcon={icon}
         loadingElement={
-          noLoadingSpinner ? (
+          !loadingSpinner ? (
             <span data-pui-component="btn-icon">{icon}</span>
           ) : undefined
         }
-        noLoadingSpinner={noLoadingSpinner}
+        loadingSpinner={loadingSpinner}
         variant={variant === 'standard' ? 'text' : variant}
         {...props}
       />
