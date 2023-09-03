@@ -1,7 +1,7 @@
 import DemoContainer from '../../../DemoContainer';
-import Heading from '@/app/_components/Heading/Heading';
-import IconButton from '@/app/_components/IconButton/IconButton';
-import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
+import Heading from '@/lib/components/Heading/Heading';
+import IconButton from '@/lib/components/IconButton/IconButton';
+import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function IconButtonRadiuses() {
   return (

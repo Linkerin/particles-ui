@@ -1,6 +1,6 @@
 import DemoContainer from '@/app/interface/DemoContainer';
-import Heading from '@/app/_components/Heading/Heading';
-import IconButton from '@/app/_components/IconButton/IconButton';
+import Heading from '@/lib/components/Heading/Heading';
+import IconButton from '@/lib/components/IconButton/IconButton';
 import { IconAtom2 as AtomIcon } from '@tabler/icons-react';
 
 function IconButtonFilled() {

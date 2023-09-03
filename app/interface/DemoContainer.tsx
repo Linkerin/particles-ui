@@ -1,4 +1,4 @@
-import { DivElementProps } from '../_lib/puiHTMLPropTypes';
+import { DivElementProps } from '@/lib/lib/puiHTMLPropTypes';
 
 const containerStyle: React.CSSProperties = {
   display: 'flex',

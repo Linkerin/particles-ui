@@ -3,11 +3,11 @@
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Link from '@/app/_components/Link/Link';
-import List from '@/app/_components/List/List';
-import ListItemInteractive from '@/app/_components/List/ListItemInteractive/ListItemInteractive';
+import Link from '@/lib/components/Link/Link';
+import List from '@/lib/components/List/List';
+import ListItemInteractive from '@/lib/components/List/ListItemInteractive/ListItemInteractive';
 
-import linkOverlayStyle from '../../styles/util-classes/link-overlay.module.scss';
+import linkOverlayStyle from '../../../lib/styles/util-classes/link-overlay.module.scss';
 import styles from './Nav.module.scss';
 
 const components = [

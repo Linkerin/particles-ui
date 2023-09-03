@@ -3,9 +3,9 @@ import { Nunito } from 'next/font/google';
 
 import Header from './interface/Header/Header';
 import Nav from './interface/Nav/Nav';
-import ThemeProvider from './_context/ThemeContext';
+import ThemeProvider from '@/lib/context/ThemeContext';
 
-import './styles/particles-ui.scss';
+import '../lib/styles/particles-ui.scss';
 import styles from './layout.module.scss';
 
 const nunito = Nunito({ subsets: ['latin'] });

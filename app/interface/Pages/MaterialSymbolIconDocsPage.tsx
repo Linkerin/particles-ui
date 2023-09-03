@@ -1,12 +1,15 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import Divider from '../../_components/Divider/Divider';
-import Heading from '@/app/_components/Heading/Heading';
-import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
-import Text from '@/app/_components/Text/Text';
+import Divider from '@/lib/components/Divider/Divider';
+import Heading from '@/lib/components/Heading/Heading';
+import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import Text from '@/lib/components/Text/Text';
 
-function SvgDemoContainer({ children, style, ...props }: DivElementProps) {
+function SvgDemoContainer({
+  children,
+  style,
+  ...props
+}: React.ComponentProps<'div'>) {
   return (
     <div
       style={{

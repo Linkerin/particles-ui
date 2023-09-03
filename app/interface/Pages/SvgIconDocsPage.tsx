@@ -1,8 +1,8 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { DivElementProps } from '@/app/_lib/puiHTMLPropTypes';
-import Divider from '../../_components/Divider/Divider';
-import SvgIcon from '@/app/_components/SvgIcon/SvgIcon';
+import { DivElementProps } from '@/lib/lib/puiHTMLPropTypes';
+import Divider from '@/lib/components/Divider/Divider';
+import SvgIcon from '@/lib/components/SvgIcon/SvgIcon';
 
 import AtomIcon from '@/public/atom.svg';
 

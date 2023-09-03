@@ -1,14 +1,14 @@
 'use client';
 
-import CloseIcon from '@/app/_components/PuiIcons/CloseIcon/CloseIcon';
+import CloseIcon from '@/lib/components/PuiIcons/CloseIcon/CloseIcon';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/app/_components/Divider/Divider';
-import Heading from '@/app/_components/Heading/Heading';
+import Divider from '@/lib/components/Divider/Divider';
+import Heading from '@/lib/components/Heading/Heading';
 import { IconCheck, IconX } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
-import SvgIcon from '@/app/_components/SvgIcon/SvgIcon';
-import Switch from '@/app/_components/Switch/Switch';
+import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import SvgIcon from '@/lib/components/SvgIcon/SvgIcon';
+import Switch from '@/lib/components/Switch/Switch';
 
 import TickSvg from '@/public/tick.svg';
 

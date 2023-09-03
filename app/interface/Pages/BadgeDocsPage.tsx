@@ -1,15 +1,15 @@
-import Avatar from '@/app/_components/Avatar/Avatar';
-import Badge, { BadgeProps } from '@/app/_components/Badge/Badge';
-import BadgeInline from '@/app/_components/BadgeInline/BadgeInline';
-import Button from '@/app/_components/Button/Button';
-import Chip from '@/app/_components/Chip/Chip';
+import Avatar from '@/lib/components/Avatar/Avatar';
+import Badge, { BadgeProps } from '@/lib/components/Badge/Badge';
+import BadgeInline from '@/lib/components/BadgeInline/BadgeInline';
+import Button from '@/lib/components/Button/Button';
+import Chip from '@/lib/components/Chip/Chip';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/app/_components/Divider/Divider';
+import Divider from '@/lib/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import Heading from '@/app/_components/Heading/Heading';
+import Heading from '@/lib/components/Heading/Heading';
 import { IconBell } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
+import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 import avatar2 from '@/public/avatar-2.jpeg';
 import avatar4 from '@/public/avatar-4.jpeg';

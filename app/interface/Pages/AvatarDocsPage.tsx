@@ -2,14 +2,14 @@
 
 import { Fragment } from 'react';
 
-import Avatar, { AvatarProps } from '@/app/_components/Avatar/Avatar';
+import Avatar, { AvatarProps } from '@/lib/components/Avatar/Avatar';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/app/_components/Divider/Divider';
+import Divider from '@/lib/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import Heading from '@/app/_components/Heading/Heading';
+import Heading from '@/lib/components/Heading/Heading';
 import { IconUser } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
+import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 import avatar1 from '@/public/avatar.jpg';
 import avatar2 from '@/public/avatar-2.jpeg';
