@@ -1,8 +1,7 @@
 @use 'sass:map';
 
-@use '../../styles/particles-ui/constants' as const;
-@use '../../styles/particles-ui/mixins' as mx;
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/constants' as const;
+@use '../../styles/theme-tokens/variables' as var;
 
 @mixin size($size) {
   $btn-typography: map.get(var.$typography, 'label', $size);

@@ -1,4 +1,4 @@
-@use '../../styles/particles-ui/constants' as const;
+@use '../../styles/theme-tokens/constants' as const;
 
 :where(.alert) {
   display: flex;

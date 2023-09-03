@@ -12,7 +12,7 @@ import Link from '@/app/_components/Link/Link';
 import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
 import Text from '@/app/_components/Text/Text';
 
-import linkOverlayStyles from '../../styles/particles-ui/util-classes/link-overlay.module.scss';
+import linkOverlayStyles from '../../styles/util-classes/link-overlay.module.scss';
 
 function LinkDocsPage() {
   return (

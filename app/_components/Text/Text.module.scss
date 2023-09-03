@@ -1,7 +1,7 @@
 @use 'sass:list';
 @use 'sass:map';
 
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/variables' as var;
 
 @mixin variant($variant) {
   @if list.index(('body', 'label'), $variant) == null {

@@ -1,7 +1,6 @@
-@use './particles-ui/mixins' as mx;
+@use './theme-tokens/mixins' as mx;
 @use './theme' as var;
 @import './material-symbols.scss';
-@import './outline-focus.scss';
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -81,4 +80,15 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/// Keyboard focus outline styling
+:where(.pui-outline-default) {
+  outline: 2px solid transparent;
+}
+
+:where(.pui-outline-focus) {
+  outline-color: var(--pui-outline-focus);
+  outline-offset: 2px;
+  z-index: 10;
 }

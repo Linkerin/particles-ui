@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 
 import Heading from '@/app/_components/Heading/Heading';
+import { PuiColorNames } from '@/app/_lib/types';
 
 import styles from './PaletteDocsPage.module.scss';
-import { PuiColorNames } from '@/app/_lib/types';
 
 const colors: Array<Exclude<PuiColorNames, 'uncolored'> | 'neutral'> = [
   'primary',

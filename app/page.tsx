@@ -1,7 +1,5 @@
 import Heading from './_components/Heading/Heading';
 
-import styles from './page.module.scss';
-
 export default function Home() {
   return (
     <section>

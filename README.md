@@ -169,8 +169,8 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 ## To-Do
 
 - **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
+- **Switch**: redesign;
 - **Link**: proper typing for `as` value.
 - **Buttons**: types for `as` prop, consider using react `lazy()`;
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component;
-- **Switch**: think about `outlined` version;

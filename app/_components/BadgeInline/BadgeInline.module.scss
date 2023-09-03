@@ -1,7 +1,7 @@
 @use 'sass:map';
 
-@use '../../styles/particles-ui/constants' as const;
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/constants' as const;
+@use '../../styles/theme-tokens/variables' as var;
 
 // Font size for the badge has to be one level less than its size
 $sizes-mapping: (
@@ -66,38 +66,6 @@ $sizes-mapping: (
 :where(.outlined) {
   outline: 2px solid var(--pui-background);
 }
-
-// :where(.top) {
-//   top: var(--pui-badge-position, 0);
-
-//   &:where(.right) {
-//     transform: translate(50%, -50%);
-//   }
-
-//   &:where(.left) {
-//     transform: translate(-50%, -50%);
-//   }
-// }
-
-// :where(.bottom) {
-//   bottom: var(--pui-badge-position, 0);
-
-//   &:where(.right) {
-//     transform: translate(50%, 50%);
-//   }
-
-//   &:where(.left) {
-//     transform: translate(-50%, 50%);
-//   }
-// }
-
-// :where(.left) {
-//   left: var(--pui-badge-position, 0);
-// }
-
-// :where(.right) {
-//   right: var(--pui-badge-position, 0);
-// }
 
 @each $color in const.$color-names {
   .#{$color} {

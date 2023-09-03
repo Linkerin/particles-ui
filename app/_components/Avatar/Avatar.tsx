@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { PuiColorNames, PuiRadius, PuiSize } from '@/app/_lib/types';
 import UserIcon from '../PuiIcons/UserIcon/UserIcon';
 
-import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
+import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Avatar.module.scss';
 
 const generateInitials = (name?: string) => {

@@ -1,4 +1,4 @@
-@use '../../../styles/particles-ui/mixins' as mx;
+@use '../../../styles/theme-tokens/mixins' as mx;
 
 :where(.list-item) {
   border-color: var(--pui-outline-variant);

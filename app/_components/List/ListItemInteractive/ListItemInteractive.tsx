@@ -10,7 +10,7 @@ import useInteractivityHandlers from '../../../_hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../../_hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../../_hooks/useMergedRefs';
 
-import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
+import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
 import styles from './ListItemInteractive.module.scss';
 
 export type { ListItemInteractiveProps };

@@ -1,4 +1,4 @@
-@use '../variables' as var;
+@use '../theme-tokens/variables' as var;
 
 /// Adds classes for the following 'gap' properties support:
 /// 'xs', 'sm', 'md', 'lg', 'xl'

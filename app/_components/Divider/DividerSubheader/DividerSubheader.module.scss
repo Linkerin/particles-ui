@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@use '../../../styles//particles-ui/variables' as var;
+@use '../../../styles/theme-tokens/variables' as var;
 
 $subheader-font: map.get(var.$typography, 'subtitle', 'sm');
 

@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import DualSpinner from '..//DualSpinner/DualSpinner';
 import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
-import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
+import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
 
 import { ButtonProps } from './Button.types';

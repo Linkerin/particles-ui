@@ -7,7 +7,7 @@ import DualSpinner from '../DualSpinner/DualSpinner';
 import { FloatingButtonProps } from './FloatingButton.types';
 import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
-import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
+import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './FloatingButton.module.scss';
 
 export type { FloatingButtonProps };

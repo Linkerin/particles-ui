@@ -3,10 +3,10 @@ import classNames from 'classnames';
 
 import { CardFooterProps } from './CardFooter.types';
 
-import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
-import flexDirectionStyles from '../../../styles/particles-ui/util-classes/flex-direction.module.scss';
-import gapStyles from '../../../styles/particles-ui/util-classes/gap.module.scss';
-import justifyContentStyles from '../../../styles/particles-ui/util-classes/justify-content.module.scss';
+import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
+import flexDirectionStyles from '../../../styles/util-classes/flex-direction.module.scss';
+import gapStyles from '../../../styles/util-classes/gap.module.scss';
+import justifyContentStyles from '../../../styles/util-classes/justify-content.module.scss';
 import styles from './CardFooter.module.scss';
 
 export type { CardFooterProps };

@@ -1,5 +1,4 @@
-@use '../../../styles/particles-ui/mixins' as mx;
-@use '../../../styles/particles-ui/variables' as var;
+@use '../../../styles/theme-tokens/mixins' as mx;
 
 $pd: var(--pui-card-padding);
 

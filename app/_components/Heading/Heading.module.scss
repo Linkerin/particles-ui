@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/variables' as var;
 
 :where(.heading) {
   color: inherit;

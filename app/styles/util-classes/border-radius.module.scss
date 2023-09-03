@@ -1,4 +1,4 @@
-@use '../variables' as var;
+@use '../theme-tokens/variables' as var;
 
 /// Adds classes for the following 'radius' properties support:
 /// 'none', 'xs', 'sm', 'md', 'lg', 'xl', 'full', 'round'

@@ -1,7 +1,5 @@
 @use 'sass:map';
 
-@use '../../../styles/particles-ui/variables' as var;
-
 :where(.reset) {
   min-height: min-content;
   padding: 0;

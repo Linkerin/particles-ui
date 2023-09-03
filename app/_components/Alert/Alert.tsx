@@ -6,7 +6,7 @@ import { AlertProps } from './Alert.types';
 import CloseButton from '../CloseButton/CloseButton';
 import Text from '../Text/Text';
 
-import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
+import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Alert.module.scss';
 
 export type { AlertProps };

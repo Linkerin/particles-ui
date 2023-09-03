@@ -1,7 +1,7 @@
 @use 'sass:map';
 
-@use '../../styles/particles-ui/constants' as const;
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/constants' as const;
+@use '../../styles/theme-tokens/variables' as var;
 
 // Font size for these buttons has to be 1 step more than the size
 $sizes-mapping: (

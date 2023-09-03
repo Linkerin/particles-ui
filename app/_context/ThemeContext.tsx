@@ -2,8 +2,8 @@
 
 import { createContext, useCallback, useState, useEffect } from 'react';
 
-import { COLOR_MODES } from '@/app/_lib/constants';
-import { PuiColorMode } from '@/app/_lib/types';
+import { COLOR_MODES } from '../_lib/constants';
+import { PuiColorMode } from '../_lib/types';
 
 type ThemeModeContextValue = Exclude<PuiColorMode, 'system'> | null;
 

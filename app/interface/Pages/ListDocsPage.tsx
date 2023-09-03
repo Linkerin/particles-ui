@@ -13,7 +13,7 @@ import ListItemInteractive from '@/app/_components/List/ListItemInteractive/List
 import ListItemText from '@/app/_components/List/ListItemText/ListItemText';
 import MaterialSymbolIcon from '@/app/_components/MaterialSymbolIcon/MaterialSymbolIcon';
 
-import linkOverlayStyles from '../../styles/particles-ui/util-classes/link-overlay.module.scss';
+import linkOverlayStyles from '../../styles/util-classes/link-overlay.module.scss';
 
 function ListDocsPage() {
   return (

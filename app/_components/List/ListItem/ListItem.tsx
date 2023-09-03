@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import ListItemIcon from '../ListItemIcon/ListItemIcon';
 import { ListItemProps } from './ListItem.types';
 
-import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
+import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
 import styles from './ListItem.module.scss';
 
 export type { ListItemProps };

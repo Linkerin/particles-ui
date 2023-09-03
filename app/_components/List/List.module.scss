@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/variables' as var;
 
 $md-text: map.get(var.$typography, 'body', 'md');
 $sm-text: map.get(var.$typography, 'body', 'sm');

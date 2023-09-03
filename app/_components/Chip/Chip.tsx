@@ -9,7 +9,7 @@ import useInteractivityHandlers from '../../_hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../_hooks/useMergedRefs';
 
-import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
+import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Chip.module.scss';
 
 export type { ChipProps };

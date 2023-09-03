@@ -2,8 +2,8 @@
 @use 'sass:map';
 @use 'sass:meta';
 
-@use '../../styles/particles-ui/mixins' as mx;
-@use '../../styles/particles-ui/variables' as var;
+@use '../../styles/theme-tokens/mixins' as mx;
+@use '../../styles/theme-tokens/variables' as var;
 
 @mixin thumb-box-shadow($thumb-dimension, $color, $state) {
   @if (

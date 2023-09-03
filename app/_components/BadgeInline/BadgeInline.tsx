@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { BadgeInlineProps } from './BadgeInline.types';
 import truncateContent from './truncateContent';
 
-import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
+import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './BadgeInline.module.scss';
 
 export type { BadgeInlineProps };
