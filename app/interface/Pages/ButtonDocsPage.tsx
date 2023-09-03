@@ -446,6 +446,17 @@ function ButtonDocsPage() {
         </Button>
       </DemoContainer>
       <Divider />
+      <Heading variant="h6">Shrink</Heading>
+      <DemoContainer>
+        <Button shrinkOnPress>Shrink on press</Button>
+        <Button shrinkOnPress shadowOnPress>
+          Shrink with shadow
+        </Button>
+        <Button shrinkOnPress variant="elevated" color="tertiary">
+          Shrink on press
+        </Button>
+      </DemoContainer>
+      <Divider />
       <Heading variant="h6">Sizes</Heading>
       <DemoContainer>
         <Button size="xs">X-small</Button>

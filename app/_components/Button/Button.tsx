@@ -37,8 +37,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     disabled = false,
     isLoading = false,
     loadingText = '',
-    noLoadingSpinner = false,
+    loadingSpinner = true,
     radius = 'md',
+    shadowOnPress = false,
     shrinkOnPress = false,
     size = 'md',
     variant = 'filled',
@@ -65,12 +66,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         outlineDefaultClassName,
         { [styles.dense]: dense },
         { [styles.loading]: isLoading },
-        { [styles.leftIcon]: !!leftIcon || (isLoading && !noLoadingSpinner) },
+        { [styles.leftIcon]: !!leftIcon || (isLoading && loadingSpinner) },
         {
           [styles.rightIcon]:
-            !!rightIcon || (isLoading && !loadingText && !noLoadingSpinner)
+            !!rightIcon || (isLoading && !loadingText && loadingSpinner)
         },
         { [styles.shrink]: shrinkOnPress },
+        { [styles.pressShadow]: shadowOnPress },
         className
       )}
       style={style}
@@ -83,7 +85,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     >
       {isLoading ? (
         <>
-          {!noLoadingSpinner && !loadingElement && (
+          {loadingSpinner && !loadingElement && (
             <DualSpinner data-pui-component="btn-load-spinner" />
           )}
           {!!loadingElement && loadingElement}

@@ -8,13 +8,13 @@ export interface LinkProps<T> extends React.ComponentPropsWithoutRef<'a'> {
    */
   color?: 'primary' | 'inherit';
   /**
+   * Do not display an icon for an external link
+   */
+  externalIcon?: boolean;
+  /**
    * Sets whether the link leads to an external resource
    */
   isExternal?: boolean;
-  /**
-   * Do not display an icon for an external link
-   */
-  noExternalIcon?: boolean;
   /**
    * Use this link for a link overlay
    */

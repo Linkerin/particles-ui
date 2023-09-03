@@ -221,7 +221,7 @@ function IconButtonElevated() {
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="edit" />}
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -230,7 +230,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="secondary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -239,7 +239,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="tertiary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -248,7 +248,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="success"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -257,7 +257,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="info"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -266,7 +266,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="warning"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -275,7 +275,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="error"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
           <IconButton
@@ -284,7 +284,7 @@ function IconButtonElevated() {
             icon={<MaterialSymbolIcon icon="edit" />}
             color="uncolored"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="elevated"
           />
         </DemoContainer>

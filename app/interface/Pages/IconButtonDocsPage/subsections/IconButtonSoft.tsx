@@ -221,7 +221,7 @@ function IconButtonSoft() {
             title="Color: primary"
             icon={<MaterialSymbolIcon icon="settings" />}
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -230,7 +230,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="secondary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -239,7 +239,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="tertiary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -248,7 +248,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="success"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -257,7 +257,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="info"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -266,7 +266,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="warning"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -275,7 +275,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="error"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
           <IconButton
@@ -284,7 +284,7 @@ function IconButtonSoft() {
             icon={<MaterialSymbolIcon icon="settings" />}
             color="uncolored"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="soft"
           />
         </DemoContainer>

@@ -6,7 +6,9 @@ import classNames from 'classnames';
 import { LinkProps } from './Link.types';
 import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
-const ExternalIcon = lazy(() => import('../ExternalIcon/ExternalIcon'));
+const ExternalIcon = lazy(
+  () => import('../PuiIcons/ExternalIcon/ExternalIcon')
+);
 
 import styles from './Link.module.scss';
 
@@ -31,8 +33,8 @@ const Link = forwardRef<
     underline,
     as = 'a',
     color = 'primary',
+    externalIcon = true,
     isExternal = false,
-    noExternalIcon = false,
     overlay = false,
     target = '_self',
     ...props
@@ -67,7 +69,7 @@ const Link = forwardRef<
       ...props
     },
     children,
-    isExternal && !noExternalIcon && (
+    isExternal && externalIcon && (
       <Suspense>
         <ExternalIcon />
       </Suspense>

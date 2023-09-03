@@ -48,7 +48,7 @@ function LinkDocsPage() {
         <Link href="#" color="inherit" isExternal>
           External inherit color
         </Link>
-        <Link href="#" isExternal noExternalIcon>
+        <Link href="#" isExternal externalIcon={false}>
           External no icon
         </Link>
       </DemoContainer>

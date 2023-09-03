@@ -121,13 +121,16 @@
   &:where(.shrink):active:not(:where(.loading)):not(:disabled) {
     transform: scale(0.97);
     transition: transform 100ms ease-out;
-    box-shadow: inset 0px 0px 3px 2px rgb(0 0 0 / 0.1);
   }
 }
 
 :where(.filled):not(:where(.uncolored)) {
   background-color: var(--pui-btn-color);
   color: var(--pui-btn-on-color);
+
+  &:where(.pressShadow):active:not(:where(.loading)):not(:disabled) {
+    box-shadow: inset -3px 3px 8px 3px rgb(0 0 0 / 0.2);
+  }
 
   &:hover:not(:where(.loading)):not(:disabled) {
     // Fallback for color-mix()

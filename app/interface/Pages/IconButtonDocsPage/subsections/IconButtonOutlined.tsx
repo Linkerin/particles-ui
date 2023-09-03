@@ -221,7 +221,7 @@ function IconButtonOutlined() {
             title="Color: primary"
             icon={<GlobeIcon />}
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -230,7 +230,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="secondary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -239,7 +239,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="tertiary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -248,7 +248,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="success"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -257,7 +257,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="info"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -266,7 +266,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="warning"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -275,7 +275,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="error"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
           <IconButton
@@ -284,7 +284,7 @@ function IconButtonOutlined() {
             icon={<GlobeIcon />}
             color="uncolored"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="outlined"
           />
         </DemoContainer>

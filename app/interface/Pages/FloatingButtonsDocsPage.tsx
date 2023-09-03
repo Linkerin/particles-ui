@@ -297,7 +297,7 @@ function FloatingButtonsDocsPage() {
           aria-label="Floating button"
           title="Floating button"
           isLoading
-          noLoadingSpinner
+          loadingSpinner={false}
         >
           <MaterialSymbolIcon icon="edit" />
         </FloatingButton>
@@ -325,7 +325,7 @@ function FloatingButtonsDocsPage() {
           aria-label="Floating button"
           color="secondary"
           isLoading
-          noLoadingSpinner
+          loadingSpinner={false}
         >
           <MaterialSymbolIcon icon="edit" />
         </FloatingButton>
@@ -354,7 +354,7 @@ function FloatingButtonsDocsPage() {
           aria-label="Floating button"
           color="tertiary"
           isLoading
-          noLoadingSpinner
+          loadingSpinner={false}
         >
           <MaterialSymbolIcon icon="edit" />
         </FloatingButton>
@@ -383,7 +383,7 @@ function FloatingButtonsDocsPage() {
           aria-label="Floating button"
           color="background"
           isLoading
-          noLoadingSpinner
+          loadingSpinner={false}
         >
           <MaterialSymbolIcon icon="edit" />
         </FloatingButton>

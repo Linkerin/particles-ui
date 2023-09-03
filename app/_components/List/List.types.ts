@@ -6,7 +6,7 @@ interface ListComponentProps {
   /**
    * Removes inline padding from list items
    */
-  noInlinePd?: boolean;
+  pdInline?: boolean;
 }
 
 type ListGenericProps<T extends keyof JSX.IntrinsicElements> = {

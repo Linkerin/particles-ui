@@ -221,7 +221,7 @@ function IconButtonFilled() {
             title="Color: primary"
             icon={<AtomIcon />}
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -230,7 +230,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="secondary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -239,7 +239,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="tertiary"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -248,7 +248,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="success"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -257,7 +257,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="info"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -266,7 +266,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="warning"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -275,7 +275,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="error"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
           <IconButton
@@ -284,7 +284,7 @@ function IconButtonFilled() {
             icon={<AtomIcon />}
             color="uncolored"
             isLoading
-            noLoadingSpinner
+            loadingSpinner={false}
             variant="filled"
           />
         </DemoContainer>

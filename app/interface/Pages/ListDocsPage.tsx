@@ -132,7 +132,7 @@ function ListDocsPage() {
         </ListItem>
       </List>
       <Heading variant="subtitle-md">Without inline paddings</Heading>
-      <List noInlinePd>
+      <List pdInline={false}>
         <ListItem>
           <ListItemText primary="First item" secondary="Simple list example" />
         </ListItem>
@@ -260,7 +260,7 @@ function ListDocsPage() {
         </ListItemInteractive>
       </List>
       <Heading variant="subtitle-md">Without inline paddings</Heading>
-      <List noInlinePd>
+      <List pdInline={false}>
         <ListItemInteractive>
           <ListItemText primary="First item" secondary="Simple list example" />
         </ListItemInteractive>

@@ -21,7 +21,7 @@ export interface ButtonBaseProps
   /**
    * Do not display a loading spinner in loading state
    */
-  noLoadingSpinner?: boolean;
+  loadingSpinner?: boolean;
   /**
    * Border radius value
    */
@@ -53,6 +53,11 @@ export interface ButtonProps extends ButtonBaseProps {
    * Button's content that will be displayed in loading state
    */
   loadingText?: string;
+  /**
+   * Adds inset box-shadow imitating button press.
+   * Only for `filled` variant.
+   */
+  shadowOnPress?: boolean;
   /**
    * Makes the button a bit smaller on press
    */
