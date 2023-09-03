@@ -87,7 +87,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/divider)
   - [Next UI](https://nextui.org/docs/components/divider)
 
-- [x] [Typography]()
+- [x] Typography
 
   - [Material 3](https://m3.material.io/styles/typography/overview)
   - [Fluent 2](https://fluent2.microsoft.design/components/web/react/text/usage)
