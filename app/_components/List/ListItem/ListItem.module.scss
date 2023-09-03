@@ -1,6 +1,7 @@
 @use '../../../styles/particles-ui/mixins' as mx;
 
 :where(.list-item) {
+  border-color: var(--pui-outline-variant);
   display: flex;
   flex-direction: row;
   gap: 1rem;

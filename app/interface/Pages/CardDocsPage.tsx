@@ -230,6 +230,56 @@ function CardDocsPage() {
           </CardFooter>
         </Card>
       </DemoContainer>
+      <DemoContainer>
+        <Card variant="outlined">
+          <CardHeader
+            divider="middle"
+            style={{ borderColor: 'var(--pui-info)' }}
+          >
+            <Heading variant="subtitle-lg">Middle dividers </Heading>
+          </CardHeader>
+          <CardBody gap="sm">
+            <CardBodyContent />
+          </CardBody>
+          <CardFooter
+            divider="middle"
+            style={{ borderColor: 'var(--pui-success)' }}
+          >
+            <CardFooterContent variant="soft" />
+          </CardFooter>
+        </Card>
+        <Card variant="outlined">
+          <CardHeader
+            divider="inset"
+            style={{ borderColor: 'var(--pui-tertiary)' }}
+          >
+            <Heading variant="subtitle-lg">Inset dividers </Heading>
+          </CardHeader>
+          <CardBody gap="sm">
+            <CardBodyContent />
+          </CardBody>
+          <CardFooter
+            divider="inset"
+            style={{ borderColor: 'var(--pui-primary-darker)' }}
+          >
+            <CardFooterContent variant="soft" />
+          </CardFooter>
+        </Card>
+        <Card variant="outlined">
+          <CardHeader divider="full" style={{ borderColor: 'green' }}>
+            <Heading variant="subtitle-lg">Full dividers</Heading>
+          </CardHeader>
+          <CardBody gap="sm">
+            <CardBodyContent />
+          </CardBody>
+          <CardFooter
+            divider="full"
+            style={{ borderColor: 'var(--pui-error)' }}
+          >
+            <CardFooterContent variant="soft" />
+          </CardFooter>
+        </Card>
+      </DemoContainer>
       <Divider />
       <Heading variant="h6">Sizes</Heading>
       <DemoContainer>

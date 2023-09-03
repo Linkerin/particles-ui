@@ -67,7 +67,10 @@ function ListDocsPage() {
       </List>
       <Heading variant="subtitle-md">With dividers</Heading>
       <List>
-        <ListItem divider="middle">
+        <ListItem
+          divider="middle"
+          style={{ borderColor: 'var(--pui-tertiary)' }}
+        >
           <ListItemText primary="Middle divider" secondary="Bottom" />
         </ListItem>
         <ListItem>
@@ -79,7 +82,11 @@ function ListDocsPage() {
         <ListItem>
           <ListItemText primary="No dividers" />
         </ListItem>
-        <ListItem divider="inset" dividerPosition="both">
+        <ListItem
+          divider="inset"
+          dividerPosition="both"
+          style={{ borderColor: 'var(--pui-secondary)' }}
+        >
           <ListItemText primary="Inset both dividers" />
         </ListItem>
         <ListItem>
@@ -216,7 +223,11 @@ function ListDocsPage() {
         <ListItemInteractive>
           <ListItemText primary="No dividers" />
         </ListItemInteractive>
-        <ListItemInteractive divider="full" dividerPosition="both">
+        <ListItemInteractive
+          divider="full"
+          dividerPosition="both"
+          style={{ borderColor: 'var(--pui-primary)' }}
+        >
           <ListItemText primary="Full both dividers" />
         </ListItemInteractive>
         <ListItemInteractive>

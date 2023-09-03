@@ -4,6 +4,7 @@
 $pd: var(--pui-card-padding);
 
 :where(.card-header) {
+  border-color: var(--pui-outline-variant);
   display: flex;
   padding: $pd $pd 0;
   position: relative;
