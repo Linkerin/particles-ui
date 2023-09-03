@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 import DualSpinner from '../DualSpinner/DualSpinner';
 import { FloatingButtonProps } from './FloatingButton.types';
+import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './FloatingButton.module.scss';
@@ -23,7 +24,9 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
     {
       children,
       className,
+      onBlur,
       onClick,
+      onKeyUp,
       title,
       radius,
       color = 'primary',
@@ -37,6 +40,9 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
     },
     ref
   ) {
+    const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+      useKeyboardFocusOutline({ onBlur, onKeyUp });
+
     return (
       <button
         ref={ref}
@@ -44,6 +50,7 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
           styles.fab,
           styles[size],
           styles[color],
+          outlineDefaultClassName,
           { [styles.lowered]: lowered },
           { [styles.loading]: isLoading },
           { [radiusStyles[`${radius}`]]: !!radius },
@@ -52,7 +59,9 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
         title={title}
         disabled={disabled}
         aria-disabled={disabled || isLoading}
+        onBlur={onBlurHandler}
         onClick={isLoading ? undefined : onClick}
+        onKeyUp={onKeyUpHandler}
         {...props}
       >
         {isLoading ? (

@@ -168,4 +168,3 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component, separate static and clickable versions;
 - **Switch**: think about `outlined` version;
-- Keyboard focus styling for: Button, FloatingButton, Link, Chip, Card, ListInteractive, Switch.

@@ -4,6 +4,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import DualSpinner from '..//DualSpinner/DualSpinner';
+import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
@@ -24,7 +25,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     children,
     className,
     style,
+    onBlur,
     onClick,
+    onKeyUp,
     leftIcon,
     rightIcon,
     loadingElement,
@@ -43,6 +46,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   },
   ref
 ) {
+  const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+    useKeyboardFocusOutline({
+      onBlur,
+      onKeyUp
+    });
+
   return (
     <button
       ref={ref}
@@ -53,6 +62,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         styles[color],
         styles[size],
         radiusStyles[radius],
+        outlineDefaultClassName,
         { [styles.dense]: dense },
         { [styles.loading]: isLoading },
         { [styles.leftIcon]: !!leftIcon || (isLoading && !noLoadingSpinner) },
@@ -67,6 +77,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       disabled={disabled}
       aria-disabled={disabled || isLoading}
       onClick={isLoading ? undefined : onClick}
+      onBlur={onBlurHandler}
+      onKeyUp={onKeyUpHandler}
       {...props}
     >
       {isLoading ? (

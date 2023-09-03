@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 import { CardProps } from './Card.types';
 import useInteractivityHandlers from '../../_hooks/useInteractivityHandlers';
+import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../_hooks/useMergedRefs';
 
 import alignItemsStyles from '../../styles/particles-ui/util-classes/align-items.module.scss';
@@ -31,9 +32,11 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
     gap,
     justifyContent,
     size = 'md',
+    onBlur,
     onClick,
     onClickCapture,
     onKeyDown,
+    onKeyUp,
     disabled = false,
     interactiveStyle = false,
     flexDirection = 'column',
@@ -57,6 +60,9 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
       ref: cardRef
     });
 
+  const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+    useKeyboardFocusOutline({ onBlur, onKeyUp });
+
   return (
     <section
       ref={mergedRefs}
@@ -70,12 +76,15 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
         styles[size],
         { [styles.clickable]: clickable },
         { [styles.disabled]: clickable && disabled },
+        { [outlineDefaultClassName]: clickable },
         className
       )}
       style={style}
-      onKeyDown={onKeyDownHandler}
-      onClickCapture={onClickCaptureHandler}
+      onBlur={clickable ? onBlurHandler : onBlur}
       onClick={disabled ? undefined : onClickHandler}
+      onClickCapture={onClickCaptureHandler}
+      onKeyDown={onKeyDownHandler}
+      onKeyUp={clickable ? onKeyUpHandler : onKeyUp}
       tabIndex={clickable && !disabled ? 0 : undefined}
       role={clickable ? 'button' : undefined}
       aria-disabled={clickable ? disabled : undefined}

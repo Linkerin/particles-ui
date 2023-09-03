@@ -6,8 +6,9 @@ import classNames from 'classnames';
 import ListItem from '../ListItem/ListItem';
 import ListItemIcon from '../ListItemIcon/ListItemIcon';
 import { ListItemInteractiveProps } from './ListItemInteractive.types';
-import useMergedRefs from '../../../_hooks/useMergedRefs';
 import useInteractivityHandlers from '../../../_hooks/useInteractivityHandlers';
+import useKeyboardFocusOutline from '../../../_hooks/useKeyboardFocusOutline';
+import useMergedRefs from '../../../_hooks/useMergedRefs';
 
 import alignItemsStyles from '../../../styles/particles-ui/util-classes/align-items.module.scss';
 import styles from './ListItemInteractive.module.scss';
@@ -28,9 +29,11 @@ const ListItemInteractive = forwardRef<HTMLLIElement, ListItemInteractiveProps>(
     {
       children,
       className,
+      onBlur,
       onClick,
       onClickCapture,
       onKeyDown,
+      onKeyUp,
       alignItems = 'center',
       interactiveDivRef = null,
       role = 'button',
@@ -88,6 +91,12 @@ const ListItemInteractive = forwardRef<HTMLLIElement, ListItemInteractiveProps>(
         [onKeyDownHandler, onKeyDown]
       );
 
+    const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+      useKeyboardFocusOutline<HTMLDivElement | HTMLLIElement>({
+        onBlur,
+        onKeyUp
+      });
+
     return (
       <ListItem
         ref={ref}
@@ -100,14 +109,17 @@ const ListItemInteractive = forwardRef<HTMLLIElement, ListItemInteractiveProps>(
           className={classNames(
             styles['li-interactive'],
             alignItemsStyles[alignItems],
+            outlineDefaultClassName,
             { [styles.disabled]: disabled },
             { [styles.selected]: selected }
           )}
           role={role}
           aria-disabled={role !== 'listitem' ? disabled : undefined}
+          onBlur={onBlurHandler}
           onClick={disabled ? undefined : onClickHandler}
           onClickCapture={onClickCaptureHandler}
           onKeyDown={onKeyDownArrowsHandler}
+          onKeyUp={onKeyUpHandler}
           tabIndex={disabled ? undefined : tabIndex}
         >
           {inset && <ListItemIcon />}

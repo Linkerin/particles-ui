@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { ChipProps } from './Chip.types';
 import CloseButton from '../CloseButton/CloseButton';
 import useInteractivityHandlers from '../../_hooks/useInteractivityHandlers';
+import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../_hooks/useMergedRefs';
 
 import radiusStyles from '../../styles/particles-ui/util-classes/border-radius.module.scss';
@@ -30,10 +31,12 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     className,
     leftIcon,
     rightIcon,
+    onBlur,
     onClick,
     onDelete,
     onClickCapture,
     onKeyDown,
+    onKeyUp,
     style,
     disabled = false,
     color = 'primary',
@@ -62,6 +65,9 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       ref: chipRef
     });
 
+  const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+    useKeyboardFocusOutline({ onBlur, onKeyUp });
+
   return (
     <div
       ref={mergedRefs}
@@ -75,13 +81,16 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
         { [styles.rightIcon]: !!rightIcon || !!onDelete },
         { [styles.static]: !clickable },
         { [styles.disabled]: disabled },
+        { [outlineDefaultClassName]: clickable },
         className
       )}
       style={style}
       aria-disabled={disabled}
+      onBlur={clickable ? onBlurHandler : onBlur}
       onClick={disabled ? undefined : onClickHandler}
       onClickCapture={onClickCaptureHandler}
       onKeyDown={onKeyDownHandler}
+      onKeyUp={clickable ? onKeyUpHandler : onKeyUp}
       tabIndex={clickable && !disabled ? 0 : undefined}
       role={clickable ? 'button' : undefined}
     >

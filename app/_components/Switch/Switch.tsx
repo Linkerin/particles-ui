@@ -8,6 +8,7 @@ import {
   LabelElementProps
 } from '../../_lib/puiHTMLPropTypes';
 import { PuiSize } from '../../_lib/types';
+import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
 import styles from './Switch.module.scss';
 
@@ -47,6 +48,12 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
 ) {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
+  const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+    useKeyboardFocusOutline({
+      onBlur: labelProps?.onBlur,
+      onKeyUp: labelProps?.onKeyUp
+    });
+
   const onKeyDownHander: React.KeyboardEventHandler<HTMLLabelElement> = e => {
     if (e.code === 'Enter' || e.code === 'Space') {
       e.preventDefault();
@@ -68,12 +75,15 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
       className={classNames(
         styles.label,
         styles[size],
+        outlineDefaultClassName,
         { [styles.disabled]: disabled },
         labelProps?.className
       )}
       aria-disabled={disabled}
       tabIndex={disabled ? undefined : tabIndex}
+      onBlur={onBlurHandler}
       onKeyDown={onKeyDownHander}
+      onKeyUp={onKeyUpHandler}
       {...labelProps}
     >
       {labelText}

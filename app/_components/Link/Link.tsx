@@ -1,7 +1,10 @@
+'use client';
+
 import { createElement, forwardRef, lazy, Suspense } from 'react';
 import classNames from 'classnames';
 
 import { LinkProps } from './Link.types';
+import useKeyboardFocusOutline from '../../_hooks/useKeyboardFocusOutline';
 
 const ExternalIcon = lazy(() => import('../ExternalIcon/ExternalIcon'));
 
@@ -22,6 +25,8 @@ const Link = forwardRef<
   {
     children,
     className,
+    onBlur,
+    onKeyUp,
     rel,
     underline,
     as = 'a',
@@ -34,12 +39,19 @@ const Link = forwardRef<
   },
   ref
 ) {
+  const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
+    useKeyboardFocusOutline({
+      onBlur,
+      onKeyUp
+    });
+
   return createElement(
     as,
     {
       ref,
       className: classNames(
         styles.link,
+        outlineDefaultClassName,
         { [styles[color]]: !!color && color !== 'inherit' },
         { [styles.external]: isExternal },
         {
@@ -50,6 +62,8 @@ const Link = forwardRef<
       target: isExternal ? '_blank' : target,
       rel: isExternal && !rel ? 'noopener external' : rel,
       'data-pui-component': overlay ? 'overlay-link' : 'link',
+      onBlur: onBlurHandler,
+      onKeyUp: onKeyUpHandler,
       ...props
     },
     children,
