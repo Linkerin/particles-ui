@@ -128,7 +128,8 @@
   color: var(--pui-btn-on-color);
 
   &:where(.pressShadow):active:not(:where(.loading)):not(:disabled) {
-    box-shadow: inset -3px 3px 8px 3px rgb(0 0 0 / 0.2);
+    box-shadow: inset -3px 3px 6px 3px rgb(0 0 0 / 0.2);
+    border-color: rgb(0 0 0 / 0.2);
   }
 
   &:hover:not(:where(.loading)):not(:disabled) {
