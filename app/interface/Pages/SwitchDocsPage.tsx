@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 
 import CloseIcon from '@/lib/components/PuiIcons/CloseIcon/CloseIcon';
 import DemoContainer from '../DemoContainer';
@@ -8,15 +9,33 @@ import Heading from '@/lib/components/Heading/Heading';
 import { IconCheck, IconX } from '@tabler/icons-react';
 import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 import SvgIcon from '@/lib/components/SvgIcon/SvgIcon';
-import Switch from '@/lib/components/Switch/Switch';
+import Switch, { SwitchProps } from '@/lib/components/Switch/Switch';
 
 import TickSvg from '@/public/tick.svg';
+
+const colors: Array<SwitchProps['color']> = [
+  'primary',
+  'secondary',
+  'tertiary',
+  'success',
+  'info',
+  'warning',
+  'error',
+  'uncolored'
+];
 
 function TickIcon() {
   return <SvgIcon src={TickSvg} id="tick" />;
 }
 
 function SwitchDocsPage() {
+  const [switchIsChecked, setSwitchIsChecked] = useState(false);
+
+  const changeHandler: React.ChangeEventHandler<HTMLInputElement> = e => {
+    console.log('Checked:', e.target.checked);
+    setSwitchIsChecked(e.target.checked);
+  };
+
   return (
     <DemoSection>
       <Heading as="h1" variant="h4">
@@ -25,11 +44,7 @@ function SwitchDocsPage() {
       <Divider />
       <Heading variant="h6">Enabled</Heading>
       <DemoContainer>
-        <Switch
-          onChange={e => {
-            console.log('Checked:', e.target.checked);
-          }}
-        />
+        <Switch checked={switchIsChecked} onChange={changeHandler} />
         <Switch defaultChecked />
       </DemoContainer>
       <DemoContainer>
@@ -47,10 +62,10 @@ function SwitchDocsPage() {
         <Switch disabled unselectedIcon={<CloseIcon />} />
         <Switch checked disabled selectedIcon={<TickIcon />} />
       </DemoContainer>
-      <Switch checked disabled labelText="Turn off" />
+      <Switch checked disabled labelElement="Turn off" />
       <Divider />
       <Heading variant="h6">Sizes</Heading>
-      <DemoContainer style={{ gap: 'var(--pui-gap-xl)' }}>
+      <DemoContainer style={{ gap: 'var(--pui-gap-xl)', flexWrap: 'wrap' }}>
         <DemoContainer style={{ flexDirection: 'column' }}>
           <h3>Small</h3>
           <DemoContainer>
@@ -61,7 +76,7 @@ function SwitchDocsPage() {
             <Switch size="sm" unselectedIcon={<CloseIcon />} />
             <Switch size="sm" defaultChecked selectedIcon={<TickIcon />} />
           </DemoContainer>
-          <Switch size="sm" labelText="Turn off" />
+          <Switch size="sm" labelElement="Turn off" />
         </DemoContainer>
         <DemoContainer style={{ flexDirection: 'column' }}>
           <h3>Medium</h3>
@@ -73,7 +88,7 @@ function SwitchDocsPage() {
             <Switch size="md" unselectedIcon={<CloseIcon />} />
             <Switch size="md" defaultChecked selectedIcon={<TickIcon />} />
           </DemoContainer>
-          <Switch size="md" labelText="Turn off" />
+          <Switch size="md" labelElement="Turn off" labelPosition="right" />
         </DemoContainer>
         <DemoContainer style={{ flexDirection: 'column' }}>
           <h3>Large</h3>
@@ -85,20 +100,37 @@ function SwitchDocsPage() {
             <Switch size="lg" unselectedIcon={<CloseIcon />} />
             <Switch size="lg" defaultChecked selectedIcon={<TickIcon />} />
           </DemoContainer>
-          <Switch size="lg" labelText="Turn off" />
+          <Switch size="lg" labelElement="Turn off" />
+        </DemoContainer>
+        <DemoContainer style={{ flexDirection: 'column' }}>
+          <h3>X-Large</h3>
+          <DemoContainer>
+            <Switch size="xl" />
+            <Switch size="xl" defaultChecked />
+          </DemoContainer>
+          <DemoContainer>
+            <Switch size="xl" unselectedIcon={<CloseIcon />} />
+            <Switch size="xl" defaultChecked selectedIcon={<TickIcon />} />
+          </DemoContainer>
+          <Switch size="xl" labelElement="Turn off" />
         </DemoContainer>
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Colors</Heading>
       <DemoContainer>
-        <Switch defaultChecked />
-        <Switch defaultChecked color="secondary" />
-        <Switch defaultChecked color="tertiary" />
+        {colors.map(color => (
+          <Switch key={color} defaultChecked color={color} />
+        ))}
       </DemoContainer>
       <DemoContainer>
-        <Switch defaultChecked selectedIcon={<TickIcon />} />
-        <Switch defaultChecked selectedIcon={<TickIcon />} color="secondary" />
-        <Switch defaultChecked selectedIcon={<TickIcon />} color="tertiary" />
+        {colors.map(color => (
+          <Switch
+            key={color}
+            defaultChecked
+            color={color}
+            selectedIcon={<TickIcon />}
+          />
+        ))}
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Other icons</Heading>

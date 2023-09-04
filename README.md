@@ -96,7 +96,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - Mantine: [Text](https://mantine.dev/core/text/) and [Title](https://mantine.dev/core/title/)
   - Chakra UI: [Text](https://chakra-ui.com/docs/components/text) and [Heading](https://chakra-ui.com/docs/components/heading)
 
-- [ ] Switch
+- [x] Switch
 
   - [Material 3](https://m3.material.io/components/switch/overview)
   - [Fluent 2](https://fluent2.microsoft.design/components/web/react/switch/usage)
@@ -169,7 +169,6 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 ## To-Do
 
 - **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
-- **Switch**: redesign;
 - **Link**: proper typing for `as` value.
 - **Buttons**: types for `as` prop, consider using react `lazy()`;
 - **IconButtons**: develop `ToggleIconButton` component;

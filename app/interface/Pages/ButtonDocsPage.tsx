@@ -443,7 +443,7 @@ function ButtonDocsPage() {
           Full
         </Button>
         <Button color="secondary" radius="round">
-          X-Large
+          Round
         </Button>
       </DemoContainer>
       <Divider />
