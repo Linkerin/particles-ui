@@ -142,6 +142,17 @@ function AlertDocsPage() {
         >
           Here is an important message for you
         </Alert>
+        <Alert heading="With emoji" color="info" icon={'🍪'} variant="soft">
+          Here is an important message for you
+        </Alert>
+        <Alert
+          heading="Without icon"
+          color="success"
+          icon={false}
+          variant="minimal"
+        >
+          Here is an important message for you
+        </Alert>
       </DemoContainer>
       <Divider />
       <Heading variant="h6">Actions</Heading>

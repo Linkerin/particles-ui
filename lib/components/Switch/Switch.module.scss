@@ -25,7 +25,7 @@
   }
 
   box-shadow: 0 0 0
-    calc((var(--thumb-box-shadow-diametr, 2.5rem) - $thumb-dimension) / 2)
+    calc((var(--pui-thumb-box-shadow-diametr, 2.5rem) - $thumb-dimension) / 2)
     rgb($color / var(--pui-state-#{$state}));
 }
 
@@ -59,31 +59,31 @@
 // sizes
 :where(.sm),
 :where(.md) {
-  --switch-border-width: 1px;
+  --pui-switch-border-width: 1px;
 }
 
 :where(.sm) {
-  --switch-height: 1rem;
+  --pui-switch-height: 1rem;
   @include label-size('sm');
 }
 
 :where(.md) {
-  --switch-height: 1.5rem;
+  --pui-switch-height: 1.5rem;
   @include label-size('md');
 }
 
 :where(.lg),
 :where(.xl) {
-  --switch-border-width: 2px;
+  --pui-switch-border-width: 2px;
 }
 
 :where(.lg) {
-  --switch-height: 2rem;
+  --pui-switch-height: 2rem;
   @include label-size('lg');
 }
 
 :where(.xl) {
-  --switch-height: 2.5rem;
+  --pui-switch-height: 2.5rem;
   @include label-size('xl');
 }
 
@@ -95,9 +95,9 @@
   background-color: var(--pui-outline);
   border-radius: var(--pui-radius-full);
   color: var(--pui-background-container);
-  font-size: var(--thumb-base-dimension);
-  height: var(--thumb-base-dimension);
-  width: var(--thumb-base-dimension);
+  font-size: var(--pui-thumb-base-dimension);
+  height: var(--pui-thumb-base-dimension);
+  width: var(--pui-thumb-base-dimension);
   transition: transform 150ms linear, height 120ms linear, width 120ms linear;
   user-select: none;
 
@@ -109,58 +109,59 @@
 }
 
 :where(.track) {
-  --switch-width: calc(var(--switch-height, 2rem) * 1.625);
-  --thumb-base-dimension: calc(var(--switch-height) / 2);
-  --thumb-selected-dimension: calc(var(--thumb-base-dimension) * 1.5);
-  --thumb-box-shadow-diametr: calc(var(--thumb-base-dimension) * 2.5);
-  --track-padding: calc(
+  --pui-switch-width: calc(var(--pui-switch-height, 2rem) * 1.625);
+  --pui-thumb-base-dimension: calc(var(--pui-switch-height) / 2);
+  --pui-thumb-selected-dimension: calc(var(--pui-thumb-base-dimension) * 1.5);
+  --pui-thumb-box-shadow-diametr: calc(var(--pui-thumb-base-dimension) * 2.5);
+  --pui-track-padding: calc(
     (
-        var(--switch-height) - (var(--switch-border-width) * 2) -
-          var(--thumb-base-dimension)
+        var(--pui-switch-height) - (var(--pui-switch-border-width) * 2) -
+          var(--pui-thumb-base-dimension)
       ) / 2
   );
-  --track-selected-padding: calc(
+  --pui-track-selected-padding: calc(
     (
-        var(--switch-height) - (var(--switch-border-width) * 2) -
-          var(--thumb-selected-dimension)
+        var(--pui-switch-height) - (var(--pui-switch-border-width) * 2) -
+          var(--pui-thumb-selected-dimension)
       ) / 2
   );
-  --thumb-selected-translateX: calc(
-    var(--switch-width) - var(--thumb-selected-dimension) -
-      (var(--switch-border-width) * 2) - var(--track-selected-padding) * 2
+  --pui-thumb-selected-translateX: calc(
+    var(--pui-switch-width) - var(--pui-thumb-selected-dimension) -
+      (var(--pui-switch-border-width) * 2) - var(--pui-track-selected-padding) *
+      2
   );
 
   display: flex;
   align-items: center;
   background-color: var(--pui-background-container);
-  border: var(--switch-border-width, 2px) solid var(--pui-outline-variant);
+  border: var(--pui-switch-border-width, 2px) solid var(--pui-outline-variant);
   border-radius: var(--pui-radius-full);
   cursor: pointer;
-  height: var(--switch-height, 2rem);
-  width: var(--switch-width, 3.25rem);
-  padding: var(--track-padding);
+  height: var(--pui-switch-height, 2rem);
+  width: var(--pui-switch-width, 3.25rem);
+  padding: var(--pui-track-padding);
   transition: background-color 150ms linear, padding 120ms linear;
 
   &:hover:not(.disabled) > :where(.thumb) {
     background-color: var(--pui-on-background-variant);
     @include thumb-box-shadow(
-      var(--thumb-base-dimension),
+      var(--pui-thumb-base-dimension),
       var(--pui-on-background-channels),
       'hover'
     );
   }
 
   &:where(.unselected-icon) {
-    padding: var(--track-selected-padding);
+    padding: var(--pui-track-selected-padding);
 
     & > :where(.thumb) {
-      width: var(--thumb-selected-dimension);
-      height: var(--thumb-selected-dimension);
+      width: var(--pui-thumb-selected-dimension);
+      height: var(--pui-thumb-selected-dimension);
     }
 
     &:hover:not(.disabled) > :where(.thumb) {
       @include thumb-box-shadow(
-        var(--thumb-selected-dimension),
+        var(--pui-thumb-selected-dimension),
         var(--pui-on-background-channels),
         'hover'
       );
@@ -169,11 +170,11 @@
 
   &:active:not(.disabled),
   &:where(.unselected-icon):active:not(.disabled) {
-    padding: var(--track-selected-padding);
+    padding: var(--pui-track-selected-padding);
 
     & > :where(.thumb) {
       @include thumb-box-shadow(
-        var(--thumb-selected-dimension),
+        var(--pui-thumb-selected-dimension),
         var(--pui-on-background-channels),
         'press'
       );
@@ -181,8 +182,8 @@
   }
 
   &:active:not(.disabled) > :where(.thumb) {
-    height: var(--thumb-selected-dimension);
-    width: var(--thumb-selected-dimension);
+    height: var(--pui-thumb-selected-dimension);
+    width: var(--pui-thumb-selected-dimension);
   }
 
   &:where(.unselected-icon):active:not(.disabled) > :where(.thumb) {
@@ -210,12 +211,12 @@
 
 input[type='checkbox']:checked ~ :where(.track) {
   border-color: transparent;
-  padding: var(--track-selected-padding);
+  padding: var(--pui-track-selected-padding);
 
   & > :where(.thumb) {
-    height: var(--thumb-selected-dimension);
-    width: var(--thumb-selected-dimension);
-    transform: translateX(var(--thumb-selected-translateX));
+    height: var(--pui-thumb-selected-dimension);
+    width: var(--pui-thumb-selected-dimension);
+    transform: translateX(var(--pui-thumb-selected-translateX));
   }
 
   &.disabled {
@@ -246,7 +247,7 @@ input[type='checkbox']:checked ~ :where(.track):not(:where(.uncolored)) {
   &:hover:not(:where(.disabled)) > :where(.thumb) {
     background-color: var(--pui-switch-color-container);
     @include thumb-box-shadow(
-      var(--thumb-selected-dimension),
+      var(--pui-thumb-selected-dimension),
       var(--pui-switch-color-channels),
       'hover'
     );
@@ -257,7 +258,7 @@ input[type='checkbox']:checked ~ :where(.track):not(:where(.uncolored)) {
 
     & > :where(.thumb) {
       @include thumb-box-shadow(
-        var(--thumb-selected-dimension),
+        var(--pui-thumb-selected-dimension),
         var(--pui-switch-color-channels),
         'press'
       );

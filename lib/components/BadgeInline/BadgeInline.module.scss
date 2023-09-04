@@ -30,10 +30,10 @@ $sizes-mapping: (
       );
 
       font-size: calc($font-size - 2px);
-      line-height: calc($line-height - 2px);
+      line-height: $line-height;
 
-      & > :where(svg),
-      & > span:where([data-pui-component='material-icon']) {
+      :where(svg),
+      span:where([data-pui-component='material-icon']) {
         font-size: $font-size;
       }
     }

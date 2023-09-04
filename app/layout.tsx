@@ -5,7 +5,7 @@ import Header from './interface/Header/Header';
 import Nav from './interface/Nav/Nav';
 import ThemeProvider from '@/lib/context/ThemeContext';
 
-import '../lib/styles/particles-ui.scss';
+import '../lib/styles/pui-globals.scss';
 import styles from './layout.module.scss';
 
 const nunito = Nunito({ subsets: ['latin'] });

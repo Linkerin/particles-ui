@@ -22,12 +22,12 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
     className,
     actionElement,
     heading,
-    icon,
     onClose,
     textProps,
     headingProps,
     closeButtonLabel = 'Close alert',
     color = 'success',
+    icon = true,
     radius = 'sm',
     role = 'alert',
     variant = 'soft',
@@ -54,13 +54,15 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
       role={role}
       {...props}
     >
-      <span
-        className={classNames(styles['alert-icon'], {
-          [styles['with-heading']]: !!heading
-        })}
-      >
-        {!!icon ? icon : <AlertIcon type={color} />}
-      </span>
+      {!!icon && (
+        <span
+          className={classNames(styles['alert-icon'], {
+            [styles['with-heading']]: !!heading
+          })}
+        >
+          {icon === true ? <AlertIcon type={color} /> : icon}
+        </span>
+      )}
       <span className={styles['alert-text']}>
         {!!heading && (
           <Text

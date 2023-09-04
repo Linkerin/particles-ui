@@ -22,7 +22,7 @@ export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
   /**
    * Icon component on the left
    */
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | boolean;
   /**
    * `onClick` handler for a close button
    */
