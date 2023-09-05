@@ -1,0 +1,22 @@
+:where(.wrapper) {
+  position: relative;
+  background-color: var(--pui-background-container);
+
+  :where(img) {
+    animation: fadein linear 0.5s;
+  }
+}
+
+:where(.fallback) {
+  position: absolute;
+  inset: 0; // top, left, right and bottom are equal to 0
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
