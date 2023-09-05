@@ -90,6 +90,8 @@ function useImageLoader({
   );
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     if (preloadFallbackSrc && !!fallbackSrc && !!src) {
       const img = new Image();
       img.src = src;

@@ -1,52 +1,35 @@
 'use client';
 
-import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
+import { forwardRef, useMemo } from 'react';
 import classNames from 'classnames';
 
+import generateInitials from './generateInitials';
 import { PuiColorNames, PuiRadius, PuiSize } from '../../lib/types';
 import UserIcon from '../PuiIcons/UserIcon/UserIcon';
+import Image, { ImageProps } from '../Image/Image';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Avatar.module.scss';
-
-const generateInitials = (name?: string) => {
-  if (!name || typeof name !== 'string') {
-    return null;
-  }
-
-  const splitted = name.toUpperCase().split(' ');
-  const initials = splitted.reduce((acc, currValue) => acc + currValue[0], '');
-
-  return initials.slice(0, 2);
-};
 
 type AvatarContentProps =
   | {
       icon?: React.ReactElement;
       iconLabel: React.AriaAttributes['aria-label'];
       src?: undefined;
-      alt?: React.ComponentProps<'img'>['alt'];
+      alt?: ImageProps['alt'];
     }
   | {
-      src?: React.ComponentProps<'img'>['src'];
-      alt: React.ComponentProps<'img'>['alt'];
+      src?: ImageProps['src'];
+      alt: ImageProps['alt'];
       icon?: undefined;
       iconLabel?: undefined;
     };
 
-interface AvatarBaseProps
-  extends Omit<
-    React.ComponentPropsWithoutRef<'img'>,
-    'src' | 'alt' | 'onError'
-  > {
+interface AvatarBaseProps extends Omit<ImageProps, 'radius'> {
   bordered?: boolean;
   color?: PuiColorNames;
   disabled?: boolean;
-  fallback?: React.ReactNode;
-  icon?: React.ReactElement;
   name?: string;
-  noFallback?: boolean;
-  onError?: OnErrorEventHandler;
   radius?: PuiRadius;
   size?: PuiSize | 'xxl';
   spanWrapperProps?: React.ComponentPropsWithoutRef<'span'>;
@@ -66,59 +49,26 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   {
     className,
     alt,
-    crossOrigin,
     src,
-    srcSet,
-    sizes,
     bordered,
     disabled,
     fallback,
     icon,
     iconLabel,
     name,
-    onError,
-    onLoad,
     spanWrapperProps,
     color = 'primary',
-    loading = 'lazy',
-    noFallback = false,
     radius = 'full',
     size = 'md',
     ...props
   },
   ref
 ) {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
   const initials = useMemo(() => generateInitials(name), [name]);
   const fallbackElement = useMemo(
     () => fallback ?? icon ?? initials ?? <UserIcon aria-label={alt} />,
     [alt, fallback, icon, initials]
   );
-
-  const loadImage = useCallback(() => {
-    if (!src || noFallback) return;
-
-    const img = new Image();
-    img.src = src;
-    // img.loading = loading; // TODO: fix lazy loading issue
-    if (crossOrigin) img.crossOrigin = crossOrigin;
-    if (srcSet) img.srcset = srcSet;
-    if (sizes) img.sizes = sizes;
-
-    img.onload = e => {
-      setImageLoaded(true);
-      onLoad?.(e as any);
-    };
-
-    if (onError) img.onerror = onError;
-  }, [src, srcSet, sizes, noFallback, crossOrigin, loading, onError, onLoad]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    loadImage();
-  }, [loadImage]);
 
   return (
     <span
@@ -137,23 +87,31 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
       }
       {...spanWrapperProps}
     >
-      {!!src && (noFallback || imageLoaded) ? (
-        <img
+      <Image
+        alt={alt}
+        src={src}
+        className={classNames(
+          // { [styles[`radius-${radius}`]]: bordered },
+          className
+        )}
+        data-pui-component="pui-avatar-img"
+        fallback={<UserIcon aria-label={alt} />}
+        {...props}
+      />
+      {/* {!!src ? (
+        <Image
           alt={alt}
           src={src}
-          srcSet={srcSet}
-          crossOrigin={crossOrigin}
-          sizes={sizes}
           className={classNames(
             { [styles[`radius-${radius}`]]: bordered },
             className
           )}
-          loading={loading}
+          fallback={<UserIcon aria-label={alt} />}
           {...props}
         />
       ) : (
         fallbackElement
-      )}
+      )} */}
     </span>
   );
 });

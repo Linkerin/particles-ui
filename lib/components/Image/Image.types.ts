@@ -1,4 +1,4 @@
-import { PuiSize } from '../../lib/types';
+import { PuiRadius } from '../../lib/types';
 
 export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
   /**
@@ -44,7 +44,7 @@ export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
   /**
    * Border radius size
    */
-  radius?: PuiSize;
+  radius?: PuiRadius;
   /**
    * Image wrapper `class` attribute
    */

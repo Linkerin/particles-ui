@@ -27,20 +27,20 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     alt,
     animationDuration,
     src,
+    fallback,
     fallbackSrc,
     fallbackClassName,
     onError,
     onLoad,
     height,
     width,
+    radius,
     wrapperClassName,
     wrapperRef,
-    fallback,
     fadeInAnimation = false,
     fallbackOnError = fallback,
     preloadFallbackSrc = true,
     loading = 'lazy',
-    radius = 'none',
     ...props
   },
   ref
@@ -62,7 +62,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
       ref={wrapperRef}
       className={classNames(
         styles.wrapper,
-        radiusStyles[radius],
+        { [radiusStyles[`${radius}`]]: radius },
         wrapperClassName
       )}
     >
