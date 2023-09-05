@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { ImageProps } from './Image.types';
-import useImageLoadingHandlers from './useImageLoadingHandlers';
+import useImageLoader from './useImageLoader';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Image.module.scss';
@@ -45,15 +45,14 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
   },
   ref
 ) {
-  const { onErrorHandler, onLoadHandler, loadingState } =
-    useImageLoadingHandlers({
-      fallback,
-      fallbackSrc,
-      preloadFallbackSrc,
-      src,
-      onError,
-      onLoad
-    });
+  const { onErrorHandler, onLoadHandler, loadingState } = useImageLoader({
+    fallback,
+    fallbackSrc,
+    preloadFallbackSrc,
+    src,
+    onError,
+    onLoad
+  });
 
   const styleObj: Pick<React.CSSProperties, 'animationDuration'> = {};
   if (animationDuration) styleObj.animationDuration = animationDuration;

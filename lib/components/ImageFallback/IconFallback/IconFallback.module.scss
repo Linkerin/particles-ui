@@ -1,0 +1,14 @@
+:where(.image-fallback) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pui-background-container-high, #e8e8ed);
+  color: var(--pui-on-background-low, #585b74);
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 35%;
+    height: 35%;
+  }
+}

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useReducer } from 'react';
 
 import { ImageProps } from './Image.types';
 
-export type UseImageLoadingHandlerParams = Pick<
+export type UseImageLoaderParams = Pick<
   ImageProps,
   | 'fallback'
   | 'fallbackSrc'
@@ -23,14 +23,14 @@ interface FallbackAction {
   payload?: string;
 }
 
-function useImageLoadingHandlers({
+function useImageLoader({
   fallback,
   fallbackSrc,
   preloadFallbackSrc,
   onError,
   onLoad,
   src
-}: UseImageLoadingHandlerParams) {
+}: UseImageLoaderParams) {
   const fallbackReducer = (state: FallbackState, action: FallbackAction) => {
     switch (action.type) {
       case 'error':
@@ -104,4 +104,4 @@ function useImageLoadingHandlers({
   return { loadingState, onLoadHandler, onErrorHandler };
 }
 
-export default useImageLoadingHandlers;
+export default useImageLoader;

@@ -9,7 +9,7 @@ import { IconHeart } from '@tabler/icons-react';
 import Image from '@/lib/components/Image/Image';
 import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
-import ImageFallback from '@/lib/components/Image/ImageFallback/ImageFallback';
+import ImageFallback from '@/lib/components/ImageFallback/ImageFallback';
 
 function ImageDocsPage() {
   return (
@@ -23,13 +23,14 @@ function ImageDocsPage() {
         <Image
           alt="Test image"
           // src="https://app.requestly.io/delay/2000/https://nextui-docs-v2.vercel.app/images/fruit-4.jpeg"
-          src="https://app.requestly.io/delay/3000/https://avatars.githubusercontent.com/u/130695447?v=4"
+          src="https://app.requestly.io/delay/3000/https://2avatars.githubusercontent.com/u/130695447?v=4"
           // fallbackSrc="https://avatars.githubusercontent.com/u/130695447?v=4"
-          fallbackSrc="https://via.placeholder.com/150"
-          // fallback={<ImageFallback />}
+          // fallbackSrc="https://via.placeholder.com/150"
+          fallback={<ImageFallback variant="skeleton" />}
+          // fallbackOnError={<ImageFallback variant="skeleton" />}
           height={150}
           width={150}
-          radius="sm"
+          radius="lg"
         />
       </DemoContainer>
       <Divider />

@@ -6,7 +6,7 @@ export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
    */
   as?: keyof JSX.IntrinsicElements | React.ReactNode;
   /**
-   * Image fade-in animation duration
+   * The duration of the fade-in animation
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration | MDN | animation-duration}
    */
   animationDuration?: React.CSSProperties['animationDuration'];

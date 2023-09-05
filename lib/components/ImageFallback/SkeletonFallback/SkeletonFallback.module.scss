@@ -1,0 +1,16 @@
+:where(.skeleton) {
+  display: block;
+  background-color: var(--pui-background-container-low);
+  height: 100%;
+  width: 100%;
+  animation: skeleton 1.4s infinite alternate;
+}
+
+@keyframes skeleton {
+  from {
+    background-color: var(--pui-background-container-low);
+  }
+  to {
+    background-color: var(--pui-background-container-highest);
+  }
+}
