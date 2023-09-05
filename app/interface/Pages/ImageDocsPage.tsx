@@ -23,12 +23,10 @@ function ImageDocsPage() {
         <Image
           alt="Test image"
           // src="https://app.requestly.io/delay/2000/https://nextui-docs-v2.vercel.app/images/fruit-4.jpeg"
-          src="https://app.requestly.io/delay/5000/https://2avatars.githubusercontent.com/u/130695447?v=4"
+          src="https://app.requestly.io/delay/3000/https://avatars.githubusercontent.com/u/130695447?v=4"
           // fallbackSrc="https://avatars.githubusercontent.com/u/130695447?v=4"
           fallbackSrc="https://via.placeholder.com/150"
-          preloadFallbackSrc={false}
-          fallback={<ImageFallback />}
-          fallbackOnError={'Error'}
+          // fallback={<ImageFallback />}
           height={150}
           width={150}
           radius="sm"

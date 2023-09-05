@@ -3,23 +3,14 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { PuiSize } from '../../lib/types';
+import { ImageProps } from './Image.types';
 import useImageLoadingHandlers from './useImageLoadingHandlers';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Image.module.scss';
 
-export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
-  as?: keyof JSX.IntrinsicElements | React.ReactNode;
-  fallback?: React.ReactNode;
-  fallbackSrc?: string;
-  fallbackOnError?: React.ReactNode;
-  fallbackClassName?: string;
-  preloadFallbackSrc?: boolean;
-  radius?: PuiSize;
-  wrapperClassName?: string;
-  wrapperRef?: React.ComponentProps<'div'>['ref'];
-}
+export type { ImageProps };
+
 /**
  * Image component with fallback support.
  *
@@ -32,7 +23,9 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
   {
     as,
     className,
+    style,
     alt,
+    animationDuration,
     src,
     fallbackSrc,
     fallbackClassName,
@@ -43,6 +36,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     wrapperClassName,
     wrapperRef,
     fallback,
+    fadeInAnimation = false,
     fallbackOnError = fallback,
     preloadFallbackSrc = true,
     loading = 'lazy',
@@ -51,20 +45,18 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
   },
   ref
 ) {
-  const {
-    onErrorHandler,
-    onLoadHandler,
-    showLoadingFallback,
-    showErrFallback,
-    srcUrl
-  } = useImageLoadingHandlers({
-    fallback,
-    fallbackSrc,
-    preloadFallbackSrc,
-    src,
-    onError,
-    onLoad
-  });
+  const { onErrorHandler, onLoadHandler, loadingState } =
+    useImageLoadingHandlers({
+      fallback,
+      fallbackSrc,
+      preloadFallbackSrc,
+      src,
+      onError,
+      onLoad
+    });
+
+  const styleObj: Pick<React.CSSProperties, 'animationDuration'> = {};
+  if (animationDuration) styleObj.animationDuration = animationDuration;
 
   return (
     <div
@@ -75,30 +67,25 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
         wrapperClassName
       )}
     >
-      {
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          ref={ref}
-          className={classNames(radiusStyles[radius], className)}
-          alt={alt}
-          src={srcUrl}
-          height={height}
-          width={width}
-          loading={loading}
-          onError={onErrorHandler}
-          onLoad={onLoadHandler}
-          {...props}
-        />
-      }
-      {(showLoadingFallback || showErrFallback) && (
-        <span
-          className={classNames(
-            styles.fallback,
-            radiusStyles[radius],
-            fallbackClassName
-          )}
-        >
-          {showLoadingFallback ? fallback : fallbackOnError}
+      <img
+        ref={ref}
+        className={classNames(
+          { [styles.animation]: fadeInAnimation },
+          className
+        )}
+        style={{ ...style, ...styleObj }}
+        alt={alt}
+        src={loadingState.src}
+        height={height}
+        width={width}
+        loading={loading}
+        onError={onErrorHandler}
+        onLoad={onLoadHandler}
+        {...props}
+      />
+      {(loadingState.error || loadingState.loading) && (
+        <span className={classNames(styles.fallback, fallbackClassName)}>
+          {loadingState.loading ? fallback : fallbackOnError}
         </span>
       )}
     </div>

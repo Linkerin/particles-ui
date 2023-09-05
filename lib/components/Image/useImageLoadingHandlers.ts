@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { ImageProps } from './Image';
+import { useCallback, useEffect, useReducer } from 'react';
+
+import { ImageProps } from './Image.types';
 
 export type UseImageLoadingHandlerParams = Pick<
   ImageProps,
@@ -11,6 +12,17 @@ export type UseImageLoadingHandlerParams = Pick<
   | 'src'
 >;
 
+interface FallbackState {
+  error: boolean;
+  loading: boolean;
+  src?: string;
+}
+
+interface FallbackAction {
+  type: 'error' | 'loaded' | 'changeSrc';
+  payload?: string;
+}
+
 function useImageLoadingHandlers({
   fallback,
   fallbackSrc,
@@ -19,13 +31,38 @@ function useImageLoadingHandlers({
   onLoad,
   src
 }: UseImageLoadingHandlerParams) {
-  const [showErrFallback, setShowErrFallBack] = useState(!src && !fallbackSrc);
-  const [showLoadingFallback, setShowLoadingFallback] = useState(
-    !!fallback && (!!src || !!fallbackSrc)
-  );
-  const [srcUrl, setSrcUrl] = useState(
-    !!fallbackSrc && (preloadFallbackSrc || !src) ? fallbackSrc : src
-  );
+  const fallbackReducer = (state: FallbackState, action: FallbackAction) => {
+    switch (action.type) {
+      case 'error':
+        return {
+          ...state,
+          loading: false,
+          error: true
+        };
+
+      case 'loaded':
+        return {
+          ...state,
+          loading: false,
+          error: false
+        };
+
+      case 'changeSrc':
+        return {
+          ...state,
+          src: action.payload
+        };
+
+      default:
+        throw new Error('Unknown action.');
+    }
+  };
+
+  const [loadingState, dispatch] = useReducer(fallbackReducer, {
+    error: !src && !fallbackSrc,
+    loading: !!fallback && (!!src || !!fallbackSrc),
+    src: !!fallbackSrc && (preloadFallbackSrc || !src) ? fallbackSrc : src
+  });
 
   const onErrorHandler: React.ReactEventHandler<HTMLImageElement> = useCallback(
     e => {
@@ -35,8 +72,7 @@ function useImageLoadingHandlers({
       if (fallbackSrc?.length && fallbackSrc.length > 0) {
         element.src = fallbackSrc;
       } else {
-        setShowLoadingFallback(false);
-        setShowErrFallBack(true);
+        dispatch({ type: 'error' });
       }
 
       onError?.(e);
@@ -46,36 +82,26 @@ function useImageLoadingHandlers({
 
   const onLoadHandler: React.ReactEventHandler<HTMLImageElement> = useCallback(
     e => {
-      setShowLoadingFallback(false);
+      dispatch({ type: 'loaded' });
 
       onLoad?.(e);
     },
     [onLoad]
   );
 
-  const preloadImage = useCallback(() => {
+  useEffect(() => {
     if (preloadFallbackSrc && !!fallbackSrc && !!src) {
       const img = new Image();
       img.src = src;
       img.onload = e => {
-        setSrcUrl?.(src);
+        dispatch({ type: 'changeSrc', payload: src });
       };
 
       return;
     }
-  }, [fallbackSrc, preloadFallbackSrc, src, setSrcUrl]);
+  }, [fallbackSrc, preloadFallbackSrc, src]);
 
-  useEffect(() => {
-    preloadImage();
-  }, [preloadImage]);
-
-  return {
-    showLoadingFallback,
-    showErrFallback,
-    srcUrl,
-    onLoadHandler,
-    onErrorHandler
-  };
+  return { loadingState, onLoadHandler, onErrorHandler };
 }
 
 export default useImageLoadingHandlers;
