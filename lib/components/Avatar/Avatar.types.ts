@@ -7,7 +7,7 @@ type AvatarContentProps =
        * Icon element displayed as an avatar.
        * Overrides `fallback` and `fallbackSrc` prop values
        */
-      icon?: React.ReactElement | 'default';
+      icon?: React.ReactNode | 'default';
       /**
        * Defining `src` is not allowed when `icon` prop is used
        */

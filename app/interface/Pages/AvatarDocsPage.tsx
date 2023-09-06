@@ -3,6 +3,7 @@
 import { Fragment } from 'react';
 
 import Avatar, { AvatarProps } from '@/lib/components/Avatar/Avatar';
+import AvatarGroup from '@/lib/components/AvatarGroup/AvatarGroup';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
 import Divider from '@/lib/components/Divider/Divider';
@@ -358,6 +359,86 @@ function AvatarDocsPage() {
           </Fragment>
         ))}
       </>
+      <Divider />
+      <>
+        <Heading variant="h6">Avatar group</Heading>
+        <Heading as="h3" variant="subtitle-md">
+          Medium size
+        </Heading>
+        <DemoContainer>
+          <AvatarGroup max={3}>
+            <Avatar src={avatar1.src} alt="grouped avatar" />
+            <Avatar src={avatar2.src} alt="grouped avatar" />
+            <Avatar src={avatar3.src} alt="grouped avatar" />
+            <Avatar src={avatar4.src} alt="grouped avatar" />
+          </AvatarGroup>
+        </DemoContainer>
+        <Heading as="h3" variant="subtitle-md">
+          XXL size
+        </Heading>
+        <DemoContainer>
+          <AvatarGroup max={3} counterAvatarProps={{ size: 'xxl' }}>
+            <Avatar size="xxl" src={avatar1.src} alt="grouped avatar" />
+            <Avatar size="xxl" src={avatar2.src} alt="grouped avatar" />
+            <Avatar size="xxl" src={avatar3.src} alt="grouped avatar" />
+            <Avatar size="xxl" src={avatar4.src} alt="grouped avatar" />
+          </AvatarGroup>
+        </DemoContainer>
+      </>
+      <Heading as="h3" variant="subtitle-md">
+        Bordered
+      </Heading>
+      <DemoContainer>
+        <AvatarGroup max={3} counterAvatarProps={{ bordered: true }}>
+          <Avatar
+            bordered
+            src={avatar1.src}
+            alt="grouped avatar"
+            wrapperProps={{
+              style: { backgroundColor: 'var(--pui-primary-container-low' }
+            }}
+          />
+          <Avatar
+            bordered
+            src={avatar2.src}
+            alt="grouped avatar"
+            wrapperProps={{
+              style: { backgroundColor: 'var(--pui-primary-container-low' }
+            }}
+          />
+          <Avatar
+            bordered
+            src={avatar3.src}
+            alt="grouped avatar"
+            wrapperProps={{
+              style: { backgroundColor: 'var(--pui-primary-container-low' }
+            }}
+          />
+          <Avatar
+            bordered
+            src={avatar4.src}
+            alt="grouped avatar"
+            wrapperProps={{
+              style: { backgroundColor: 'var(--pui-primary-container-low' }
+            }}
+          />
+        </AvatarGroup>
+      </DemoContainer>
+      <Heading as="h3" variant="subtitle-md">
+        Right-to-left
+      </Heading>
+      <DemoContainer>
+        <AvatarGroup
+          max={3}
+          direction="rtl"
+          counterAvatarProps={{ size: 'lg' }}
+        >
+          <Avatar size="lg" src={avatar1.src} alt="grouped avatar" />
+          <Avatar size="lg" src={avatar2.src} alt="grouped avatar" />
+          <Avatar size="lg" src={avatar3.src} alt="grouped avatar" />
+          <Avatar size="lg" src={avatar4.src} alt="grouped avatar" />
+        </AvatarGroup>
+      </DemoContainer>
     </DemoSection>
   );
 }

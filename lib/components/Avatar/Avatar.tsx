@@ -46,6 +46,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
     color = 'primary',
     radius = 'full',
     size = 'md',
+    wrapperProps,
     ...props
   },
   ref
@@ -60,9 +61,11 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
     [fallback, initials, iconElement]
   );
 
+  const imageWrapperProps = { 'data-pui-component': 'avatar', ...wrapperProps };
+
   return (
     <Image
-      wrapperProps={{ ref }}
+      wrapperProps={imageWrapperProps}
       alt={alt}
       wrapperClassName={classNames(
         styles.avatar,
