@@ -11,13 +11,13 @@ export type { ImageFallbackProps };
  * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
  */
 const ImageFallback = forwardRef<HTMLSpanElement, ImageFallbackProps>(
-  function ImageFallback({ variant, ...props }, ref) {
-    switch (variant) {
+  function ImageFallback({ type, ...props }, ref) {
+    switch (type) {
       case 'icon-error':
-        return <IconFallback ref={ref} type="error" {...props} />;
+        return <IconFallback ref={ref} icon="error" {...props} />;
 
       case 'icon-loading':
-        return <IconFallback ref={ref} type="loading" {...props} />;
+        return <IconFallback ref={ref} icon="loading" {...props} />;
 
       case 'skeleton':
         return <SkeletonFallback ref={ref} {...props} />;

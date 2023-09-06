@@ -12,11 +12,14 @@ export type { SkeletonFallbackProps };
  * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
  */
 const SkeletonFallback = forwardRef<HTMLSpanElement, SkeletonFallbackProps>(
-  function SkeletonFallback({ className, ...props }, ref) {
+  function SkeletonFallback(
+    { className, color = 'background', ...props },
+    ref
+  ) {
     return (
       <span
         ref={ref}
-        className={classNames(styles.skeleton, className)}
+        className={classNames(styles.skeleton, styles[color], className)}
         {...props}
       />
     );

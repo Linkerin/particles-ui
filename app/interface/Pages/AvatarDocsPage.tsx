@@ -154,9 +154,7 @@ function AvatarDocsPage() {
         <Avatar
           src="./broken"
           alt="Broken link image fallback"
-          fallbackSrc={
-            'https://bespokeunit.com/wp-content/uploads/2017/05/Square-face-shape-bespke-unit-Bordered-700x700.png'
-          }
+          fallbackSrc={'https://via.placeholder.com/40'}
           radius="none"
           onError={e => {
             console.warn('Load failed: Broken link image fallback');

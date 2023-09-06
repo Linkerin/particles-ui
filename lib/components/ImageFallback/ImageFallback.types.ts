@@ -1,7 +1,8 @@
-export interface ImageFallbackProps
-  extends React.ComponentPropsWithoutRef<'span'> {
+import { IconFallbackProps } from './IconFallback/IconFallback.types';
+
+export interface ImageFallbackProps extends IconFallbackProps {
   /**
-   * Fallback variant
+   * Fallback type
    */
-  variant: 'icon-error' | 'icon-loading' | 'skeleton';
+  type: 'icon-error' | 'icon-loading' | 'skeleton';
 }

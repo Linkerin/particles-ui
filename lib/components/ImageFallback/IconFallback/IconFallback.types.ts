@@ -1,7 +1,17 @@
+import { PuiColorNames, PuiStyleVariant } from '../../../lib/types';
+
 export interface IconFallbackProps
   extends React.ComponentPropsWithoutRef<'span'> {
   /**
+   * Fallback's main color
+   */
+  color?: Exclude<PuiColorNames, 'uncolored'> | 'background';
+  /**
    * Variant of the fallback's icon
    */
-  type?: 'loading' | 'error';
+  icon?: 'loading' | 'error';
+  /**
+   * Styling variant
+   */
+  variant?: Extract<PuiStyleVariant, 'filled' | 'outlined'>;
 }

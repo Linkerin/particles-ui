@@ -14,7 +14,8 @@ export type UseImageLoaderParams = Pick<
 
 interface FallbackState {
   error: boolean;
-  loading: boolean;
+  pending: boolean;
+  loaded: boolean;
   src?: string;
 }
 
@@ -36,14 +37,16 @@ function useImageLoader({
       case 'error':
         return {
           ...state,
-          loading: false,
+          loaded: false,
+          pending: false,
           error: true
         };
 
       case 'loaded':
         return {
           ...state,
-          loading: false,
+          loaded: true,
+          pending: false,
           error: false
         };
 
@@ -59,9 +62,10 @@ function useImageLoader({
   };
 
   const [loadingState, dispatch] = useReducer(fallbackReducer, {
-    error: !src && !fallbackSrc,
-    loading: !!fallback && (!!src || !!fallbackSrc),
-    src: !!fallbackSrc && (preloadFallbackSrc || !src) ? fallbackSrc : src
+    src: !!fallbackSrc && (preloadFallbackSrc || !src) ? fallbackSrc : src,
+    pending: !!fallback && (!!src || !!fallbackSrc),
+    loaded: false,
+    error: !src && !fallbackSrc
   });
 
   const onErrorHandler: React.ReactEventHandler<HTMLImageElement> = useCallback(

@@ -19,16 +19,24 @@ export type { IconFallbackProps };
  * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
  */
 const IconFallback = forwardRef<HTMLSpanElement, IconFallbackProps>(
-  function ImageFallback({ className, type, ...props }, ref) {
+  function ImageFallback(
+    { className, icon, color = 'primary', variant = 'filled', ...props },
+    ref
+  ) {
     return (
       <span
         ref={ref}
-        className={classNames(styles['image-fallback'], className)}
+        className={classNames(
+          styles['image-fallback'],
+          styles[variant],
+          styles[color],
+          className
+        )}
         {...props}
       >
         <Suspense>
-          {type === 'loading' && <LoadImageIcon strokeWidth={1.3} />}
-          {type === 'error' && <NoImageIcon strokeWidth={1.3} />}
+          {icon === 'loading' && <LoadImageIcon strokeWidth={1.2} />}
+          {icon === 'error' && <NoImageIcon strokeWidth={1.2} />}
         </Suspense>
       </span>
     );

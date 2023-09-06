@@ -36,7 +36,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     width,
     radius,
     wrapperClassName,
-    wrapperRef,
+    wrapperProps,
     fadeInAnimation = false,
     fallbackOnError = fallback,
     preloadFallbackSrc = true,
@@ -59,18 +59,19 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
 
   return (
     <div
-      ref={wrapperRef}
       className={classNames(
         styles.wrapper,
         { [radiusStyles[`${radius}`]]: radius },
         wrapperClassName
       )}
+      {...wrapperProps}
     >
       <img
         ref={ref}
         className={classNames(
           { [styles.animation]: fadeInAnimation },
-          { [styles.invisible]: loadingState.error || loadingState.loading },
+          { [styles.invisible]: !loadingState.loaded },
+          { [styles.visible]: loadingState.loaded },
           className
         )}
         style={{ ...style, ...styleObj }}
@@ -83,12 +84,12 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
         onLoad={onLoadHandler}
         {...props}
       />
-      {(loadingState.error || loadingState.loading) && (
+      {(loadingState.error || loadingState.pending) && (
         <span
           className={classNames(styles.fallback, fallbackClassName)}
           role="presentation"
         >
-          {loadingState.loading ? fallback : fallbackOnError}
+          {loadingState.pending ? fallback : fallbackOnError}
         </span>
       )}
     </div>

@@ -1,20 +1,23 @@
 :where(.wrapper) {
   position: relative;
-  background-color: var(--pui-background-container);
   overflow: hidden;
 }
 
 :where(.fallback) {
+  border-radius: inherit;
   position: absolute;
   inset: 0; // top, left, right and bottom are equal to 0
 }
 
-:where(.animation) {
-  animation: fadein ease-in 1.2s;
-}
-
 :where(.invisible) {
   opacity: 0;
+}
+
+:where(.visible) {
+  opacity: 1;
+  &:where(.animation) {
+    animation: fadein ease-in 0.6s;
+  }
 }
 
 @keyframes fadein {

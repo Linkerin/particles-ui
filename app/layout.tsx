@@ -6,6 +6,7 @@ import Nav from './interface/Nav/Nav';
 import ThemeProvider from '@/lib/context/ThemeContext';
 
 import '../lib/styles/pui-globals.scss';
+import './material-symbols.scss';
 import styles from './layout.module.scss';
 
 const nunito = Nunito({ subsets: ['latin'] });

@@ -1,6 +1,29 @@
+@use '../../../styles/theme-tokens/constants' as const;
+
+@each $color in const.$color-names {
+  :where(.#{$color}) {
+    --pui-skeleton-fallback-color-container-low: var(
+      --pui-#{$color}-container-low
+    );
+    --pui-skeleton-fallback-color-container: var(--pui-#{$color}-container);
+  }
+}
+
+:where(.background) {
+  --pui-skeleton-fallback-color-container-low: var(
+    --pui-background-container-low
+  );
+  --pui-skeleton-fallback-color-container: var(
+    --pui-background-container-highest
+  );
+}
+
 :where(.skeleton) {
   display: block;
-  background-color: var(--pui-background-container-low);
+  background-color: var(
+    --pui-skeleton-fallback-color-container-low,
+    var(--pui-background-container-low)
+  );
   height: 100%;
   width: 100%;
   animation: skeleton 1.4s infinite alternate;
@@ -8,9 +31,9 @@
 
 @keyframes skeleton {
   from {
-    background-color: var(--pui-background-container-low);
+    background-color: var(--pui-skeleton-fallback-color-container-low);
   }
   to {
-    background-color: var(--pui-background-container-highest);
+    background-color: var(--pui-skeleton-fallback-color-container);
   }
 }

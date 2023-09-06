@@ -50,7 +50,7 @@ export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
    */
   wrapperClassName?: string;
   /**
-   * Image wrapper `ref` attribute
+   * Image wrapper props
    */
-  wrapperRef?: React.ComponentProps<'div'>['ref'];
+  wrapperProps?: Omit<React.ComponentProps<'div'>, 'className'>;
 }
