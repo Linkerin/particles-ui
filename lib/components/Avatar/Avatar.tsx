@@ -62,7 +62,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
 
   return (
     <Image
-      wrapperRef={ref}
+      wrapperProps={{ ref }}
       alt={alt}
       wrapperClassName={classNames(
         styles.avatar,
