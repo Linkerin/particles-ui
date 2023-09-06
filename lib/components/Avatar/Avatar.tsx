@@ -1,41 +1,27 @@
 'use client';
 
-import { forwardRef, useMemo } from 'react';
+import { forwardRef, lazy, Suspense, useMemo } from 'react';
 import classNames from 'classnames';
 
+import { AvatarProps } from './Avatar.types';
 import generateInitials from './generateInitials';
-import { PuiColorNames, PuiRadius, PuiSize } from '../../lib/types';
-import UserIcon from '../PuiIcons/UserIcon/UserIcon';
-import Image, { ImageProps } from '../Image/Image';
+import Image from '../Image/Image';
+import type { UserIconProps } from '../PuiIcons/UserIcon/UserIcon';
+
+const UserIcon = lazy(() => import('../PuiIcons/UserIcon/UserIcon'));
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Avatar.module.scss';
 
-type AvatarContentProps =
-  | {
-      icon?: React.ReactElement;
-      iconLabel: React.AriaAttributes['aria-label'];
-      src?: undefined;
-      alt?: ImageProps['alt'];
-    }
-  | {
-      src?: ImageProps['src'];
-      alt: ImageProps['alt'];
-      icon?: undefined;
-      iconLabel?: undefined;
-    };
+export type { AvatarProps };
 
-interface AvatarBaseProps extends Omit<ImageProps, 'radius'> {
-  bordered?: boolean;
-  color?: PuiColorNames;
-  disabled?: boolean;
-  name?: string;
-  radius?: PuiRadius;
-  size?: PuiSize | 'xxl';
-  spanWrapperProps?: React.ComponentPropsWithoutRef<'span'>;
+function SuspensedUserIcon(props: UserIconProps) {
+  return (
+    <Suspense>
+      <UserIcon {...props} />
+    </Suspense>
+  );
 }
-
-export type AvatarProps = AvatarBaseProps & AvatarContentProps;
 
 /**
  * Avatar component displays user's profile image, initials or fallback icon.
@@ -45,7 +31,7 @@ export type AvatarProps = AvatarBaseProps & AvatarContentProps;
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
  */
-const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
+const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
   {
     className,
     alt,
@@ -53,10 +39,10 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
     bordered,
     disabled,
     fallback,
+    fallbackClassName,
     icon,
-    iconLabel,
     name,
-    spanWrapperProps,
+    wrapperClassName,
     color = 'primary',
     radius = 'full',
     size = 'md',
@@ -65,54 +51,38 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   ref
 ) {
   const initials = useMemo(() => generateInitials(name), [name]);
+  const iconElement = useMemo(
+    () => (icon === 'default' ? <SuspensedUserIcon /> : icon),
+    [icon]
+  );
   const fallbackElement = useMemo(
-    () => fallback ?? icon ?? initials ?? <UserIcon aria-label={alt} />,
-    [alt, fallback, icon, initials]
+    () => iconElement ?? fallback ?? initials ?? <SuspensedUserIcon />,
+    [fallback, initials, iconElement]
   );
 
   return (
-    <span
-      ref={ref}
-      className={classNames(
+    <Image
+      wrapperRef={ref}
+      alt={alt}
+      wrapperClassName={classNames(
         styles.avatar,
         styles[size],
-        { [styles[color]]: !disabled && color !== 'uncolored' },
         radiusStyles[radius],
         { [styles.bordered]: bordered },
-        { [styles.disabled]: disabled }
+        { [styles[color]]: !disabled && color !== 'uncolored' },
+        { [styles.disabled]: disabled },
+        wrapperClassName
       )}
       aria-disabled={disabled}
-      aria-label={
-        !!icon && !!iconLabel ? iconLabel : !src && name ? name : undefined
-      }
-      {...spanWrapperProps}
-    >
-      <Image
-        alt={alt}
-        src={src}
-        className={classNames(
-          // { [styles[`radius-${radius}`]]: bordered },
-          className
-        )}
-        data-pui-component="pui-avatar-img"
-        fallback={<UserIcon aria-label={alt} />}
-        {...props}
-      />
-      {/* {!!src ? (
-        <Image
-          alt={alt}
-          src={src}
-          className={classNames(
-            { [styles[`radius-${radius}`]]: bordered },
-            className
-          )}
-          fallback={<UserIcon aria-label={alt} />}
-          {...props}
-        />
-      ) : (
-        fallbackElement
-      )} */}
-    </span>
+      src={!icon ? src : undefined}
+      data-pui-component="pui-avatar-img"
+      fallback={fallbackElement}
+      fallbackClassName={classNames(
+        styles['avatar-fallback'],
+        fallbackClassName
+      )}
+      {...props}
+    />
   );
 });
 

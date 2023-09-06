@@ -1,7 +1,10 @@
+import { PuiIconProps } from '../PuiIcon.types';
+import SvgIcon from '../../SvgIcon/SvgIcon';
 import UserSvg from './user.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
 
-function UserIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as UserIconProps };
+
+function UserIcon(props: PuiIconProps) {
   return <SvgIcon src={UserSvg} id="user" {...props} />;
 }
 

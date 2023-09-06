@@ -70,6 +70,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
         ref={ref}
         className={classNames(
           { [styles.animation]: fadeInAnimation },
+          { [styles.invisible]: loadingState.error || loadingState.loading },
           className
         )}
         style={{ ...style, ...styleObj }}
@@ -83,7 +84,10 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
         {...props}
       />
       {(loadingState.error || loadingState.loading) && (
-        <span className={classNames(styles.fallback, fallbackClassName)}>
+        <span
+          className={classNames(styles.fallback, fallbackClassName)}
+          role="presentation"
+        >
           {loadingState.loading ? fallback : fallbackOnError}
         </span>
       )}

@@ -1,7 +1,10 @@
 import InfoSvg from './info.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
+import { PuiIconProps } from '../PuiIcon.types';
+import SvgIcon from '../../SvgIcon/SvgIcon';
 
-function InfoIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as InfoIconProps };
+
+function InfoIcon(props: PuiIconProps) {
   return <SvgIcon src={InfoSvg} id="info" {...props} />;
 }
 

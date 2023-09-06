@@ -1,7 +1,10 @@
 import CloseSvg from './close.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
+import { PuiIconProps } from '../PuiIcon.types';
+import SvgIcon from '../../SvgIcon/SvgIcon';
 
-function CloseIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as CloseIconProps };
+
+function CloseIcon(props: PuiIconProps) {
   return <SvgIcon src={CloseSvg} id="close" {...props} />;
 }
 

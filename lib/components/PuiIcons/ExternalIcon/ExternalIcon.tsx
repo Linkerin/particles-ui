@@ -1,7 +1,10 @@
 import ExternalSvg from './external.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
+import { PuiIconProps } from '../PuiIcon.types';
+import SvgIcon from '../../SvgIcon/SvgIcon';
 
-function ExternalIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as ExternalIconProps };
+
+function ExternalIcon(props: PuiIconProps) {
   return <SvgIcon src={ExternalSvg} id="external" {...props} />;
 }
 

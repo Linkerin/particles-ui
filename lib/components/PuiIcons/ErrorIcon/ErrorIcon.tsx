@@ -1,7 +1,10 @@
 import ErrorSvg from './error.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
+import { PuiIconProps } from '../PuiIcon.types';
+import SvgIcon from '../../SvgIcon/SvgIcon';
 
-function ErrorIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as ErrorIconProps };
+
+function ErrorIcon(props: PuiIconProps) {
   return <SvgIcon src={ErrorSvg} id="error" {...props} />;
 }
 

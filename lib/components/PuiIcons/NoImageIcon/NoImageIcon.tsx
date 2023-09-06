@@ -1,7 +1,10 @@
 import NoImageSvg from './no-image.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
+import { PuiIconProps } from '../PuiIcon.types';
+import SvgIcon from '../../SvgIcon/SvgIcon';
 
-function NoImageIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as NoImageIconProps };
+
+function NoImageIcon(props: PuiIconProps) {
   return <SvgIcon src={NoImageSvg} id="no-image" {...props} />;
 }
 

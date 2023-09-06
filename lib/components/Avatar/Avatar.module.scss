@@ -24,8 +24,8 @@
       #{$property}: $value;
     }
 
-    & > :where(svg),
-    & > span:where([data-pui-component='material-icon']) {
+    & :where(svg),
+    & span:where([data-pui-component='material-icon']) {
       font-size: map.get($label, 'line-height');
     }
 
@@ -43,6 +43,7 @@
 // colors
 @each $color in const.$color-names {
   :where(.#{$color}) {
+    --pui-avatar-color-container: var(--pui-#{$color}-container-low);
     --pui-avatar-on-color-container: var(--pui-on-#{$color}-container);
     --pui-avatar-color: var(--pui-#{$color});
   }
@@ -50,14 +51,6 @@
 
 :where(.avatar) {
   background: none;
-  color: var(--pui-avatar-on-color-container, var(--pui-on-background-variant));
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-align: center;
-  text-transform: uppercase;
-  user-select: none;
   aspect-ratio: 1 / 1;
 
   & *:where([data-pui-component='pui-avatar-img']) {
@@ -73,13 +66,27 @@
   }
 }
 
-:where(.disabled) {
-  opacity: var(--pui-state-disabled-content, 38%);
+:where(.avatar-fallback) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(
+    --pui-avatar-color-container,
+    var(--pui-background-container)
+  );
+  color: var(--pui-avatar-on-color-container, var(--pui-on-background-variant));
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
 }
 
 :where(.bordered) {
   border-color: var(--pui-avatar-color, var(--pui-on-background-variant));
   border-style: solid;
+}
+
+:where(.disabled) {
+  opacity: var(--pui-state-disabled-content, 38%);
 }
 
 // sizes

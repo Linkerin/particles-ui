@@ -13,6 +13,10 @@
   animation: fadein ease-in 1.2s;
 }
 
+:where(.invisible) {
+  opacity: 0;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

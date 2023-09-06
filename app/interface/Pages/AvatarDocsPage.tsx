@@ -68,7 +68,7 @@ function AvatarDocsPage() {
             <Avatar
               key={size}
               icon={<GlobeIcon />}
-              iconLabel={`Globe svg icon, size ${size}`}
+              alt={`Globe svg icon, size ${size}`}
               title={`Size: ${size}`}
               size={size}
             />
@@ -79,7 +79,7 @@ function AvatarDocsPage() {
             <Avatar
               key={size}
               icon={<MaterialSymbolIcon icon="account_circle" />}
-              iconLabel={`Material Symbol icon, size ${size}`}
+              alt={`Material Symbol icon, size ${size}`}
               title={`Size: ${size}`}
               size={size}
             />
@@ -90,7 +90,7 @@ function AvatarDocsPage() {
             <Avatar
               key={size}
               icon={<IconUser />}
-              iconLabel={`Tabler icon, size ${size}`}
+              alt={`Tabler icon, size ${size}`}
               title={`Size: ${size}`}
               size={size}
             />
@@ -135,6 +135,7 @@ function AvatarDocsPage() {
       <Divider />
       <Heading variant="h6">Fallbacks</Heading>
       <DemoContainer style={{ flexWrap: 'wrap' }}>
+        <Avatar alt="Only default icon" icon="default" />
         <Avatar
           src="./broken"
           alt="Broken link"
@@ -145,9 +146,20 @@ function AvatarDocsPage() {
         <Avatar
           src="./broken"
           alt="Broken link no fallback"
-          noFallback
+          fallback={false}
           onError={e => {
             console.warn('Load failed: Broken link no fallback');
+          }}
+        />
+        <Avatar
+          src="./broken"
+          alt="Broken link image fallback"
+          fallbackSrc={
+            'https://bespokeunit.com/wp-content/uploads/2017/05/Square-face-shape-bespke-unit-Bordered-700x700.png'
+          }
+          radius="none"
+          onError={e => {
+            console.warn('Load failed: Broken link image fallback');
           }}
         />
         <Avatar src="./broken" alt="Broken link with name" name="Kate" />
@@ -165,7 +177,6 @@ function AvatarDocsPage() {
           alt="Broken link with name and fallback element and noFallback"
           fallback={<MaterialSymbolIcon icon="headphones" />}
           name="Kate"
-          noFallback
           onError={e => {
             console.warn(
               'Load failed: Broken link with name and fallback element and noFallback'
@@ -238,21 +249,21 @@ function AvatarDocsPage() {
               />
               <Avatar
                 icon={<GlobeIcon />}
-                iconLabel={`Globe svg icon,  color: ${color}`}
+                alt={`Globe svg icon,  color: ${color}`}
                 title={`Color: ${color}`}
                 size="lg"
                 color={color}
               />
               <Avatar
                 icon={<MaterialSymbolIcon icon="account_circle" />}
-                iconLabel={`Material Symbol icon, color: ${color}`}
+                alt={`Material Symbol icon, color: ${color}`}
                 title={`Color: ${color}`}
                 size="lg"
                 color={color}
               />
               <Avatar
                 icon={<IconUser />}
-                iconLabel={`Tabler icon, color: ${color}`}
+                alt={`Tabler icon, color: ${color}`}
                 title={`Color: ${color}`}
                 size="lg"
                 color={color}
@@ -292,7 +303,7 @@ function AvatarDocsPage() {
           />
           <Avatar
             icon={<GlobeIcon />}
-            iconLabel={`Globe svg icon,  color: disabled`}
+            alt={`Globe svg icon,  color: disabled`}
             title={`Color: disabled`}
             size="lg"
             color="tertiary"
@@ -300,7 +311,7 @@ function AvatarDocsPage() {
           />
           <Avatar
             icon={<MaterialSymbolIcon icon="account_circle" />}
-            iconLabel={`Material Symbol icon, color: disabled`}
+            alt={`Material Symbol icon, color: disabled`}
             title={`Color: disabled`}
             size="lg"
             color="tertiary"
@@ -308,7 +319,7 @@ function AvatarDocsPage() {
           />
           <Avatar
             icon={<IconUser />}
-            iconLabel={`Tabler icon, color: disabled`}
+            alt={`Tabler icon, color: disabled`}
             title={`Color: disabled`}
             size="lg"
             color="tertiary"

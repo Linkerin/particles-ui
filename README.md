@@ -132,7 +132,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/kbd)
   - [Next UI](https://nextui.org/docs/components/kbd)
 
-- [ ] Avatar:
+- [x] Avatar:
 
   - Fluent 2: [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage) and [Avatar Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
   - [Ant Design](https://ant.design/components/avatar)
@@ -141,7 +141,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Chakra UI](https://chakra-ui.com/docs/components/avatar)
   - [Next UI](https://nextui.org/docs/components/avatar)
 
-- [ ] Image
+- [x] Image
 
   - [Fluent 2](https://fluent2.microsoft.design/components/web/react/image/usage)
   - [Ant Design](https://ant.design/components/image)
@@ -168,8 +168,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 ## To-Do
 
-- **Avatar**: investigate: lazy loading doesn't work inside `useEffect()`, fix bug of initial load;
-- **Link**: proper typing for `as` value.
-- **Buttons**: types for `as` prop, consider using react `lazy()`;
+- **Important**: typing for `as` prop;
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component;
+- Sass types
