@@ -1,4 +1,3 @@
-import { HtmlElementProps } from '../../lib/puiHTMLPropTypes';
 import {
   PuiAlignItems,
   PuiFlexDirection,
@@ -6,7 +5,8 @@ import {
   PuiSize
 } from '../../lib/types';
 
-export interface CardContentProps extends Omit<HtmlElementProps, 'ref'> {
+export interface CardContentProps
+  extends Omit<React.HTMLAttributes<HTMLElement>, 'ref'> {
   /**
    * Card's element content
    */

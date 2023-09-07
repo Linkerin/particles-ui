@@ -1,12 +1,15 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { DivElementProps } from '@/lib/lib/puiHTMLPropTypes';
 import Divider from '@/lib/components/Divider/Divider';
 import SvgIcon from '@/lib/components/SvgIcon/SvgIcon';
 
 import AtomIcon from '@/public/atom.svg';
 
-function SvgDemoContainer({ children, style, ...props }: DivElementProps) {
+function SvgDemoContainer({
+  children,
+  style,
+  ...props
+}: React.ComponentProps<'div'>) {
   return (
     <div
       style={{

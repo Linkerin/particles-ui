@@ -113,26 +113,3 @@
     }
   }
 }
-
-/// Checks that the list of allowed color tokens contains the provided color
-///
-/// @param {string} $option Color token to be checked
-///
-/// @param {list} $allowed-colors [('primary', 'secondary', 'tertiary')] A list of allowed color tokens
-///
-@mixin check-color-option(
-  $option,
-  $allowed-colors: ('primary', 'secondary', 'tertiary')
-) {
-  @if not $option {
-    @error "Color token has to be provided";
-  }
-
-  @if (meta.type-of($allowed-colors) != 'list') {
-    @error "Allowed color tokens has to be a list";
-  }
-
-  @if list.index($allowed-colors, $option) == null {
-    @error "Invalid value: '#{$option}'. Allowed values: #{$allowed-colors}";
-  }
-}

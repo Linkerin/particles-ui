@@ -1,10 +1,13 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { DivElementProps } from '@/lib/lib/puiHTMLPropTypes';
 import DualSpinner from '@/lib/components/DualSpinner/DualSpinner';
 import Heading from '@/lib/components/Heading/Heading';
 
-function SpinnerContainer({ children, style, ...props }: DivElementProps) {
+function SpinnerContainer({
+  children,
+  style,
+  ...props
+}: React.ComponentProps<'div'>) {
   return (
     <div
       style={{

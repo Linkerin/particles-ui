@@ -1,7 +1,7 @@
-import { HtmlElementProps } from '../../lib/puiHTMLPropTypes';
 import { PuiSize } from '../../lib/types';
 
-export interface TextProps extends Omit<HtmlElementProps, 'ref'> {
+export interface TextProps
+  extends Omit<React.HTMLAttributes<HTMLElement>, 'ref'> {
   /**
    * HTML element that will be rendered by the component
    */
