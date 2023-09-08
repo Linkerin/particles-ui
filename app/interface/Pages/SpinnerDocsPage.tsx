@@ -1,7 +1,8 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import DualSpinner from '@/lib/components/DualSpinner/DualSpinner';
+import DualSpinner from '@/lib/components/Spinner/DualSpinner/DualSpinner';
 import Heading from '@/lib/components/Heading/Heading';
+import RingSpinner from '@/lib/components/Spinner/RingSpinner/RingSpinner';
 
 function SpinnerContainer({
   children,
@@ -25,12 +26,10 @@ function SpinnerContainer({
   );
 }
 
-function DualSpinnerDocsPage() {
+function SpinnerDocsPage() {
   return (
     <DemoSection>
-      <Heading as="h1" variant="h4">
-        Dual Spinner Component
-      </Heading>
+      <Heading variant="h6">Dual Spinner Component</Heading>
       <DemoContainer>
         <SpinnerContainer>
           <Heading variant="h6">X-Small</Heading>
@@ -57,8 +56,35 @@ function DualSpinnerDocsPage() {
           <DualSpinner size="xxl" speed="3s" />
         </SpinnerContainer>
       </DemoContainer>
+      <Heading variant="h6">Ring Spinner</Heading>
+      <DemoContainer>
+        <SpinnerContainer>
+          <Heading variant="h6">X-Small</Heading>
+          <RingSpinner size="xs" speed="0.3s" />
+        </SpinnerContainer>
+        <SpinnerContainer style={{ color: 'var(--pui-tertiary)' }}>
+          <Heading variant="h6">Small</Heading>
+          <RingSpinner size="sm" />
+        </SpinnerContainer>
+        <SpinnerContainer>
+          <Heading variant="h6">Medium</Heading>
+          <RingSpinner size="md" speed="0.7s" />
+        </SpinnerContainer>
+        <SpinnerContainer>
+          <Heading variant="h6">Large</Heading>
+          <RingSpinner size="lg" />
+        </SpinnerContainer>
+        <SpinnerContainer>
+          <Heading variant="h6">X-Large</Heading>
+          <RingSpinner size="xl" />
+        </SpinnerContainer>
+        <SpinnerContainer>
+          <Heading variant="h6">XXL</Heading>
+          <RingSpinner size="xxl" speed="3s" />
+        </SpinnerContainer>
+      </DemoContainer>
     </DemoSection>
   );
 }
 
-export default DualSpinnerDocsPage;
+export default SpinnerDocsPage;

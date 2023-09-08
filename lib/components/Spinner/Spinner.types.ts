@@ -1,6 +1,6 @@
 import { PuiSize } from '../../lib/types';
 
-export interface DualSpinnerProps
+export interface SpinnerProps
   extends Omit<React.ComponentPropsWithoutRef<'span'>, 'color'> {
   /**
    * Size value

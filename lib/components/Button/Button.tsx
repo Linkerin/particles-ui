@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import DualSpinner from '../DualSpinner/DualSpinner';
+import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
