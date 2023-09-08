@@ -12,7 +12,7 @@ import styles from './Alert.module.scss';
 export type { AlertProps };
 
 /**
- * Alert component displays a shot message that attracts user's attention.
+ * Alert component displays a short message that attracts user's attention.
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/alert/ | WAI-ARIA | Alert Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/alert | Particles UI | Alert}
  */

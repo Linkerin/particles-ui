@@ -19,7 +19,11 @@ export interface ButtonBaseProps
    */
   isLoading?: boolean;
   /**
-   * Do not display a loading spinner in loading state
+   * Element that will be displayed in the loading state instead of default spinner
+   */
+  loadingElement?: React.ReactElement;
+  /**
+   * Do not display a loading spinner in the loading state
    */
   loadingSpinner?: boolean;
   /**
@@ -45,10 +49,7 @@ export interface ButtonProps extends ButtonBaseProps {
    * Icon element on the right
    */
   rightIcon?: React.ReactElement;
-  /**
-   * Element that will be displayed in loading state instead of default spinner
-   */
-  loadingElement?: React.ReactElement;
+
   /**
    * Button's content that will be displayed in loading state
    */

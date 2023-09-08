@@ -1,22 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconHeart, IconSend, IconTrash } from '@tabler/icons-react';
+import {
+  IconBookmark,
+  IconHeart,
+  IconSend,
+  IconSettings,
+  IconTrash
+} from '@tabler/icons-react';
 
-import Button, { ButtonProps } from './Button';
+import IconButton, { IconButtonProps } from './IconButton';
 import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
 import RingSpinner from '../Spinner/RingSpinner/RingSpinner';
 
-const defaultProps: ButtonProps = {
+const defaultProps: Partial<IconButtonProps> = {
+  'aria-label': 'IconButton demo',
   color: 'primary',
-  dense: false,
   disabled: false,
   isLoading: false,
-  loadingText: '',
   loadingSpinner: true,
   radius: 'md',
-  shadowOnPress: false,
-  shrinkOnPress: false,
-  size: 'md',
-  variant: 'filled'
+  size: 'lg',
+  variant: 'standard'
 };
 
 const spinners = {
@@ -25,8 +28,10 @@ const spinners = {
 };
 
 const icons = {
+  bookmark: <IconBookmark />,
   heart: <IconHeart />,
   send: <IconSend />,
+  settings: <IconSettings />,
   trash: <IconTrash />
 };
 
@@ -37,63 +42,56 @@ const iconControls = {
 };
 
 const meta = {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/IconButton',
+  component: IconButton,
   tags: ['autodocs'],
   args: { ...defaultProps },
   argTypes: {
-    leftIcon: iconControls,
-    rightIcon: iconControls,
     onClick: { action: 'clicked' },
+    icon: iconControls,
     loadingElement: {
       options: Object.keys(spinners),
       mapping: spinners,
       control: { type: 'select' }
     }
   }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: args => <Button {...args}>Button</Button>
+  args: {
+    icon: <IconBookmark />
+  },
+  render: args => <IconButton {...args} />
 };
 
 export const Loading: Story = {
   args: {
+    color: 'secondary',
+    icon: <IconSend />,
     isLoading: true,
-    loadingText: 'Loading...',
-    leftIcon: <IconTrash />,
-    color: 'secondary'
+    variant: 'soft'
   },
-  render: args => <Button {...args}>Button</Button>
+  render: args => <IconButton {...args} />
 };
 
 export const Disabled: Story = {
   args: {
+    icon: <IconHeart />,
     disabled: true,
-    leftIcon: <IconTrash />,
     variant: 'outlined'
   },
-  render: args => <Button {...args}>Button</Button>
+  render: args => <IconButton {...args} />
 };
 
-export const FullRadius: Story = {
+export const Rounded: Story = {
   args: {
     color: 'tertiary',
-    radius: 'full',
-    rightIcon: <IconSend />,
+    icon: <IconSettings />,
+    radius: 'round',
     variant: 'elevated'
   },
-  render: args => <Button {...args}>Button</Button>
-};
-
-export const Dense: Story = {
-  args: {
-    dense: true,
-    color: 'info',
-    variant: 'soft'
-  },
-  render: args => <Button {...args}>Button</Button>
+  render: args => <IconButton {...args} />
 };
