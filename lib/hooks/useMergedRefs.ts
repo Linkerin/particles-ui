@@ -2,6 +2,8 @@
  * Takes an array of refs and returns a ref callback that merges all the
  * refs together.
  *
+ * @see {@link https://particles.snipshot.dev/docs/hooks/use-merged-refs | Particles UI | useMergedRefs}
+ *
  * @param refs - An array of references
  *
  * @returns A `React.RefCallback<T>`

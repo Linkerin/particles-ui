@@ -1,12 +1,13 @@
 import Avatar from '@/lib/components/Avatar/Avatar';
 import Badge, { BadgeProps } from '@/lib/components/Badge/Badge';
 import BadgeInline from '@/lib/components/BadgeInline/BadgeInline';
+import BadgeInvisible from './BadgeInvisible';
 import Button from '@/lib/components/Button/Button';
 import Chip from '@/lib/components/Chip/Chip';
-import DemoContainer from '../DemoContainer';
-import DemoSection from '../DemoSection';
+import DemoContainer from '../../DemoContainer';
+import DemoSection from '../../DemoSection';
 import Divider from '@/lib/components/Divider/Divider';
-import GlobeIcon from '../GlobeIcon';
+import GlobeIcon from '../../GlobeIcon';
 import Heading from '@/lib/components/Heading/Heading';
 import { IconBell } from '@tabler/icons-react';
 import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
@@ -465,6 +466,8 @@ function BadgeDocsPage() {
           ></BadgeInline>
         </Chip>
       </DemoContainer>
+      <Divider />
+      <BadgeInvisible />
     </DemoSection>
   );
 }

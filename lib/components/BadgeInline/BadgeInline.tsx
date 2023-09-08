@@ -57,6 +57,7 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
           { [styles.single]: singleElement },
           className
         )}
+        aria-hidden={invisible}
         {...props}
       >
         {size !== 'dot' && badgeContent}

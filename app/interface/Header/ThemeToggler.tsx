@@ -4,7 +4,7 @@ import Button from '@/lib/components/Button/Button';
 import IconButton from '@/lib/components/IconButton/IconButton';
 import { IconMoon } from '@tabler/icons-react';
 import { IconSun } from '@tabler/icons-react';
-import useColorMode from '@/lib/hooks/useColorModeToggle';
+import useColorMode from '@/lib/hooks/useColorMode';
 
 function ThemeToggler() {
   const { colorMode, toggleColorMode } = useColorMode();

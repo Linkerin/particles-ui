@@ -15,6 +15,8 @@ interface UseKeyboardFocusOutlineParams<T> {
  * Event handlers that set and remove a data attribute to enable
  * element outline functioning when it was focused only via keyboard
  *
+ * @see {@link https://particles.snipshot.dev/docs/hooks/use-keyboard-focus-outline | Particles UI | useKeyboardFocusOutline}
+ *
  * @returns `onKeyUp`, `onBlur` event handlers
  * and a classname for default outline styling
  */

@@ -60,7 +60,7 @@ $sizes-mapping: (
 }
 
 :where(.invisible) {
-  opacity: 0;
+  visibility: hidden;
 }
 
 :where(.outlined) {

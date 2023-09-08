@@ -13,6 +13,8 @@ export interface UseInteractivityHandlerParams<T> {
 /**
  * Interactivity handlers for non-interactive by default HTML elements.
  * 
+ * @see {@link https://particles.snipshot.dev/docs/hooks/use-interactivity-handlers | Particles UI | useInteractivityHandlers}
+ * 
  * @returns An object containing three properties:
  * `onClickHandler`, `onClickCaptureHandler`, and `onKeyDownHandler`.
  * These properties are functions that can be used as event handlers

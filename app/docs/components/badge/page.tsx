@@ -1,4 +1,4 @@
-import BadgeDocsPage from '@/app/interface/Pages/BadgeDocsPage';
+import BadgeDocsPage from '@/app/interface/Pages/BadgeDocsPage/BadgeDocsPage';
 
 function BadgePage() {
   return <BadgeDocsPage />;
