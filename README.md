@@ -168,7 +168,7 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 ## To-Do
 
-- **Important**: typing for `as` prop;
+- **Important**: typing for `as` prop. Component that need support: `Avatar`,`Badge`, `BadgeInline`, `Button`, `Card`, `Chip`, `FloatingButton`, `Heading`, `Image`, `Link`, `List`, `Text`;
 - **IconButtons**: develop `ToggleIconButton` component;
 - **Chip**: develop `ToggleChip` component;
 - Sass types
