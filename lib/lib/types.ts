@@ -1,6 +1,18 @@
 import { COLOR_MODES } from './constants';
 
 /**
+ * 'alignItems' prop type
+ */
+export type PuiAlignItems = Extract<
+  React.CSSProperties['alignItems'],
+  'center' | 'flex-start' | 'flex-end' | 'stretch'
+>;
+
+export type PuiAsProp = {
+  as?: React.ElementType;
+};
+
+/**
  * Theme color mode values type
  */
 export type PuiColorMode = (typeof COLOR_MODES)[number];
@@ -18,13 +30,8 @@ export type PuiColorNames =
   | 'info'
   | 'uncolored';
 
-/**
- * 'alignItems' prop type
- */
-export type PuiAlignItems = Extract<
-  React.CSSProperties['alignItems'],
-  'center' | 'flex-start' | 'flex-end' | 'stretch'
->;
+export type PuiComponentProps<T extends React.ElementType> =
+  React.ComponentPropsWithRef<T> & PuiAsProp;
 
 /**
  * 'flexDirection' prop type

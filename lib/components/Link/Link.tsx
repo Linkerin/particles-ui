@@ -2,6 +2,7 @@
 
 import { createElement, forwardRef, lazy, Suspense } from 'react';
 import classNames from 'classnames';
+import Box from '../Box/Box';
 
 import { LinkProps } from './Link.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
@@ -20,10 +21,7 @@ export type { LinkProps };
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/link | WAI-ARIA | Link Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/link | Particles UI | Link}
  */
-const Link = forwardRef<
-  HTMLAnchorElement,
-  LinkProps<'a' | React.ComponentType<any>>
->(function Link(
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   {
     children,
     className,
@@ -47,11 +45,11 @@ const Link = forwardRef<
       onKeyUp
     });
 
-  return createElement(
-    as,
-    {
-      ref,
-      className: classNames(
+  return (
+    <Box
+      as={as}
+      ref={ref}
+      className={classNames(
         styles.link,
         outlineDefaultClassName,
         { [styles[color]]: !!color && color !== 'inherit' },
@@ -60,21 +58,51 @@ const Link = forwardRef<
           [styles[`underline-${underline}`]]: underline && underline !== 'none'
         },
         className
-      ),
-      target: isExternal ? '_blank' : target,
-      rel: isExternal && !rel ? 'noopener external' : rel,
-      'data-pui-component': overlay ? 'overlay-link' : 'link',
-      onBlur: onBlurHandler,
-      onKeyUp: onKeyUpHandler,
-      ...props
-    },
-    children,
-    isExternal && externalIcon && (
-      <Suspense>
-        <ExternalIcon />
-      </Suspense>
-    )
+      )}
+      target={isExternal ? '_blank' : target}
+      rel={isExternal && !rel ? 'noopener external' : rel}
+      data-pui-component={overlay ? 'overlay-link' : 'link'}
+      onBlur={onBlurHandler}
+      onKeyUp={onKeyUpHandler}
+      {...props}
+    >
+      {children}
+      {isExternal && externalIcon && (
+        <Suspense>
+          <ExternalIcon />
+        </Suspense>
+      )}
+    </Box>
   );
+
+  // return createElement(
+  //   as,
+  //   {
+  //     ref,
+  //     className: classNames(
+  //       styles.link,
+  //       outlineDefaultClassName,
+  //       { [styles[color]]: !!color && color !== 'inherit' },
+  //       { [styles.external]: isExternal },
+  //       {
+  //         [styles[`underline-${underline}`]]: underline && underline !== 'none'
+  //       },
+  //       className
+  //     ),
+  //     target: isExternal ? '_blank' : target,
+  //     rel: isExternal && !rel ? 'noopener external' : rel,
+  //     'data-pui-component': overlay ? 'overlay-link' : 'link',
+  //     onBlur: onBlurHandler,
+  //     onKeyUp: onKeyUpHandler,
+  //     ...props
+  //   },
+  //   children,
+  //   isExternal && externalIcon && (
+  //     <Suspense>
+  //       <ExternalIcon />
+  //     </Suspense>
+  //   )
+  // );
 });
 
 export default Link;

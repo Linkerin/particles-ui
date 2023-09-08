@@ -1,8 +1,6 @@
-export interface LinkProps<T> extends React.ComponentPropsWithoutRef<'a'> {
-  /**
-   * HTML element that will be rendered by the component
-   */
-  as?: T;
+import { PuiComponentProps } from '../../lib/types';
+
+export interface LinkProps extends PuiComponentProps<'a'> {
   /**
    * Link's font color
    */
