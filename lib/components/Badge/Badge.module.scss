@@ -8,6 +8,8 @@
   display: flex;
   flex-shrink: 0;
   position: relative;
+  width: fit-content;
+  height: fit-content;
 }
 
 :where(.top),
