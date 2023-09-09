@@ -5,7 +5,7 @@ import UserSvg from './user.svg';
 export type { PuiIconProps as UserIconProps };
 
 function UserIcon(props: PuiIconProps) {
-  return <SvgIcon src={UserSvg} id="user" {...props} />;
+  return <SvgIcon src={UserSvg.src} id="user" {...props} />;
 }
 
 export default UserIcon;

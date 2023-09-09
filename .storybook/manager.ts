@@ -3,7 +3,7 @@ import { create } from '@storybook/theming/create';
 
 const theme = create({
   base: 'light',
-  brandTitle: 'Particles UI Storybook',
+  brandTitle: 'Particles UI',
   brandUrl: 'https://particles.snipshot.dev',
   brandImage: '/pui-storybook-logo.svg',
   brandTarget: '_blank'

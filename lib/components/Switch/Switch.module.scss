@@ -239,7 +239,7 @@ input[type='checkbox']:checked ~ :where(.track) {
 input[type='checkbox']:checked ~ :where(.track):not(:where(.uncolored)) {
   background-color: var(--pui-switch-color);
 
-  & > :where(.thumb) {
+  &:not(:where(.disabled)) > :where(.thumb) {
     background-color: var(--pui-switch-on-color);
     color: var(--pui-switch-color-darker);
   }

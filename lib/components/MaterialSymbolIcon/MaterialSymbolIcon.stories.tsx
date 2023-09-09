@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import MaterialSymbolIcon from './MaterialSymbolIcon';
 
 const meta: Meta<typeof MaterialSymbolIcon> = {
-  title: 'Components/Material Symbol Icon',
+  title: 'Components/Icon/Material Symbol Icon',
   component: MaterialSymbolIcon,
   tags: ['autodocs'],
   args: { role: 'presentation' },
