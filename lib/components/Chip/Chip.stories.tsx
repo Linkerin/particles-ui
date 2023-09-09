@@ -83,5 +83,5 @@ export const IconWithDeleteButton: Story = {
     onClick: undefined,
     variant: 'elevated'
   },
-  render: args => <Chip {...args}>Search</Chip>
+  render: args => <Chip {...args}>Music</Chip>
 };

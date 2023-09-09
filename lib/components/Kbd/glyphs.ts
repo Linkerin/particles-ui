@@ -1,7 +1,7 @@
 /**
  * Glyphs for `Kbd` component
  */
-const glyphs = Object.freeze({
+export const glyphs = Object.freeze({
   apple: '',
   command: '⌘',
   control: '⌃',
@@ -25,7 +25,8 @@ const glyphs = Object.freeze({
   tab: '⇥',
   tabLeft: '⇤',
   space: '␣',
-  fn: '🌐'
+  fn: '🌐',
+  win: '⊞'
 });
 
 /**
