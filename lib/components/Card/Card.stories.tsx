@@ -28,7 +28,7 @@ const meta = {
   title: 'Components/Card',
   component: Card,
   tags: ['autodocs'],
-  args: { ...defaultProps }
+  args: { ...defaultProps, style: { maxWidth: '25vw' } }
 } satisfies Meta<typeof Card>;
 
 export default meta;
@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: args => (
-    <Card {...args} style={{ width: '25vw' }}>
+    <Card {...args}>
       <CardHeader>
         <Heading variant="h4">Kea</Heading>
       </CardHeader>
@@ -65,7 +65,7 @@ export const WithImage: Story = {
     variant: 'elevated'
   },
   render: args => (
-    <Card {...args} style={{ width: '20vw' }}>
+    <Card {...args}>
       <CardHeader
         padding={false}
         flexDirection="column"
@@ -81,8 +81,8 @@ export const WithImage: Story = {
         />
       </CardHeader>
       <CardBody gap="md">
-        <Heading variant="h4">Raven</Heading>
-        <Text>
+        <Heading variant="h5">Raven</Heading>
+        <Text size="sm">
           A raven is any of several larger-bodied passerine bird species in the
           genus Corvus. There is no consistent distinction between
           &quot;crows&quot; and &quot;ravens&quot;, common names which are
@@ -106,7 +106,7 @@ export const Clickable: Story = {
     onClick: e => console.log('Card clicked')
   },
   render: args => (
-    <Card {...args} style={{ width: 'fit-content' }}>
+    <Card {...args}>
       <CardHeader
         padding={false}
         flexDirection="column"
@@ -141,7 +141,7 @@ export const WithDividers: Story = {
     size: 'sm'
   },
   render: args => (
-    <Card {...args} style={{ width: '20vw' }}>
+    <Card {...args}>
       <CardHeader
         divider="middle"
         flexDirection="column"
