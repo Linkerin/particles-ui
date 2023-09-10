@@ -25,7 +25,7 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
     onClose,
     textProps,
     headingProps,
-    closeButtonLabel = 'Close alert',
+    closeButtonLabel = 'Close alert message',
     color = 'success',
     icon = true,
     radius = 'sm',
@@ -49,7 +49,7 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
         { [styles.action]: !!onClose || !!actionElement },
         className
       )}
-      aria-labelledby={!!heading ? titleId : undefined}
+      aria-labelledby={heading !== undefined ? titleId : undefined}
       aria-describedby={textId}
       role={role}
       {...props}

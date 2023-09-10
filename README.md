@@ -1,5 +1,7 @@
 [![Particles UI Logo](./readme_img/pui-logo.svg)](https://particles-ui.snipshot.dev)
 
+[<img src="./readme_img/storybook.svg" alt="Storybook logo" width="160" height="40">](https://particles-book.snipshot.dev)
+
 # Particles UI
 
 React components inspired by [Material Design 3](https://m3.material.io) and [Fluent 2](https://fluent2.microsoft.design/).
