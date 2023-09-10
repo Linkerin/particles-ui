@@ -25,18 +25,15 @@
 }
 
 :where(.filled) {
-  background-color: var(--pui-background-container-highest);
+  background-color: var(--pui-background-container);
 
   &:where(.clickable):hover:not(.disabled) {
-    background-color: rgba(
-      var(--pui-background-container-highest-action-channels) /
-        calc(100% - var(--pui-state-hover))
-    );
+    background-color: var(--pui-background-container-high);
     box-shadow: var(--pui-elevation-1);
   }
 
   &:where(.clickable):active:not(.disabled) {
-    background-color: var(--pui-background-container-highest-action);
+    background-color: var(--pui-background-container-highest);
     box-shadow: none;
   }
 }
@@ -46,15 +43,12 @@
   box-shadow: var(--pui-elevation-1);
 
   &:where(.clickable):hover:not(.disabled) {
-    background-color: rgba(
-      var(--pui-background-container-low-action-channels) /
-        calc(100% - var(--pui-state-hover))
-    );
+    background-color: var(--pui-background-container);
     box-shadow: var(--pui-elevation-2);
   }
 
   &:where(.clickable):active:not(.disabled) {
-    background-color: var(--pui-background-container-low-action);
+    background-color: var(--pui-background-container-high);
     box-shadow: var(--pui-elevation-1);
   }
 }
@@ -64,15 +58,12 @@
   border: 1px solid var(--pui-outline-variant);
 
   &:where(.clickable):hover:not(.disabled) {
+    background-color: var(--pui-background-container-low);
     box-shadow: var(--pui-elevation-1);
-    background-color: rgba(
-      var(--pui-background-container-low-action-channels) /
-        calc(100% - var(--pui-state-hover))
-    );
   }
 
   &:where(.clickable):active:not(.disabled) {
-    background-color: var(--pui-background-container-low-action);
+    background-color: var(--pui-background-container);
     box-shadow: none;
   }
 }
