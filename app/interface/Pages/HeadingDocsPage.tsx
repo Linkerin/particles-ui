@@ -135,7 +135,7 @@ function HeadingDocsPage() {
       <Divider />
       <Heading variant="h6">Inherit variant</Heading>
       <div style={{ color: 'var(--pui-secondary, green)' }}>
-        <Heading variant="subtitle-lg">
+        <Heading variant="subtitle-lg" color="inherit">
           Here is secondary color text with{' '}
           <Heading
             as="span"

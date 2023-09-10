@@ -6,7 +6,7 @@ $primary: #5e68ba !default;
 $primary-dark: func.desaturate($primary) !default;
 $secondary: #69aba5 !default;
 $secondary-dark: func.desaturate($secondary) !default;
-$tertiary: #eca855 !default;
+$tertiary: #d88a41 !default;
 $tertiary-dark: func.desaturate($tertiary) !default;
 
 $neutral: func.generate-neutral($primary) !default;

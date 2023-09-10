@@ -160,7 +160,7 @@
 
   &:not(:where(.uncolored)) {
     background-color: var(--pui-background-container-low);
-    color: var(--pui-btn-color);
+    color: var(--pui-btn-color-darker);
   }
 
   &:hover:not(:where(.loading)):not(:disabled) {
