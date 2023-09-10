@@ -16,7 +16,7 @@
 :where(.visible) {
   opacity: 1;
   &:where(.animation) {
-    animation: fadein ease-in 0.6s;
+    animation: fadein ease-in 0.5s;
   }
 }
 

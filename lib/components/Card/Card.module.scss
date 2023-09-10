@@ -2,17 +2,10 @@
 
 @use '../../styles/theme-tokens/variables' as var;
 
-// Padding size variable for CardHeader, CardBody and CardFooter components
-@each $size in ('sm', 'md', 'lg') {
-  :where(.#{$size}) {
-    $pd: map.get(var.$card-padding, $size);
-    --pui-card-padding: #{$pd};
-  }
-}
-
 :where(.card) {
+  --pui-card-padding: #{map.get(var.$card-padding, 'none')};
+
   display: flex;
-  border: 1px solid transparent;
   border-radius: var(--pui-radius-md);
   overflow-wrap: break-word;
   text-align: start;
@@ -81,5 +74,13 @@
   &:where(.clickable):active:not(.disabled) {
     background-color: var(--pui-background-container-low-action);
     box-shadow: none;
+  }
+}
+
+// Padding size variable for CardHeader, CardBody and CardFooter components
+@each $size in ('sm', 'md', 'lg') {
+  :where(.#{$size}) {
+    $pd: map.get(var.$card-padding, $size);
+    --pui-card-padding: #{$pd};
   }
 }

@@ -27,6 +27,7 @@ const CardHeader = forwardRef<HTMLElement, CardHeaderProps>(function CardHeader(
     gap,
     justifyContent,
     alignItems = 'center',
+    padding = true,
     ...props
   },
   ref
@@ -35,6 +36,7 @@ const CardHeader = forwardRef<HTMLElement, CardHeaderProps>(function CardHeader(
     <header
       ref={ref}
       className={classNames(
+        { [styles['no-padding']]: padding === false },
         styles['card-header'],
         alignItemsStyles[alignItems],
         { [flexDirectionStyles[`${flexDirection}`]]: !!flexDirection },

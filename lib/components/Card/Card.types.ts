@@ -30,6 +30,10 @@ export interface CardContentProps
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content | MDN | justify-content - CSS}
    */
   justifyContent?: PuiJustifyContent;
+  /**
+   * Switches padding of `CardHeader`, `CardBody` and `CardFooter` components
+   */
+  padding?: boolean;
 }
 
 interface CardStaticProps extends CardContentProps {
@@ -49,8 +53,6 @@ interface CardStaticProps extends CardContentProps {
    * Styling variant
    */
   variant?: 'filled' | 'outlined' | 'elevated';
-  //   onClickCapture?: React.MouseEventHandler<HTMLElement>;
-  //   onKeyDown?: React.KeyboardEventHandler<HTMLElement>;
 }
 
 type CardActionProps =

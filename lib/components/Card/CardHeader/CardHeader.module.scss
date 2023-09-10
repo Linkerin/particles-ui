@@ -1,5 +1,9 @@
 @use '../../../styles/theme-tokens/mixins' as mx;
 
+.no-padding {
+  --pui-card-padding: 0rem;
+}
+
 $pd: var(--pui-card-padding);
 
 :where(.card-header) {
