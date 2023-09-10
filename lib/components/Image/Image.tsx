@@ -61,6 +61,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     <div
       className={classNames(
         styles.wrapper,
+        { [styles.bg]: !fallback && !fallbackOnError },
         { [radiusStyles[`${radius}`]]: radius },
         wrapperClassName
       )}

@@ -1,6 +1,12 @@
 :where(.wrapper) {
   position: relative;
   overflow: hidden;
+  height: fit-content;
+  width: fit-content;
+
+  &:where(.bg) {
+    background-color: var(--pui-background-container);
+  }
 }
 
 :where(.fallback) {
