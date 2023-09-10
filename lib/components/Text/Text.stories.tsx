@@ -15,8 +15,7 @@ const meta = {
   title: 'Components/Text',
   component: Text,
   tags: ['autodocs'],
-  args: { ...defaultProps },
-  argTypes: {}
+  args: { ...defaultProps }
 } satisfies Meta<typeof Text>;
 
 export default meta;
