@@ -10,12 +10,11 @@ $sizes-mapping: (
   'lg': 'xl'
 );
 
-@mixin size($size, $dimension, $radius, $pd, $loading-border-width: null) {
+@mixin size($size, $dimension, $pd, $loading-border-width: null) {
   $font: map.get(var.$typography, 'label', map.get($sizes-mapping, $size));
   $icon-size: $dimension - ($pd * 2);
 
   :where(.#{$size}) {
-    border-radius: var(--pui-radius-#{$radius});
     height: $dimension;
     padding: $pd;
 
@@ -141,12 +140,6 @@ $sizes-mapping: (
   }
 }
 
-@include size('sm', 2.5rem, $radius: 'md', $pd: 0.5rem);
-@include size('md', 3.5rem, $radius: 'lg', $pd: 1rem);
-@include size(
-  'lg',
-  6rem,
-  $radius: 'xl',
-  $pd: 1.75rem,
-  $loading-border-width: 2px
-);
+@include size('sm', 2.5rem, $pd: 0.5rem);
+@include size('md', 3.5rem, $pd: 1rem);
+@include size('lg', 6rem, $pd: 1.75rem, $loading-border-width: 2px);

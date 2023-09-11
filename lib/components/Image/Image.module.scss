@@ -1,6 +1,12 @@
 :where(.wrapper) {
   position: relative;
   overflow: hidden;
+  height: fit-content;
+  width: fit-content;
+
+  &:where(.bg) {
+    background-color: var(--pui-background-container);
+  }
 }
 
 :where(.fallback) {
@@ -16,7 +22,7 @@
 :where(.visible) {
   opacity: 1;
   &:where(.animation) {
-    animation: fadein ease-in 0.6s;
+    animation: fadein ease-in 0.5s;
   }
 }
 

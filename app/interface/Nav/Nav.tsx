@@ -18,7 +18,6 @@ const components = [
   { name: 'Chip', link: 'chip' },
   { name: 'Card', link: 'card' },
   { name: 'Divider', link: 'divider' },
-  { name: 'DualSpinner', link: 'dual-spinner' },
   { name: 'FloatingButton', link: 'floating-button' },
   { name: 'Heading', link: 'heading' },
   { name: 'IconButton', link: 'icon-button' },
@@ -28,6 +27,7 @@ const components = [
   { name: 'List', link: 'list' },
   { name: 'MaterialSymbolIcon', link: 'material-symbol-icon' },
   { name: 'Palette', link: 'palette' },
+  { name: 'Spinner', link: 'spinner' },
   { name: 'SvgIcon', link: 'svg-icon' },
   { name: 'Switch', link: 'switch' },
   { name: 'Text', link: 'text' }

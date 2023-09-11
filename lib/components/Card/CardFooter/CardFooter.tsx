@@ -28,6 +28,7 @@ const CardFooter = forwardRef<HTMLElement, CardFooterProps>(function CardFooter(
     justifyContent,
     alignItems = 'center',
     gap = 'md',
+    padding = true,
     ...props
   },
   ref
@@ -36,6 +37,7 @@ const CardFooter = forwardRef<HTMLElement, CardFooterProps>(function CardFooter(
     <footer
       ref={ref}
       className={classNames(
+        { [styles['no-padding']]: padding === false },
         styles['card-footer'],
         alignItemsStyles[alignItems],
         gapStyles[gap],

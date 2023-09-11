@@ -34,13 +34,13 @@ function SvgIconDocsPage() {
       <DemoContainer>
         <SvgDemoContainer>
           <h2>20px (small)</h2>
-          <SvgIcon src={AtomIcon} id="atom" size={20} />
+          <SvgIcon src={AtomIcon.src} id="atom" size={20} />
         </SvgDemoContainer>
         <Divider orientation="vertical" />
         <SvgDemoContainer>
           <h2>24px (medium)</h2>
           <SvgIcon
-            src={AtomIcon}
+            src={AtomIcon.src}
             id="atom"
             size={24}
             color="var(--pui-primary)"
@@ -49,12 +49,12 @@ function SvgIconDocsPage() {
         <Divider orientation="vertical" />
         <SvgDemoContainer>
           <h2>40px (large)</h2>
-          <SvgIcon src={AtomIcon} id="atom" size={40} />
+          <SvgIcon src={AtomIcon.src} id="atom" size={40} />
         </SvgDemoContainer>
         <Divider orientation="vertical" />
         <SvgDemoContainer>
           <h2>48px (x-large)</h2>
-          <SvgIcon src={AtomIcon} id="atom" size={48} color="green" />
+          <SvgIcon src={AtomIcon.src} id="atom" size={48} color="green" />
         </SvgDemoContainer>
       </DemoContainer>
     </DemoSection>

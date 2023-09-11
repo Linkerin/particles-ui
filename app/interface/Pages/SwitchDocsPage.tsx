@@ -25,7 +25,7 @@ const colors: Array<SwitchProps['color']> = [
 ];
 
 function TickIcon() {
-  return <SvgIcon src={TickSvg} id="tick" />;
+  return <SvgIcon src={TickSvg.src} id="tick" />;
 }
 
 function SwitchDocsPage() {

@@ -1,3 +1,7 @@
+.no-padding {
+  --pui-card-padding: 0rem;
+}
+
 $pd: var(--pui-card-padding);
 
 :where(.card-body) {

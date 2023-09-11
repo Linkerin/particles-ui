@@ -5,9 +5,9 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
+    'storybook-dark-mode',
     {
       name: '@storybook/addon-styling',
       options: {
@@ -23,6 +23,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag'
-  }
+  },
+  staticDirs: ['./public']
 };
 export default config;

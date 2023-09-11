@@ -184,14 +184,11 @@ function TextDocsPage() {
         <Text as="abbr">ABBR</Text>
         <Text as="code">&lt;code here /&gt;</Text>
         <Text as="cite">Citation</Text>
+        <Text as="blockquote">Quote</Text>
         <Text as="del">Deleted</Text>
         <Text as="em">Emphasis</Text>
         <Text as="ins">Inserted</Text>
-        <div style={{ display: 'flex' }}>
-          <Text as="kbd">Ctrl</Text>
-          <Text>&nbsp;+&nbsp;</Text>
-          <Text as="kbd">C</Text>
-        </div>
+        <Text as="kbd">Ctrl + C</Text>
         <Text as="mark">Highlighted</Text>
         <Text as="s">Strikethrough</Text>
         <Text as="samp">Sample</Text>

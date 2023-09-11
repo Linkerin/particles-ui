@@ -32,7 +32,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         className={classNames(styles[size], className)}
         leftIcon={icon}
         loadingElement={
-          !loadingSpinner ? (
+          loadingSpinner === false ? (
             <span data-pui-component="btn-icon">{icon}</span>
           ) : undefined
         }

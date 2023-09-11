@@ -32,7 +32,7 @@ const SvgIcon = forwardRef<SVGSVGElement, SvgIconProps>(function SvgIcon(
       color={color}
       strokeWidth={strokeWidth}
     >
-      <use href={`${src.src}#${id}`} />
+      <use href={`${src}#${id}`} />
     </svg>
   );
 });

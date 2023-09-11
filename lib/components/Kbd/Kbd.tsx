@@ -14,10 +14,11 @@ export type { KbdProps };
  * @see {@link https://particles.snipshot.dev/docs/components/kbd | Particles UI | Kbd}
  */
 const Kbd = forwardRef<HTMLElement, KbdProps>(function Kbd(
-  { children, className, glyph, type = 'flat', ...props },
+  { children, className, glyph, rightGlyph, type = 'flat', ...props },
   ref
 ) {
   const glyphsContent = createGlyphContent(glyph);
+  const rightGlyphsContent = createGlyphContent(rightGlyph);
 
   return (
     <Text
@@ -31,6 +32,9 @@ const Kbd = forwardRef<HTMLElement, KbdProps>(function Kbd(
         <kbd data-pui-component="kbd-glyphs">{glyphsContent}</kbd>
       )}
       {children}
+      {rightGlyphsContent?.length && rightGlyphsContent?.length > 0 && (
+        <kbd data-pui-component="kbd-glyphs">{rightGlyphsContent}</kbd>
+      )}
     </Text>
   );
 });

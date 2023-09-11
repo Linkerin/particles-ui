@@ -1,4 +1,5 @@
-import '../app/styles/particles-ui.scss';
+import './storybook.scss';
+import '../lib/styles/pui-globals.scss';
 
 import type { Preview } from '@storybook/react';
 
@@ -11,6 +12,12 @@ const preview: Preview = {
         date: /Date$/
       }
     }
+  }
+};
+
+export const parameters = {
+  darkMode: {
+    stylePreview: true
   }
 };
 

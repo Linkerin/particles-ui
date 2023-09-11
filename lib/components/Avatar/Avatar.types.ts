@@ -31,7 +31,7 @@ type AvatarContentProps =
       /**
        * Icon element is not allowed when `src` prop is used
        */
-      icon?: undefined;
+      icon?: 'default' | undefined;
     };
 
 interface AvatarBaseProps

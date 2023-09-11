@@ -27,6 +27,7 @@ const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function CardBody(
     alignItems = 'flex-start',
     flexDirection = 'column',
     justifyContent = 'center',
+    padding = true,
     ...props
   },
   ref
@@ -35,6 +36,7 @@ const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function CardBody(
     <div
       ref={ref}
       className={classNames(
+        { [styles['no-padding']]: padding === false },
         styles['card-body'],
         flexDirectionStyles[flexDirection],
         alignItemsStyles[alignItems],

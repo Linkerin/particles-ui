@@ -5,7 +5,7 @@ import SvgIcon from '../../SvgIcon/SvgIcon';
 export type { PuiIconProps as ErrorIconProps };
 
 function ErrorIcon(props: PuiIconProps) {
-  return <SvgIcon src={ErrorSvg} id="error" {...props} />;
+  return <SvgIcon src={ErrorSvg.src} id="error" {...props} />;
 }
 
 export default ErrorIcon;

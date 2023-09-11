@@ -12,7 +12,7 @@ import styles from './Alert.module.scss';
 export type { AlertProps };
 
 /**
- * Alert component displays a shot message that attracts user's attention.
+ * Alert component displays a short message that attracts user's attention.
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/alert/ | WAI-ARIA | Alert Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/alert | Particles UI | Alert}
  */
@@ -25,7 +25,7 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
     onClose,
     textProps,
     headingProps,
-    closeButtonLabel = 'Close alert',
+    closeButtonLabel = 'Close alert message',
     color = 'success',
     icon = true,
     radius = 'sm',
@@ -49,7 +49,7 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
         { [styles.action]: !!onClose || !!actionElement },
         className
       )}
-      aria-labelledby={!!heading ? titleId : undefined}
+      aria-labelledby={heading !== undefined ? titleId : undefined}
       aria-describedby={textId}
       role={role}
       {...props}

@@ -5,7 +5,7 @@ import SvgIcon from '../../SvgIcon/SvgIcon';
 export type { PuiIconProps as SuccessIconProps };
 
 function SuccessIcon(props: PuiIconProps) {
-  return <SvgIcon src={SuccessSvg} id="success" {...props} />;
+  return <SvgIcon src={SuccessSvg.src} id="success" {...props} />;
 }
 
 export default SuccessIcon;

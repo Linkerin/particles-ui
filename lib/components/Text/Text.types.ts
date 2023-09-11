@@ -14,6 +14,7 @@ export interface TextProps
     | 'u'
     | 'abbr'
     | 'cite'
+    | 'blockquote'
     | 'code'
     | 'del'
     | 'em'

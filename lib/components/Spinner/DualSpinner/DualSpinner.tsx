@@ -1,17 +1,17 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { DualSpinnerProps, StyleObj } from './DualSpinner.types';
+import { SpinnerProps, StyleObj } from '../Spinner.types';
 
 import styles from './DualSpinner.module.scss';
 
-export type { DualSpinnerProps };
+export type { SpinnerProps as DualSpinnerProps };
 
 /**
  * Dual Spinner component
- * @see {@link https://particles.snipshot.dev/docs/components/dual-spinner | Particles UI | Dual Spinner}
+ * @see {@link https://particles.snipshot.dev/docs/components/spinner | Particles UI | Spinner}
  */
-const DualSpinner = forwardRef<HTMLSpanElement, DualSpinnerProps>(
+const DualSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
   function DualSpinner({ className, style, speed, size = '', ...props }, ref) {
     const styleObj: StyleObj = {};
     if (speed) styleObj.animationDuration = speed;

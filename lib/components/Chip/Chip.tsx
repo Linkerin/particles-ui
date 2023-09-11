@@ -17,7 +17,7 @@ export type { ChipProps };
 /**
  * Chip component that is used to represent element of a data set
  * and can handle user actions.
- * Can be clickable and deletable base on `onClick` and `onDelete` props.
+ * Can be 'clickable' and 'deletable' based on `onClick` and `onDelete` props.
  *
  * Do not use `Chip` where `Button` shoud be used.
  *

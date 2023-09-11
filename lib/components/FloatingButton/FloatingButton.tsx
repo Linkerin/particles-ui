@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import DualSpinner from '../DualSpinner/DualSpinner';
+import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
 import { FloatingButtonProps } from './FloatingButton.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
@@ -11,6 +11,12 @@ import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './FloatingButton.module.scss';
 
 export type { FloatingButtonProps };
+
+const mappingSizeRadius = {
+  sm: 'md',
+  md: 'lg',
+  lg: 'xl'
+};
 
 /**
  * Floating action button component for the most common or important action on a screen.
@@ -24,11 +30,11 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
     {
       children,
       className,
+      loadingElement,
       onBlur,
       onClick,
       onKeyUp,
       title,
-      radius,
       color = 'primary',
       disabled = false,
       isLoading = false,
@@ -36,6 +42,7 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       lowered = false,
       loadingSpinner = true,
       size = 'md',
+      radius = mappingSizeRadius[size],
       ...props
     },
     ref
@@ -53,7 +60,7 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
           outlineDefaultClassName,
           { [styles.lowered]: lowered },
           { [styles.loading]: isLoading },
-          { [radiusStyles[`${radius}`]]: !!radius },
+          radiusStyles[radius],
           className
         )}
         title={title}
@@ -66,7 +73,9 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       >
         {isLoading ? (
           <>
-            {loadingSpinner && (
+            {loadingSpinner && loadingElement ? (
+              loadingElement
+            ) : (
               <DualSpinner data-pui-component="fab-load-spinner" />
             )}
             {!loadingSpinner && !loadingText ? children : loadingText}
