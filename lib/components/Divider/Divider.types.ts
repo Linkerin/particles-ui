@@ -1,4 +1,5 @@
 import { DividerHrProps } from './DividerHr/DividerHr.types';
+import { HeadingProps } from '../Heading/Heading.types';
 
 export interface DividerProps extends DividerHrProps {
   /**
@@ -6,11 +7,7 @@ export interface DividerProps extends DividerHrProps {
    */
   subheader?: string;
   /**
-   * HTML `class` attribute value for the subheader
+   * Divider's subheader props
    */
-  subheaderClassName?: string;
-  /**
-   * `ref` attribute value for the subheader
-   */
-  subheaderRef?: React.Ref<HTMLSpanElement>;
+  subheaderProps?: HeadingProps;
 }

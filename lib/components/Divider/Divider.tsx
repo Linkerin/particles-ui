@@ -16,13 +16,7 @@ export type { DividerProps };
  * @see {@link https://particles.snipshot.dev/docs/components/divider | Particles UI | Divider}
  */
 const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
-  {
-    subheader,
-    subheaderClassName,
-    subheaderRef,
-    orientation = 'horizontal',
-    ...props
-  },
+  { subheader, subheaderProps, orientation = 'horizontal', ...props },
   ref
 ) {
   return orientation === 'horizontal' &&
@@ -36,9 +30,7 @@ const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
         {...props}
       />
       <Suspense fallback={subheader}>
-        <DividerSubheader ref={subheaderRef} className={subheaderClassName}>
-          {subheader}
-        </DividerSubheader>
+        <DividerSubheader {...subheaderProps}>{subheader}</DividerSubheader>
       </Suspense>
     </span>
   ) : (
