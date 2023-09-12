@@ -8,10 +8,6 @@ export type PuiAlignItems = Extract<
   'center' | 'flex-start' | 'flex-end' | 'stretch'
 >;
 
-export type PuiAsProp = {
-  as?: React.ElementType;
-};
-
 /**
  * Theme color mode values type
  */
@@ -29,9 +25,6 @@ export type PuiColorNames =
   | 'warning'
   | 'info'
   | 'uncolored';
-
-export type PuiComponentProps<T extends React.ElementType> =
-  React.ComponentPropsWithRef<T> & PuiAsProp;
 
 /**
  * 'flexDirection' prop type

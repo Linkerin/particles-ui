@@ -1,17 +1,26 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
+import {
+  PolymorphicProps,
+  PolymorphicRef
+} from '@/lib/lib/polymorphicComponent';
 
-import { createCompoundComponent } from './compoundComponent';
-import { PuiAsProp } from '../../lib/types';
+type BoxProps<C extends React.ElementType> = PolymorphicProps<C, {}>;
 
-export type BoxProps = PuiAsProp;
+type BoxComponent = <C extends React.ElementType = 'div'>(
+  props: BoxProps<C>
+) => React.ReactNode;
 
-const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
-  { as, ...props },
-  ref
+const Box: BoxComponent = forwardRef(function Box<C extends React.ElementType>(
+  { as, children, ...props }: BoxProps<C>,
+  ref?: PolymorphicRef<C>
 ) {
   const Element = as ?? 'div';
 
-  return <Element ref={ref} {...props} />;
+  return (
+    <Element ref={ref} {...props}>
+      {children}
+    </Element>
+  );
 });
 
 export default Box;
