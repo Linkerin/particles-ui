@@ -1,23 +1,10 @@
-@use './theme-tokens/mixins' as mx;
-@use './theme' as var;
-
 @media (prefers-color-scheme: light) {
-  :root {
-    @include mx.create-css-vars(var.$colors, light);
-    @include mx.create-css-vars(var.$elevations, light, $prefix: 'elevation');
-  }
-
   html {
     color-scheme: light;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    @include mx.create-css-vars(var.$colors, dark);
-    @include mx.create-css-vars(var.$elevations, dark, $prefix: 'elevation');
-  }
-
   html {
     color-scheme: dark;
   }
@@ -25,14 +12,10 @@
 
 html[data-pui-mode='light'] {
   color-scheme: light;
-  @include mx.create-css-vars(var.$colors, light);
-  @include mx.create-css-vars(var.$elevations, light, $prefix: 'elevation');
 }
 
 html[data-pui-mode='dark'] {
   color-scheme: dark;
-  @include mx.create-css-vars(var.$colors, dark);
-  @include mx.create-css-vars(var.$elevations, dark, $prefix: 'elevation');
 }
 
 *,
@@ -46,10 +29,6 @@ html[data-pui-mode='dark'] {
 }
 
 body {
-  @include mx.create-css-vars(var.$gap, $prefix: 'gap');
-  @include mx.create-css-vars(var.$radiuses, $prefix: 'radius');
-  @include mx.create-css-vars(var.$states, $prefix: 'state');
-
   background-color: var(--pui-background);
   line-height: 1;
   max-width: 100dvw;
