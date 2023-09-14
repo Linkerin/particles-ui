@@ -1,0 +1,66 @@
+:where(.skeleton) {
+  background-color: var(--pui-background-container-high, #e8e8ed);
+  height: 1em;
+  width: 100%;
+  overflow: hidden;
+}
+
+:where(.avatar) {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+:where(.image) {
+  height: 6rem;
+  width: 6rem;
+}
+
+:where(.button) {
+  height: 2.5rem;
+  width: 6rem;
+}
+
+:where(.fit) {
+  height: fit-content;
+  width: fit-content;
+}
+
+// animations
+:where(.pulse) {
+  animation: pulse 1.4s infinite linear;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+:where(.wave) {
+  animation: wave 3.2s infinite linear;
+  background-size: 300% 100%;
+  background-image: linear-gradient(
+    to right,
+    var(--pui-background-container-low) 0%,
+    var(--pui-background-container-highest) 50%,
+    var(--pui-background-container-low) 100%
+  );
+}
+
+@keyframes wave {
+  from {
+    background-position-x: 300%;
+  }
+
+  to {
+    background-position-x: 0%;
+  }
+}
