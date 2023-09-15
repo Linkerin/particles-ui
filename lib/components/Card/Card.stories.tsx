@@ -10,7 +10,7 @@ import CardFooter from './CardFooter/CardFooter';
 import Heading from '../Heading/Heading';
 import IconButton from '../IconButton/IconButton';
 import Image from '../Image/Image';
-import ImageFallback from '../ImageFallback/ImageFallback';
+import ImageIconFallback from '../ImageIconFallback/ImageIconFallback';
 import Text from '../Text/Text';
 
 import sneakersPng from '../../../.storybook/public/sneakers.png';
@@ -76,7 +76,7 @@ export const WithImage: Story = {
           alt="Commom raven of North America in flight"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/3782_Common_Raven_in_flight.jpg/1920px-3782_Common_Raven_in_flight.jpg"
           fadeInAnimation={true}
-          fallback={<ImageFallback type="icon-loading" color="primary" />}
+          fallback={<ImageIconFallback icon="loading" color="primary" />}
           radius="md"
         />
       </CardHeader>
@@ -117,7 +117,7 @@ export const Clickable: Story = {
           alt="Commom raven of North America in flight"
           src={sneakersPng.src}
           fadeInAnimation={true}
-          fallback={<ImageFallback type="icon-loading" color="primary" />}
+          fallback={<ImageIconFallback icon="loading" color="primary" />}
           radius="md"
           height={150}
           width={225}

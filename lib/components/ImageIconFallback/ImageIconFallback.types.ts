@@ -1,6 +1,6 @@
-import { PuiColorNames, PuiStyleVariant } from '../../../lib/types';
+import { PuiColorNames, PuiStyleVariant } from '../../lib/types';
 
-export interface IconFallbackProps
+export interface ImageIconFallbackProps
   extends React.ComponentPropsWithoutRef<'span'> {
   /**
    * Fallback's main color

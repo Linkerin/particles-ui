@@ -1,30 +1,28 @@
 import { forwardRef, lazy, Suspense } from 'react';
 import classNames from 'classnames';
 
-import { IconFallbackProps } from './IconFallback.types';
+import { ImageIconFallbackProps } from './ImageIconFallback.types';
 
-import styles from './IconFallback.module.scss';
+import styles from './ImageIconFallback.module.scss';
 
-const NoImageIcon = lazy(
-  () => import('../../PuiIcons/NoImageIcon/NoImageIcon')
-);
+const NoImageIcon = lazy(() => import('../PuiIcons/NoImageIcon/NoImageIcon'));
 const LoadImageIcon = lazy(
-  () => import('../../PuiIcons/LoadImageIcon/LoadImageIcon')
+  () => import('../PuiIcons/LoadImageIcon/LoadImageIcon')
 );
 
-export type { IconFallbackProps };
+export type { ImageIconFallbackProps };
 
 /**
  * Fallback element for an `Image` component with loading and error icons.
  * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
  */
-const IconFallback = forwardRef<HTMLSpanElement, IconFallbackProps>(
+const ImageIconFallback = forwardRef<HTMLDivElement, ImageIconFallbackProps>(
   function ImageFallback(
     { className, icon, color = 'primary', variant = 'filled', ...props },
     ref
   ) {
     return (
-      <span
+      <div
         ref={ref}
         className={classNames(
           styles['image-fallback'],
@@ -38,9 +36,9 @@ const IconFallback = forwardRef<HTMLSpanElement, IconFallbackProps>(
           {icon === 'loading' && <LoadImageIcon strokeWidth={1.2} />}
           {icon === 'error' && <NoImageIcon strokeWidth={1.2} />}
         </Suspense>
-      </span>
+      </div>
     );
   }
 );
 
-export default IconFallback;
+export default ImageIconFallback;

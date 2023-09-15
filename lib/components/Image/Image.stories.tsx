@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Image, { ImageProps } from './Image';
-import ImageFallback from '../ImageFallback/ImageFallback';
+import ImageIconFallback from '../ImageIconFallback/ImageIconFallback';
 
 const defaultProps: ImageProps = {
   fadeInAnimation: false,
@@ -46,7 +46,7 @@ export const WithFallback: Story = {
   name: 'With `fallback` prop',
   args: {
     fadeInAnimation: true,
-    fallback: <ImageFallback type="icon-loading" variant="outlined" />,
+    fallback: <ImageIconFallback icon="loading" variant="outlined" />,
     radius: 'md',
     src: 'https://app.requestly.io/delay/3000/https://loremflickr.com/320/240'
   },
@@ -68,8 +68,8 @@ export const ErrorWithFallbackSrc: Story = {
 export const ErrorWithSeparateFallbacks: Story = {
   name: 'Error with separate fallbacks',
   args: {
-    fallback: <ImageFallback type="icon-loading" variant="outlined" />,
-    fallbackOnError: <ImageFallback type="icon-error" color="error" />,
+    fallback: <ImageIconFallback icon="loading" variant="outlined" />,
+    fallbackOnError: <ImageIconFallback icon="error" color="error" />,
     radius: 'sm',
     src: 'https://app.requestly.io/delay/3000/broken'
   },
