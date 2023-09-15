@@ -1,33 +1,26 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { PuiRadius } from '../../lib/types';
+import { SkeletonProps, StyleObj } from './Skeleton.types';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Skeleton.module.scss';
 
-export interface SkeletonProps extends React.ComponentPropsWithoutRef<'div'> {
-  animation?: 'pulse' | 'wave' | 'none';
-  fitContent?: boolean;
-  isLoaded?: boolean;
-  radius?: PuiRadius;
-  speed?: React.CSSProperties['animationDuration'];
-  type?: 'avatar' | 'button' | 'image';
-  height?: React.CSSProperties['height'];
-  width?: React.CSSProperties['width'];
-}
+export type { SkeletonProps };
 
 const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skeleton(
   {
     children,
     className,
+    animationDuration,
     height,
     width,
-    speed,
+    style,
     type,
-    animation = 'wave',
+    animation = 'pulse',
+    fadeAnimation = true,
     fitContent = false,
-    isLoaded = 'false',
+    isLoaded = false,
     radius = 'xs',
     ...props
   },
@@ -51,17 +44,25 @@ const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skeleton(
       break;
   }
 
+  const styleObj: StyleObj = {};
+  if (animationDuration) styleObj.animationDuration = animationDuration;
+  if (height) styleObj.height = height;
+  if (width) styleObj.width = width;
+
   return (
     <div
       ref={ref}
       className={classNames(
         styles.skeleton,
         { [styles.fit]: fitContent },
-        { [styles[animation]]: animation && animation !== 'none' },
+        { [styles[animation]]: !isLoaded && animation && animation !== 'none' },
         { [styles[`${type}`]]: type },
+        { [styles.loaded]: isLoaded },
+        { [styles['fade-animation']]: fadeAnimation },
         radiusStyles[componentRadius],
         className
       )}
+      style={{ ...styleObj, ...style }}
       {...props}
     >
       {children}

@@ -1,8 +1,35 @@
 :where(.skeleton) {
-  background-color: var(--pui-background-container-high, #e8e8ed);
+  --pui-skeleton-base-color: var(--pui-background-container-high, #e8e8ed);
+  --pui-skeleton-wave-start-color: var(--pui-background-container-low, #f6f7f8);
+  --pui-skeleton-wave-middle-color: var(
+    --pui-background-container-highest,
+    #e2e3e9
+  );
+
+  background-color: var(--pui-skeleton-base-color);
   height: 1em;
   width: 100%;
   overflow: hidden;
+
+  * {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+:where(.loaded) {
+  visibility: hidden;
+
+  * {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:where(.fade-animation) {
+    * {
+      transition: opacity 0.4s linear;
+    }
+  }
 }
 
 :where(.avatar) {
@@ -49,9 +76,9 @@
   background-size: 300% 100%;
   background-image: linear-gradient(
     to right,
-    var(--pui-background-container-low) 0%,
-    var(--pui-background-container-highest) 50%,
-    var(--pui-background-container-low) 100%
+    var(--pui-skeleton-wave-start-color) 0%,
+    var(--pui-skeleton-wave-middle-color) 50%,
+    var(--pui-skeleton-wave-start-color) 100%
   );
 }
 
