@@ -8,6 +8,14 @@ import styles from './Skeleton.module.scss';
 
 export type { SkeletonProps };
 
+/**
+ * Skeleton component displays a preview of your content while it's loading,
+ * or to visualize content that doesn't exist yet.
+ *
+ * Can wrap content. Consider using `area-busy` attribute for children in that case.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-busy | MDN | aria-busy}
+ * @see {@link https://particles.snipshot.dev/docs/components/skeleton | Particles UI | Skeleton}
+ */
 const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skeleton(
   {
     children,

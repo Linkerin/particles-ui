@@ -12,6 +12,10 @@ import styles from './SkeletonText.module.scss';
 
 export type { SkeletonTextProps };
 
+/**
+ * Composes `Skeleton` components to mimic a text paragraph.
+ * @see {@link https://particles.snipshot.dev/docs/components/skeleton | Particles UI | Skeleton}
+ */
 const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(
   function SkeletonText(
     {
