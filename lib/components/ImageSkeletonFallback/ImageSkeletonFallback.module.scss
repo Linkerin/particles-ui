@@ -14,7 +14,7 @@
   --pui-skeleton-wave-middle-color: var(--pui-background-container-high);
 }
 
-:where(.skeleton) {
+div:where(.skeleton) {
   display: block;
   height: 100%;
   width: 100%;
