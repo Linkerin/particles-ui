@@ -1,5 +1,6 @@
+import '../lib/styles/pui-base.scss';
+import './pui-globals.scss';
 import './storybook.scss';
-import '../lib/styles/pui-globals.scss';
 
 import type { Preview } from '@storybook/react';
 

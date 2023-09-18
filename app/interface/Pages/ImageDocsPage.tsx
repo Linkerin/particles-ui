@@ -8,11 +8,12 @@ import Image from '@/lib/components/Image/Image';
 
 import avatar from '@/public/avatar.jpg';
 
-import ImageFallback, {
-  ImageFallbackProps
-} from '@/lib/components/ImageFallback/ImageFallback';
+import ImageIconFallback, {
+  ImageIconFallbackProps
+} from '@/lib/components/ImageIconFallback/ImageIconFallback';
+import ImageSkeletonFallback from '@/lib/components/ImageSkeletonFallback/ImageSkeletonFallback';
 
-const colors: Array<ImageFallbackProps['color']> = [
+const colors: Array<ImageIconFallbackProps['color']> = [
   'primary',
   'secondary',
   'tertiary',
@@ -57,7 +58,7 @@ function ImageDocsPage() {
           alt="default image"
           src="https://app.requestly.io/delay/2000/https://upload.wikimedia.org/wikipedia/commons/a/a1/Square_funny.svg"
           fallbackSrc="https://via.placeholder.com/80"
-          fallback={<ImageFallback type="icon-loading" />}
+          fallback={<ImageIconFallback icon="loading" />}
           width={80}
           height={80}
           radius="xs"
@@ -74,7 +75,7 @@ function ImageDocsPage() {
           <Image
             key={color}
             alt={`${color} filled fallback`}
-            fallback={<ImageFallback type="icon-loading" color={color} />}
+            fallback={<ImageIconFallback icon="loading" color={color} />}
             height={80}
             width={80}
             radius="xs"
@@ -90,8 +91,8 @@ function ImageDocsPage() {
             key={color}
             alt={`${color} outlined fallback`}
             fallback={
-              <ImageFallback
-                type="icon-error"
+              <ImageIconFallback
+                icon="error"
                 color={color}
                 variant="outlined"
               />
@@ -103,14 +104,29 @@ function ImageDocsPage() {
         ))}
       </DemoContainer>
       <Heading as="h3" variant="subtitle-md">
-        Skeleton
+        Skeleton pulse
       </Heading>
       <DemoContainer>
         {colors.map(color => (
           <Image
             key={color}
             alt={`${color} skeleton fallback`}
-            fallback={<ImageFallback type="skeleton" color={color} />}
+            fallback={<ImageSkeletonFallback color={color} />}
+            height={80}
+            width={80}
+            radius="xs"
+          />
+        ))}
+      </DemoContainer>
+      <Heading as="h3" variant="subtitle-md">
+        Skeleton wave
+      </Heading>
+      <DemoContainer>
+        {colors.map(color => (
+          <Image
+            key={color}
+            alt={`${color} skeleton fallback`}
+            fallback={<ImageSkeletonFallback animation="wave" color={color} />}
             height={80}
             width={80}
             radius="xs"
@@ -154,8 +170,8 @@ function ImageDocsPage() {
         <Image
           alt="default image"
           src="https://app.requestly.io/delay/3000/broken"
-          fallback={<ImageFallback type="skeleton" color="tertiary" />}
-          fallbackOnError={<ImageFallback type="icon-error" color="error" />}
+          fallback={<ImageSkeletonFallback color="tertiary" />}
+          fallbackOnError={<ImageIconFallback icon="error" color="error" />}
           width={80}
           height={80}
           radius="xs"

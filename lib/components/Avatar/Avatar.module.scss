@@ -15,7 +15,7 @@
     $label: map.get(var.$typography, 'label', $size);
   }
 
-  :where(.#{$size}) {
+  div:where(.#{$size}) {
     height: $dimension;
     min-width: $dimension;
     width: $dimension;

@@ -7,10 +7,7 @@ const meta = {
   title: 'Components/Divider',
   component: Divider,
   tags: ['autodocs'],
-  args: { orientation: 'horizontal', subheader: '' },
-  argTypes: {
-    subheaderRef: { control: { disable: true } }
-  }
+  args: { orientation: 'horizontal', subheader: '' }
 } satisfies Meta<typeof Divider>;
 
 export default meta;
