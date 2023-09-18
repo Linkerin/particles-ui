@@ -3,8 +3,10 @@
 import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 
-import { ChipProps } from './Chip.types';
+import Box from '../Box/Box';
+import { ChipBaseProps, ChipProps } from './Chip.types';
 import CloseButton from '../CloseButton/CloseButton';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../hooks/useMergedRefs';
@@ -14,18 +16,9 @@ import styles from './Chip.module.scss';
 
 export type { ChipProps };
 
-/**
- * Chip component that is used to represent element of a data set
- * and can handle user actions.
- * Can be 'clickable' and 'deletable' based on `onClick` and `onDelete` props.
- *
- * Do not use `Chip` where `Button` shoud be used.
- *
- * The component renders a `div` element.
- * @see {@link https://particles.snipshot.dev/docs/components/chip | Particles UI | Chip}
- *
- */
-const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
+const DEFAULT_ELEMENT = 'div';
+
+const _Chip = forwardRef<HTMLDivElement, ChipProps>(function _Chip(
   {
     children,
     className,
@@ -37,13 +30,14 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     onClickCapture,
     onKeyDown,
     onKeyUp,
-    style,
+    as = DEFAULT_ELEMENT,
     disabled = false,
     color = 'primary',
     interactiveStyle = false,
     radius = 'sm',
     size = 'md',
-    variant = 'outlined'
+    variant = 'outlined',
+    ...props
   },
   ref
 ) {
@@ -69,8 +63,9 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     useKeyboardFocusOutline({ onBlur, onKeyUp });
 
   return (
-    <div
+    <Box
       ref={mergedRefs}
+      as={as}
       className={classNames(
         styles.chip,
         styles[variant],
@@ -84,7 +79,6 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
         { [outlineDefaultClassName]: clickable },
         className
       )}
-      style={style}
       aria-disabled={disabled}
       onBlur={clickable ? onBlurHandler : onBlur}
       onClick={disabled ? undefined : onClickHandler}
@@ -93,6 +87,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       onKeyUp={clickable ? onKeyUpHandler : onKeyUp}
       tabIndex={clickable && !disabled ? 0 : undefined}
       role={clickable ? 'button' : undefined}
+      {...props}
     >
       {!!leftIcon && <span data-pui-component="chip-icon">{leftIcon}</span>}
       {children}
@@ -106,8 +101,23 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       ) : (
         !!rightIcon && <span data-pui-component="chip-icon">{rightIcon}</span>
       )}
-    </div>
+    </Box>
   );
 });
+
+/**
+ * Chip component that is used to represent element of a data set
+ * and can handle user actions.
+ * Can be 'clickable' and 'deletable' based on `onClick` and `onDelete` props.
+ *
+ * Do not use `Chip` where `Button` shoud be used.
+ *
+ * The component renders a `div` element.
+ * @see {@link https://particles.snipshot.dev/docs/components/chip | Particles UI | Chip}
+ *
+ */
+const Chip = createPolymorphicComponent<typeof DEFAULT_ELEMENT, ChipBaseProps>(
+  _Chip
+);
 
 export default Chip;

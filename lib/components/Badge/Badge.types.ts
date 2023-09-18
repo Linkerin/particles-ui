@@ -1,6 +1,10 @@
-import { BadgeInlineProps } from '../BadgeInline/BadgeInline.types';
+import {
+  BadgeInlineBaseProps,
+  BadgeInlineProps
+} from '../BadgeInline/BadgeInline.types';
+import { PuiAsProp } from '../../lib/types';
 
-export interface BadgeProps extends BadgeInlineProps {
+interface BadgeSelfProps {
   /**
    * Horizontal position (works when `inline` = `false`)
    */
@@ -14,3 +18,7 @@ export interface BadgeProps extends BadgeInlineProps {
    */
   shape?: 'circle' | 'rectangle';
 }
+
+export type BadgeBaseProps = BadgeInlineBaseProps & BadgeSelfProps;
+
+export type BadgeProps = BadgeSelfProps & PuiAsProp & BadgeInlineProps;

@@ -3,24 +3,21 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
+import Box from '../Box/Box';
+import { createPolymorphicComponent } from '../..//lib/createPolymorphicComponent';
 import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
 
-import { ButtonProps } from './Button.types';
+import { ButtonBaseProps, ButtonProps } from './Button.types';
 
 export type { ButtonProps };
 
-/**
- * Button component that enables users to trigger an action or event,
- * such as submitting a form, opening a dialog, canceling an action,
- * or performing a delete operation.
- * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
- * @see {@link https://particles.snipshot.dev/docs/components/button | Particles UI | Button}
- */
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+const DEFAULT_ELEMENT = 'button';
+
+const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
   {
     children,
     className,
@@ -32,6 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     rightIcon,
     loadingElement,
     title,
+    as = DEFAULT_ELEMENT,
     color = 'primary',
     dense = false,
     disabled = false,
@@ -54,8 +52,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     });
 
   return (
-    <button
+    <Box
       ref={ref}
+      as={as}
       title={title}
       className={classNames(
         styles.button,
@@ -100,8 +99,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
           )}
         </>
       )}
-    </button>
+    </Box>
   );
 });
+
+/**
+ * Button component that enables users to trigger an action or event,
+ * such as submitting a form, opening a dialog, canceling an action,
+ * or performing a delete operation.
+ * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
+ * @see {@link https://particles.snipshot.dev/docs/components/button | Particles UI | Button}
+ */
+const Button = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  ButtonBaseProps
+>(_Button);
 
 export default Button;

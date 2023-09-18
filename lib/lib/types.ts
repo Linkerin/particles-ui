@@ -9,6 +9,16 @@ export type PuiAlignItems = Extract<
 >;
 
 /**
+ * `as` prop type
+ */
+export type PuiAsProp = {
+  /**
+   * HTML or React element that will be rendered by the component
+   */
+  as?: React.ElementType;
+};
+
+/**
  * Theme color mode values type
  */
 export type PuiColorMode = (typeof COLOR_MODES)[number];

@@ -2,27 +2,20 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import BadgeInline from '../BadgeInline/BadgeInline';
-import { BadgeProps } from './Badge.types';
+import { BadgeBaseProps, BadgeProps } from './Badge.types';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 
 import styles from './Badge.module.scss';
 
 export type { BadgeProps };
 
-/**
- * Badge component is a small visual indicator for a notification,
- * item count or status. May use numbers, short text or icons.
- * This is an overlay version.
- *
- * We strongly recommend using no more than __4__ characters for content.
- *
- * By default, underlying component's `shape` is `'rectangle'`.
- * Provide the value `'circle'` if your underlying component is spherical.
- * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
- */
-const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
+const DEFAULT_ELEMENT = 'span';
+
+const _Badge = forwardRef<HTMLSpanElement, BadgeProps>(function _Badge(
   {
     children,
     className,
+    as = DEFAULT_ELEMENT,
     vertical = 'top',
     horizontal = 'right',
     shape = 'rectangle',
@@ -38,6 +31,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
     >
       {children}
       <BadgeInline
+        as={as}
         ref={ref}
         className={classNames(
           styles[vertical],
@@ -50,5 +44,21 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
     </span>
   );
 });
+
+/**
+ * Badge component is a small visual indicator for a notification,
+ * item count or status. May use numbers, short text or icons.
+ * This is an overlay version.
+ *
+ * We strongly recommend using no more than __4__ characters for content.
+ *
+ * By default, underlying component's `shape` is `'rectangle'`.
+ * Provide the value `'circle'` if your underlying component is spherical.
+ * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
+ */
+const Badge = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  BadgeBaseProps
+>(_Badge);
 
 export default Badge;

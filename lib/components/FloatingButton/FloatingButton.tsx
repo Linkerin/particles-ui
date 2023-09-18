@@ -3,8 +3,13 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
+import Box from '../Box/Box';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
-import { FloatingButtonProps } from './FloatingButton.types';
+import {
+  FloatingButtonBaseProps,
+  FloatingButtonProps
+} from './FloatingButton.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
@@ -12,21 +17,15 @@ import styles from './FloatingButton.module.scss';
 
 export type { FloatingButtonProps };
 
+const DEFAULT_ELEMENT = 'button';
 const mappingSizeRadius = {
   sm: 'md',
   md: 'lg',
   lg: 'xl'
 };
 
-/**
- * Floating action button component for the most common or important action on a screen.
- * Floating button appear in front of all other content on the screen and should persist
- * when the content is being scrolled.
- * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
- * @see {@link https://particles.snipshot.dev/docs/components/floating-button | Particles UI | FloatingButton}
- */
-const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
-  function FloatingButton(
+const _FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
+  function _FloatingButton(
     {
       children,
       className,
@@ -35,6 +34,7 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       onClick,
       onKeyUp,
       title,
+      as = DEFAULT_ELEMENT,
       color = 'primary',
       disabled = false,
       isLoading = false,
@@ -51,8 +51,9 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
       useKeyboardFocusOutline({ onBlur, onKeyUp });
 
     return (
-      <button
+      <Box
         ref={ref}
+        as={as}
         className={classNames(
           styles.fab,
           styles[size],
@@ -83,9 +84,21 @@ const FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
         ) : (
           children
         )}
-      </button>
+      </Box>
     );
   }
 );
+
+/**
+ * Floating action button component for the most common or important action on a screen.
+ * Floating button appear in front of all other content on the screen and should persist
+ * when the content is being scrolled.
+ * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
+ * @see {@link https://particles.snipshot.dev/docs/components/floating-button | Particles UI | FloatingButton}
+ */
+const FloatingButton = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  FloatingButtonBaseProps
+>(_FloatingButton);
 
 export default FloatingButton;

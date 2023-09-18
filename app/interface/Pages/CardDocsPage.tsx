@@ -36,7 +36,7 @@ function CardFooterContent({
       disabled={disabled}
       rightIcon={rightIcon}
       variant={variant}
-      onClick={e => {
+      onClick={() => {
         console.log('Button clicked');
       }}
     >

@@ -3,7 +3,8 @@
 import { forwardRef, lazy, Suspense, useMemo } from 'react';
 import classNames from 'classnames';
 
-import { AvatarProps } from './Avatar.types';
+import { AvatarBaseProps, AvatarProps } from './Avatar.types';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import generateInitials from './generateInitials';
 import Image from '../Image/Image';
 import type { UserIconProps } from '../PuiIcons/UserIcon/UserIcon';
@@ -15,6 +16,8 @@ import styles from './Avatar.module.scss';
 
 export type { AvatarProps };
 
+const DEFAULT_ELEMENT = 'img';
+
 function SuspensedUserIcon(props: UserIconProps) {
   return (
     <Suspense>
@@ -23,15 +26,7 @@ function SuspensedUserIcon(props: UserIconProps) {
   );
 }
 
-/**
- * Avatar component displays user's profile image, initials or fallback icon.
- *
- * Always add `alt` description with `src` provided image
- * and `iconLabel` description with `icon`.
- * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
- * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
- */
-const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
+const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
   {
     className,
     alt,
@@ -43,6 +38,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
     icon,
     name,
     wrapperClassName,
+    as = DEFAULT_ELEMENT,
     color = 'primary',
     radius = 'full',
     size = 'md',
@@ -65,6 +61,8 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
 
   return (
     <Image
+      ref={ref}
+      as={as}
       wrapperProps={imageWrapperProps}
       alt={alt}
       wrapperClassName={classNames(
@@ -88,5 +86,18 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
     />
   );
 });
+
+/**
+ * Avatar component displays user's profile image, initials or fallback icon.
+ *
+ * Always add `alt` description with `src` provided image
+ * and `iconLabel` description with `icon`.
+ * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
+ * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
+ */
+const Avatar = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  AvatarBaseProps
+>(_Avatar);
 
 export default Avatar;

@@ -9,7 +9,7 @@ import Text from '../Text/Text';
 
 import linkOverlayStyles from '../../styles/util-classes/link-overlay.module.scss';
 
-const defaultProps: LinkProps<'a'> = {
+const defaultProps: LinkProps = {
   as: 'a',
   color: 'primary',
   externalIcon: true,

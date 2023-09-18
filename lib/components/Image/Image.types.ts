@@ -1,10 +1,6 @@
-import { PuiRadius } from '../../lib/types';
+import { PuiAsProp, PuiRadius } from '../../lib/types';
 
-export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
-  /**
-   * Element that will be rendered as image component
-   */
-  as?: keyof JSX.IntrinsicElements | React.ReactNode;
+export interface ImageBaseProps {
   /**
    * The duration of the fade-in animation
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration | MDN | animation-duration}
@@ -54,3 +50,7 @@ export interface ImageProps extends React.ComponentPropsWithoutRef<'img'> {
    */
   wrapperProps?: Omit<React.ComponentProps<'div'>, 'className'>;
 }
+
+export type ImageProps = ImageBaseProps &
+  PuiAsProp &
+  React.ComponentPropsWithoutRef<'img'>;

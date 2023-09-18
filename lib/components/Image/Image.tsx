@@ -3,7 +3,9 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { ImageProps } from './Image.types';
+import Box from '../Box/Box';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { ImageBaseProps, ImageProps } from './Image.types';
 import useImageLoader from './useImageLoader';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
@@ -11,17 +13,10 @@ import styles from './Image.module.scss';
 
 export type { ImageProps };
 
-/**
- * Image component with fallback support.
- *
- * For Next.js you can combine the framework's optimized `Image` component
- * with this one providing it into `as` prop.
- * @see {@link https://nextjs.org/docs/app/api-reference/components/image | Next.js | Image}
- * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
- */
-const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
+const DEFAULT_ELEMENT = 'img';
+
+const _Image = forwardRef<HTMLImageElement, ImageProps>(function _Image(
   {
-    as,
     className,
     style,
     alt,
@@ -37,6 +32,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     radius,
     wrapperClassName,
     wrapperProps,
+    as = DEFAULT_ELEMENT,
     fadeInAnimation = false,
     fallbackOnError = fallback,
     preloadFallbackSrc = true,
@@ -67,8 +63,9 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
       )}
       {...wrapperProps}
     >
-      <img
+      <Box
         ref={ref}
+        as={as}
         className={classNames(
           { [styles.animation]: fadeInAnimation },
           { [styles.invisible]: !loadingState.loaded },
@@ -96,5 +93,18 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     </div>
   );
 });
+
+/**
+ * Image component with fallback support.
+ *
+ * For Next.js you can combine the framework's optimized `Image` component
+ * with this one providing it into `as` prop.
+ * @see {@link https://nextjs.org/docs/app/api-reference/components/image | Next.js | Image}
+ * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
+ */
+const Image = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  ImageBaseProps
+>(_Image);
 
 export default Image;

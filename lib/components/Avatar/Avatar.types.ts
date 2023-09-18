@@ -1,5 +1,5 @@
-import { ImageProps } from '../Image/Image.types';
-import { PuiColorNames, PuiRadius, PuiSize } from '../../lib/types';
+import { ImageBaseProps, ImageProps } from '../Image/Image.types';
+import { PuiAsProp, PuiColorNames, PuiRadius, PuiSize } from '../../lib/types';
 
 type AvatarContentProps =
   | {
@@ -34,11 +34,7 @@ type AvatarContentProps =
       icon?: 'default' | undefined;
     };
 
-interface AvatarBaseProps
-  extends Omit<
-    ImageProps,
-    'alt' | 'src' | 'fallback' | 'fallbackOnError' | 'radius' | 'wrapperRef'
-  > {
+type AvatarSelfProps = AvatarContentProps & {
   /**
    * HTML `<img>` element's `alt` attribute value
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes | MDN | img}
@@ -68,6 +64,17 @@ interface AvatarBaseProps
    * Size value
    */
   size?: PuiSize | 'xxl';
-}
+};
 
-export type AvatarProps = AvatarBaseProps & AvatarContentProps;
+type ImageBasePropsToOmit =
+  | 'fallback'
+  | 'fallbackOnError'
+  | 'radius'
+  | 'wrapperRef';
+
+export type AvatarBaseProps = AvatarSelfProps &
+  Omit<ImageBaseProps, ImageBasePropsToOmit>;
+
+export type AvatarProps = AvatarSelfProps &
+  PuiAsProp &
+  Omit<ImageProps, 'alt' | 'src' | ImageBasePropsToOmit>;

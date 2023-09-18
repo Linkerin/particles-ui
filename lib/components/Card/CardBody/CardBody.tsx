@@ -1,7 +1,9 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { CardBodyProps } from './CardBody.types';
+import Box from '../../Box/Box';
+import { CardBodyBaseProps, CardBodyProps } from './CardBody.types';
+import { createPolymorphicComponent } from '../../../lib/createPolymorphicComponent';
 
 import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
 import flexDirectionStyles from '../../../styles/util-classes/flex-direction.module.scss';
@@ -11,19 +13,15 @@ import styles from './CardBody.module.scss';
 
 export type { CardBodyProps };
 
-/**
- * CardBody component that wraps card's main content.
- * Should be used inside a `Card` component.
- *
- * The component renders as a `div` element.
- * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
- */
-const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function CardBody(
+const DEFAULT_ELEMENT = 'div';
+
+const _CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function _CardBody(
   {
     children,
     className,
     style,
     gap,
+    as = DEFAULT_ELEMENT,
     alignItems = 'flex-start',
     flexDirection = 'column',
     justifyContent = 'center',
@@ -33,8 +31,9 @@ const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function CardBody(
   ref
 ) {
   return (
-    <div
+    <Box
       ref={ref}
+      as={as}
       className={classNames(
         { [styles['no-padding']]: padding === false },
         styles['card-body'],
@@ -48,8 +47,20 @@ const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function CardBody(
       {...props}
     >
       {children}
-    </div>
+    </Box>
   );
 });
+
+/**
+ * CardBody component that wraps card's main content.
+ * Should be used inside a `Card` component.
+ *
+ * The component renders as a `div` element.
+ * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
+ */
+const CardBody = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  CardBodyBaseProps
+>(_CardBody);
 
 export default CardBody;

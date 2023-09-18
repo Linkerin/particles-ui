@@ -140,7 +140,7 @@ function AvatarDocsPage() {
         <Avatar
           src="./broken"
           alt="Broken link"
-          onError={e => {
+          onError={() => {
             console.warn('Load failed: Broken link');
           }}
         />
@@ -148,7 +148,7 @@ function AvatarDocsPage() {
           src="./broken"
           alt="Broken link no fallback"
           fallback={false}
-          onError={e => {
+          onError={() => {
             console.warn('Load failed: Broken link no fallback');
           }}
         />
@@ -157,7 +157,7 @@ function AvatarDocsPage() {
           alt="Broken link image fallback"
           fallbackSrc={'https://via.placeholder.com/40'}
           radius="none"
-          onError={e => {
+          onError={() => {
             console.warn('Load failed: Broken link image fallback');
           }}
         />
@@ -167,7 +167,7 @@ function AvatarDocsPage() {
           alt="Broken link with name and fallback"
           fallback={<MaterialSymbolIcon icon="headphones" />}
           name="Kate"
-          onError={e => {
+          onError={() => {
             console.warn('Load failed: Broken link with name and fallback');
           }}
         />
@@ -176,7 +176,7 @@ function AvatarDocsPage() {
           alt="Broken link with name and fallback element and noFallback"
           fallback={<MaterialSymbolIcon icon="headphones" />}
           name="Kate"
-          onError={e => {
+          onError={() => {
             console.warn(
               'Load failed: Broken link with name and fallback element and noFallback'
             );

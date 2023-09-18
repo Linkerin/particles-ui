@@ -1,30 +1,6 @@
-import { PuiSize } from '../../lib/types';
+import { PuiAsProp, PuiSize } from '../../lib/types';
 
-export interface TextProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, 'ref'> {
-  /**
-   * HTML element that will be rendered by the component
-   */
-  as?:
-    | 'p'
-    | 'span'
-    | 'strong'
-    | 'b'
-    | 'i'
-    | 'u'
-    | 'abbr'
-    | 'cite'
-    | 'blockquote'
-    | 'code'
-    | 'del'
-    | 'em'
-    | 'ins'
-    | 'kbd'
-    | 'mark'
-    | 's'
-    | 'samp'
-    | 'sub'
-    | 'sup';
+export interface TextBaseProps {
   /**
    * Font color
    */
@@ -47,3 +23,7 @@ export interface TextProps
    */
   variant?: 'body' | 'label' | 'inherit';
 }
+
+export type TextProps = TextBaseProps &
+  PuiAsProp &
+  Omit<React.HTMLAttributes<HTMLElement>, 'ref'>;

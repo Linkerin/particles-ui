@@ -1,4 +1,5 @@
 import {
+  PuiAsProp,
   PuiColorNames,
   PuiRadius,
   PuiSize,
@@ -8,8 +9,7 @@ import {
 /**
  * Common props for Button-like components
  */
-export interface ButtonBaseProps
-  extends React.ComponentPropsWithoutRef<'button'> {
+export interface ButtonCommonProps {
   /**
    * Button's main color
    */
@@ -36,7 +36,7 @@ export interface ButtonBaseProps
   size?: PuiSize;
 }
 
-export interface ButtonProps extends ButtonBaseProps {
+export interface ButtonBaseProps extends ButtonCommonProps {
   /**
    * Shrinks the button reducing paddings
    */
@@ -68,3 +68,7 @@ export interface ButtonProps extends ButtonBaseProps {
    */
   variant?: PuiStyleVariant | 'text';
 }
+
+export type ButtonProps = ButtonBaseProps &
+  PuiAsProp &
+  React.ComponentPropsWithoutRef<'button'>;

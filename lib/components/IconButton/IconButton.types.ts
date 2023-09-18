@@ -1,8 +1,11 @@
-import { ButtonBaseProps } from '../Button/Button.types';
-import { PuiStyleVariant } from '../../lib/types';
+import { ButtonCommonProps } from '../Button/Button.types';
+import { PuiAsProp, PuiStyleVariant } from '../../lib/types';
 
-export interface IconButtonProps
-  extends Omit<ButtonBaseProps, 'children' | 'aria-label' | 'ref'> {
+export interface IconButtonBaseProps extends ButtonCommonProps {
+  /**
+   * HTML `aria-label` attribute value
+   * @see {@link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label | MDN | aria-label}
+   */
   'aria-label': React.AriaAttributes['aria-label'];
   /**
    * Button's icon content
@@ -13,3 +16,7 @@ export interface IconButtonProps
    */
   variant?: PuiStyleVariant | 'standard';
 }
+
+export type IconButtonProps = IconButtonBaseProps &
+  PuiAsProp &
+  Omit<React.ComponentPropsWithoutRef<'button'>, 'children' | 'aria-label'>;

@@ -1,10 +1,9 @@
-type HeadingElements = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+import { HEADING_ELEMENTS } from '../../lib/constants';
+import { PuiAsProp } from '../../lib/types';
 
-export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
-  /**
-   * HTML element that will be rendered by the component
-   */
-  as?: HeadingElements | 'span';
+type HeadingElements = (typeof HEADING_ELEMENTS)[number];
+
+export interface HeadingBaseProps {
   /**
    * Font color
    */
@@ -28,3 +27,7 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
     | 'subtitle-sm'
     | 'inherit';
 }
+
+export type HeadingProps = HeadingBaseProps &
+  PuiAsProp &
+  Omit<React.HTMLAttributes<HTMLHeadingElement>, 'ref'>;

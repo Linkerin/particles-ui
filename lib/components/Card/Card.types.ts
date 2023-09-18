@@ -1,12 +1,12 @@
 import {
   PuiAlignItems,
+  PuiAsProp,
   PuiFlexDirection,
   PuiJustifyContent,
   PuiSize
 } from '../../lib/types';
 
-export interface CardContentProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, 'ref'> {
+export interface CardContentProps {
   /**
    * Card's element content
    */
@@ -65,4 +65,8 @@ type CardActionProps =
       'aria-label': React.AriaAttributes['aria-label'];
     };
 
-export type CardProps = CardStaticProps & CardActionProps;
+export type CardBaseProps = CardStaticProps & CardActionProps;
+
+export type CardProps = CardBaseProps &
+  PuiAsProp &
+  Omit<React.HTMLAttributes<HTMLElement>, 'ref'>;

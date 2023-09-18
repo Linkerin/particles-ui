@@ -20,24 +20,24 @@ function ChipDocsPage() {
       <DemoContainer>
         <Chip>Outlined chip</Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Outlined chip clicked');
           }}
         >
           Outlined clickable chip
         </Chip>
         <Chip
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
         >
           Deletable chip
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Deletable chip clicked');
           }}
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
         >
@@ -48,7 +48,7 @@ function ChipDocsPage() {
       <DemoContainer>
         <Chip variant="elevated">Elevated chip</Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Elevated chip clicked');
           }}
           variant="elevated"
@@ -65,10 +65,10 @@ function ChipDocsPage() {
         </Chip>
         <Chip
           variant="elevated"
-          onClick={e => {
+          onClick={() => {
             console.log('Deletable chip clicked');
           }}
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
         >
@@ -81,7 +81,7 @@ function ChipDocsPage() {
       <DemoContainer>
         <Chip variant="filled">Filled chip</Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Outlined chip clicked');
           }}
           variant="filled"
@@ -89,7 +89,7 @@ function ChipDocsPage() {
           Filled clickable chip
         </Chip>
         <Chip
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
           variant="filled"
@@ -97,7 +97,7 @@ function ChipDocsPage() {
           Deletable chip
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Deletable chip clicked');
           }}
           onDelete={e => {
@@ -114,7 +114,7 @@ function ChipDocsPage() {
       <DemoContainer>
         <Chip variant="soft">Soft chip</Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Outlined chip clicked');
           }}
           variant="soft"
@@ -122,7 +122,7 @@ function ChipDocsPage() {
           Soft clickable chip
         </Chip>
         <Chip
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
           variant="soft"
@@ -130,10 +130,10 @@ function ChipDocsPage() {
           Deletable chip
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Deletable chip clicked');
           }}
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
           variant="soft"
@@ -184,7 +184,7 @@ function ChipDocsPage() {
         </Chip>
         <Chip
           disabled
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on outlined chip');
           }}
         >
@@ -193,7 +193,7 @@ function ChipDocsPage() {
         <Chip
           disabled
           variant="elevated"
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on elevated chip!');
           }}
         >
@@ -202,7 +202,7 @@ function ChipDocsPage() {
         <Chip
           disabled
           variant="filled"
-          onDelete={e => {
+          onDelete={() => {
             alert('Delete try on elevated chip!');
           }}
         >
@@ -325,7 +325,7 @@ function ChipDocsPage() {
       <Heading variant="h6">Icon colors</Heading>
       <DemoContainer>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked primary color');
           }}
           leftIcon={<GlobeIcon />}
@@ -333,7 +333,7 @@ function ChipDocsPage() {
           Primary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked secondary color');
           }}
           leftIcon={<GlobeIcon />}
@@ -342,7 +342,7 @@ function ChipDocsPage() {
           Secondary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked tertiary color');
           }}
           leftIcon={<GlobeIcon />}
@@ -353,7 +353,7 @@ function ChipDocsPage() {
       </DemoContainer>
       <DemoContainer>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked primary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="code" />}
@@ -362,7 +362,7 @@ function ChipDocsPage() {
           Primary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked secondary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="code" />}
@@ -372,7 +372,7 @@ function ChipDocsPage() {
           Secondary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked tertiary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="edit" />}
@@ -384,7 +384,7 @@ function ChipDocsPage() {
       </DemoContainer>
       <DemoContainer>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked primary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="edit" />}
@@ -393,7 +393,7 @@ function ChipDocsPage() {
           Primary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked secondary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="edit" />}
@@ -403,7 +403,7 @@ function ChipDocsPage() {
           Secondary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked tertiary color');
           }}
           leftIcon={<MaterialSymbolIcon icon="code" />}
@@ -415,7 +415,7 @@ function ChipDocsPage() {
       </DemoContainer>
       <DemoContainer>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked primary color');
           }}
           leftIcon={<GlobeIcon />}
@@ -424,7 +424,7 @@ function ChipDocsPage() {
           Primary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked secondary color');
           }}
           leftIcon={<GlobeIcon />}
@@ -434,7 +434,7 @@ function ChipDocsPage() {
           Secondary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked tertiary color');
           }}
           leftIcon={<GlobeIcon />}
@@ -444,7 +444,7 @@ function ChipDocsPage() {
           Tertiary
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked success color');
           }}
           leftIcon={<GlobeIcon />}
@@ -454,7 +454,7 @@ function ChipDocsPage() {
           Success
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked info color');
           }}
           leftIcon={<GlobeIcon />}
@@ -464,7 +464,7 @@ function ChipDocsPage() {
           Info
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked warning color');
           }}
           leftIcon={<GlobeIcon />}
@@ -474,7 +474,7 @@ function ChipDocsPage() {
           Warning
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked error color');
           }}
           leftIcon={<GlobeIcon />}
@@ -484,7 +484,7 @@ function ChipDocsPage() {
           Error
         </Chip>
         <Chip
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked none color');
           }}
           leftIcon={<GlobeIcon />}

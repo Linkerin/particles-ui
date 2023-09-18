@@ -24,7 +24,7 @@ function FloatingButtonsDocsPage() {
         <FloatingButton
           aria-label="Floating button"
           title="Floating button with onClick callback"
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked floating button');
           }}
         >

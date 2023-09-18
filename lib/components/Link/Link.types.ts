@@ -1,8 +1,6 @@
-export interface LinkProps<T> extends React.ComponentPropsWithoutRef<'a'> {
-  /**
-   * HTML element that will be rendered by the component
-   */
-  as?: T;
+import { PuiAsProp } from '../../lib/types';
+
+export interface LinkBaseProps {
   /**
    * Link's font color
    */
@@ -16,7 +14,8 @@ export interface LinkProps<T> extends React.ComponentPropsWithoutRef<'a'> {
    */
   isExternal?: boolean;
   /**
-   * Use this link for a link overlay
+   * The link with this property set to `true`
+   * will be used for a link overlay
    */
   overlay?: boolean;
   /**
@@ -24,3 +23,7 @@ export interface LinkProps<T> extends React.ComponentPropsWithoutRef<'a'> {
    */
   underline?: 'none' | 'hover' | 'always';
 }
+
+export type LinkProps = LinkBaseProps &
+  PuiAsProp &
+  React.ComponentPropsWithoutRef<'a'>;

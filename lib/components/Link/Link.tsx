@@ -1,9 +1,11 @@
 'use client';
 
-import { createElement, forwardRef, lazy, Suspense } from 'react';
+import { forwardRef, lazy, Suspense } from 'react';
 import classNames from 'classnames';
 
-import { LinkProps } from './Link.types';
+import Box from '../Box/Box';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { LinkBaseProps, LinkProps } from './Link.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
 const ExternalIcon = lazy(
@@ -14,16 +16,9 @@ import styles from './Link.module.scss';
 
 export type { LinkProps };
 
-/**
- * Link component that wraps an HTML `<a>` element.
- * Could be used with different routing libraries link components via `as` prop.
- * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/link | WAI-ARIA | Link Pattern}
- * @see {@link https://particles.snipshot.dev/docs/components/link | Particles UI | Link}
- */
-const Link = forwardRef<
-  HTMLAnchorElement,
-  LinkProps<'a' | React.ComponentType<any>>
->(function Link(
+const DEFAULT_ELEMENT = 'a';
+
+const _Link = forwardRef<HTMLAnchorElement, LinkProps>(function _Link(
   {
     children,
     className,
@@ -31,7 +26,7 @@ const Link = forwardRef<
     onKeyUp,
     rel,
     underline,
-    as = 'a',
+    as = DEFAULT_ELEMENT,
     color = 'primary',
     externalIcon = true,
     isExternal = false,
@@ -47,11 +42,11 @@ const Link = forwardRef<
       onKeyUp
     });
 
-  return createElement(
-    as,
-    {
-      ref,
-      className: classNames(
+  return (
+    <Box
+      ref={ref}
+      as={as}
+      className={classNames(
         styles.link,
         outlineDefaultClassName,
         { [styles[color]]: !!color && color !== 'inherit' },
@@ -60,21 +55,32 @@ const Link = forwardRef<
           [styles[`underline-${underline}`]]: underline && underline !== 'none'
         },
         className
-      ),
-      target: isExternal ? '_blank' : target,
-      rel: isExternal && !rel ? 'noopener external' : rel,
-      'data-pui-component': overlay ? 'overlay-link' : 'link',
-      onBlur: onBlurHandler,
-      onKeyUp: onKeyUpHandler,
-      ...props
-    },
-    children,
-    isExternal && externalIcon && (
-      <Suspense>
-        <ExternalIcon />
-      </Suspense>
-    )
+      )}
+      target={isExternal ? '_blank' : target}
+      rel={isExternal && !rel ? 'noopener external' : rel}
+      data-pui-component={overlay ? 'overlay-link' : 'link'}
+      onBlur={onBlurHandler}
+      onKeyUp={onKeyUpHandler}
+      {...props}
+    >
+      {children}
+      {isExternal && externalIcon && (
+        <Suspense>
+          <ExternalIcon />
+        </Suspense>
+      )}
+    </Box>
   );
 });
+
+/**
+ * Link component that wraps an HTML `<a>` element.
+ * Could be used with different routing libraries link components via `as` prop.
+ * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/link | WAI-ARIA | Link Pattern}
+ * @see {@link https://particles.snipshot.dev/docs/components/link | Particles UI | Link}
+ */
+const Link = createPolymorphicComponent<typeof DEFAULT_ELEMENT, LinkBaseProps>(
+  _Link
+);
 
 export default Link;

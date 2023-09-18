@@ -2,24 +2,22 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import Button from '../Button/Button';
-import { IconButtonProps } from './IconButton.types';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { IconButtonBaseProps, IconButtonProps } from './IconButton.types';
 
 import styles from './IconButton.module.scss';
 
 export type { IconButtonProps };
 
-/**
- * Icon button component is used to display actions in a compact layout.
- * We recommend setting the `title` property.
- * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
- * @see {@link https://particles.snipshot.dev/docs/components/icon-button | Particles UI | Button}
- */
-const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-  function IconButton(
+const DEFAULT_ELEMENT = 'button';
+
+const _IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  function _IconButton(
     {
       className,
       icon,
       loadingSpinner,
+      as = DEFAULT_ELEMENT,
       size = 'md',
       variant = 'standard',
       ...props
@@ -29,6 +27,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <Button
         ref={ref}
+        as={as}
         className={classNames(styles[size], className)}
         leftIcon={icon}
         loadingElement={
@@ -43,5 +42,16 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     );
   }
 );
+
+/**
+ * Icon button component is used to display actions in a compact layout.
+ * We recommend setting the `title` property.
+ * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
+ * @see {@link https://particles.snipshot.dev/docs/components/icon-button | Particles UI | Button}
+ */
+const IconButton = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  IconButtonBaseProps
+>(_IconButton);
 
 export default IconButton;

@@ -20,7 +20,7 @@ function ButtonDocsPage() {
       <Heading variant="h6">Primary color</Heading>
       <DemoContainer>
         <Button
-          onClick={e => {
+          onClick={() => {
             console.log('Clicked');
           }}
         >

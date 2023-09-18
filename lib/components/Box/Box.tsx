@@ -1,26 +1,27 @@
-import React, { forwardRef } from 'react';
-import {
-  PolymorphicProps,
-  PolymorphicRef
-} from '@/lib/lib/polymorphicComponent';
+import { forwardRef } from 'react';
 
-type BoxProps<C extends React.ElementType> = PolymorphicProps<C, {}>;
+import { BoxProps } from './Box.types';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 
-type BoxComponent = <C extends React.ElementType = 'div'>(
-  props: BoxProps<C>
-) => React.ReactNode;
+export type { BoxProps };
 
-const Box: BoxComponent = forwardRef(function Box<C extends React.ElementType>(
-  { as, children, ...props }: BoxProps<C>,
-  ref?: PolymorphicRef<C>
+const DEFAULT_ELEMENT: React.ElementType = 'div';
+
+const _Box = forwardRef<HTMLDivElement, BoxProps>(function _Box(
+  { as: Element = DEFAULT_ELEMENT, children, ...props },
+  ref
 ) {
-  const Element = as ?? 'div';
-
   return (
     <Element ref={ref} {...props}>
       {children}
     </Element>
   );
 });
+
+/**
+ * Base polymorphic component.
+ * By default, renders as `div` element
+ */
+const Box = createPolymorphicComponent<typeof DEFAULT_ELEMENT, {}>(_Box);
 
 export default Box;

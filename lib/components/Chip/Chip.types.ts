@@ -1,11 +1,12 @@
 import {
+  PuiAsProp,
   PuiColorNames,
   PuiRadius,
   PuiSize,
   PuiStyleVariant
 } from '../../lib/types';
 
-export interface ChipProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface ChipBaseProps {
   /**
    * Disabled styling and behaviour
    */
@@ -43,3 +44,7 @@ export interface ChipProps extends React.ComponentPropsWithoutRef<'div'> {
    */
   variant?: PuiStyleVariant;
 }
+
+export type ChipProps = ChipBaseProps &
+  PuiAsProp &
+  React.ComponentPropsWithoutRef<'div'>;

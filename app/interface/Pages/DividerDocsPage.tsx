@@ -29,7 +29,10 @@ function DividerDocsPage() {
         <Heading as="h3" variant="subtitle-md">
           Full
         </Heading>
-        <Divider subheader="Subheader" subheaderProps={{ className: 'test' }} />
+        <Divider
+          subheader="Subheader"
+          subheaderProps={{ as: 'h3', className: 'test' }}
+        />
         <Heading as="h3" variant="subtitle-md">
           Inset
         </Heading>

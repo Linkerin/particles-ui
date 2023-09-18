@@ -17,7 +17,7 @@ function TextDocsPage() {
       <Heading variant="h6">Sizes</Heading>
       <DemoContainer>
         <div>
-          <Text variant="label" size="sm">
+          <Text variant="label" as="span" size="sm">
             Label text, sm font size.
           </Text>
           <Text variant="label" size="md">

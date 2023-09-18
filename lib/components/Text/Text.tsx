@@ -1,24 +1,21 @@
-import { createElement, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { TextProps } from './Text.types';
+import Box from '../Box/Box';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { TextBaseProps, TextProps } from './Text.types';
 
 import styles from './Text.module.scss';
 
 export type { TextProps };
 
-/**
- * Text component is used to render text and paragraphs.
- *
- * By default, the component is rendered as a `<p>` element.
- * @see {@link https://particles.snipshot.dev/docs/components/text | Particles UI | Text}
- */
-const Text = forwardRef<HTMLElement, TextProps>(function Text(
+const DEFAULT_ELEMENT = 'p';
+
+const _Text = forwardRef<HTMLElement, TextProps>(function _Text(
   {
     children,
     className,
-    style,
-    as = 'p',
+    as = DEFAULT_ELEMENT,
     color = 'inherit',
     size = 'md',
     truncate = false,
@@ -27,23 +24,33 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(
   },
   ref
 ) {
-  return createElement(
-    as,
-    {
-      ref,
-      className: classNames(
+  return (
+    <Box
+      ref={ref}
+      as={as}
+      className={classNames(
         styles.text,
         styles[size],
         { [styles.truncate]: truncate },
         { [styles[variant]]: variant !== 'inherit' },
         { [styles[color]]: color !== 'inherit' },
         className
-      ),
-      style,
-      ...props
-    },
-    children
+      )}
+      {...props}
+    >
+      {children}
+    </Box>
   );
 });
+
+/**
+ * Text component is used to render text and paragraphs.
+ *
+ * By default, the component is rendered as a `<p>` element.
+ * @see {@link https://particles.snipshot.dev/docs/components/text | Particles UI | Text}
+ */
+const Text = createPolymorphicComponent<typeof DEFAULT_ELEMENT, TextBaseProps>(
+  _Text
+);
 
 export default Text;

@@ -3,7 +3,9 @@
 import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 
-import { CardProps } from './Card.types';
+import Box from '../Box/Box';
+import { CardBaseProps, CardProps } from './Card.types';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../hooks/useMergedRefs';
@@ -16,14 +18,9 @@ import styles from './Card.module.scss';
 
 export type { CardProps };
 
-/**
- * Card component is used to display content and actions on a single topic.
- * Contains related elements. Use with `CardHeader`, `CardBody` and `CardFooter` components.
- *
- * The component renders as a `section` element.
- * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
- */
-const Card = forwardRef<HTMLElement, CardProps>(function Card(
+const DEFAULT_ELEMENT = 'section';
+
+const _Card = forwardRef<HTMLElement, CardProps>(function _Card(
   {
     children,
     className,
@@ -36,6 +33,7 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
     onClickCapture,
     onKeyDown,
     onKeyUp,
+    as = DEFAULT_ELEMENT,
     disabled = false,
     interactiveStyle = false,
     flexDirection = 'column',
@@ -65,8 +63,9 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
     useKeyboardFocusOutline({ onBlur, onKeyUp });
 
   return (
-    <section
+    <Box
       ref={mergedRefs}
+      as={as}
       className={classNames(
         flexDirectionStyles[flexDirection],
         { [alignItemsStyles[`${alignItems}`]]: !!alignItems },
@@ -92,8 +91,19 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
       {...props}
     >
       {children}
-    </section>
+    </Box>
   );
 });
+
+/**
+ * Card component is used to display content and actions on a single topic.
+ * Contains related elements. Use with `CardHeader`, `CardBody` and `CardFooter` components.
+ *
+ * The component renders as a `section` element.
+ * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
+ */
+const Card = createPolymorphicComponent<typeof DEFAULT_ELEMENT, CardBaseProps>(
+  _Card
+);
 
 export default Card;

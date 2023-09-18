@@ -1,7 +1,9 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import { BadgeInlineProps } from './BadgeInline.types';
+import Box from '../Box/Box';
+import { BadgeInlineBaseProps, BadgeInlineProps } from './BadgeInline.types';
+import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import truncateContent from './truncateContent';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
@@ -9,21 +11,16 @@ import styles from './BadgeInline.module.scss';
 
 export type { BadgeInlineProps };
 
-/**
- * BadgeInline component is a small visual indicator for a notification,
- * item count or status. May use numbers, short text or icons.
- * This is a version for inline use.
- *
- * We strongly recommend using no more than __4__ characters for content.
- * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
- */
-const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
-  function BadgeInline(
+const DEFAULT_ELEMENT = 'span';
+
+const _BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
+  function _BadgeInline(
     {
       children,
       className,
       content,
       maxChars,
+      as = DEFAULT_ELEMENT,
       color = 'primary',
       invisible = false,
       outlined = false,
@@ -44,8 +41,9 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
     }
 
     return (
-      <span
+      <Box
         ref={ref}
+        as={as}
         className={classNames(
           styles.badge,
           styles[variant],
@@ -61,9 +59,22 @@ const BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
         {...props}
       >
         {size !== 'dot' && badgeContent}
-      </span>
+      </Box>
     );
   }
 );
+
+/**
+ * BadgeInline component is a small visual indicator for a notification,
+ * item count or status. May use numbers, short text or icons.
+ * This is a version for inline use.
+ *
+ * We strongly recommend using no more than __4__ characters for content.
+ * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
+ */
+const BadgeInline = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  BadgeInlineBaseProps
+>(_BadgeInline);
 
 export default BadgeInline;
