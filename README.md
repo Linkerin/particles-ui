@@ -178,8 +178,3 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Mantine](https://mantine.dev/core/menu/)
   - [Chakra UI](https://chakra-ui.com/docs/components/menu)
   - [Next UI](https://nextui.org/docs/components/dropdown)
-
-## To-Do
-
-- **IconButtons**: develop `ToggleIconButton` component;
-- **Chip**: develop `ToggleChip` component;

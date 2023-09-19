@@ -1,16 +1,16 @@
 import { COLOR_MODES } from './constants';
 
-/**
- * 'alignItems' prop type
- */
-export type PuiAlignItems = Extract<
-  React.CSSProperties['alignItems'],
-  'center' | 'flex-start' | 'flex-end' | 'stretch'
->;
+export type PuiAlignItems = {
+  /**
+   * `align-items` property value inside the component
+   * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-items | MDN | align-items - CSS}
+   */
+  alignItems?: Extract<
+    React.CSSProperties['alignItems'],
+    'center' | 'flex-start' | 'flex-end' | 'stretch'
+  >;
+};
 
-/**
- * `as` prop type
- */
 export type PuiAsProp = {
   /**
    * HTML or React element that will be rendered by the component
@@ -36,26 +36,32 @@ export type PuiColorNames =
   | 'info'
   | 'uncolored';
 
-/**
- * 'flexDirection' prop type
- */
-export type PuiFlexDirection = Extract<
-  React.CSSProperties['flexDirection'],
-  'column' | 'column-reverse' | 'row' | 'row-reverse'
->;
+export type PuiFlexDirection = {
+  /**
+   * `flex-direction` property value inside the component
+   * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction | MDN | flex-direction - CSS}
+   */
+  flexDirection?: Extract<
+    React.CSSProperties['flexDirection'],
+    'column' | 'column-reverse' | 'row' | 'row-reverse'
+  >;
+};
 
-/**
- * 'justifyContent' prop type
- */
-export type PuiJustifyContent = Extract<
-  React.CSSProperties['justifyContent'],
-  | 'center'
-  | 'flex-start'
-  | 'flex-end'
-  | 'space-between'
-  | 'space-around'
-  | 'space-evenly'
->;
+export type PuiJustifyContent = {
+  /**
+   * `justify-content` property value inside the component
+   * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content | MDN | justify-content - CSS}
+   */
+  justifyContent?: Extract<
+    React.CSSProperties['justifyContent'],
+    | 'center'
+    | 'flex-start'
+    | 'flex-end'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly'
+  >;
+};
 
 /**
  * Radiuses sizes used as prop value
