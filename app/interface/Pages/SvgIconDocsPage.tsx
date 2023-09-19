@@ -1,7 +1,8 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import SvgIcon from '@/lib/components/SvgIcon/SvgIcon';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { Heading } from '@/lib/components/Heading/Heading';
+import { SvgIcon } from '@/lib/components/SvgIcon/SvgIcon';
 
 import AtomIcon from '@/public/atom.svg';
 
@@ -30,15 +31,17 @@ function SvgDemoContainer({
 function SvgIconDocsPage() {
   return (
     <DemoSection>
-      <h1>SvgIcon Component</h1>
+      <Heading as="h1" variant="h4">
+        SvgIcon Component
+      </Heading>
       <DemoContainer>
         <SvgDemoContainer>
-          <h2>20px (small)</h2>
+          <Heading variant="h6">20px (small)</Heading>
           <SvgIcon src={AtomIcon.src} id="atom" size={20} />
         </SvgDemoContainer>
         <Divider orientation="vertical" />
         <SvgDemoContainer>
-          <h2>24px (medium)</h2>
+          <Heading variant="h6">24px (medium)</Heading>
           <SvgIcon
             src={AtomIcon.src}
             id="atom"
@@ -48,12 +51,12 @@ function SvgIconDocsPage() {
         </SvgDemoContainer>
         <Divider orientation="vertical" />
         <SvgDemoContainer>
-          <h2>40px (large)</h2>
+          <Heading variant="h6">40px (large)</Heading>
           <SvgIcon src={AtomIcon.src} id="atom" size={40} />
         </SvgDemoContainer>
         <Divider orientation="vertical" />
         <SvgDemoContainer>
-          <h2>48px (x-large)</h2>
+          <Heading variant="h6">48px (x-large)</Heading>
           <SvgIcon src={AtomIcon.src} id="atom" size={48} color="green" />
         </SvgDemoContainer>
       </DemoContainer>

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconHeadphones, IconDeviceTv, IconSearch } from '@tabler/icons-react';
 
-import Chip, { ChipProps } from './Chip';
+import { Chip, ChipProps } from './Chip';
 
 const defaultProps: ChipProps = {
   disabled: false,

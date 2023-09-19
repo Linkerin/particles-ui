@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { BadgeInlineBaseProps, BadgeInlineProps } from './BadgeInline.types';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import truncateContent from './truncateContent';
@@ -70,11 +70,10 @@ const _BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
  * This is a version for inline use.
  *
  * We strongly recommend using no more than __4__ characters for content.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
  */
-const BadgeInline = createPolymorphicComponent<
+export const BadgeInline = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   BadgeInlineBaseProps
 >(_BadgeInline);
-
-export default BadgeInline;

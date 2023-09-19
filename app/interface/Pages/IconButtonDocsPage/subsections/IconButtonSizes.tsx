@@ -1,8 +1,8 @@
 import DemoContainer from '../../../DemoContainer';
-import Heading from '@/lib/components/Heading/Heading';
+import { Heading } from '@/lib/components/Heading/Heading';
 import GlobeIcon from '../../../GlobeIcon';
-import IconButton from '@/lib/components/IconButton/IconButton';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { IconButton } from '@/lib/components/IconButton/IconButton';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 import { IconAtom2 as AtomIcon } from '@tabler/icons-react';
 
 function IconButtonSizes() {

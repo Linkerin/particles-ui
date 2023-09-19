@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import glyphs from './glyphs';
-import Kbd from './Kbd';
-import Text from '../Text/Text';
+import { Kbd } from './Kbd';
+import { Text } from '../Text/Text';
 
 const meta = {
   title: 'Components/Kbd',

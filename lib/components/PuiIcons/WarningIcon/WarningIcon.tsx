@@ -1,7 +1,10 @@
+import { PuiIconProps } from '../PuiIcon.types';
+import { SvgIcon } from '../../SvgIcon/SvgIcon';
 import WarningSvg from './warning.svg';
-import SvgIcon, { SvgIconProps } from '../../SvgIcon/SvgIcon';
 
-function WarningIcon(props: Omit<SvgIconProps, 'src' | 'id'>) {
+export type { PuiIconProps as WarningIconProps };
+
+function WarningIcon(props: PuiIconProps) {
   return <SvgIcon src={WarningSvg.src} id="warning" {...props} />;
 }
 

@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { IconBell, IconPencil } from '@tabler/icons-react';
 
-import Avatar, { AvatarProps } from '../Avatar/Avatar';
-import Badge, { BadgeProps } from './Badge';
+import { Avatar, AvatarProps } from '../Avatar/Avatar';
+import { Badge, BadgeProps } from './Badge';
 
 const badgeInlineProps: Partial<BadgeProps> = {
   color: 'primary',

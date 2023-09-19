@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { AvatarBaseProps, AvatarProps } from './Avatar.types';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import generateInitials from './generateInitials';
-import Image from '../Image/Image';
+import { Image } from '../Image/Image';
 import type { UserIconProps } from '../PuiIcons/UserIcon/UserIcon';
 
 const UserIcon = lazy(() => import('../PuiIcons/UserIcon/UserIcon'));
@@ -92,12 +92,11 @@ const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
  *
  * Always add `alt` description with `src` provided image
  * and `iconLabel` description with `icon`.
+ *
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
  */
-const Avatar = createPolymorphicComponent<
+export const Avatar = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   AvatarBaseProps
 >(_Avatar);
-
-export default Avatar;

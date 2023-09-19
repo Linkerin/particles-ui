@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconHeart, IconSend, IconTrash } from '@tabler/icons-react';
 
-import Button, { ButtonProps } from './Button';
-import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
-import RingSpinner from '../Spinner/RingSpinner/RingSpinner';
+import { Button, ButtonProps } from './Button';
+import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
+import { RingSpinner } from '../Spinner/RingSpinner/RingSpinner';
 
 const defaultProps: ButtonProps = {
   color: 'primary',

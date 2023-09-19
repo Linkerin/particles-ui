@@ -1,12 +1,12 @@
 import DemoContainer from '../../DemoContainer';
 import DemoSection from '../../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import Heading from '@/lib/components/Heading/Heading';
-import Skeleton from '@/lib/components/Skeleton/Skeleton';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { Heading } from '@/lib/components/Heading/Heading';
+import { Skeleton } from '@/lib/components/Skeleton/Skeleton';
+import { SkeletonText } from '@/lib/components/SkeletonText/SkeletonText';
 import SkeletonWrapper from './SkeletonWrapper';
 
 import styles from './SkeletonDocsPage.module.scss';
-import SkeletonText from '@/lib/components/SkeletonText/SkeletonText';
 
 function SkeletonDocsPage() {
   return (

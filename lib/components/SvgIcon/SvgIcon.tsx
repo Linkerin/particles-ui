@@ -7,9 +7,10 @@ export type { SvgIconProps };
 /**
  * SvgIcon component: wrapper around static imported SVG elements.
  * Default `size` is `1em`.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/svg-icon | Particles UI | SvgIcon}
  */
-const SvgIcon = forwardRef<SVGSVGElement, SvgIconProps>(function SvgIcon(
+export const SvgIcon = forwardRef<SVGSVGElement, SvgIconProps>(function SvgIcon(
   {
     className,
     color,
@@ -36,5 +37,3 @@ const SvgIcon = forwardRef<SVGSVGElement, SvgIconProps>(function SvgIcon(
     </svg>
   );
 });
-
-export default SvgIcon;

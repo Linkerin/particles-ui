@@ -5,11 +5,11 @@ import {
   IconBrandJavascript
 } from '@tabler/icons-react';
 
-import List, { ListProps } from './List';
-import ListItem from './ListItem/ListItem';
-import ListItemInteractive from './ListItemInteractive/ListItemInteractive';
-import ListItemIcon from './ListItemIcon/ListItemIcon';
-import ListItemText from './ListItemText/ListItemText';
+import { List, ListProps } from './List';
+import { ListItem } from './ListItem/ListItem';
+import { ListItemInteractive } from './ListItemInteractive/ListItemInteractive';
+import { ListItemIcon } from './ListItemIcon/ListItemIcon';
+import { ListItemText } from './ListItemText/ListItemText';
 
 const defaultProps: ListProps = {
   as: 'ol',

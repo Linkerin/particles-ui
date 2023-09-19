@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Skeleton from '../Skeleton/Skeleton';
+import { Skeleton } from '../Skeleton/Skeleton';
 import { SkeletonTextProps } from './SkeletonText.types';
 
 import alignItemsStyles from '../../styles/util-classes/align-items.module.scss';
@@ -14,9 +14,10 @@ export type { SkeletonTextProps };
 
 /**
  * Composes `Skeleton` components to mimic a text paragraph.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/skeleton | Particles UI | Skeleton}
  */
-const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(
+export const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(
   function SkeletonText(
     {
       className,
@@ -56,5 +57,3 @@ const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(
     );
   }
 );
-
-export default SkeletonText;

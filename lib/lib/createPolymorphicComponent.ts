@@ -29,7 +29,7 @@ type PolymorphicComponentPropsWithRef<
 export function createPolymorphicComponent<
   DefaultElement extends React.ElementType,
   Props
->(component: any) {
+>(component: React.ComponentType<any>) {
   type PolymorphicComponent = <C extends React.ElementType = DefaultElement>(
     props: PolymorphicComponentPropsWithRef<C, Props>
   ) => React.ReactElement;

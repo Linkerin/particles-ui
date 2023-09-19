@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconRocket } from '@tabler/icons-react';
 
-import Alert, { AlertProps } from './Alert';
-import Button from '../Button/Button';
+import { Alert, AlertProps } from './Alert';
+import { Button } from '../Button/Button';
 
 const defaultProps: AlertProps = {
   closeButtonLabel: 'Close alert',

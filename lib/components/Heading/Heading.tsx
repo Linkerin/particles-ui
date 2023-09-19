@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import { HEADING_ELEMENTS } from '../../lib/constants';
 import { HeadingBaseProps, HeadingProps } from './Heading.types';
@@ -52,12 +52,11 @@ const _Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function _Heading(
  *
  * By default, the component is rendered as a `<h2>` element.
  * Do not skip heading levels.
+ *
  * @see {@link https://www.w3.org/WAI/tutorials/page-structure/headings | WAI-ARIA | Headings}
  * @see {@link https://particles.snipshot.dev/docs/components/heading | Particles UI | Heading}
  */
-const Heading = createPolymorphicComponent<
+export const Heading = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   HeadingBaseProps
 >(_Heading);
-
-export default Heading;

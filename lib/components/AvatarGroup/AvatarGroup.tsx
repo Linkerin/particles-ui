@@ -1,14 +1,19 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Avatar from '../Avatar/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 import { AvatarGroupProps } from './AvatarGroup.types';
 
 import styles from './AvatarGroup.module.scss';
 
 export type { AvatarGroupProps };
 
-const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
+/**
+ * An avatar group component that displays multiple avatars
+ *
+ * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
+ */
+export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
   function AvatarGroup(
     {
       children,
@@ -51,5 +56,3 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
     );
   }
 );
-
-export default AvatarGroup;

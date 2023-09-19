@@ -10,9 +10,10 @@ export type { ListItemIconProps };
 /**
  * ListItemIcon component is a wrapper around icon components
  * for proper use inside a `List` component.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/list | Particles UI | List}
  */
-const ListItemIcon = forwardRef<HTMLSpanElement, ListItemIconProps>(
+export const ListItemIcon = forwardRef<HTMLSpanElement, ListItemIconProps>(
   function ListItemIcon({ children, className, ...props }, ref) {
     return (
       <span
@@ -25,5 +26,3 @@ const ListItemIcon = forwardRef<HTMLSpanElement, ListItemIconProps>(
     );
   }
 );
-
-export default ListItemIcon;

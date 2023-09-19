@@ -2,16 +2,16 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { IconShare } from '@tabler/icons-react';
 
-import Button from '../Button/Button';
-import Card, { CardProps } from './Card';
-import CardBody from './CardBody/CardBody';
-import CardHeader from './CardHeader/CardHeader';
-import CardFooter from './CardFooter/CardFooter';
-import Heading from '../Heading/Heading';
-import IconButton from '../IconButton/IconButton';
-import Image from '../Image/Image';
-import ImageIconFallback from '../ImageIconFallback/ImageIconFallback';
-import Text from '../Text/Text';
+import { Button } from '../Button/Button';
+import { Card, CardProps } from './Card';
+import { CardBody } from './CardBody/CardBody';
+import { CardHeader } from './CardHeader/CardHeader';
+import { CardFooter } from './CardFooter/CardFooter';
+import { Heading } from '../Heading/Heading';
+import { IconButton } from '../IconButton/IconButton';
+import { Image } from '../Image/Image';
+import { ImageIconFallback } from '../ImageIconFallback/ImageIconFallback';
+import { Text } from '../Text/Text';
 
 import sneakersPng from '../../../.storybook/public/sneakers.png';
 

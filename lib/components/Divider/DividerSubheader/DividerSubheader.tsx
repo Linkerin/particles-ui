@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 
-import Heading, { HeadingProps } from '../../Heading/Heading';
+import { Heading, HeadingProps } from '../../Heading/Heading';
 
 import styles from './DividerSubheader.module.scss';
 
-function DividerSubheader({
+export function DividerSubheader({
   children,
   className,
   as = 'span',

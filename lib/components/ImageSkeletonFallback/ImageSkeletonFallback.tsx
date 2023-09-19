@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Skeleton from '../Skeleton/Skeleton';
+import { Skeleton } from '../Skeleton/Skeleton';
 import { ImageSkeletonFallbackProps } from './ImageSkeletonFallback.types';
 
 import styles from './ImageSkeletonFallback.module.scss';
@@ -10,9 +10,10 @@ export type { ImageSkeletonFallbackProps };
 
 /**
  * Skeleton fallback for `Image` component
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/image | Particles UI | Image}
  */
-const ImageSkeletonFallback = forwardRef<
+export const ImageSkeletonFallback = forwardRef<
   HTMLDivElement,
   ImageSkeletonFallbackProps
 >(function ImageSkeletonFallback(
@@ -27,5 +28,3 @@ const ImageSkeletonFallback = forwardRef<
     />
   );
 });
-
-export default ImageSkeletonFallback;

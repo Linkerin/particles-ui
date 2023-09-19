@@ -9,10 +9,11 @@ export interface AlertIconProps extends Omit<SvgIconProps, 'src' | 'id'> {
 }
 
 /**
- * Informational icon that is used inside `Alert` component.
+ * An information icon that is used inside the `Alert` component.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/alert | Particles UI | Button}
  */
-function AlertIcon({ type = 'info', ...props }: AlertIconProps) {
+export function AlertIcon({ type = 'info', ...props }: AlertIconProps) {
   switch (type) {
     case 'success':
       return <SuccessIcon {...props} />;
@@ -30,5 +31,3 @@ function AlertIcon({ type = 'info', ...props }: AlertIconProps) {
       return <InfoIcon {...props} />;
   }
 }
-
-export default AlertIcon;

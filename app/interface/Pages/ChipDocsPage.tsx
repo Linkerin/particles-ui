@@ -1,13 +1,13 @@
 'use client';
 
-import Chip from '@/lib/components/Chip/Chip';
+import { Chip } from '@/lib/components/Chip/Chip';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
+import { Divider } from '@/lib/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import Heading from '@/lib/components/Heading/Heading';
+import { Heading } from '@/lib/components/Heading/Heading';
 import { IconHeart } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function ChipDocsPage() {
   return (

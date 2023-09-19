@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconSearch } from '@tabler/icons-react';
 
-import Text, { TextProps } from './Text';
+import { Text, TextProps } from './Text';
 
 const defaultProps: TextProps = {
   as: 'p',

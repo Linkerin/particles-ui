@@ -7,9 +7,9 @@ import {
   IconTrash
 } from '@tabler/icons-react';
 
-import IconButton, { IconButtonProps } from './IconButton';
-import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
-import RingSpinner from '../Spinner/RingSpinner/RingSpinner';
+import { IconButton, IconButtonProps } from './IconButton';
+import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
+import { RingSpinner } from '../Spinner/RingSpinner/RingSpinner';
 
 const defaultProps: Partial<IconButtonProps> = {
   'aria-label': 'IconButton demo',

@@ -1,10 +1,10 @@
 import { forwardRef, useId } from 'react';
 import classNames from 'classnames';
 
-import AlertIcon from './AlertIcon/AlertIcon';
+import { AlertIcon } from './AlertIcon/AlertIcon';
 import { AlertProps } from './Alert.types';
-import CloseButton from '../CloseButton/CloseButton';
-import Text from '../Text/Text';
+import { CloseButton } from '../CloseButton/CloseButton';
+import { Text } from '../Text/Text';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Alert.module.scss';
@@ -13,10 +13,11 @@ export type { AlertProps };
 
 /**
  * Alert component displays a short message that attracts user's attention.
+ *
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/alert/ | WAI-ARIA | Alert Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/alert | Particles UI | Alert}
  */
-const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
+export const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
   {
     children,
     className,
@@ -93,5 +94,3 @@ const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
     </section>
   );
 });
-
-export default Alert;

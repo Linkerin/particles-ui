@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import BadgeInline from '../BadgeInline/BadgeInline';
 import { BadgeBaseProps, BadgeProps } from './Badge.types';
+import { BadgeInline } from '../BadgeInline/BadgeInline';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 
 import styles from './Badge.module.scss';
@@ -54,11 +54,10 @@ const _Badge = forwardRef<HTMLSpanElement, BadgeProps>(function _Badge(
  *
  * By default, underlying component's `shape` is `'rectangle'`.
  * Provide the value `'circle'` if your underlying component is spherical.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/badge | Particles UI | Badge}
  */
-const Badge = createPolymorphicComponent<
+export const Badge = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   BadgeBaseProps
 >(_Badge);
-
-export default Badge;

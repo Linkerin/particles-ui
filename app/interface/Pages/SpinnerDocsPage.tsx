@@ -1,8 +1,8 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import DualSpinner from '@/lib/components/Spinner/DualSpinner/DualSpinner';
-import Heading from '@/lib/components/Heading/Heading';
-import RingSpinner from '@/lib/components/Spinner/RingSpinner/RingSpinner';
+import { DualSpinner } from '@/lib/components/Spinner/DualSpinner/DualSpinner';
+import { Heading } from '@/lib/components/Heading/Heading';
+import { RingSpinner } from '@/lib/components/Spinner/RingSpinner/RingSpinner';
 
 function SpinnerContainer({
   children,

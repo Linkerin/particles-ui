@@ -1,16 +1,16 @@
-import Card from '@/lib/components/Card/Card';
-import CardBody from '@/lib/components/Card/CardBody/CardBody';
-import CardFooter from '@/lib/components/Card/CardFooter/CardFooter';
-import CardHeader from '@/lib/components/Card/CardHeader/CardHeader';
+import { Card } from '@/lib/components/Card/Card';
+import { CardBody } from '@/lib/components/Card/CardBody/CardBody';
+import { CardFooter } from '@/lib/components/Card/CardFooter/CardFooter';
+import { CardHeader } from '@/lib/components/Card/CardHeader/CardHeader';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import Heading from '@/lib/components/Heading/Heading';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { Heading } from '@/lib/components/Heading/Heading';
 import { IconExternalLinkOff } from '@tabler/icons-react';
 import GlobeIcon from '../GlobeIcon';
-import Link from '@/lib/components/Link/Link';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import Text from '@/lib/components/Text/Text';
+import { Link } from '@/lib/components/Link/Link';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { Text } from '@/lib/components/Text/Text';
 
 import linkOverlayStyles from '../../../lib/styles/util-classes/link-overlay.module.scss';
 

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import { ListBaseProps, ListProps } from './List.types';
 
@@ -44,12 +44,12 @@ const _List = forwardRef<HTMLUListElement, ListProps>(function _List(
 /**
  * List component: vertically organized groups of text and images.
  *
- * By default, the component is rendered as an `<ol>` element.
+ * By default, the component is rendered as an `<ul>` element.
+ *
  * @see {@link https://www.w3.org/WAI/tutorials/page-structure/content/#lists | WAI | Content Structure}
  * @see {@link https://particles.snipshot.dev/docs/components/list | Particles UI | List}
  */
-const List = createPolymorphicComponent<typeof DEFAULT_ELEMENT, ListBaseProps>(
-  _List
-);
-
-export default List;
+export const List = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  ListBaseProps
+>(_List);

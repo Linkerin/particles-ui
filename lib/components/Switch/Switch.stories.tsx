@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { IconCheck, IconMoon, IconSunLow, IconX } from '@tabler/icons-react';
 
-import Switch, { SwitchProps } from './Switch';
+import { Switch, SwitchProps } from './Switch';
 
 const defaultProps: SwitchProps = {
   color: 'primary',

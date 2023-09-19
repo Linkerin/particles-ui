@@ -1,6 +1,6 @@
 'use client';
 
-import IconButton from '@/lib/components/IconButton/IconButton';
+import { IconButton } from '@/lib/components/IconButton/IconButton';
 import { IconMoon, IconSun } from '@tabler/icons-react';
 
 import useColorMode from '@/lib/hooks/useColorMode';

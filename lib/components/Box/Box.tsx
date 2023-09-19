@@ -22,6 +22,4 @@ const _Box = forwardRef<HTMLDivElement, BoxProps>(function _Box(
  * Base polymorphic component.
  * By default, renders as `div` element
  */
-const Box = createPolymorphicComponent<typeof DEFAULT_ELEMENT, {}>(_Box);
-
-export default Box;
+export const Box = createPolymorphicComponent<typeof DEFAULT_ELEMENT, {}>(_Box);

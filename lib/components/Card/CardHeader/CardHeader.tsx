@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../../Box/Box';
+import { Box } from '../../Box/Box';
 import { CardHeaderBaseProps, CardHeaderProps } from './CardHeader.types';
 import { createPolymorphicComponent } from '../../../lib/createPolymorphicComponent';
 
@@ -59,11 +59,10 @@ const _CardHeader = forwardRef<HTMLElement, CardHeaderProps>(
  * CardHeader component that wraps card's header. Should be used inside `Card` component.
  *
  * The component renders as a `header` element.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
  */
-const CardHeader = createPolymorphicComponent<
+export const CardHeader = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   CardHeaderBaseProps
 >(_CardHeader);
-
-export default CardHeader;

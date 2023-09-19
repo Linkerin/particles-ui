@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Image, { ImageProps } from './Image';
-import ImageIconFallback from '../ImageIconFallback/ImageIconFallback';
+import { Image, ImageProps } from './Image';
+import { ImageIconFallback } from '../ImageIconFallback/ImageIconFallback';
 
 const defaultProps: ImageProps = {
   fadeInAnimation: false,

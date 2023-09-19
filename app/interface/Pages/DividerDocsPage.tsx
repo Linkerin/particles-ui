@@ -1,7 +1,7 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import Heading from '@/lib/components/Heading/Heading';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { Heading } from '@/lib/components/Heading/Heading';
 
 function DividerDocsPage() {
   return (

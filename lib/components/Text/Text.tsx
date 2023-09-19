@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import { TextBaseProps, TextProps } from './Text.types';
 
@@ -47,10 +47,10 @@ const _Text = forwardRef<HTMLElement, TextProps>(function _Text(
  * Text component is used to render text and paragraphs.
  *
  * By default, the component is rendered as a `<p>` element.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/text | Particles UI | Text}
  */
-const Text = createPolymorphicComponent<typeof DEFAULT_ELEMENT, TextBaseProps>(
-  _Text
-);
-
-export default Text;
+export const Text = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  TextBaseProps
+>(_Text);

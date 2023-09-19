@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconHighlight } from '@tabler/icons-react';
 
-import Heading, { HeadingProps } from './Heading';
+import { Heading, HeadingProps } from './Heading';
 
 const defaultProps: HeadingProps = {
   as: 'h2',

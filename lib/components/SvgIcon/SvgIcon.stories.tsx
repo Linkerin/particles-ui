@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import SvgIcon, { SvgIconProps } from './SvgIcon';
+import { SvgIcon, SvgIconProps } from './SvgIcon';
 
 import atomSvg from '../../../.storybook/public/icons/atom.svg';
 

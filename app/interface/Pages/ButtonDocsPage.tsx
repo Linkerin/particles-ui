@@ -2,13 +2,13 @@
 
 import { IconDeviceFloppy as SaveIcon } from '@tabler/icons-react';
 
-import Button from '@/lib/components/Button/Button';
+import { Button } from '@/lib/components/Button/Button';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import Heading from '@/lib/components/Heading/Heading';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { Heading } from '@/lib/components/Heading/Heading';
 import GlobeIcon from '../GlobeIcon';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function ButtonDocsPage() {
   return (

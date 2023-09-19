@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import BadgeInline, { BadgeInlineProps } from './BadgeInline';
-import Button from '../Button/Button';
+import { BadgeInline, BadgeInlineProps } from './BadgeInline';
+import { Button } from '../Button/Button';
 
 const defaultProps: Partial<BadgeInlineProps> = {
   color: 'primary',

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../../Box/Box';
+import { Box } from '../../Box/Box';
 import { CardBodyBaseProps, CardBodyProps } from './CardBody.types';
 import { createPolymorphicComponent } from '../../../lib/createPolymorphicComponent';
 
@@ -56,11 +56,10 @@ const _CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function _CardBody(
  * Should be used inside a `Card` component.
  *
  * The component renders as a `div` element.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
  */
-const CardBody = createPolymorphicComponent<
+export const CardBody = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   CardBodyBaseProps
 >(_CardBody);
-
-export default CardBody;

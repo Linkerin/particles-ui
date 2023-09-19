@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import SkeletonText, { SkeletonTextProps } from './SkeletonText';
+import { SkeletonText, SkeletonTextProps } from './SkeletonText';
 
 const defaultProps: SkeletonTextProps = {
   alignItems: 'flex-start',

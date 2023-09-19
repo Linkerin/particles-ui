@@ -6,9 +6,9 @@ import {
   IconTrash
 } from '@tabler/icons-react';
 
-import FloatingButton, { FloatingButtonProps } from './FloatingButton';
-import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
-import RingSpinner from '../Spinner/RingSpinner/RingSpinner';
+import { FloatingButton, FloatingButtonProps } from './FloatingButton';
+import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
+import { RingSpinner } from '../Spinner/RingSpinner/RingSpinner';
 
 const defaultProps: Partial<FloatingButtonProps> = {
   color: 'primary',

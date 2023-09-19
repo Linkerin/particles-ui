@@ -1,10 +1,10 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
+import { Divider } from '@/lib/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import Heading from '@/lib/components/Heading/Heading';
+import { Heading } from '@/lib/components/Heading/Heading';
 import { IconBrandJavascript as JSIcon } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function HeadingDocsPage() {
   return (

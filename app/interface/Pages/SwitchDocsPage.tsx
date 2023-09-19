@@ -4,12 +4,12 @@ import { useState } from 'react';
 import CloseIcon from '@/lib/components/PuiIcons/CloseIcon/CloseIcon';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import Heading from '@/lib/components/Heading/Heading';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { Heading } from '@/lib/components/Heading/Heading';
 import { IconCheck, IconX } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import SvgIcon from '@/lib/components/SvgIcon/SvgIcon';
-import Switch, { SwitchProps } from '@/lib/components/Switch/Switch';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { SvgIcon } from '@/lib/components/SvgIcon/SvgIcon';
+import { Switch, SwitchProps } from '@/lib/components/Switch/Switch';
 
 import TickSvg from '@/public/tick.svg';
 

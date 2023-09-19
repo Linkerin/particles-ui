@@ -3,7 +3,7 @@
 import { forwardRef, lazy, Suspense } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import { LinkBaseProps, LinkProps } from './Link.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
@@ -76,11 +76,11 @@ const _Link = forwardRef<HTMLAnchorElement, LinkProps>(function _Link(
 /**
  * Link component that wraps an HTML `<a>` element.
  * Could be used with different routing libraries link components via `as` prop.
+ *
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/link | WAI-ARIA | Link Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/link | Particles UI | Link}
  */
-const Link = createPolymorphicComponent<typeof DEFAULT_ELEMENT, LinkBaseProps>(
-  _Link
-);
-
-export default Link;
+export const Link = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  LinkBaseProps
+>(_Link);

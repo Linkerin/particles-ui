@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { createGlyphContent } from './glyphs';
 import { KbdProps } from './Kbd.types';
-import Text from '../Text/Text';
+import { Text } from '../Text/Text';
 
 import styles from './Kbd.module.scss';
 
@@ -11,9 +11,10 @@ export type { KbdProps };
 
 /**
  * Keyboard key component (`Kbd`) displays a key or a combination of keys
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/kbd | Particles UI | Kbd}
  */
-const Kbd = forwardRef<HTMLElement, KbdProps>(function Kbd(
+export const Kbd = forwardRef<HTMLElement, KbdProps>(function Kbd(
   { children, className, glyph, rightGlyph, type = 'flat', ...props },
   ref
 ) {
@@ -38,5 +39,3 @@ const Kbd = forwardRef<HTMLElement, KbdProps>(function Kbd(
     </Text>
   );
 });
-
-export default Kbd;

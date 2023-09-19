@@ -9,9 +9,10 @@ export type { SpinnerProps as DualSpinnerProps };
 
 /**
  * Dual Spinner component
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/spinner | Particles UI | Spinner}
  */
-const DualSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
+export const DualSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
   function DualSpinner({ className, style, speed, size = '', ...props }, ref) {
     const styleObj: StyleObj = {};
     if (speed) styleObj.animationDuration = speed;
@@ -32,5 +33,3 @@ const DualSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
     );
   }
 );
-
-export default DualSpinner;

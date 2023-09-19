@@ -3,9 +3,9 @@
 import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { ChipBaseProps, ChipProps } from './Chip.types';
-import CloseButton from '../CloseButton/CloseButton';
+import { CloseButton } from '../CloseButton/CloseButton';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
@@ -113,11 +113,11 @@ const _Chip = forwardRef<HTMLDivElement, ChipProps>(function _Chip(
  * Do not use `Chip` where `Button` shoud be used.
  *
  * The component renders a `div` element.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/chip | Particles UI | Chip}
  *
  */
-const Chip = createPolymorphicComponent<typeof DEFAULT_ELEMENT, ChipBaseProps>(
-  _Chip
-);
-
-export default Chip;
+export const Chip = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  ChipBaseProps
+>(_Chip);

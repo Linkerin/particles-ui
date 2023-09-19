@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../../Box/Box';
+import { Box } from '../../Box/Box';
 import { CardFooterBaseProps, CardFooterProps } from './CardFooter.types';
 import { createPolymorphicComponent } from '../../../lib/createPolymorphicComponent';
 
@@ -60,11 +60,10 @@ const _CardFooter = forwardRef<HTMLElement, CardFooterProps>(
  * Should be used inside a `Card` component.
  *
  * The component renders as a `footer` element.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
  */
-const CardFooter = createPolymorphicComponent<
+export const CardFooter = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   CardFooterBaseProps
 >(_CardFooter);
-
-export default CardFooter;

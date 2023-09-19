@@ -2,14 +2,14 @@
 
 import { useCallback, useState } from 'react';
 
-import Button from '@/lib/components/Button/Button';
-import Card from '@/lib/components/Card/Card';
-import CardBody from '@/lib/components/Card/CardBody/CardBody';
-import CardHeader from '@/lib/components/Card/CardHeader/CardHeader';
+import { Button } from '@/lib/components/Button/Button';
+import { Card } from '@/lib/components/Card/Card';
+import { CardBody } from '@/lib/components/Card/CardBody/CardBody';
+import { CardHeader } from '@/lib/components/Card/CardHeader/CardHeader';
 import DemoContainer from '../../DemoContainer';
-import Skeleton from '@/lib/components/Skeleton/Skeleton';
-import Heading from '@/lib/components/Heading/Heading';
-import Text from '@/lib/components/Text/Text';
+import { Skeleton } from '@/lib/components/Skeleton/Skeleton';
+import { Heading } from '@/lib/components/Heading/Heading';
+import { Text } from '@/lib/components/Text/Text';
 
 function SkeletonWrapper() {
   const [loaded, setLoaded] = useState(false);

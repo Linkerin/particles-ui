@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { ListItemTextProps } from './ListItemText.types';
-import Text from '../../Text/Text';
+import { Text } from '../../Text/Text';
 
 import styles from './ListItemText.module.scss';
 
@@ -11,9 +11,10 @@ export type { ListItemTextProps };
 /**
  * ListItemText component groups text inside a `List` component.
  * Uses `Text` components inside.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/list | Particles UI | List}
  */
-const ListItemText = forwardRef<HTMLDivElement, ListItemTextProps>(
+export const ListItemText = forwardRef<HTMLDivElement, ListItemTextProps>(
   function ListItemText(
     {
       className,
@@ -60,5 +61,3 @@ const ListItemText = forwardRef<HTMLDivElement, ListItemTextProps>(
     );
   }
 );
-
-export default ListItemText;

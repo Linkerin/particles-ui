@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { IconWorld } from '@tabler/icons-react';
 
-import Card from '../Card/Card';
-import CardBody from '../Card/CardBody/CardBody';
-import Image from '../Image/Image';
-import Link, { LinkProps } from './Link';
-import Text from '../Text/Text';
+import { Card } from '../Card/Card';
+import { CardBody } from '../Card/CardBody/CardBody';
+import { Image } from '../Image/Image';
+import { Link, LinkProps } from './Link';
+import { Text } from '../Text/Text';
 
 import linkOverlayStyles from '../../styles/util-classes/link-overlay.module.scss';
 

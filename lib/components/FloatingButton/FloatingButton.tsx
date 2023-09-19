@@ -3,9 +3,9 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
-import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
+import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
 import {
   FloatingButtonBaseProps,
   FloatingButtonProps
@@ -93,12 +93,11 @@ const _FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
  * Floating action button component for the most common or important action on a screen.
  * Floating button appear in front of all other content on the screen and should persist
  * when the content is being scrolled.
+ *
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/floating-button | Particles UI | FloatingButton}
  */
-const FloatingButton = createPolymorphicComponent<
+export const FloatingButton = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   FloatingButtonBaseProps
 >(_FloatingButton);
-
-export default FloatingButton;

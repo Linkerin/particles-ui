@@ -9,9 +9,10 @@ export type { SpinnerProps as RingSpinnerProps };
 
 /**
  * Ring Spinner component
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/spinner | Particles UI | Spinner}
  */
-const RingSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
+export const RingSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
   function RingSpinner({ className, style, speed, size = '', ...props }, ref) {
     const styleObj: StyleObj = {};
     if (speed) styleObj.animationDuration = speed;
@@ -35,5 +36,3 @@ const RingSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
     );
   }
 );
-
-export default RingSpinner;

@@ -3,9 +3,9 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../..//lib/createPolymorphicComponent';
-import DualSpinner from '../Spinner/DualSpinner/DualSpinner';
+import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
@@ -107,12 +107,11 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
  * Button component that enables users to trigger an action or event,
  * such as submitting a form, opening a dialog, canceling an action,
  * or performing a delete operation.
+ *
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/button | Particles UI | Button}
  */
-const Button = createPolymorphicComponent<
+export const Button = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
   ButtonBaseProps
 >(_Button);
-
-export default Button;

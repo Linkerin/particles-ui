@@ -1,6 +1,6 @@
 import { forwardRef, lazy, Suspense } from 'react';
 
-import DividerHr from './DividerHr/DividerHr';
+import { DividerHr } from './DividerHr/DividerHr';
 import { DividerProps } from './Divider.types';
 
 const DividerSubheader = lazy(
@@ -12,10 +12,11 @@ export type { DividerProps };
 /**
  * Divider component that renders as an `<hr>` element.
  * The thematic break element. Can be used horizontally or vertically.
+ *
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr | MDN | Horizontal Rule}
  * @see {@link https://particles.snipshot.dev/docs/components/divider | Particles UI | Divider}
  */
-const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
+export const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
   { subheader, subheaderProps, orientation = 'horizontal', ...props },
   ref
 ) {
@@ -42,5 +43,3 @@ const Divider = forwardRef<HTMLHRElement, DividerProps>(function Divider(
     />
   );
 });
-
-export default Divider;

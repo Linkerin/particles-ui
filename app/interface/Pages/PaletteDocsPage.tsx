@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import Heading from '@/lib/components/Heading/Heading';
+import { Heading } from '@/lib/components/Heading/Heading';
 import { PuiColorNames } from '@/lib/lib/types';
 
 import styles from './PaletteDocsPage.module.scss';

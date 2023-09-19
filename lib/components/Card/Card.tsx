@@ -3,7 +3,7 @@
 import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 
-import Box from '../Box/Box';
+import { Box } from '../Box/Box';
 import { CardBaseProps, CardProps } from './Card.types';
 import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
 import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
@@ -100,10 +100,10 @@ const _Card = forwardRef<HTMLElement, CardProps>(function _Card(
  * Contains related elements. Use with `CardHeader`, `CardBody` and `CardFooter` components.
  *
  * The component renders as a `section` element.
+ *
  * @see {@link https://particles.snipshot.dev/docs/components/card | Particles UI | Card}
  */
-const Card = createPolymorphicComponent<typeof DEFAULT_ELEMENT, CardBaseProps>(
-  _Card
-);
-
-export default Card;
+export const Card = createPolymorphicComponent<
+  typeof DEFAULT_ELEMENT,
+  CardBaseProps
+>(_Card);

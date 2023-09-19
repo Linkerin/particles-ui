@@ -2,12 +2,12 @@
 
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import Divider from '@/lib/components/Divider/Divider';
-import FloatingButton from '@/lib/components/FloatingButton/FloatingButton';
+import { Divider } from '@/lib/components/Divider/Divider';
+import { FloatingButton } from '@/lib/components/FloatingButton/FloatingButton';
 import GlobeIcon from '../GlobeIcon';
-import Heading from '@/lib/components/Heading/Heading';
+import { Heading } from '@/lib/components/Heading/Heading';
 import { IconMessage } from '@tabler/icons-react';
-import MaterialSymbolIcon from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function FloatingButtonsDocsPage() {
   return (

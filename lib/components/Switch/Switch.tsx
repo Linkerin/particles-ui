@@ -18,10 +18,11 @@ export type { SwitchProps };
  * Switches are the preffered way to adjust settings.
  *
  * Privide `aria-label` value if you don't use `labelElement`.
+ *
  * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/switch/ | WAI-ARIA | Switch Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/switch | Particles UI | Switch}
  */
-const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   {
     className,
     checked,
@@ -138,5 +139,3 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
     </label>
   );
 });
-
-export default Switch;

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconBallBasketball } from '@tabler/icons-react';
 
-import Avatar, { AvatarProps } from './Avatar';
-import AvatarGroup from '../AvatarGroup/AvatarGroup';
+import { Avatar, AvatarProps } from './Avatar';
+import { AvatarGroup } from '../AvatarGroup/AvatarGroup';
 
 const defaultProps: AvatarProps = {
   alt: 'Random avatar image',
