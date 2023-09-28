@@ -2,22 +2,22 @@
 
 @use 'functions' as func;
 
-$primary: #5e68ba !default;
+$primary: hsl(233, 40%, 55%) !default;
 $primary-dark: func.desaturate($primary) !default;
-$secondary: #69aba5 !default;
+$secondary: hsl(175, 28%, 54%) !default;
 $secondary-dark: func.desaturate($secondary) !default;
-$tertiary: #d88a41 !default;
+$tertiary: hsl(29, 66%, 55%) !default;
 $tertiary-dark: func.desaturate($tertiary) !default;
 
 $neutral: func.generate-neutral($primary) !default;
 $neutral-dark: func.desaturate($neutral) !default;
-$error: #e0525b !default;
+$error: hsl(356, 70%, 60%) !default;
 $error-dark: func.desaturate($error) !default;
-$success: #4db37e !default;
+$success: hsl(149, 40%, 50%) !default;
 $success-dark: func.desaturate($success) !default;
-$warning: #fdad35 !default;
+$warning: hsl(36, 98%, 60%) !default;
 $warning-dark: func.desaturate($warning) !default;
-$info: #4994e9 !default;
+$info: hsl(212, 78%, 60%) !default;
 $info-dark: func.desaturate($info) !default;
 
 $primary-palette: func.generate-palette($primary, 'primary');
@@ -183,7 +183,7 @@ $-color-scheme: (
     'on-warning-container': map.get($warning-palette-dark, 'warning-90'),
     'info-base': $info-dark,
     'info': map.get($info-palette-dark, 'info-60'),
-    'info-darker': map.get($info-palette-dark, 'info-60'),
+    'info-darker': map.get($info-palette-dark, 'info-50'),
     'info-container': map.get($info-palette-dark, 'info-35'),
     'info-container-low': map.get($info-palette-dark, 'info-25'),
     'on-info': map.get($info-palette-dark, 'info-10'),

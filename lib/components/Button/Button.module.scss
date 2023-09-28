@@ -31,7 +31,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--pui-gap-md, 0.5rem);
   background: none;
   border: 1px solid transparent;
   cursor: pointer;

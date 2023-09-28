@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom';
-
 import generateInitials from './generateInitials';
 
 describe('generateInitials', () => {
@@ -23,6 +21,7 @@ describe('generateInitials', () => {
 
   it('should return null when the name is not a string', () => {
     const name = 123;
+    // @ts-expect-error
     const result = generateInitials(name);
     expect(result).toBeNull();
   });

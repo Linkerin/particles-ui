@@ -5,6 +5,13 @@ import { IconMoon, IconSun } from '@tabler/icons-react';
 
 import useColorMode from '@/lib/hooks/useColorMode';
 
+// Greeting in the browser console
+const consoleColor = '#543792';
+console.log(
+  '%c🇵​​​​​🇦​​​​​🇷​​​​​🇹​​​​​🇮​​​​​🇨​​​​​🇱​​​​​🇪​​​​​🇸​​​​​ 🇺​​​​​🇮',
+  `color: ${consoleColor}; font-size: 26px`
+);
+
 function ThemeToggler() {
   const { colorMode, toggleColorMode } = useColorMode();
 

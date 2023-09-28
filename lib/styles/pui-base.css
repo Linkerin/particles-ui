@@ -61,7 +61,7 @@ table {
   border-spacing: 0;
 }
 
-/// Keyboard focus outline styling
+/* Keyboard focus outline styling */
 :where(.pui-outline-default) {
   outline: 2px solid transparent;
 }

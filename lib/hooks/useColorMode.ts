@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import {
   ThemeModeContext,
   ThemeToggleModeContext
-} from '../context/ThemeContext';
+} from '../theme/ThemeContext';
 
 /**
  * Returns only the current color mode value from the Context provider.
