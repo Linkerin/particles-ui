@@ -8,9 +8,8 @@ import Theme from '@/lib/theme/Theme';
 import ThemeProvider from '@/lib/theme/ThemeContext';
 
 import '../lib/styles/pui-base.css';
-// import './pui-globals.scss';
-import './material-symbols.scss';
-import styles from './layout.module.scss';
+import './material-symbols.css';
+import styles from './layout.module.css';
 
 const nunito = Nunito({ subsets: ['latin'] });
 

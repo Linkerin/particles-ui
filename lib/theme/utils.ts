@@ -15,6 +15,7 @@ import {
 import deepMerge from '../lib/deepMerge';
 import elevation from './tokens/elevation';
 import gap from './tokens/gap';
+import getSplitComplementary from './spectrum/methods/getSplitComplementary';
 import radius from './tokens/radius';
 import Spectrum from './spectrum/spectrum';
 import state from './tokens/state';
@@ -66,6 +67,18 @@ function convertUserColors(colors: ThemeMainColors | Required<Theme['color']>) {
       );
 
       convertedColors[mode] = Object.fromEntries(spectrumValuePairs);
+    }
+  }
+
+  if (convertedColors.light?.primary) {
+    const complementary = getSplitComplementary(convertedColors.light?.primary);
+
+    if (!convertedColors.light.secondary) {
+      convertedColors.light.secondary = complementary.secondary;
+    }
+
+    if (!convertedColors.light.tertiary) {
+      convertedColors.light.tertiary = complementary.tertiary;
     }
   }
 
