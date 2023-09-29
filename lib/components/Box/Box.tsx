@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
 import { BoxProps } from './Box.types';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 
 export type { BoxProps };
 

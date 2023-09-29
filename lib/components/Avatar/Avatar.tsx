@@ -4,7 +4,7 @@ import { forwardRef, lazy, Suspense, useMemo } from 'react';
 import classNames from 'classnames';
 
 import { AvatarBaseProps, AvatarProps } from './Avatar.types';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import generateInitials from './generateInitials';
 import { Image } from '../Image/Image';
 import type { UserIconProps } from '../PuiIcons/UserIcon/UserIcon';

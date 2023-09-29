@@ -12,7 +12,7 @@ import {
   ThemeColor,
   ThemeMainColors
 } from './theme.types';
-import deepMerge from '../lib/deepMerge';
+import deepMerge from '../services/deepMerge';
 import elevation from './tokens/elevation';
 import gap from './tokens/gap';
 import getSplitComplementary from './spectrum/methods/getSplitComplementary';

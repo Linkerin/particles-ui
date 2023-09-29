@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { BadgeBaseProps, BadgeProps } from './Badge.types';
 import { BadgeInline } from '../BadgeInline/BadgeInline';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 
 import styles from './Badge.module.scss';
 

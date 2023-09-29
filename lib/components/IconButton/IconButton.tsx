@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { Button } from '../Button/Button';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import { IconButtonBaseProps, IconButtonProps } from './IconButton.types';
 
 import styles from './IconButton.module.scss';

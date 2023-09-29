@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import { ListBaseProps, ListProps } from './List.types';
 
 import styles from './List.module.scss';

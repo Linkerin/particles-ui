@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
 import { BadgeInlineBaseProps, BadgeInlineProps } from './BadgeInline.types';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import truncateContent from './truncateContent';
 
 import radiusStyles from '../../styles/util-classes/border-radius.module.scss';

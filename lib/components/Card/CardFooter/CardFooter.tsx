@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { Box } from '../../Box/Box';
 import { CardFooterBaseProps, CardFooterProps } from './CardFooter.types';
-import { createPolymorphicComponent } from '../../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../../services/createPolymorphicComponent';
 
 import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
 import flexDirectionStyles from '../../../styles/util-classes/flex-direction.module.scss';

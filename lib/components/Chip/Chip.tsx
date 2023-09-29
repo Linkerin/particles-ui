@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { Box } from '../Box/Box';
 import { ChipBaseProps, ChipProps } from './Chip.types';
 import { CloseButton } from '../CloseButton/CloseButton';
-import { createPolymorphicComponent } from '../../lib/createPolymorphicComponent';
+import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../hooks/useMergedRefs';
