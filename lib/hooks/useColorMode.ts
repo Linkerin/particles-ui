@@ -28,10 +28,9 @@ export function useColorModeValue() {
 
 /**
  * Returns the color mode setter function.
- * The function returns `true` if the color mode was successfully set,
- * `false` otherwise
+ * The function returns `false` if the color mode was not set,
+ * otherwise the value that was set
  * @see {@link https://particles.snipshot.dev/docs/hooks/use-color-mode-setter | Particles UI | useColorModeSetter}
- *
  *
  * @returns `setColorMode` function
  *

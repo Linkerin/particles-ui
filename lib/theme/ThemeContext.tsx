@@ -7,8 +7,8 @@ import { PuiColorMode } from '../lib/types';
 import ssrLocalStorage from '../services/SsrLocalStorage';
 
 type ThemeMode = Exclude<PuiColorMode, 'system'>;
-type ThemeModeContextValue = ThemeMode | null;
-type ThemeSetModeContextValue = (mode: PuiColorMode) => boolean;
+type ThemeModeContextValue = PuiColorMode | null;
+type ThemeSetModeContextValue = (mode: PuiColorMode) => PuiColorMode | false;
 
 /**
  * Changes the value of the `html[data-pui-mode]` attribute
@@ -69,7 +69,22 @@ export default function ThemeProvider({
    * Color mode toggle function. Switches between 'light' and 'dark' mode
    */
   const toggleColorMode = useCallback(() => {
-    const newMode = colorMode === 'light' ? 'dark' : 'light';
+    let newMode: ThemeMode;
+    switch (colorMode) {
+      case 'light':
+        newMode = 'dark';
+        break;
+
+      case 'dark':
+        newMode = 'light';
+        break;
+
+      default: {
+        const systemMode = getSystemMode();
+        newMode = systemMode === 'light' ? 'dark' : 'light';
+        break;
+      }
+    }
 
     const htmlChanged = changePuiModeHtmlAttr(newMode);
     if (htmlChanged) {
@@ -84,7 +99,8 @@ export default function ThemeProvider({
    * The color mode setter function
    *
    * @param {PuiColorMode} mode - The color mode to be set
-   * @returns {boolean} `true` if the color mode was successfully set, `false` otherwise
+   * @returns {PuiColorMode | false} `false` if the color mode was not set,
+   * otherwise the value that was set
    */
   const colorModeSetter = useCallback(
     (mode: PuiColorMode) => {
@@ -97,19 +113,21 @@ export default function ThemeProvider({
 
       if (!window) return false;
 
-      const newMode = mode === 'system' ? getSystemMode() : mode;
+      const modeIsSystem = mode === 'system';
+      const newMode = modeIsSystem ? getSystemMode() : mode;
 
       const htmlChanged = changePuiModeHtmlAttr(newMode);
       if (htmlChanged) {
-        setColorMode(newMode);
+        const modeValue = modeIsSystem ? mode : newMode;
+        setColorMode(modeValue);
+
         if (withLocalStorage) {
-          ssrLocalStorage.setItem(
-            'pui-mode',
-            mode === 'system' ? mode : newMode
-          );
+          modeIsSystem
+            ? ssrLocalStorage.removeItem('pui-mode')
+            : ssrLocalStorage.setItem('pui-mode', newMode);
         }
 
-        return true;
+        return modeValue;
       }
 
       return false;
@@ -133,20 +151,15 @@ export default function ThemeProvider({
       }
 
       const fromStorage = withLocalStorage
-        ? (ssrLocalStorage.getItem('pui-mode') as PuiColorMode)
+        ? (ssrLocalStorage.getItem('pui-mode') as ThemeMode)
         : null;
       const puiLocal =
         fromStorage && COLOR_MODES.includes(fromStorage) ? fromStorage : null;
 
       const systemMode = getSystemMode();
 
-      const localMode = !puiLocal
-        ? null
-        : puiLocal === 'system'
-        ? systemMode
-        : puiLocal;
       const serverMode = puiMode === 'system' ? systemMode : puiMode;
-      const mode = localMode ?? serverMode;
+      const mode = puiLocal ?? serverMode;
 
       const htmlChanged = changePuiModeHtmlAttr(mode);
       if (htmlChanged) setColorMode(mode);
