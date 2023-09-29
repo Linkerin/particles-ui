@@ -1,9 +1,20 @@
-@use '../theme-tokens/variables' as var;
+// @use '../theme-tokens/variables' as var;
+
+$radiuses: (
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 0.75rem,
+  'lg': 1rem,
+  'xl': 1.75rem,
+  'full': 3rem,
+  'round': 50%,
+  'none': 0
+) !default;
 
 /// Adds classes for the following 'radius' properties support:
 /// 'none', 'xs', 'sm', 'md', 'lg', 'xl', 'full', 'round'
 ///
-@each $radius, $value in var.$radiuses {
+@each $radius, $value in $radiuses {
   :where(.#{$radius}) {
     --pui-curr-elem-radius: var(--pui-radius-#{$radius}, #{$value});
     border-radius: var(--pui-radius-#{$radius}, $value);

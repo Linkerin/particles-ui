@@ -5,14 +5,16 @@ import { createContext, useCallback, useState, useEffect } from 'react';
 import { COLOR_MODES } from '../lib/constants';
 import { PuiColorMode } from '../lib/types';
 
-type ThemeModeContextValue = Exclude<PuiColorMode, 'system'> | null;
+type ThemeMode = Exclude<PuiColorMode, 'system'>;
+type ThemeModeContextValue = ThemeMode | null;
 
 /**
  * Changes the value of the `html[data-pui-mode]` attribute
- * @param mode `light` or `dark` color mode
+ *
+ * @param {'light' | 'dark'} mode `light` or `dark` color mode
  * @returns `true` in case of successful changes, otherwise `false`
  */
-function changePuiModeHtmlAttr(mode: Exclude<PuiColorMode, 'system'>) {
+function changePuiModeHtmlAttr(mode: ThemeMode) {
   const html = document.documentElement;
   const htmlPuiMode = html.attributes.getNamedItem('data-pui-mode');
   if (!htmlPuiMode) return false;
@@ -27,6 +29,17 @@ export const ThemeModeContext = createContext<ThemeModeContextValue>(null);
 
 export const ThemeToggleModeContext = createContext(() => {});
 
+/**
+ * Provides a theme mode context to its children components.
+ * Allows toggling between light and dark modes and supports a system mode.
+ * The color mode is determined based on the `data-pui-mode` attribute
+ * of the HTML element.
+ *
+ * @param children - The child components that need access to the color mode.
+ * @returns The children components wrapped with the `ThemeModeContext.Provider`
+ * and `ThemeToggleModeContext.Provider` components,
+ * providing the color mode and toggle function as context values.
+ */
 export default function ThemeProvider({
   children
 }: {
@@ -52,27 +65,27 @@ export default function ThemeProvider({
 
   useEffect(() => {
     if (typeof document !== 'undefined' && typeof window !== 'undefined') {
-      const systemDarkMode =
-        window && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const systemMode = systemDarkMode ? 'dark' : 'light';
-
       const html = document.documentElement;
-      const htmlPuiMode = html.attributes.getNamedItem('data-pui-mode');
-      const puiMode = htmlPuiMode?.value as PuiColorMode;
+      const puiMode = html.getAttribute('data-pui-mode') as PuiColorMode;
 
       if (!puiMode) {
-        throw new Error('html element should have a `data-pui-mode` attribute');
+        throw new Error('html element must have a `data-pui-mode` attribute');
       }
 
-      if (COLOR_MODES.includes(puiMode)) {
-        if (puiMode === 'system') {
-          const htmlChanged = changePuiModeHtmlAttr(systemMode);
-          if (htmlChanged) setColorMode(systemMode);
-        } else {
-          const htmlChanged = changePuiModeHtmlAttr(puiMode);
-          if (htmlChanged) setColorMode(puiMode);
-        }
+      if (!COLOR_MODES.includes(puiMode)) {
+        throw new Error(
+          `'${puiMode}' is an invalid value for a 'data-pui-mode' attribute`
+        );
       }
+
+      const systemDarkMode = window?.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      const systemMode = systemDarkMode ? 'dark' : 'light';
+      let mode = puiMode === 'system' ? systemMode : puiMode;
+
+      const htmlChanged = changePuiModeHtmlAttr(mode);
+      if (htmlChanged) setColorMode(mode);
     }
   }, []);
 
@@ -88,89 +101,3 @@ export default function ThemeProvider({
     </ThemeModeContext.Provider>
   );
 }
-
-// 'use client';
-
-// import { createContext, useCallback, useState, useEffect } from 'react';
-
-// import { PuiColorMode } from '@/app/_lib/types';
-
-// type ThemeModeValue = Exclude<PuiColorMode, 'system'> | null;
-
-// /**
-//  * Changes the value of the `html[data-pui-mode]` attribute
-//  * @param mode `light` or `dark` color mode
-//  * @returns `true` in case of successful changes, otherwise `false`
-//  */
-// function changePuiModeHtmlAttr(mode: Exclude<PuiColorMode, 'system'>) {
-//   if (typeof document === 'undefined') return false;
-
-//   const html = document.documentElement;
-//   let htmlPuiMode = html.attributes.getNamedItem('data-pui-mode');
-//   if (!htmlPuiMode) {
-//     htmlPuiMode = document.createAttribute('data-pui-mode');
-//   }
-
-//   htmlPuiMode.value = mode;
-//   html.attributes.setNamedItem(htmlPuiMode);
-
-//   return true;
-// }
-
-// export const ThemeModeContext = createContext<ThemeModeValue>(null);
-
-// export const ThemeToggleModeContext = createContext(() => {});
-
-// export default function ThemeProvider({
-//   children,
-//   mode = 'system'
-// }: {
-//   children: React.ReactNode;
-//   mode?: PuiColorMode;
-// }) {
-//   const [colorMode, setColorMode] = useState<ThemeModeValue>(null);
-
-//   /**
-//    * Color mode toggle function. Switches between 'light' and 'dark' mode
-//    */
-//   const toggleColorMode = useCallback(() => {
-//     if (colorMode === 'light') {
-//       const htmlChanged = changePuiModeHtmlAttr('dark');
-//       if (htmlChanged) setColorMode('dark');
-//       return;
-//     }
-
-//     const htmlChanged = changePuiModeHtmlAttr('light');
-//     if (htmlChanged) setColorMode('light');
-
-//     return;
-//   }, [colorMode]);
-
-//   useEffect(() => {
-//     if (typeof document !== 'undefined' && typeof window !== 'undefined') {
-//       const systemDarkMode =
-//         window && window.matchMedia('(prefers-color-scheme: dark)').matches;
-//       const systemMode = systemDarkMode ? 'dark' : 'light';
-
-//       if (mode === 'system') {
-//         const htmlChanged = changePuiModeHtmlAttr(systemMode);
-//         if (htmlChanged) setColorMode(systemMode);
-//       } else {
-//         const htmlChanged = changePuiModeHtmlAttr(mode);
-//         if (htmlChanged) setColorMode(mode);
-//       }
-//     }
-//   }, [mode]);
-
-//   if (colorMode === null) {
-//     return children;
-//   }
-
-//   return (
-//     <ThemeModeContext.Provider value={colorMode}>
-//       <ThemeToggleModeContext.Provider value={toggleColorMode}>
-//         {children}
-//       </ThemeToggleModeContext.Provider>
-//     </ThemeModeContext.Provider>
-//   );
-// }
