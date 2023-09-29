@@ -13,15 +13,15 @@
 ///   color-to-rgb(#6750a4);
 ///   // 103 80 164
 ///
-@function color-to-rgb($color) {
-  @if (meta.type-of($color) != 'color') {
-    @error "#{$color} is not a color value";
-  }
+// @function color-to-rgb($color) {
+//   @if (meta.type-of($color) != 'color') {
+//     @error "#{$color} is not a color value";
+//   }
 
-  $channels: (color.red($color) color.green($color) color.blue($color));
+//   $channels: (color.red($color) color.green($color) color.blue($color));
 
-  @return $channels;
-}
+//   @return $channels;
+// }
 
 /// Generates a palette of different lightness level from the base color
 ///
@@ -41,49 +41,49 @@
 ///   //   'primary-100':#ffffff
 ///   // )
 ///
-@function generate-palette($color, $name) {
-  @if (meta.type-of($color) != 'color') {
-    @error "#{$color} is not a color value";
-  }
+// @function generate-palette($color, $name) {
+//   @if (meta.type-of($color) != 'color') {
+//     @error "#{$color} is not a color value";
+//   }
 
-  @if (meta.type-of($name) != 'string') {
-    @error "#{$name} is not a string value";
-  }
+//   @if (meta.type-of($name) != 'string') {
+//     @error "#{$name} is not a string value";
+//   }
 
-  $palette: ();
-  $values: (
-    0,
-    5,
-    10,
-    12,
-    15,
-    20,
-    25,
-    30,
-    35,
-    40,
-    50,
-    60,
-    70,
-    80,
-    90,
-    92,
-    95,
-    97,
-    99,
-    100
-  );
+//   $palette: ();
+//   $values: (
+//     0,
+//     5,
+//     10,
+//     12,
+//     15,
+//     20,
+//     25,
+//     30,
+//     35,
+//     40,
+//     50,
+//     60,
+//     70,
+//     80,
+//     90,
+//     92,
+//     95,
+//     97,
+//     99,
+//     100
+//   );
 
-  @each $value in $values {
-    $palette: map.set(
-      $palette,
-      '#{$name}-#{$value}',
-      color.change($color, $lightness: $value * 1%)
-    );
-  }
+//   @each $value in $values {
+//     $palette: map.set(
+//       $palette,
+//       '#{$name}-#{$value}',
+//       color.change($color, $lightness: $value * 1%)
+//     );
+//   }
 
-  @return $palette;
-}
+//   @return $palette;
+// }
 
 /// Adjusts the saturation level.
 /// By default, desaturates by 10% for dark palette
@@ -91,25 +91,25 @@
 ///
 /// @param {number} $saturation [-10%] Saturation value
 ///
-@function desaturate($color, $saturation: -10%) {
-  @if (meta.type-of($color) != 'color') {
-    @error "#{$color} is not a color value";
-  }
+// @function desaturate($color, $saturation: -10%) {
+//   @if (meta.type-of($color) != 'color') {
+//     @error "#{$color} is not a color value";
+//   }
 
-  @return color.adjust($color, $saturation: $saturation);
-}
+//   @return color.adjust($color, $saturation: $saturation);
+// }
 
 /// Generates neutral color from the given
 /// by setting saturation equal to 14%
 /// @param {color} $color Color value
 ///
-@function generate-neutral($color) {
-  @if (meta.type-of($color) != 'color') {
-    @error "#{$color} is not a color value";
-  }
+// @function generate-neutral($color) {
+//   @if (meta.type-of($color) != 'color') {
+//     @error "#{$color} is not a color value";
+//   }
 
-  @return color.change($color, $saturation: 14%);
-}
+//   @return color.change($color, $saturation: 14%);
+// }
 
 /// Checks background color intensity
 /// and returns a proper color for 'on' text
@@ -127,33 +127,33 @@
 ///   on-color(#5757db, $primary-palette, 'primary99', 'primary20');
 ///   // #fbfbfe ('primary99')
 ///
-@function on-color($color, $palette, $light-value, $dark-value) {
-  @if (meta.type-of($color) != 'color') {
-    @error "#{$color} is not a color value";
-  }
+// @function on-color($color, $palette, $light-value, $dark-value) {
+//   @if (meta.type-of($color) != 'color') {
+//     @error "#{$color} is not a color value";
+//   }
 
-  @if (meta.type-of($palette) != 'map') {
-    @error "Provided palette has to be a `map` value";
-  }
+//   @if (meta.type-of($palette) != 'map') {
+//     @error "Provided palette has to be a `map` value";
+//   }
 
-  @if (map.get($palette, $light-value) == null) {
-    @error "There is no '#{$light-value}' key in the palette";
-  }
+//   @if (map.get($palette, $light-value) == null) {
+//     @error "There is no '#{$light-value}' key in the palette";
+//   }
 
-  @if (map.get($palette, $dark-value) == null) {
-    @error "There is no '#{$dark-value}' key in the palette";
-  }
+//   @if (map.get($palette, $dark-value) == null) {
+//     @error "There is no '#{$dark-value}' key in the palette";
+//   }
 
-  $red: color.red($color);
-  $green: color.green($color);
-  $blue: color.blue($color);
+//   $red: color.red($color);
+//   $green: color.green($color);
+//   $blue: color.blue($color);
 
-  // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
-  $intensity: $red * 0.299 + $green * 0.587 + $blue * 0.114;
+//   // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+//   $intensity: $red * 0.299 + $green * 0.587 + $blue * 0.114;
 
-  @if ($intensity >= 165) {
-    @return map.get($palette, $dark-value);
-  } @else {
-    @return map.get($palette, $light-value);
-  }
-}
+//   @if ($intensity >= 165) {
+//     @return map.get($palette, $dark-value);
+//   } @else {
+//     @return map.get($palette, $light-value);
+//   }
+// }

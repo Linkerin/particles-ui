@@ -16,8 +16,6 @@ export const colorTokens = {
 export const defaultColors: DefaultColor = {
   light: {
     primary: new Spectrum('hsl', '233, 40%, 55%'),
-    // secondary: new Spectrum('hsl', '175, 28%, 54%'),
-    // tertiary: new Spectrum('hsl', '29, 66%, 55%'),
     error: new Spectrum('hsl', '356, 70%, 60%'),
     success: new Spectrum('hsl', '149, 40%, 50%'),
     warning: new Spectrum('hsl', '36, 98%, 60%'),
