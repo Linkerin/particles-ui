@@ -2,17 +2,17 @@
 
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/lib/components/Divider/Divider';
-import { Heading } from '@/lib/components/Heading/Heading';
-import { Image } from '@/lib/components/Image/Image';
+import { Divider } from '@/src/components/Divider/Divider';
+import { Heading } from '@/src/components/Heading/Heading';
+import { Image } from '@/src/components/Image/Image';
 
 import avatar from '@/public/avatar.jpg';
 
 import {
   ImageIconFallback,
   ImageIconFallbackProps
-} from '@/lib/components/ImageIconFallback/ImageIconFallback';
-import { ImageSkeletonFallback } from '@/lib/components/ImageSkeletonFallback/ImageSkeletonFallback';
+} from '@/src/components/ImageIconFallback/ImageIconFallback';
+import { ImageSkeletonFallback } from '@/src/components/ImageSkeletonFallback/ImageSkeletonFallback';
 
 const colors: Array<ImageIconFallbackProps['color']> = [
   'primary',

@@ -1,16 +1,16 @@
 'use client';
 
-import { Button, ButtonProps } from '@/lib/components/Button/Button';
-import { Card } from '@/lib/components/Card/Card';
-import { CardHeader } from '@/lib/components/Card/CardHeader/CardHeader';
-import { CardBody } from '@/lib/components/Card/CardBody/CardBody';
-import { CardFooter } from '@/lib/components/Card/CardFooter/CardFooter';
+import { Button, ButtonProps } from '@/src/components/Button/Button';
+import { Card } from '@/src/components/Card/Card';
+import { CardHeader } from '@/src/components/Card/CardHeader/CardHeader';
+import { CardBody } from '@/src/components/Card/CardBody/CardBody';
+import { CardFooter } from '@/src/components/Card/CardFooter/CardFooter';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/lib/components/Divider/Divider';
+import { Divider } from '@/src/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/lib/components/Heading/Heading';
-import { Text } from '@/lib/components/Text/Text';
+import { Heading } from '@/src/components/Heading/Heading';
+import { Text } from '@/src/components/Text/Text';
 
 function CardBodyContent({
   firstLine = 'Some example text of the card content.'

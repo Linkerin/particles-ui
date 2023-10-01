@@ -1,19 +1,19 @@
 'use client';
 
 import DemoSection from '../DemoSection';
-import { Divider } from '@/lib/components/Divider/Divider';
+import { Divider } from '@/src/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/lib/components/Heading/Heading';
+import { Heading } from '@/src/components/Heading/Heading';
 import { IconStack2 as StackIcon } from '@tabler/icons-react';
-import { Link } from '@/lib/components/Link/Link';
-import { List } from '@/lib/components/List/List';
-import { ListItem } from '@/lib/components/List/ListItem/ListItem';
-import { ListItemIcon } from '@/lib/components/List/ListItemIcon/ListItemIcon';
-import { ListItemInteractive } from '@/lib/components/List/ListItemInteractive/ListItemInteractive';
-import { ListItemText } from '@/lib/components/List/ListItemText/ListItemText';
-import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { Link } from '@/src/components/Link/Link';
+import { List } from '@/src/components/List/List';
+import { ListItem } from '@/src/components/List/ListItem/ListItem';
+import { ListItemIcon } from '@/src/components/List/ListItemIcon/ListItemIcon';
+import { ListItemInteractive } from '@/src/components/List/ListItemInteractive/ListItemInteractive';
+import { ListItemText } from '@/src/components/List/ListItemText/ListItemText';
+import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
-import linkOverlayStyles from '../../../lib/styles/util-classes/link-overlay.module.scss';
+import linkOverlayStyles from '../../../src/styles/util-classes/link-overlay.module.scss';
 
 function ListDocsPage() {
   return (

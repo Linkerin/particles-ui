@@ -1,8 +1,8 @@
 import React from 'react';
 
-import PuiTheme from '../lib/theme/PuiTheme';
+import PuiTheme from '../src/theme/PuiTheme';
 
-import '../lib/styles/pui-base.css';
+import '../src/styles/pui-base.css';
 import './storybook.css';
 
 import type { Preview } from '@storybook/react';

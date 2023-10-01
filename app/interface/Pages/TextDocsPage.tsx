@@ -1,11 +1,11 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/lib/components/Divider/Divider';
+import { Divider } from '@/src/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/lib/components/Heading/Heading';
+import { Heading } from '@/src/components/Heading/Heading';
 import { IconArticleFilledFilled as ArticleIcon } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/lib/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import { Text } from '@/lib/components/Text/Text';
+import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { Text } from '@/src/components/Text/Text';
 
 function TextDocsPage() {
   return (

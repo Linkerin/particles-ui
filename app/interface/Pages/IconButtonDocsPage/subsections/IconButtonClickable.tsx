@@ -1,9 +1,9 @@
 'use client';
 
-import { Heading } from '@/lib/components/Heading/Heading';
+import { Heading } from '@/src/components/Heading/Heading';
 import DemoContainer from '@/app/interface/DemoContainer';
 import GlobeIcon from '@/app/interface/GlobeIcon';
-import { IconButton } from '@/lib/components/IconButton/IconButton';
+import { IconButton } from '@/src/components/IconButton/IconButton';
 
 function IconButtonClickable() {
   const onClickHandler: React.MouseEventHandler = e => {

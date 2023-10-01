@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-import PuiTheme from '../lib/theme/PuiTheme';
+import PuiTheme from '../src/theme/PuiTheme';
 
 export default function Document() {
   return (

@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { IconButton } from '@/lib/components/IconButton/IconButton';
+import { IconButton } from '@/src/components/IconButton/IconButton';
 import { IconBrandGithub } from '@tabler/icons-react';
 
 function GithubIconLink() {

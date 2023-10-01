@@ -4,7 +4,7 @@ import { IconBrandGithubFilled } from '@tabler/icons-react';
 import {
   Button,
   ButtonProps
-} from '../../../../../../lib/components/Button/Button';
+} from '../../../../../../src/components/Button/Button';
 
 interface GithubButtonProps extends ButtonProps {
   link: string;

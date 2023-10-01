@@ -2,8 +2,8 @@
 
 import { IconDeviceLaptop, IconMoon, IconSun } from '@tabler/icons-react';
 
-import { IconButton } from '../../../../lib/components/IconButton/IconButton';
-import useColorMode from '../../../../lib/hooks/useColorMode';
+import { IconButton } from '../../../../src/components/IconButton/IconButton';
+import useColorMode from '../../../../src/hooks/useColorMode';
 
 import styles from './ThemeToggler.module.css';
 

@@ -3,11 +3,11 @@ import { Nunito } from 'next/font/google';
 
 import Header from './interface/Header/Header';
 import Nav from './interface/Nav/Nav';
-import Spectrum from '@/lib/theme/spectrum/spectrum';
-import PuiTheme from '@/lib/theme/PuiTheme';
-import ThemeProvider from '@/lib/theme/ThemeContext';
+import Spectrum from '../src/theme/spectrum/spectrum';
+import PuiTheme from '../src/theme/PuiTheme';
+import ThemeProvider from '../src/theme/ThemeContext';
 
-import '../lib/styles/pui-base.css';
+import '../src/styles/pui-base.css';
 import './material-symbols.css';
 import styles from './layout.module.css';
 

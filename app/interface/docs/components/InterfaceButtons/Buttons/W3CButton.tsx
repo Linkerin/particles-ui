@@ -4,7 +4,7 @@ import W3CIcon from '../../W3CIcon/W3CIcon';
 import {
   Button,
   ButtonProps
-} from '../../../../../../lib/components/Button/Button';
+} from '../../../../../../src/components/Button/Button';
 
 interface W3CButtonProps extends ButtonProps {
   link: string;

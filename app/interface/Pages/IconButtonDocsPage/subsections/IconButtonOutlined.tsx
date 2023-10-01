@@ -1,7 +1,7 @@
 import DemoContainer from '../../../DemoContainer';
-import { Heading } from '@/lib/components/Heading/Heading';
+import { Heading } from '@/src/components/Heading/Heading';
 import GlobeIcon from '../../../GlobeIcon';
-import { IconButton } from '@/lib/components/IconButton/IconButton';
+import { IconButton } from '@/src/components/IconButton/IconButton';
 
 function IconButtonOutlined() {
   return (

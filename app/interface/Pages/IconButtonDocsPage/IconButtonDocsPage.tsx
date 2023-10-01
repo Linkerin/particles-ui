@@ -1,6 +1,6 @@
 import DemoSection from '../../DemoSection';
-import { Divider } from '@/lib/components/Divider/Divider';
-import { Heading } from '@/lib/components/Heading/Heading';
+import { Divider } from '@/src/components/Divider/Divider';
+import { Heading } from '@/src/components/Heading/Heading';
 import IconButtonClickable from './subsections/IconButtonClickable';
 import IconButtonStandard from './subsections/IconButtonStandard';
 import IconButtonFilled from './subsections/IconButtonFilled';

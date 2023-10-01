@@ -1,4 +1,4 @@
-import { PuiColorNames, PuiSize } from '@/lib/lib/types';
+import { PuiColorNames, PuiSize } from '@/src/lib/types';
 
 export interface SwitchProps
   extends Omit<React.ComponentPropsWithoutRef<'input'>, 'size'> {
