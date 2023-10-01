@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useState, useEffect } from 'react';
+import { createContext, useCallback, useEffect, useState } from 'react';
 
 import { COLOR_MODES } from '../lib/constants';
 import { PuiColorMode } from '../lib/types';

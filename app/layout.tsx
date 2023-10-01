@@ -4,7 +4,7 @@ import { Nunito } from 'next/font/google';
 import Header from './interface/Header/Header';
 import Nav from './interface/Nav/Nav';
 import Spectrum from '@/lib/theme/spectrum/spectrum';
-import Theme from '@/lib/theme/Theme';
+import PuiTheme from '@/lib/theme/PuiTheme';
 import ThemeProvider from '@/lib/theme/ThemeContext';
 
 import '../lib/styles/pui-base.css';
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-pui-mode="system">
       <body className={nunito.className}>
-        <Theme mainColors={{ light: { secondary, tertiary } }} />
+        <PuiTheme mainColors={{ light: { secondary, tertiary } }} />
         <ThemeProvider>
           <Header />
           <div className={styles.container}>

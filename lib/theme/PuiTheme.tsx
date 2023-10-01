@@ -14,7 +14,7 @@ interface ThemeProps {
  * @returns {JSX.Element} - The JSX element containing
  * the injected CSS variables inside `<style>` elements.
  */
-function Theme({ mainColors, theme }: ThemeProps): JSX.Element {
+function PuiTheme({ mainColors, theme }: ThemeProps): JSX.Element {
   const defaultTheme = getTheme(mainColors);
   const composedTheme = mergeThemes(defaultTheme, theme);
   const { common, light, dark } = getCssVars(composedTheme);
@@ -47,4 +47,4 @@ function Theme({ mainColors, theme }: ThemeProps): JSX.Element {
   );
 }
 
-export default Theme;
+export default PuiTheme;
