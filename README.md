@@ -1,11 +1,14 @@
 [![Particles UI Logo](./readme_img/pui-logo.svg)](https://particles-ui.snipshot.dev)
 
-[<img src="./readme_img/storybook.svg" alt="Storybook logo" width="160" height="40">](https://particles-book.snipshot.dev)
+<a href="https://particles-book.snipshot.dev" target="_blank" aria-label="To Particles UI Storybook website"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg" />
 
 # Particles UI
 
-React components inspired by [Material Design 3](https://m3.material.io) and [Fluent 2](https://fluent2.microsoft.design/).
-Components are fully compatible with [Next.js 13 server component](https://nextjs.org/docs/getting-started/react-essentials#server-components). Uses [Sass](https://sass-lang.com) for styling.
+React components inspired by [Material Design 3](https://m3.material.io) and
+[Fluent 2](https://fluent2.microsoft.design/). Components are fully compatible
+with [Next.js 13 server
+component](https://nextjs.org/docs/getting-started/react-essentials#server-components).
+Uses [Sass](https://sass-lang.com) for styling.
 
 ## Demo
 
@@ -24,7 +27,8 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - [x] Button:
 
   - [Material 3](https://m3.material.io/components/buttons/overview)
-  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/button/usage)
+  - [Fluent
+    2](https://fluent2.microsoft.design/components/web/react/button/usage)
   - [Ant Design](https://ant.design/components/button)
   - [Open UI](https://open-ui.org/components/button/)
   - [MUI](https://mui.com/material-ui/react-button/)
@@ -40,7 +44,8 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 - [x] Floating action button:
 
-  - [Material 3](https://m3.material.io/components/floating-action-button/overview)
+  - [Material
+    3](https://m3.material.io/components/floating-action-button/overview)
   - [Ant Design](https://ant.design/components/float-button)
   - [MUI](https://mui.com/material-ui/react-floating-action-button/)
 
@@ -80,13 +85,15 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Fluent 2](https://fluent2.microsoft.design/components/web/react/link/usage)
   - [MUI](https://mui.com/material-ui/react-link/)
   - [Mantine](https://mantine.dev/core/anchor/)
-  - [Chakra UI](https://chakra-ui.com/docs/components/link) and [overlay](https://chakra-ui.com/docs/components/link-overlay)
+  - [Chakra UI](https://chakra-ui.com/docs/components/link) and
+    [overlay](https://chakra-ui.com/docs/components/link-overlay)
   - [Next UI](https://nextui.org/docs/components/link)
 
 - [x] Divider
 
   - [Material 3](https://m3.material.io/components/divider/overview)
-  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/divider/usage)
+  - [Fluent
+    2](https://fluent2.microsoft.design/components/web/react/divider/usage)
   - [Ant Design](https://ant.design/components/divider)
   - [Open UI](https://open-ui.org/components/text/)
   - [MUI](https://mui.com/material-ui/react-divider/)
@@ -100,13 +107,16 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
   - [Fluent 2](https://fluent2.microsoft.design/components/web/react/text/usage)
   - [Ant Design](https://ant.design/components/typography)
   - [MUI](https://mui.com/material-ui/react-typography/)
-  - Mantine: [Text](https://mantine.dev/core/text/) and [Title](https://mantine.dev/core/title/)
-  - Chakra UI: [Text](https://chakra-ui.com/docs/components/text) and [Heading](https://chakra-ui.com/docs/components/heading)
+  - Mantine: [Text](https://mantine.dev/core/text/) and
+    [Title](https://mantine.dev/core/title/)
+  - Chakra UI: [Text](https://chakra-ui.com/docs/components/text) and
+    [Heading](https://chakra-ui.com/docs/components/heading)
 
 - [x] Switch
 
   - [Material 3](https://m3.material.io/components/switch/overview)
-  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/switch/usage)
+  - [Fluent
+    2](https://fluent2.microsoft.design/components/web/react/switch/usage)
   - [Ant Design](https://ant.design/components/switch)
   - [Open UI](https://open-ui.org/components/switch/)
   - [MUI](https://mui.com/material-ui/react-switch/)
@@ -127,7 +137,8 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 - [x] Badge:
 
   - [Material 3](https://m3.material.io/components/badges/overview)
-  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/badge/usage)
+  - [Fluent
+    2](https://fluent2.microsoft.design/components/web/react/badge/usage)
   - [Ant Design](https://ant.design/components/badge)
   - [Open UI](https://open-ui.org/components/badge.research/)
   - [MUI](https://mui.com/material-ui/react-badge/)
@@ -144,7 +155,10 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 - [x] Avatar:
 
-  - Fluent 2: [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage) and [Avatar Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
+  - Fluent 2:
+    [Avatar](https://fluent2.microsoft.design/components/web/react/avatar/usage)
+    and [Avatar
+    Group](https://fluent2.microsoft.design/components/web/react/avatargroup/usage)
   - [Ant Design](https://ant.design/components/avatar)
   - [Open UI](https://open-ui.org/components/avatar.research/)
   - [MUI](https://mui.com/material-ui/react-avatar/)
@@ -154,7 +168,8 @@ Recommended icons library: [tabler icons](https://tabler-icons.io/)
 
 - [x] Image
 
-  - [Fluent 2](https://fluent2.microsoft.design/components/web/react/image/usage)
+  - [Fluent
+    2](https://fluent2.microsoft.design/components/web/react/image/usage)
   - [Ant Design](https://ant.design/components/image)
   - [Open UI](https://open-ui.org/components/image.research/)
   - [Mantine](https://mantine.dev/core/image/)

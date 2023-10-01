@@ -8,7 +8,6 @@ import { createPolymorphicComponent } from '../../services/createPolymorphicComp
 import { ImageBaseProps, ImageProps } from './Image.types';
 import useImageLoader from './useImageLoader';
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Image.module.scss';
 
 export type { ImageProps };
@@ -58,7 +57,7 @@ const _Image = forwardRef<HTMLImageElement, ImageProps>(function _Image(
       className={classNames(
         styles.wrapper,
         { [styles.bg]: !fallback && !fallbackOnError },
-        { [radiusStyles[`${radius}`]]: radius },
+        { [`pui-radius-${radius}`]: radius },
         wrapperClassName
       )}
       {...wrapperProps}

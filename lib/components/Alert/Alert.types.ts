@@ -4,10 +4,6 @@ import { TextProps } from '../Text/Text';
 
 export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
   /**
-   * Alert's message heading
-   */
-  heading?: string | React.ReactNode;
-  /**
    * Interactive component on the right
    */
   actionElement?: React.ReactNode;
@@ -19,6 +15,14 @@ export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
    * Alert's main color
    */
   color?: PuiColorNames;
+  /**
+   * Alert's message heading
+   */
+  heading?: string | React.ReactNode;
+  /**
+   * `Text` component properties for alert's heading
+   */
+  headingProps?: TextProps;
   /**
    * Icon component on the left
    */
@@ -32,13 +36,9 @@ export interface AlertProps extends React.ComponentPropsWithoutRef<'section'> {
    */
   radius?: Exclude<PuiRadius, 'round'>;
   /**
-   * `Text` properties for alert's message component
+   * `Text` component properties for alert's message
    */
   textProps?: TextProps;
-  /**
-   * `Text` properties for alert's heading component
-   */
-  headingProps?: TextProps;
   /**
    * Styling variant
    */

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import GithubIconLink from './GitHubIconLink';
 import Logo from '../Logo/Logo';
-import ThemeToggler from './ThemeToggler';
+import ThemeToggler from './ThemeToggler/ThemeToggler';
 
 import styles from './Header.module.scss';
 

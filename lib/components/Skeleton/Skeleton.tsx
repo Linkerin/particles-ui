@@ -3,7 +3,6 @@ import classNames from 'classnames';
 
 import { SkeletonProps, StyleObj } from './Skeleton.types';
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Skeleton.module.scss';
 
 export type { SkeletonProps };
@@ -71,7 +70,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
           { [styles[`${type}`]]: type },
           { [styles.loaded]: isLoaded },
           { [styles['fade-animation']]: fadeAnimation },
-          radiusStyles[componentRadius],
+          `pui-radius-${componentRadius}`,
           className
         )}
         style={{ ...styleObj, ...style }}

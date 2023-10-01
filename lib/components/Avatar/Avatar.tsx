@@ -11,7 +11,6 @@ import type { UserIconProps } from '../PuiIcons/UserIcon/UserIcon';
 
 const UserIcon = lazy(() => import('../PuiIcons/UserIcon/UserIcon'));
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Avatar.module.scss';
 
 export type { AvatarProps };
@@ -68,7 +67,7 @@ const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
       wrapperClassName={classNames(
         styles.avatar,
         styles[size],
-        radiusStyles[radius],
+        `pui-radius-${radius}`,
         { [styles.bordered]: bordered },
         { [styles[color]]: !disabled && color !== 'uncolored' },
         { [styles.disabled]: disabled },

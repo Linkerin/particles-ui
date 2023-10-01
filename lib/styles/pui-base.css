@@ -72,3 +72,43 @@ table {
   outline-offset: 2px;
   z-index: 10;
 }
+
+.pui-radius-xs {
+  --pui-curr-elem-radius: var(--pui-radius-xs, 0.25rem);
+  border-radius: var(--pui-radius-xs, 0.25rem);
+}
+
+.pui-radius-sm {
+  --pui-curr-elem-radius: var(--pui-radius-sm, 0.5rem);
+  border-radius: var(--pui-radius-sm, 0.5rem);
+}
+
+.pui-radius-md {
+  --pui-curr-elem-radius: var(--pui-radius-md, 0.75rem);
+  border-radius: var(--pui-radius-md, 0.75rem);
+}
+
+.pui-radius-lg {
+  --pui-curr-elem-radius: var(--pui-radius-lg, 1rem);
+  border-radius: var(--pui-radius-lg, 1rem);
+}
+
+.pui-radius-xl {
+  --pui-curr-elem-radius: var(--pui-radius-xl, 1.75rem);
+  border-radius: var(--pui-radius-xl, 1.75rem);
+}
+
+.pui-radius-full {
+  --pui-curr-elem-radius: var(--pui-radius-full, 3rem);
+  border-radius: var(--pui-radius-full, 3rem);
+}
+
+.pui-radius-round {
+  --pui-curr-elem-radius: var(--pui-radius-round, 50%);
+  border-radius: var(--pui-radius-round, 50%);
+}
+
+.pui-radius-none {
+  --pui-curr-elem-radius: var(--pui-radius-none, 0);
+  border-radius: var(--pui-radius-none, 0);
+}

@@ -52,12 +52,12 @@ function Nav() {
           <ListItemInteractive
             key={component.link}
             className={linkOverlayStyle.overlay}
-            selected={pathname === `/docs/components/${component.link}`}
+            selected={pathname === `/demo/components/${component.link}`}
             tabIndex={-1}
           >
             <Link
               as={NextLink}
-              href={`/docs/components/${component.link}`}
+              href={`/demo/components/${component.link}`}
               aria-label={`${component.name} component page`}
               overlay
             >

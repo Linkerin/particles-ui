@@ -6,7 +6,6 @@ import { BadgeInlineBaseProps, BadgeInlineProps } from './BadgeInline.types';
 import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import truncateContent from './truncateContent';
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './BadgeInline.module.scss';
 
 export type { BadgeInlineProps };
@@ -48,7 +47,7 @@ const _BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
           styles.badge,
           styles[variant],
           styles[size],
-          radiusStyles[radius],
+          `pui-radius-${radius}`,
           { [styles[color]]: color !== 'uncolored' },
           { [styles.invisible]: invisible },
           { [styles.outlined]: outlined },

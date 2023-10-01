@@ -12,7 +12,6 @@ import {
 } from './FloatingButton.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './FloatingButton.module.scss';
 
 export type { FloatingButtonProps };
@@ -61,7 +60,7 @@ const _FloatingButton = forwardRef<HTMLButtonElement, FloatingButtonProps>(
           outlineDefaultClassName,
           { [styles.lowered]: lowered },
           { [styles.loading]: isLoading },
-          radiusStyles[radius],
+          `pui-radius-${radius}`,
           className
         )}
         title={title}

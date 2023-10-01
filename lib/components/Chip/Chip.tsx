@@ -11,7 +11,6 @@ import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../hooks/useMergedRefs';
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Chip.module.scss';
 
 export type { ChipProps };
@@ -71,7 +70,7 @@ const _Chip = forwardRef<HTMLDivElement, ChipProps>(function _Chip(
         styles[variant],
         styles[color],
         styles[size],
-        radiusStyles[radius],
+        `pui-radius-${radius}`,
         { [styles.leftIcon]: !!leftIcon },
         { [styles.rightIcon]: !!rightIcon || !!onDelete },
         { [styles.static]: !clickable },

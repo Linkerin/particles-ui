@@ -1,0 +1,16 @@
+{
+  "home_link": {
+    "title": "Home",
+    "type": "page",
+    "href": "/"
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  },
+  "about_link": {
+    "title": "About",
+    "type": "page",
+    "href": "/docs/about"
+  }
+}

@@ -8,7 +8,6 @@ import { createPolymorphicComponent } from '../../services/createPolymorphicComp
 import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
-import radiusStyles from '../../styles/util-classes/border-radius.module.scss';
 import styles from './Button.module.scss';
 
 import { ButtonBaseProps, ButtonProps } from './Button.types';
@@ -61,7 +60,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
         styles[variant],
         styles[color],
         styles[size],
-        radiusStyles[radius],
+        `pui-radius-${radius}`,
         outlineDefaultClassName,
         { [styles.dense]: dense },
         { [styles.loading]: isLoading },
