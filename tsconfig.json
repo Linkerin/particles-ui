@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/Alert/Alert.test.js"
+    "src/components/Alert/Alert.test.ts"
   ],
   "exclude": ["node_modules"]
 }

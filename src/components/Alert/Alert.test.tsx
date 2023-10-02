@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
 
-import { Alert } from './Alert';
+import { Alert, AlertProps } from './Alert';
 import { Button } from '../Button/Button';
 
 import styles from './Alert.module.scss';
@@ -25,7 +25,8 @@ const tests = describe('Alert component', () => {
       styles.success,
       'pui-radius-sm'
     );
-    expect(alert).toHaveTextContent(alertData.text, alertData.heading);
+    expect(alert).toHaveTextContent(alertData.text);
+    expect(alert).toHaveTextContent(alertData.heading);
     expect(alert.firstChild).toHaveClass(
       styles['alert-icon'],
       styles['with-heading']
@@ -33,7 +34,12 @@ const tests = describe('Alert component', () => {
   });
 
   it('renders all variants alert', () => {
-    const variants = ['soft', 'outlined', 'filled', 'minimal'];
+    const variants: Array<Exclude<AlertProps['variant'], undefined>> = [
+      'soft',
+      'outlined',
+      'filled',
+      'minimal'
+    ];
 
     variants.forEach(variant => {
       const { getByLabelText } = render(
@@ -47,14 +53,14 @@ const tests = describe('Alert component', () => {
   });
 
   it('renders alert with all colors', () => {
-    const colors = [
+    const colors: Array<Exclude<AlertProps['color'], undefined>> = [
       'success',
       'info',
       'warning',
       'error',
       'primary',
       'secondary',
-      'teriary'
+      'tertiary'
     ];
 
     colors.forEach(color => {
@@ -69,7 +75,15 @@ const tests = describe('Alert component', () => {
   });
 
   it('renders alert with all radius options', () => {
-    const radiuses = ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'full'];
+    const radiuses: Array<AlertProps['radius']> = [
+      'none',
+      'xs',
+      'sm',
+      'md',
+      'lg',
+      'xl',
+      'full'
+    ];
 
     radiuses.forEach(radius => {
       const { getByLabelText } = render(
@@ -178,7 +192,7 @@ const tests = describe('Alert component', () => {
 
     const closeButton = queryByLabelText('Close alert message');
     expect(closeButton).toBeInTheDocument();
-    fireEvent.click(closeButton);
+    if (closeButton) fireEvent.click(closeButton);
     expect(onCloseMock).toHaveBeenCalledTimes(1);
 
     const actionButton = getByText('Undo');

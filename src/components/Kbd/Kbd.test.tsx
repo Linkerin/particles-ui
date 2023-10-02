@@ -53,9 +53,9 @@ describe('Kbd', () => {
     expect(kbdElement).not.toHaveClass(styles.flat);
   });
 
-  // Tests that the Kbd component renders with an empty glyph prop
   it('renders Kbd component with empty glyph prop', () => {
     const text = 'Space';
+    // @ts-expect-error
     const { getByText } = render(<Kbd glyph=""> {text} </Kbd>);
 
     const kbdElement = getByText(text);
@@ -66,6 +66,7 @@ describe('Kbd', () => {
 
   it('renders Kbd component with invalid glyph prop', () => {
     const { getByTestId } = render(
+      // @ts-expect-error
       <Kbd glyph="invalid" data-testid="invalid-kbd" />
     );
 

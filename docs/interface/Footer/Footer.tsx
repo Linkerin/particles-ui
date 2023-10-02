@@ -1,5 +1,5 @@
-import { Link } from '../../../../../src/components/Link/Link';
-import { Text } from '../../../../../src/components/Text/Text';
+import { Link } from '../../../src/components/Link/Link';
+import { Text } from '../../../src/components/Text/Text';
 
 import styles from './Footer.module.css';
 

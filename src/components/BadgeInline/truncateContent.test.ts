@@ -35,6 +35,7 @@ describe('code snippet', () => {
 
   it('should throw an error if content is not a number or a string', () => {
     const content = { name: 'John Dorian' };
+    // @ts-expect-error
     expect(() => truncateContent(content, 4)).toThrow(
       'Content has to be a string or a number'
     );
@@ -42,6 +43,7 @@ describe('code snippet', () => {
 
   it('should throw an error if length is not a number', () => {
     const content = 'John T Dorian';
+    // @ts-expect-error
     expect(() => truncateContent(content, '4')).toThrow(
       "Content's max length value has to be a number"
     );

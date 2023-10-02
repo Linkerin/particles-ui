@@ -21,7 +21,9 @@ const preview: Preview = {
   decorators: [
     Story => (
       <>
-        <PuiTheme />
+        <PuiTheme
+          mainColors={{ light: { secondary: '#69aba5', tertiary: '#d88a41' } }}
+        />
         <Story />
       </>
     )

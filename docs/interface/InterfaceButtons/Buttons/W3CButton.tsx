@@ -1,10 +1,7 @@
 import W3CIcon from '../../W3CIcon/W3CIcon';
 
-import {
-  Button,
-  ButtonProps
-} from '../../../../../../src/components/Button/Button';
-import { Link } from '../../../../../../src/components/Link/Link';
+import { Button, ButtonProps } from '../../../../src/components/Button/Button';
+import { Link } from '../../../../src/components/Link/Link';
 
 interface W3CButtonProps extends ButtonProps {
   link: string;

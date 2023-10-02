@@ -47,7 +47,7 @@ describe('DualSpinner', () => {
   });
 
   it('forwards ref to the underlying span element', () => {
-    const ref = createRef();
+    const ref = createRef<HTMLSpanElement>();
     render(<DualSpinner ref={ref} data-testid="dual-spinner" />);
 
     expect(ref.current).toBeInstanceOf(HTMLSpanElement);

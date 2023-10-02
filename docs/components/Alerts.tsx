@@ -1,6 +1,6 @@
-import { Alert, AlertProps } from '../../../src/components/Alert/Alert';
-import { Button } from '../../../src/components/Button/Button';
-import DemoContainer from '../../../app/interface/docs/components/DemoContainer/DemoContainer';
+import { Alert, AlertProps } from '../../src/components/Alert/Alert';
+import { Button } from '../../src/components/Button/Button';
+import DemoContainer from '../interface/DemoContainer/DemoContainer';
 
 const variants: Array<AlertProps['variant']> = [
   'filled',

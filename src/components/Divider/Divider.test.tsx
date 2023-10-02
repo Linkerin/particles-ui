@@ -74,7 +74,7 @@ describe('DualSpinner', () => {
   });
 
   it('forwards ref to the underlying span element', () => {
-    const ref = createRef();
+    const ref = createRef<HTMLHRElement>();
     render(<Divider ref={ref} data-testid="divider" />);
 
     expect(ref.current).toBeInstanceOf(HTMLHRElement);

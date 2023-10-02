@@ -25,7 +25,7 @@ const tests = describe('Card component', () => {
       </CardBody>
       <CardFooter>
         <Button
-          onClick={e => {
+          onClick={() => {
             console.log('Button clicked');
           }}
         >

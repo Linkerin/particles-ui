@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { ButtonProps } from '../../../../../src/components/Button/Button';
+import { ButtonProps } from '../../../src/components/Button/Button';
 import GithubButton from './Buttons/GithubButton';
 import StorybookButton from './Buttons/StorybookButton';
 import W3CButton from './Buttons/W3CButton';

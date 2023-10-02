@@ -24,6 +24,7 @@ describe('parseCode', () => {
   });
 
   it('should return null when a non-string value is provided', () => {
+    // @ts-expect-error
     expect(parseCode(123)).toBeNull();
   });
 

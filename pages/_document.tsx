@@ -6,7 +6,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <PuiTheme />
+        <PuiTheme
+          mainColors={{ light: { secondary: '#69aba5', tertiary: '#d88a41' } }}
+        />
       </Head>
       <body>
         <Main />
