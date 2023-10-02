@@ -34,7 +34,7 @@ The `Alert` component displays a short message that attracts user's attention.
 ```jsx copy
 import { Alert } from '@snipshot/particles';
 
-export function MyComponent() {
+function MyComponent() {
   return (
     <Alert
       heading="Message sent"
@@ -263,15 +263,15 @@ features:
 `Alert` component extends default `<section>` element props with the following
 props:
 
-| Prop             | Type                                                                                    | Description                                     | Default                 |
-| :--------------- | :-------------------------------------------------------------------------------------- | :---------------------------------------------- | :---------------------- |
-| actionElement    | `React.ReactNode`                                                                       | Interactive component on the right              | `undefined`             |
-| closeButtonLabel | `string`                                                                                | `aria-label` value for a close button           | `'Close alert message'` |
-| color            | `'success' \| 'info' \| 'warning' \| 'error' \| 'primary' \| 'secondary' \| 'tertiary'` | Alert's color scheme color                      | `'success'`             |
-| heading          | `string \| React.ReactNode`                                                             | Alert's message heading                         | `undefined`             |
-| headingProps     | [`TextProps`](/docs/text)                                                               | `Text` component properties for alert's heading | `undefined`             |
-| icon             | `React.ReactNode \| boolean`                                                            | Icon component on the left                      | `true`                  |
-| onClose          | `() => void`                                                                            | `onClick` handler for a close button            | `undefined`             |
-| radius           | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'full' \| 'round' \| 'none'`                   | Border radius value                             | `'sm'`                  |
-| textProps        | [`TextProps`](/docs/text)                                                               | `Text` component properties for alert's message | `undefined`             |
-| variant          | `'filled' \| 'outlined' \| 'soft' \| 'minimal'`                                         | Styling variant                                 | `'soft'`                |
+| Prop             | Type                                                                                    | Default                 | Description                                     |
+| :--------------- | :-------------------------------------------------------------------------------------- | :---------------------- | :---------------------------------------------- |
+| actionElement    | `React.ReactNode`                                                                       | `undefined`             | Interactive component on the right              |
+| closeButtonLabel | `string`                                                                                | `'Close alert message'` | `aria-label` value for a close button           |
+| color            | `'success' \| 'info' \| 'warning' \| 'error' \| 'primary' \| 'secondary' \| 'tertiary'` | `'success'`             | Alert's color scheme                            |
+| heading          | `string \| React.ReactNode`                                                             | `undefined`             | Alert's message heading                         |
+| headingProps     | [`TextProps`](/docs/text)                                                               | `undefined`             | `Text` component properties for alert's heading |
+| icon             | `React.ReactNode \| boolean`                                                            | `true`                  | Icon component on the left                      |
+| onClose          | `() => void`                                                                            | `undefined`             | `onClick` handler for a close button            |
+| radius           | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'full' \| 'round' \| 'none'`                   | `'sm'`                  | Border radius value                             |
+| textProps        | [`TextProps`](/docs/text)                                                               | `undefined`             | `Text` component properties for alert's message |
+| variant          | `'filled' \| 'outlined' \| 'soft' \| 'minimal'`                                         | `'soft'`                | Styling variant                                 |

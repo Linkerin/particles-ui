@@ -19,11 +19,11 @@ export interface ButtonCommonProps {
    */
   isLoading?: boolean;
   /**
-   * Element that will be displayed in the loading state instead of default spinner
+   * Element that will be displayed in the loading state instead of a default spinner
    */
   loadingElement?: React.ReactElement;
   /**
-   * Do not display a loading spinner in the loading state
+   * Disable a loading spinner in the loading state
    */
   loadingSpinner?: boolean;
   /**
