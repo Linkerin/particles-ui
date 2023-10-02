@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer p:not(:last-of-type) {
+  border-right: 1px solid var(--pui-outline-variant);
+  padding-right: 0.5rem;
+}

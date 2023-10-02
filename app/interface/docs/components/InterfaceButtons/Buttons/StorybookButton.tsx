@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import { IconBrandStorybook } from '@tabler/icons-react';
 
 import {
   Button,
   ButtonProps
 } from '../../../../../../src/components/Button/Button';
+import { Link } from '../../../../../../src/components/Link/Link';
 
 interface StorybookButtonProps extends ButtonProps {
   link: string;
@@ -15,8 +15,8 @@ function StorybookButton({ link, ...props }: StorybookButtonProps) {
     <Button
       as={Link}
       href={`https://particles-book.snipshot.dev/?path=/docs/${link}`}
-      target="_blank"
-      rel="noopener external"
+      isExternal
+      externalIcon={false}
       leftIcon={<IconBrandStorybook />}
       variant="soft"
       radius="full"
