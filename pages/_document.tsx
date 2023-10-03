@@ -9,14 +9,6 @@ export default function Document() {
         <PuiTheme />
       </Head>
       <body>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `\nbody {\n  .nx-py-12 {
-              padding-top: 1.75rem;
-              padding-bottom: 1.75rem;
-            }}`
-          }}
-        />
         <Main />
         <NextScript />
       </body>

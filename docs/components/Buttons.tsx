@@ -54,7 +54,7 @@ export function ButtonVariants() {
       }}
     >
       {variants.map(variant => (
-        <Button as="span" key={variant} variant={variant}>
+        <Button as="div" key={variant} variant={variant}>
           {variant}
         </Button>
       ))}
@@ -199,7 +199,7 @@ export function ButtonLoading() {
         loadingElement={<RingSpinner size="xs" />}
         isLoading
         variant="elevated"
-        color="tertiary"
+        color="secondary"
       >
         Ring spinner
       </Button>
