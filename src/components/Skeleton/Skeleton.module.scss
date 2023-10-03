@@ -84,6 +84,22 @@
   );
 }
 
+@media (prefers-reduced-motion) {
+  :where(.pulse) {
+    animation-duration: 3s;
+  }
+
+  :where(.wave) {
+    animation-duration: 7s;
+  }
+
+  :where(.fade-animation) {
+    * {
+      transition-duration: 1.2s;
+    }
+  }
+}
+
 @keyframes wave {
   from {
     background-position-x: 300%;

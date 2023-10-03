@@ -1,4 +1,4 @@
-[![Particles UI Logo](./readme_img/pui-logo.svg)](https://particles-ui.snipshot.dev)
+[![Particles UI Logo](./readme_img/pui-logo.svg)](https://particles.snipshot.dev)
 
 <a href="https://particles-book.snipshot.dev" target="_blank" aria-label="To Particles UI Storybook website"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg" />
 

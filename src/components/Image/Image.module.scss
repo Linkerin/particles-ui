@@ -23,6 +23,10 @@
   opacity: 1;
   &:where(.animation) {
     animation: fadein ease-in 0.5s;
+
+    @media (prefers-reduced-motion) {
+      animation-duration: 1.2s;
+    }
   }
 }
 

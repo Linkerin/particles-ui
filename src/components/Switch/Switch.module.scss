@@ -101,6 +101,10 @@
   transition: transform 150ms linear, height 120ms linear, width 120ms linear;
   user-select: none;
 
+  @media (prefers-reduced-motion) {
+    transition: transform 300ms linear, height 240ms linear, width 240ms linear;
+  }
+
   svg {
     height: 1em;
     min-width: 1em;
@@ -141,6 +145,10 @@
   width: var(--pui-switch-width, 3.25rem);
   padding: var(--pui-track-padding);
   transition: background-color 150ms linear, padding 120ms linear;
+
+  @media (prefers-reduced-motion) {
+    transition: background-color 300ms linear, padding 240ms linear;
+  }
 
   &:hover:not(.disabled) > :where(.thumb) {
     background-color: var(--pui-on-background-variant);

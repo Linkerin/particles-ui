@@ -24,6 +24,10 @@
     width: 75%;
     height: 75%;
     animation: ring-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+
+    @media (prefers-reduced-motion) {
+      animation-duration: 2.4s;
+    }
   }
 
   & span:nth-child(1) {
