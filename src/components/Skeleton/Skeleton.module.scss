@@ -1,111 +1,118 @@
-:where(.skeleton) {
-  --pui-skeleton-base-color: var(--pui-background-container-high, #e8e8ed);
-  --pui-skeleton-wave-start-color: var(--pui-background-container-low, #f6f7f8);
-  --pui-skeleton-wave-middle-color: var(
-    --pui-background-container-highest,
-    #e2e3e9
-  );
+@layer pui-base, pui-components, pui-utils;
 
-  background-color: var(--pui-skeleton-base-color);
-  cursor: progress;
-  height: 1em;
-  width: 100%;
-  overflow: hidden;
+@layer pui-components {
+  :where(.skeleton) {
+    --pui-skeleton-base-color: var(--pui-background-container-high, #e8e8ed);
+    --pui-skeleton-wave-start-color: var(
+      --pui-background-container-low,
+      #f6f7f8
+    );
+    --pui-skeleton-wave-middle-color: var(
+      --pui-background-container-highest,
+      #e2e3e9
+    );
 
-  * {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
+    background-color: var(--pui-skeleton-base-color);
+    cursor: progress;
+    height: 1em;
+    width: 100%;
+    overflow: hidden;
 
-:where(.loaded) {
-  cursor: default;
-  visibility: hidden;
-
-  * {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &:where(.fade-animation) {
     * {
-      transition: opacity 0.4s linear;
+      visibility: hidden;
+      opacity: 0;
     }
   }
-}
 
-:where(.avatar) {
-  height: 2.5rem;
-  width: 2.5rem;
-}
+  :where(.loaded) {
+    cursor: default;
+    visibility: hidden;
 
-:where(.image) {
-  height: 6rem;
-  width: 6rem;
-}
+    * {
+      visibility: visible;
+      opacity: 1;
+    }
 
-:where(.button) {
-  height: 2.5rem;
-  width: 6rem;
-}
-
-:where(.fit) {
-  height: fit-content;
-  width: fit-content;
-}
-
-// animations
-:where(.pulse) {
-  animation: pulse 1.4s infinite linear;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
+    &:where(.fade-animation) {
+      * {
+        transition: opacity 0.4s linear;
+      }
+    }
   }
 
-  50% {
-    opacity: 0.3;
+  :where(.avatar) {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
-  100% {
-    opacity: 1;
+  :where(.image) {
+    height: 6rem;
+    width: 6rem;
   }
-}
 
-:where(.wave) {
-  animation: wave 3.2s infinite linear;
-  background-size: 300% 100%;
-  background-image: linear-gradient(
-    to right,
-    var(--pui-skeleton-wave-start-color) 0%,
-    var(--pui-skeleton-wave-middle-color) 50%,
-    var(--pui-skeleton-wave-start-color) 100%
-  );
-}
+  :where(.button) {
+    height: 2.5rem;
+    width: 6rem;
+  }
 
-@media (prefers-reduced-motion) {
+  :where(.fit) {
+    height: fit-content;
+    width: fit-content;
+  }
+
+  // animations
   :where(.pulse) {
-    animation-duration: 3s;
+    animation: pulse 1.4s infinite linear;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.3;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 
   :where(.wave) {
-    animation-duration: 7s;
+    animation: wave 3.2s infinite linear;
+    background-size: 300% 100%;
+    background-image: linear-gradient(
+      to right,
+      var(--pui-skeleton-wave-start-color) 0%,
+      var(--pui-skeleton-wave-middle-color) 50%,
+      var(--pui-skeleton-wave-start-color) 100%
+    );
   }
 
-  :where(.fade-animation) {
-    * {
-      transition-duration: 1.2s;
+  @media (prefers-reduced-motion) {
+    :where(.pulse) {
+      animation-duration: 3s;
+    }
+
+    :where(.wave) {
+      animation-duration: 7s;
+    }
+
+    :where(.fade-animation) {
+      * {
+        transition-duration: 1.2s;
+      }
     }
   }
-}
 
-@keyframes wave {
-  from {
-    background-position-x: 300%;
-  }
+  @keyframes wave {
+    from {
+      background-position-x: 300%;
+    }
 
-  to {
-    background-position-x: 0%;
+    to {
+      background-position-x: 0%;
+    }
   }
 }

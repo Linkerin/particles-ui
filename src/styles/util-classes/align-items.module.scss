@@ -1,8 +1,12 @@
-/// Adds classes for the following 'align-items' properties support:
-/// 'center', 'flex-start', 'flex-end', 'stretch'
-///
-@each $value in (center, flex-start, flex-end, stretch) {
-  :where(.#{$value}) {
-    align-items: $value;
+@layer pui-base, pui-components, pui-utils;
+
+@layer pui-utils {
+  /// Adds classes for the following 'align-items' properties support:
+  /// 'center', 'flex-start', 'flex-end', 'stretch'
+  ///
+  @each $value in (center, flex-start, flex-end, stretch) {
+    :where(.#{$value}) {
+      align-items: $value;
+    }
   }
 }

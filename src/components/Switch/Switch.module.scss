@@ -37,239 +37,244 @@
   letter-spacing: map.get($font, 'letter-spacing');
 }
 
-:where(.label) {
-  display: flex;
-  align-items: center;
-  width: fit-content;
+@layer pui-base, pui-components, pui-utils;
 
-  &:hover:not(:where(.disabled)) {
-    cursor: pointer;
+@layer pui-components {
+  :where(.label) {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    &:hover:not(:where(.disabled)) {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: var(--pui-state-disabled-content, 0.38);
+    }
   }
 
-  &.disabled {
-    cursor: not-allowed;
-    opacity: var(--pui-state-disabled-content, 0.38);
-  }
-}
-
-:where(.right-label) {
-  flex-direction: row-reverse;
-}
-
-// sizes
-:where(.sm),
-:where(.md) {
-  --pui-switch-border-width: 1px;
-}
-
-:where(.sm) {
-  --pui-switch-height: 1rem;
-  @include label-size('sm');
-}
-
-:where(.md) {
-  --pui-switch-height: 1.5rem;
-  @include label-size('md');
-}
-
-:where(.lg),
-:where(.xl) {
-  --pui-switch-border-width: 2px;
-}
-
-:where(.lg) {
-  --pui-switch-height: 2rem;
-  @include label-size('lg');
-}
-
-:where(.xl) {
-  --pui-switch-height: 2.5rem;
-  @include label-size('xl');
-}
-
-:where(.thumb) {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--pui-outline);
-  border-radius: var(--pui-radius-full);
-  color: var(--pui-background-container);
-  font-size: var(--pui-thumb-base-dimension);
-  height: var(--pui-thumb-base-dimension);
-  width: var(--pui-thumb-base-dimension);
-  transition: transform 150ms linear, height 120ms linear, width 120ms linear;
-  user-select: none;
-
-  @media (prefers-reduced-motion) {
-    transition: transform 300ms linear, height 240ms linear, width 240ms linear;
+  :where(.right-label) {
+    flex-direction: row-reverse;
   }
 
-  svg {
-    height: 1em;
-    min-width: 1em;
-    width: auto;
-  }
-}
-
-:where(.track) {
-  --pui-switch-width: calc(var(--pui-switch-height, 2rem) * 1.625);
-  --pui-thumb-base-dimension: calc(var(--pui-switch-height) / 2);
-  --pui-thumb-selected-dimension: calc(var(--pui-thumb-base-dimension) * 1.5);
-  --pui-thumb-box-shadow-diametr: calc(var(--pui-thumb-base-dimension) * 2.5);
-  --pui-track-padding: calc(
-    (
-        var(--pui-switch-height) - (var(--pui-switch-border-width) * 2) -
-          var(--pui-thumb-base-dimension)
-      ) / 2
-  );
-  --pui-track-selected-padding: calc(
-    (
-        var(--pui-switch-height) - (var(--pui-switch-border-width) * 2) -
-          var(--pui-thumb-selected-dimension)
-      ) / 2
-  );
-  --pui-thumb-selected-translateX: calc(
-    var(--pui-switch-width) - var(--pui-thumb-selected-dimension) -
-      (var(--pui-switch-border-width) * 2) - var(--pui-track-selected-padding) *
-      2
-  );
-
-  display: flex;
-  align-items: center;
-  background-color: var(--pui-background-container);
-  border: var(--pui-switch-border-width, 2px) solid var(--pui-outline-variant);
-  border-radius: var(--pui-radius-full);
-  cursor: pointer;
-  height: var(--pui-switch-height, 2rem);
-  width: var(--pui-switch-width, 3.25rem);
-  padding: var(--pui-track-padding);
-  transition: background-color 150ms linear, padding 120ms linear;
-
-  @media (prefers-reduced-motion) {
-    transition: background-color 300ms linear, padding 240ms linear;
+  // sizes
+  :where(.sm),
+  :where(.md) {
+    --pui-switch-border-width: 1px;
   }
 
-  &:hover:not(.disabled) > :where(.thumb) {
-    background-color: var(--pui-on-background-variant);
-    @include thumb-box-shadow(
-      var(--pui-thumb-base-dimension),
-      var(--pui-on-background-channels),
-      'hover'
+  :where(.sm) {
+    --pui-switch-height: 1rem;
+    @include label-size('sm');
+  }
+
+  :where(.md) {
+    --pui-switch-height: 1.5rem;
+    @include label-size('md');
+  }
+
+  :where(.lg),
+  :where(.xl) {
+    --pui-switch-border-width: 2px;
+  }
+
+  :where(.lg) {
+    --pui-switch-height: 2rem;
+    @include label-size('lg');
+  }
+
+  :where(.xl) {
+    --pui-switch-height: 2.5rem;
+    @include label-size('xl');
+  }
+
+  :where(.thumb) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pui-outline);
+    border-radius: var(--pui-radius-full);
+    color: var(--pui-background-container);
+    font-size: var(--pui-thumb-base-dimension);
+    height: var(--pui-thumb-base-dimension);
+    width: var(--pui-thumb-base-dimension);
+    transition: transform 150ms linear, height 120ms linear, width 120ms linear;
+    user-select: none;
+
+    @media (prefers-reduced-motion) {
+      transition: transform 300ms linear, height 240ms linear,
+        width 240ms linear;
+    }
+
+    svg {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+  }
+
+  :where(.track) {
+    --pui-switch-width: calc(var(--pui-switch-height, 2rem) * 1.625);
+    --pui-thumb-base-dimension: calc(var(--pui-switch-height) / 2);
+    --pui-thumb-selected-dimension: calc(var(--pui-thumb-base-dimension) * 1.5);
+    --pui-thumb-box-shadow-diametr: calc(var(--pui-thumb-base-dimension) * 2.5);
+    --pui-track-padding: calc(
+      (
+          var(--pui-switch-height) - (var(--pui-switch-border-width) * 2) -
+            var(--pui-thumb-base-dimension)
+        ) / 2
     );
-  }
+    --pui-track-selected-padding: calc(
+      (
+          var(--pui-switch-height) - (var(--pui-switch-border-width) * 2) -
+            var(--pui-thumb-selected-dimension)
+        ) / 2
+    );
+    --pui-thumb-selected-translateX: calc(
+      var(--pui-switch-width) - var(--pui-thumb-selected-dimension) -
+        (var(--pui-switch-border-width) * 2) - var(--pui-track-selected-padding) *
+        2
+    );
 
-  &:where(.unselected-icon) {
-    padding: var(--pui-track-selected-padding);
+    display: flex;
+    align-items: center;
+    background-color: var(--pui-background-container);
+    border: var(--pui-switch-border-width, 2px) solid var(--pui-outline-variant);
+    border-radius: var(--pui-radius-full);
+    cursor: pointer;
+    height: var(--pui-switch-height, 2rem);
+    width: var(--pui-switch-width, 3.25rem);
+    padding: var(--pui-track-padding);
+    transition: background-color 150ms linear, padding 120ms linear;
 
-    & > :where(.thumb) {
-      width: var(--pui-thumb-selected-dimension);
-      height: var(--pui-thumb-selected-dimension);
+    @media (prefers-reduced-motion) {
+      transition: background-color 300ms linear, padding 240ms linear;
     }
 
     &:hover:not(.disabled) > :where(.thumb) {
+      background-color: var(--pui-on-background-variant);
       @include thumb-box-shadow(
-        var(--pui-thumb-selected-dimension),
+        var(--pui-thumb-base-dimension),
         var(--pui-on-background-channels),
         'hover'
       );
     }
-  }
 
-  &:active:not(.disabled),
-  &:where(.unselected-icon):active:not(.disabled) {
-    padding: var(--pui-track-selected-padding);
+    &:where(.unselected-icon) {
+      padding: var(--pui-track-selected-padding);
 
-    & > :where(.thumb) {
-      @include thumb-box-shadow(
-        var(--pui-thumb-selected-dimension),
-        var(--pui-on-background-channels),
-        'press'
-      );
+      & > :where(.thumb) {
+        width: var(--pui-thumb-selected-dimension);
+        height: var(--pui-thumb-selected-dimension);
+      }
+
+      &:hover:not(.disabled) > :where(.thumb) {
+        @include thumb-box-shadow(
+          var(--pui-thumb-selected-dimension),
+          var(--pui-on-background-channels),
+          'hover'
+        );
+      }
     }
-  }
 
-  &:active:not(.disabled) > :where(.thumb) {
-    height: var(--pui-thumb-selected-dimension);
-    width: var(--pui-thumb-selected-dimension);
-  }
+    &:active:not(.disabled),
+    &:where(.unselected-icon):active:not(.disabled) {
+      padding: var(--pui-track-selected-padding);
 
-  &:where(.unselected-icon):active:not(.disabled) > :where(.thumb) {
-    background-color: var(--pui-on-background-low);
-  }
+      & > :where(.thumb) {
+        @include thumb-box-shadow(
+          var(--pui-thumb-selected-dimension),
+          var(--pui-on-background-channels),
+          'press'
+        );
+      }
+    }
 
-  &.disabled {
-    background-color: rgb(
-      var(--pui-background-container-highest-channels) /
-        var(--pui-state-disabled, 0.12)
-    );
-    border-color: rgb(
-      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
-    );
-    cursor: not-allowed;
+    &:active:not(.disabled) > :where(.thumb) {
+      height: var(--pui-thumb-selected-dimension);
+      width: var(--pui-thumb-selected-dimension);
+    }
 
-    :where(.thumb) {
-      & > svg,
-      & > span[data-pui-component='material-icon'] {
-        opacity: var(--pui-state-disabled-content, 0.38);
+    &:where(.unselected-icon):active:not(.disabled) > :where(.thumb) {
+      background-color: var(--pui-on-background-low);
+    }
+
+    &.disabled {
+      background-color: rgb(
+        var(--pui-background-container-highest-channels) /
+          var(--pui-state-disabled, 0.12)
+      );
+      border-color: rgb(
+        var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
+      );
+      cursor: not-allowed;
+
+      :where(.thumb) {
+        & > svg,
+        & > span[data-pui-component='material-icon'] {
+          opacity: var(--pui-state-disabled-content, 0.38);
+        }
       }
     }
   }
-}
 
-input[type='checkbox']:checked ~ :where(.track) {
-  border-color: transparent;
-  padding: var(--pui-track-selected-padding);
-
-  & > :where(.thumb) {
-    height: var(--pui-thumb-selected-dimension);
-    width: var(--pui-thumb-selected-dimension);
-    transform: translateX(var(--pui-thumb-selected-translateX));
-  }
-
-  &.disabled {
-    background-color: rgb(
-      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
-    );
-  }
-}
-
-@each $color in const.$color-names {
-  :where(.#{$color}) {
-    --pui-switch-color: var(--pui-#{$color});
-    --pui-switch-color-channels: var(--pui-#{$color}-channels);
-    --pui-switch-color-darker: var(--pui-#{$color}-darker);
-    --pui-switch-color-container: var(--pui-#{$color}-container);
-    --pui-switch-on-color: var(--pui-on-#{$color});
-  }
-}
-
-input[type='checkbox']:checked ~ :where(.track):not(:where(.uncolored)) {
-  background-color: var(--pui-switch-color);
-
-  &:not(:where(.disabled)) > :where(.thumb) {
-    background-color: var(--pui-switch-on-color);
-    color: var(--pui-switch-color-darker);
-  }
-
-  &:hover:not(:where(.disabled)) > :where(.thumb) {
-    background-color: var(--pui-switch-color-container);
-    @include thumb-box-shadow(
-      var(--pui-thumb-selected-dimension),
-      var(--pui-switch-color-channels),
-      'hover'
-    );
-  }
-
-  &:active:not(:where(.disabled)) {
-    background-color: var(--pui-switch-color-darker);
+  input[type='checkbox']:checked ~ :where(.track) {
+    border-color: transparent;
+    padding: var(--pui-track-selected-padding);
 
     & > :where(.thumb) {
+      height: var(--pui-thumb-selected-dimension);
+      width: var(--pui-thumb-selected-dimension);
+      transform: translateX(var(--pui-thumb-selected-translateX));
+    }
+
+    &.disabled {
+      background-color: rgb(
+        var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
+      );
+    }
+  }
+
+  @each $color in const.$color-names {
+    :where(.#{$color}) {
+      --pui-switch-color: var(--pui-#{$color});
+      --pui-switch-color-channels: var(--pui-#{$color}-channels);
+      --pui-switch-color-darker: var(--pui-#{$color}-darker);
+      --pui-switch-color-container: var(--pui-#{$color}-container);
+      --pui-switch-on-color: var(--pui-on-#{$color});
+    }
+  }
+
+  input[type='checkbox']:checked ~ :where(.track):not(:where(.uncolored)) {
+    background-color: var(--pui-switch-color);
+
+    &:not(:where(.disabled)) > :where(.thumb) {
+      background-color: var(--pui-switch-on-color);
+      color: var(--pui-switch-color-darker);
+    }
+
+    &:hover:not(:where(.disabled)) > :where(.thumb) {
+      background-color: var(--pui-switch-color-container);
       @include thumb-box-shadow(
         var(--pui-thumb-selected-dimension),
         var(--pui-switch-color-channels),
-        'press'
+        'hover'
       );
+    }
+
+    &:active:not(:where(.disabled)) {
+      background-color: var(--pui-switch-color-darker);
+
+      & > :where(.thumb) {
+        @include thumb-box-shadow(
+          var(--pui-thumb-selected-dimension),
+          var(--pui-switch-color-channels),
+          'press'
+        );
+      }
     }
   }
 }

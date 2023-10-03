@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 
 import Header from './interface/Header/Header';
 import Nav from './interface/Nav/Nav';
@@ -11,7 +11,7 @@ import '../src/styles/pui-base.css';
 import './material-symbols.css';
 import styles from './layout.module.css';
 
-const nunito = Nunito({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Particles UI Demo',
@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-pui-mode="system">
-      <body className={nunito.className}>
+      <body className={manrope.className}>
         <PuiTheme mainColors={{ light: { secondary, tertiary } }} />
         <ThemeProvider>
           <Header />

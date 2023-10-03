@@ -1,5 +1,9 @@
-.li-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@layer pui-base, pui-components, pui-utils;
+
+@layer pui-components {
+  .li-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

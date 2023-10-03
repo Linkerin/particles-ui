@@ -160,9 +160,10 @@ export default function ThemeProvider({
 
       const serverMode = puiMode === 'system' ? systemMode : puiMode;
       const mode = puiLocal ?? serverMode;
+      const isSystem = !puiLocal && puiMode === 'system';
 
       const htmlChanged = changePuiModeHtmlAttr(mode);
-      if (htmlChanged) setColorMode(mode);
+      if (htmlChanged) setColorMode(isSystem ? 'system' : mode);
     }
   }, [withLocalStorage]);
 

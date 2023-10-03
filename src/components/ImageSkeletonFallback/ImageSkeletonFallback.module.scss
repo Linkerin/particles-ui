@@ -1,21 +1,25 @@
 @use '../../styles/theme-tokens/constants' as const;
 
-@each $color in const.$color-names {
-  :where(.#{$color}) {
-    --pui-skeleton-base-color: var(--pui-#{$color}-container);
-    --pui-skeleton-wave-start-color: var(--pui-#{$color}-container-low);
-    --pui-skeleton-wave-middle-color: var(--pui-#{$color}-container);
+@layer pui-base, pui-components, pui-utils;
+
+@layer pui-components {
+  @each $color in const.$color-names {
+    :where(.#{$color}) {
+      --pui-skeleton-base-color: var(--pui-#{$color}-container);
+      --pui-skeleton-wave-start-color: var(--pui-#{$color}-container-low);
+      --pui-skeleton-wave-middle-color: var(--pui-#{$color}-container);
+    }
   }
-}
 
-:where(.background) {
-  --pui-skeleton-base-color: var(--pui-background-container-high);
-  --pui-skeleton-wave-start-color: var(--pui-background-container-low);
-  --pui-skeleton-wave-middle-color: var(--pui-background-container-high);
-}
+  :where(.background) {
+    --pui-skeleton-base-color: var(--pui-background-container-high);
+    --pui-skeleton-wave-start-color: var(--pui-background-container-low);
+    --pui-skeleton-wave-middle-color: var(--pui-background-container-high);
+  }
 
-div:where(.skeleton) {
-  display: block;
-  height: 100%;
-  width: 100%;
+  div:where(.skeleton) {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
 }

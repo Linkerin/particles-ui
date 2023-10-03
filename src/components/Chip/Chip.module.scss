@@ -3,6 +3,8 @@
 @use '../../styles/theme-tokens/constants' as const;
 @use '../../styles/theme-tokens/variables' as var;
 
+@layer pui-base, pui-components, pui-utils;
+
 @mixin size($size) {
   $label: map.get(var.$typography, 'label', $size);
 
@@ -23,226 +25,228 @@
   }
 }
 
-:where(.chip) {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: var(--pui-gap-md, 0.5rem);
-  border: 1px solid transparent;
-  color: var(--pui-on-background);
-  cursor: pointer;
-  padding: 0.3125rem 1.142857em;
-  height: fit-content;
-  width: fit-content;
-  white-space: nowrap;
-
-  &:where(.static) {
-    cursor: default;
-  }
-
-  & > :where(span[data-pui-component='chip-icon']) {
+@layer pui-components {
+  :where(.chip) {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: var(--pui-gap-md, 0.5rem);
+    border: 1px solid transparent;
+    color: var(--pui-on-background);
+    cursor: pointer;
+    padding: 0.3125rem 1.142857em;
+    height: fit-content;
+    width: fit-content;
+    white-space: nowrap;
 
-    :where(svg) {
-      height: 1em;
-      min-width: 1em;
-      width: auto;
+    &:where(.static) {
+      cursor: default;
+    }
+
+    & > :where(span[data-pui-component='chip-icon']) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      :where(svg) {
+        height: 1em;
+        min-width: 1em;
+        width: auto;
+      }
+    }
+
+    & > button[data-pui-component='close-btn'] {
+      padding: 1px;
+    }
+
+    &.disabled {
+      color: rgb(
+        var(--pui-on-background-channels) /
+          var(--pui-state-disabled-content, 0.38)
+      );
+      cursor: not-allowed;
+      box-shadow: none;
     }
   }
 
-  & > button[data-pui-component='close-btn'] {
-    padding: 1px;
+  // colors
+  @each $color in const.$color-names {
+    :where(.#{$color}) {
+      --pui-chip-color: var(--pui-#{$color});
+      --pui-chip-color-channels: var(--pui-#{$color}-channels);
+      --pui-chip-on-color: var(--pui-on-#{$color});
+      --pui-chip-on-color-channels: var(--pui-on-#{$color}-channels);
+      --pui-chip-color-darker: var(--pui-#{$color}-darker);
+      --pui-chip-color-darker-channels: var(--pui-#{$color}-darker-channels);
+      --pui-chip-color-container-low: var(--pui-#{$color}-container-low);
+      --pui-chip-on-color-container: var(--pui-on-#{$color}-container);
+    }
   }
 
-  &.disabled {
-    color: rgb(
-      var(--pui-on-background-channels) /
-        var(--pui-state-disabled-content, 0.38)
-    );
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-}
-
-// colors
-@each $color in const.$color-names {
-  :where(.#{$color}) {
-    --pui-chip-color: var(--pui-#{$color});
-    --pui-chip-color-channels: var(--pui-#{$color}-channels);
-    --pui-chip-on-color: var(--pui-on-#{$color});
-    --pui-chip-on-color-channels: var(--pui-on-#{$color}-channels);
-    --pui-chip-color-darker: var(--pui-#{$color}-darker);
-    --pui-chip-color-darker-channels: var(--pui-#{$color}-darker-channels);
-    --pui-chip-color-container-low: var(--pui-#{$color}-container-low);
-    --pui-chip-on-color-container: var(--pui-on-#{$color}-container);
-  }
-}
-
-// Some styles may be combined with `Button` styles in the future
-:where(.filled):not(:where(.uncolored)) {
-  background-color: var(--pui-chip-color);
-  color: var(--pui-chip-on-color);
-
-  &:hover:not(.disabled):not(:where(.static)) {
-    // Fallback for color-mix()
-    background-color: rgb(var(--pui-chip-color-darker-channels) / 82%);
-
-    background-color: color-mix(
-      in oklab,
-      var(--pui-chip-color),
-      var(--pui-black) var(--pui-state-hover, 0.08)
-    );
-  }
-
-  &:active:not(.disabled):not(:where(.static)) {
-    // Fallback for color-mix()
-    background-color: rgb(var(--pui-chip-color-darker-channels) / 86%);
-
-    background-color: color-mix(
-      in oklab,
-      var(--pui-chip-color),
-      var(--pui-black) var(--pui-state-press, 0.12)
-    );
-  }
-
-  span:where([data-pui-component='chip-icon']),
-  button:where([data-pui-component='close-btn']) {
+  // Some styles may be combined with `Button` styles in the future
+  :where(.filled):not(:where(.uncolored)) {
+    background-color: var(--pui-chip-color);
     color: var(--pui-chip-on-color);
-  }
 
-  button:where([data-pui-component='close-btn']) {
-    &:hover:not(:disabled) {
-      background-color: rgb(
-        var(--pui-chip-on-color-channels) / var(--pui-state-hover, 0.08)
+    &:hover:not(.disabled):not(:where(.static)) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-chip-color-darker-channels) / 82%);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-chip-color),
+        var(--pui-black) var(--pui-state-hover, 0.08)
       );
     }
 
-    &:active:not(:disabled) {
-      background-color: rgb(
-        var(--pui-chip-on-color-channels) / var(--pui-state-press, 0.12)
-      );
-    }
-  }
-}
+    &:active:not(.disabled):not(:where(.static)) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-chip-color-darker-channels) / 86%);
 
-:where(.filled),
-:where(.elevated),
-:where(.soft) {
-  &.disabled {
-    background-color: rgb(
-      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
-    );
-  }
-}
-
-:where(.elevated) {
-  background-color: var(--pui-background-container-low);
-  box-shadow: var(--pui-elevation-1);
-
-  &:hover:not(.disabled):not(:where(.static)) {
-    box-shadow: var(--pui-elevation-2);
-  }
-}
-
-:where(.outlined) {
-  border-color: var(--pui-outline);
-
-  &.disabled {
-    border-color: rgb(
-      var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
-    );
-  }
-}
-
-:where(.elevated):not(:where(.uncolored)),
-:where(.outlined):not(:where(.uncolored)) {
-  span:where([data-pui-component='chip-icon']),
-  button:where([data-pui-component='close-btn']) {
-    color: var(--pui-chip-color);
-  }
-
-  &:hover:not(.disabled):not(:where(.static)) {
-    background-color: rgb(
-      var(--pui-on-background-channels) / var(--pui-state-hover, 0.08)
-    );
-  }
-
-  &:active:not(.disabled):not(:where(.static)) {
-    background-color: rgb(
-      var(--pui-on-background-channels) / var(--pui-state-press, 0.12)
-    );
-  }
-
-  button:where([data-pui-component='close-btn']) {
-    &:hover:not(:disabled) {
-      background-color: rgb(
-        var(--pui-chip-color-channels) / var(--pui-state-hover, 0.08)
+      background-color: color-mix(
+        in oklab,
+        var(--pui-chip-color),
+        var(--pui-black) var(--pui-state-press, 0.12)
       );
     }
 
-    &:active:not(:disabled) {
+    span:where([data-pui-component='chip-icon']),
+    button:where([data-pui-component='close-btn']) {
+      color: var(--pui-chip-on-color);
+    }
+
+    button:where([data-pui-component='close-btn']) {
+      &:hover:not(:disabled) {
+        background-color: rgb(
+          var(--pui-chip-on-color-channels) / var(--pui-state-hover, 0.08)
+        );
+      }
+
+      &:active:not(:disabled) {
+        background-color: rgb(
+          var(--pui-chip-on-color-channels) / var(--pui-state-press, 0.12)
+        );
+      }
+    }
+  }
+
+  :where(.filled),
+  :where(.elevated),
+  :where(.soft) {
+    &.disabled {
       background-color: rgb(
-        var(--pui-chip-color-channels) / var(--pui-state-press, 0.12)
+        var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
       );
     }
   }
-}
 
-:where(.soft):not(:where(.uncolored)) {
-  background-color: var(--pui-chip-color-container-low);
-  color: var(--pui-chip-on-color-container);
+  :where(.elevated) {
+    background-color: var(--pui-background-container-low);
+    box-shadow: var(--pui-elevation-1);
 
-  &:hover:not(.disabled):not(:where(.static)) {
-    // Fallback for color-mix()
-    background-color: rgb(var(--pui-chip-color-channels) / 0.2);
-
-    background-color: color-mix(
-      in oklab,
-      var(--pui-chip-color-container-low),
-      var(--pui-chip-color) var(--pui-state-hover, 0.08)
-    );
+    &:hover:not(.disabled):not(:where(.static)) {
+      box-shadow: var(--pui-elevation-2);
+    }
   }
 
-  &:active:not(.disabled):not(:where(.static)) {
-    // Fallback for color-mix()
-    background-color: rgb(var(--pui-chip-color-channels) / 0.24);
+  :where(.outlined) {
+    border-color: var(--pui-outline);
 
-    background-color: color-mix(
-      in oklab,
-      var(--pui-chip-color-container-low),
-      var(--pui-chip-color) var(--pui-state-press, 0.12)
-    );
+    &.disabled {
+      border-color: rgb(
+        var(--pui-on-background-channels) / var(--pui-state-disabled, 0.12)
+      );
+    }
   }
 
-  span:where([data-pui-component='chip-icon']),
-  button:where([data-pui-component='close-btn']) {
+  :where(.elevated):not(:where(.uncolored)),
+  :where(.outlined):not(:where(.uncolored)) {
+    span:where([data-pui-component='chip-icon']),
+    button:where([data-pui-component='close-btn']) {
+      color: var(--pui-chip-color);
+    }
+
+    &:hover:not(.disabled):not(:where(.static)) {
+      background-color: rgb(
+        var(--pui-on-background-channels) / var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(.disabled):not(:where(.static)) {
+      background-color: rgb(
+        var(--pui-on-background-channels) / var(--pui-state-press, 0.12)
+      );
+    }
+
+    button:where([data-pui-component='close-btn']) {
+      &:hover:not(:disabled) {
+        background-color: rgb(
+          var(--pui-chip-color-channels) / var(--pui-state-hover, 0.08)
+        );
+      }
+
+      &:active:not(:disabled) {
+        background-color: rgb(
+          var(--pui-chip-color-channels) / var(--pui-state-press, 0.12)
+        );
+      }
+    }
+  }
+
+  :where(.soft):not(:where(.uncolored)) {
+    background-color: var(--pui-chip-color-container-low);
     color: var(--pui-chip-on-color-container);
-  }
 
-  button:where([data-pui-component='close-btn']) {
-    &:hover:not(:disabled) {
-      background-color: rgb(var(--pui-chip-color-channels) / 0.16);
-    }
-
-    &:active:not(:disabled) {
+    &:hover:not(.disabled):not(:where(.static)) {
+      // Fallback for color-mix()
       background-color: rgb(var(--pui-chip-color-channels) / 0.2);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-chip-color-container-low),
+        var(--pui-chip-color) var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(.disabled):not(:where(.static)) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-chip-color-channels) / 0.24);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-chip-color-container-low),
+        var(--pui-chip-color) var(--pui-state-press, 0.12)
+      );
+    }
+
+    span:where([data-pui-component='chip-icon']),
+    button:where([data-pui-component='close-btn']) {
+      color: var(--pui-chip-on-color-container);
+    }
+
+    button:where([data-pui-component='close-btn']) {
+      &:hover:not(:disabled) {
+        background-color: rgb(var(--pui-chip-color-channels) / 0.16);
+      }
+
+      &:active:not(:disabled) {
+        background-color: rgb(var(--pui-chip-color-channels) / 0.2);
+      }
     }
   }
-}
 
-$icon-side-pd: 0.5714286em;
+  $icon-side-pd: 0.5714286em;
 
-:where(.leftIcon) {
-  padding-left: $icon-side-pd;
-}
+  :where(.leftIcon) {
+    padding-left: $icon-side-pd;
+  }
 
-:where(.rightIcon) {
-  padding-right: $icon-side-pd;
-}
+  :where(.rightIcon) {
+    padding-right: $icon-side-pd;
+  }
 
-@each $size in const.$sizes {
-  @include size($size);
+  @each $size in const.$sizes {
+    @include size($size);
+  }
 }

@@ -210,7 +210,9 @@ export function ButtonLoading() {
 export function ButtonPolymorphic() {
   return (
     <DemoContainer>
-      <Button as="a">I am a link</Button>
+      <Button as="a" style={{ color: 'var(--pui-btn-on-color)' }}>
+        I am a link
+      </Button>
     </DemoContainer>
   );
 }

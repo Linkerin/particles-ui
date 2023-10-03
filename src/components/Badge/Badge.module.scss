@@ -1,50 +1,54 @@
-:where(.badge-container) {
-  --pui-badge-position: 0;
+@layer pui-base, pui-components, pui-utils;
 
-  &:where(.circle) {
-    --pui-badge-position: 14%;
+@layer pui-components {
+  :where(.badge-container) {
+    --pui-badge-position: 0;
+
+    &:where(.circle) {
+      --pui-badge-position: 14%;
+    }
+
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
   }
 
-  display: flex;
-  flex-shrink: 0;
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-}
-
-:where(.top),
-:where(.bottom) {
-  position: absolute;
-}
-
-:where(.top) {
-  top: var(--pui-badge-position, 0);
-
-  &:where(.right) {
-    transform: translate(50%, -50%);
+  :where(.top),
+  :where(.bottom) {
+    position: absolute;
   }
 
-  &:where(.left) {
-    transform: translate(-50%, -50%);
+  :where(.top) {
+    top: var(--pui-badge-position, 0);
+
+    &:where(.right) {
+      transform: translate(50%, -50%);
+    }
+
+    &:where(.left) {
+      transform: translate(-50%, -50%);
+    }
   }
-}
 
-:where(.bottom) {
-  bottom: var(--pui-badge-position, 0);
+  :where(.bottom) {
+    bottom: var(--pui-badge-position, 0);
 
-  &:where(.right) {
-    transform: translate(50%, 50%);
+    &:where(.right) {
+      transform: translate(50%, 50%);
+    }
+
+    &:where(.left) {
+      transform: translate(-50%, 50%);
+    }
   }
 
-  &:where(.left) {
-    transform: translate(-50%, 50%);
+  :where(.left) {
+    left: var(--pui-badge-position, 0);
   }
-}
 
-:where(.left) {
-  left: var(--pui-badge-position, 0);
-}
-
-:where(.right) {
-  right: var(--pui-badge-position, 0);
+  :where(.right) {
+    right: var(--pui-badge-position, 0);
+  }
 }

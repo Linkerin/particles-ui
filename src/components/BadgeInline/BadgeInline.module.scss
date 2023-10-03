@@ -3,6 +3,8 @@
 @use '../../styles/theme-tokens/constants' as const;
 @use '../../styles/theme-tokens/variables' as var;
 
+@layer pui-base, pui-components, pui-utils;
+
 // Font size for the badge has to be one level less than its size
 $sizes-mapping: (
   'sm': 'xs',
@@ -40,53 +42,55 @@ $sizes-mapping: (
   }
 }
 
-:where(.badge) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  text-align: center;
-  white-space: nowrap;
+@layer pui-components {
+  :where(.badge) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    text-align: center;
+    white-space: nowrap;
 
-  &:not(:where(.dot)):not(:where(.single)) {
-    padding-inline: 0.5em;
+    &:not(:where(.dot)):not(:where(.single)) {
+      padding-inline: 0.5em;
+    }
+
+    :where(svg) {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
   }
 
-  :where(svg) {
-    height: 1em;
-    min-width: 1em;
-    width: auto;
+  :where(.invisible) {
+    visibility: hidden;
   }
-}
 
-:where(.invisible) {
-  visibility: hidden;
-}
-
-:where(.outlined) {
-  outline: 2px solid var(--pui-background);
-}
-
-@each $color in const.$color-names {
-  .#{$color} {
-    --pui-badge-color: var(--pui-#{$color});
-    --pui-badge-on-color: var(--pui-on-#{$color});
-    --pui-badge-color-container: var(--pui-#{$color}-container);
-    --pui-badge-on-color-container: var(--pui-on-#{$color}-container);
+  :where(.outlined) {
+    outline: 2px solid var(--pui-background);
   }
-}
 
-:where(.filled) {
-  background-color: var(--pui-badge-color);
-  color: var(--pui-badge-on-color);
-}
+  @each $color in const.$color-names {
+    .#{$color} {
+      --pui-badge-color: var(--pui-#{$color});
+      --pui-badge-on-color: var(--pui-on-#{$color});
+      --pui-badge-color-container: var(--pui-#{$color}-container);
+      --pui-badge-on-color-container: var(--pui-on-#{$color}-container);
+    }
+  }
 
-:where(.soft) {
-  background-color: var(--pui-badge-color-container);
-  color: var(--pui-badge-on-color-container);
-}
+  :where(.filled) {
+    background-color: var(--pui-badge-color);
+    color: var(--pui-badge-on-color);
+  }
 
-@include size('dot', 0.375rem);
-@include size('sm', 1rem);
-@include size('md', 1.25rem);
-@include size('lg', 1.5rem);
+  :where(.soft) {
+    background-color: var(--pui-badge-color-container);
+    color: var(--pui-badge-on-color-container);
+  }
+
+  @include size('dot', 0.375rem);
+  @include size('sm', 1rem);
+  @include size('md', 1.25rem);
+  @include size('lg', 1.5rem);
+}

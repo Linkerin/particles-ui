@@ -6,11 +6,17 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <PuiTheme
-          mainColors={{ light: { secondary: '#69aba5', tertiary: '#d88a41' } }}
-        />
+        <PuiTheme />
       </Head>
       <body>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `\nbody {\n  .nx-py-12 {
+              padding-top: 1.75rem;
+              padding-bottom: 1.75rem;
+            }}`
+          }}
+        />
         <Main />
         <NextScript />
       </body>

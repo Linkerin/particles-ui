@@ -19,6 +19,7 @@ const defaultProps: Partial<CardProps> = {
   disabled: false,
   interactiveStyle: false,
   flexDirection: 'column',
+  onClick: undefined,
   padding: true,
   size: 'md',
   variant: 'filled'
@@ -28,7 +29,7 @@ const meta = {
   title: 'Components/Card',
   component: Card,
   tags: ['autodocs'],
-  args: { ...defaultProps, style: { maxWidth: '25vw' } }
+  args: { ...defaultProps, style: { maxWidth: 'max(225px, 25vw)' } }
 } satisfies Meta<typeof Card>;
 
 export default meta;

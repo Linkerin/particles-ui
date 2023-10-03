@@ -1,29 +1,33 @@
 @use '../../../styles/theme-tokens/mixins' as mx;
 
-.no-padding {
-  --pui-card-padding: 0rem;
-}
+@layer pui-base, pui-components, pui-utils;
 
-$pd: var(--pui-card-padding);
+@layer pui-components {
+  .no-padding {
+    --pui-card-padding: 0rem;
+  }
 
-:where(.card-header) {
-  border-color: var(--pui-outline-variant);
-  display: flex;
-  padding: $pd $pd 0;
-  position: relative;
-}
+  $pd: var(--pui-card-padding);
 
-:where(.divider-full) {
-  padding-bottom: $pd;
-  border-bottom: 1px solid var(--pui-outline-variant);
-}
+  :where(.card-header) {
+    border-color: var(--pui-outline-variant);
+    display: flex;
+    padding: $pd $pd 0;
+    position: relative;
+  }
 
-:where(.divider-middle) {
-  padding-bottom: $pd;
-  @include mx.pseudo-divider($pd, 'bottom');
-}
+  :where(.divider-full) {
+    padding-bottom: $pd;
+    border-bottom: 1px solid var(--pui-outline-variant);
+  }
 
-:where(.divider-inset) {
-  padding-bottom: $pd;
-  @include mx.pseudo-divider($pd, 'bottom', $pr: 0rem);
+  :where(.divider-middle) {
+    padding-bottom: $pd;
+    @include mx.pseudo-divider($pd, 'bottom');
+  }
+
+  :where(.divider-inset) {
+    padding-bottom: $pd;
+    @include mx.pseudo-divider($pd, 'bottom', $pr: 0rem);
+  }
 }

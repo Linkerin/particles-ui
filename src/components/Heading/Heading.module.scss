@@ -2,65 +2,69 @@
 
 @use '../../styles/theme-tokens/variables' as var;
 
-:where(.heading) {
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  font-weight: inherit;
-  text-align: inherit;
-  margin: 0;
-  padding: 0;
+@layer pui-base, pui-components, pui-utils;
 
-  & > span:where([data-pui-component='material-icon']),
-  & > svg {
-    vertical-align: -12.5%;
-  }
+@layer pui-components {
+  :where(.heading) {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin: 0;
+    padding: 0;
 
-  & > svg {
-    display: inline-block;
-    height: 1em;
-    min-width: 1em;
-    width: auto;
-  }
-}
+    & > span:where([data-pui-component='material-icon']),
+    & > svg {
+      vertical-align: -12.5%;
+    }
 
-:where(.truncate) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@each $heading in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6') {
-  $heading-typography: map.get(var.$typography, 'heading', $heading);
-
-  :where(.#{$heading}) {
-    @each $property, $value in $heading-typography {
-      #{$property}: $value;
+    & > svg {
+      display: inline-block;
+      height: 1em;
+      min-width: 1em;
+      width: auto;
     }
   }
-}
 
-// subtitle styles
-@each $size in ('sm', 'md', 'lg') {
-  $subtitle-typography: map.get(var.$typography, 'subtitle', $size);
+  :where(.truncate) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-  :where(.subtitle-#{$size}) {
-    @each $property, $value in $subtitle-typography {
-      #{$property}: $value;
+  @each $heading in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6') {
+    $heading-typography: map.get(var.$typography, 'heading', $heading);
+
+    :where(.#{$heading}) {
+      @each $property, $value in $heading-typography {
+        #{$property}: $value;
+      }
     }
   }
-}
 
-// base colors
-:where(.on-background) {
-  color: var(--pui-on-background);
-}
+  // subtitle styles
+  @each $size in ('sm', 'md', 'lg') {
+    $subtitle-typography: map.get(var.$typography, 'subtitle', $size);
 
-:where(.on-background-variant) {
-  color: var(--pui-on-background-variant);
-}
+    :where(.subtitle-#{$size}) {
+      @each $property, $value in $subtitle-typography {
+        #{$property}: $value;
+      }
+    }
+  }
 
-:where(.on-background-low) {
-  color: var(--pui-on-background-low);
+  // base colors
+  :where(.on-background) {
+    color: var(--pui-on-background);
+  }
+
+  :where(.on-background-variant) {
+    color: var(--pui-on-background-variant);
+  }
+
+  :where(.on-background-low) {
+    color: var(--pui-on-background-low);
+  }
 }

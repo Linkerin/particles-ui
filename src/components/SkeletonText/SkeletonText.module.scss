@@ -1,7 +1,13 @@
-:where(.skeleton-text) {
-  display: flex;
+@layer pui-base, pui-components, pui-utils;
 
-  *[data-pui-component='skeleton-text-line']:last-of-type:not(:first-of-type) {
-    width: 75%;
+@layer pui-components {
+  :where(.skeleton-text) {
+    display: flex;
+
+    *[data-pui-component='skeleton-text-line']:last-of-type:not(
+        :first-of-type
+      ) {
+      width: 75%;
+    }
   }
 }

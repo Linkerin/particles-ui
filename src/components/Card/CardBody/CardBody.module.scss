@@ -1,10 +1,14 @@
-.no-padding {
-  --pui-card-padding: 0rem;
-}
+@layer pui-base, pui-components, pui-utils;
 
-$pd: var(--pui-card-padding);
+@layer pui-components {
+  .no-padding {
+    --pui-card-padding: 0rem;
+  }
 
-:where(.card-body) {
-  display: flex;
-  padding: $pd;
+  $pd: var(--pui-card-padding);
+
+  :where(.card-body) {
+    display: flex;
+    padding: $pd;
+  }
 }

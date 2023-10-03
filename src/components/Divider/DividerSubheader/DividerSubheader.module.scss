@@ -1,4 +1,8 @@
-.divider-subheader {
-  display: inline-block;
-  margin-top: 0.25rem;
+@layer pui-base, pui-components, pui-utils;
+
+@layer pui-components {
+  .divider-subheader {
+    display: inline-block;
+    margin-top: 0.25rem;
+  }
 }

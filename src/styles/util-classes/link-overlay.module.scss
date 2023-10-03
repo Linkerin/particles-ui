@@ -1,22 +1,26 @@
-.overlay {
-  z-index: 0;
-  position: relative;
+@layer pui-base, pui-components, pui-utils;
 
-  *[data-pui-component='overlay-link'] {
-    position: initial;
-
-    &::before {
-      content: '';
-      cursor: inherit;
-      display: block;
-      position: absolute;
-      inset: 0; // top, left, right and bottom are equal to 0
-    }
-  }
-
-  // Lets other links be clickable through the overlay
-  *[data-pui-component='link'] {
+@layer pui-utils {
+  .overlay {
+    z-index: 0;
     position: relative;
-    z-index: 1;
+
+    *[data-pui-component='overlay-link'] {
+      position: initial;
+
+      &::before {
+        content: '';
+        cursor: inherit;
+        display: block;
+        position: absolute;
+        inset: 0; // top, left, right and bottom are equal to 0
+      }
+    }
+
+    // Lets other links be clickable through the overlay
+    *[data-pui-component='link'] {
+      position: relative;
+      z-index: 1;
+    }
   }
 }

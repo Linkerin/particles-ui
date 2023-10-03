@@ -1,12 +1,16 @@
-:where(.list-item-icon) {
-  font-size: var(--pui-list-icon-size);
-  height: var(--pui-list-icon-size);
-  width: var(--pui-list-icon-size);
-  min-width: var(--pui-list-icon-size);
+@layer pui-base, pui-components, pui-utils;
 
-  svg {
-    height: 1em;
-    min-width: 1em;
-    width: auto;
+@layer pui-components {
+  :where(.list-item-icon) {
+    font-size: var(--pui-list-icon-size);
+    height: var(--pui-list-icon-size);
+    width: var(--pui-list-icon-size);
+    min-width: var(--pui-list-icon-size);
+
+    svg {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
   }
 }

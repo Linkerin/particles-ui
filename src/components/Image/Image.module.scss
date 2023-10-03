@@ -1,40 +1,44 @@
-:where(.wrapper) {
-  position: relative;
-  overflow: hidden;
-  height: fit-content;
-  width: fit-content;
+@layer pui-base, pui-components, pui-utils;
 
-  &:where(.bg) {
-    background-color: var(--pui-background-container);
-  }
-}
+@layer pui-components {
+  :where(.wrapper) {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
 
-:where(.fallback) {
-  border-radius: inherit;
-  position: absolute;
-  inset: 0; // top, left, right and bottom are equal to 0
-}
-
-:where(.invisible) {
-  opacity: 0;
-}
-
-:where(.visible) {
-  opacity: 1;
-  &:where(.animation) {
-    animation: fadein ease-in 0.5s;
-
-    @media (prefers-reduced-motion) {
-      animation-duration: 1.2s;
+    &:where(.bg) {
+      background-color: var(--pui-background-container);
     }
   }
-}
 
-@keyframes fadein {
-  from {
+  :where(.fallback) {
+    border-radius: inherit;
+    position: absolute;
+    inset: 0; // top, left, right and bottom are equal to 0
+  }
+
+  :where(.invisible) {
     opacity: 0;
   }
-  to {
+
+  :where(.visible) {
     opacity: 1;
+    &:where(.animation) {
+      animation: fadein ease-in 0.5s;
+
+      @media (prefers-reduced-motion) {
+        animation-duration: 1.2s;
+      }
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }

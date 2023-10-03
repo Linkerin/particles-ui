@@ -6,3 +6,7 @@
   gap: 0.5rem;
   margin-block: 1rem;
 }
+
+.interface-buttons > a {
+  border-radius: var(--pui-radius-full);
+}
