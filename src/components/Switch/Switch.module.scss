@@ -37,8 +37,6 @@
   letter-spacing: map.get($font, 'letter-spacing');
 }
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.label) {
     display: flex;

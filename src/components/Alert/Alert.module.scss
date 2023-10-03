@@ -1,7 +1,5 @@
 @use '../../styles/theme-tokens/constants' as const;
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.alert) {
     display: flex;

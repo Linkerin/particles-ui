@@ -3,8 +3,6 @@
 @use '../../styles/theme-tokens/constants' as const;
 @use '../../styles/theme-tokens/variables' as var;
 
-@layer pui-base, pui-components, pui-utils;
-
 @mixin size($size, $dimension, $border-width: 2px, $pd: 2px) {
   $label: (
     'font-size': 2.5rem,

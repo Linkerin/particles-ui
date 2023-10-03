@@ -1,5 +1,3 @@
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.skeleton) {
     --pui-skeleton-base-color: var(--pui-background-container-high, #e8e8ed);

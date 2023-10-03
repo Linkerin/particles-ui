@@ -1,7 +1,5 @@
 @use '../../../styles/theme-tokens/mixins' as mx;
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.list-item) {
     border-color: var(--pui-outline-variant);

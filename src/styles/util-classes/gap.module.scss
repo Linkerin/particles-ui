@@ -1,7 +1,5 @@
 @use '../theme-tokens/variables' as var;
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-utils {
   /// Adds classes for the following 'gap' properties support:
   /// 'xs', 'sm', 'md', 'lg', 'xl'

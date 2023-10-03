@@ -7,8 +7,6 @@
   }
 }
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.dual-spinner) {
     display: flex;

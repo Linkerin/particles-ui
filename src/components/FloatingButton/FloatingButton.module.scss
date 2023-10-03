@@ -3,8 +3,6 @@
 @use '../../styles/theme-tokens/constants' as const;
 @use '../../styles/theme-tokens/variables' as var;
 
-@layer pui-base, pui-components, pui-utils;
-
 // Font size for these buttons has to be 1 step more than the size
 $sizes-mapping: (
   'sm': 'md',

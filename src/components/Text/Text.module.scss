@@ -21,8 +21,6 @@
   }
 }
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.text) {
     color: inherit;

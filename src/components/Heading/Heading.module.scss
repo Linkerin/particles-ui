@@ -2,8 +2,6 @@
 
 @use '../../styles/theme-tokens/variables' as var;
 
-@layer pui-base, pui-components, pui-utils;
-
 @layer pui-components {
   :where(.heading) {
     color: inherit;
