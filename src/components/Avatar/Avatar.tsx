@@ -27,7 +27,6 @@ function SuspensedUserIcon(props: UserIconProps) {
 
 const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
   {
-    className,
     alt,
     src,
     bordered,

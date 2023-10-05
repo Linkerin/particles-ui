@@ -20,7 +20,7 @@ class SsrLocalStorage {
    * @returns {boolean} `true` if the value was set, `false` otherwise
    */
   setItem(key: string, value: string): boolean {
-    if (typeof window !== 'undefined' && typeof Storage !== undefined) {
+    if (typeof window !== 'undefined' && typeof Storage !== 'undefined') {
       localStorage.setItem(key, value);
       return true;
     }
@@ -36,7 +36,7 @@ class SsrLocalStorage {
    * @returns {string | null} The value associated with the key or `null`
    */
   getItem(key: string): string | null {
-    if (typeof window !== 'undefined' && typeof Storage !== undefined) {
+    if (typeof window !== 'undefined' && typeof Storage !== 'undefined') {
       return localStorage.getItem(key);
     }
     return null;
@@ -54,7 +54,7 @@ class SsrLocalStorage {
    * @returns {boolean} `true` if the key/value pair was successfully removed, `false` otherwise
    */
   removeItem(key: string): boolean {
-    if (typeof window !== 'undefined' && typeof Storage !== undefined) {
+    if (typeof window !== 'undefined' && typeof Storage !== 'undefined') {
       localStorage.removeItem(key);
       return true;
     }
