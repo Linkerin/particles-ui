@@ -4,10 +4,6 @@ import classNames from 'classnames';
 import { Skeleton } from '../Skeleton/Skeleton';
 import { SkeletonTextProps } from './SkeletonText.types';
 
-import alignItemsStyles from '../../styles/util-classes/align-items.module.scss';
-import flexDirectionStyles from '../../styles/util-classes/flex-direction.module.scss';
-import gapStyles from '../../styles/util-classes/gap.module.scss';
-import justifyContentStyles from '../../styles/util-classes/justify-content.module.scss';
 import styles from './SkeletonText.module.scss';
 
 export type { SkeletonTextProps };
@@ -38,10 +34,10 @@ export const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(
         ref={ref}
         className={classNames(
           styles['skeleton-text'],
-          alignItemsStyles[alignItems],
-          flexDirectionStyles[flexDirection],
-          justifyContentStyles[justifyContent],
-          gapStyles[gap],
+          `pui-items-${alignItems}`,
+          `pui-flex-${flexDirection}`,
+          `pui-justify-content-${justifyContent}`,
+          `pui-gap-${gap}`,
           className
         )}
         {...props}

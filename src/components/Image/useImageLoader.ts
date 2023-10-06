@@ -99,7 +99,7 @@ function useImageLoader({
     if (preloadFallbackSrc && !!fallbackSrc && !!src) {
       const img = new Image();
       img.src = src;
-      img.onload = e => {
+      img.onload = () => {
         dispatch({ type: 'changeSrc', payload: src });
       };
 

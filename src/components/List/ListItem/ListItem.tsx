@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { ListItemIcon } from '../ListItemIcon/ListItemIcon';
 import { ListItemProps } from './ListItem.types';
 
-import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
 import styles from './ListItem.module.scss';
 
 export type { ListItemProps };
@@ -34,7 +33,7 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
         ref={ref}
         className={classNames(
           styles['list-item'],
-          alignItemsStyles[alignItems],
+          `pui-items-${alignItems}`,
           { [styles[`divider-${divider}`]]: !!divider },
           {
             [styles.top]:

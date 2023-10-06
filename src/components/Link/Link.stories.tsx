@@ -7,8 +7,6 @@ import { Image } from '../Image/Image';
 import { Link, LinkProps } from './Link';
 import { Text } from '../Text/Text';
 
-import linkOverlayStyles from '../../styles/util-classes/link-overlay.module.scss';
-
 const defaultProps: LinkProps = {
   as: 'a',
   color: 'primary',
@@ -61,7 +59,7 @@ export const Overlay: Story = {
     underline: 'hover'
   },
   render: args => (
-    <Card className={linkOverlayStyles.overlay} size="sm" variant="elevated">
+    <Card className="pui-link-overlay" size="sm" variant="elevated">
       <CardBody gap="md">
         <Image
           src="https://loremflickr.com/320/240"

@@ -4,7 +4,7 @@ import {
 } from '../BadgeInline/BadgeInline.types';
 import { PuiAsProp } from '../../lib/types';
 
-interface BadgeSelfProps {
+export interface BadgeSelfProps {
   /**
    * Horizontal position (works when `inline` = `false`)
    */

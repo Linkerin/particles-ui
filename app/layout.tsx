@@ -7,7 +7,7 @@ import Spectrum from '../src/theme/spectrum/spectrum';
 import PuiTheme from '../src/theme/PuiTheme';
 import ThemeProvider from '../src/theme/ThemeContext';
 
-import '../src/styles/pui-base.css';
+import '../src/styles/pui-base.scss';
 import './material-symbols.css';
 import styles from './layout.module.css';
 

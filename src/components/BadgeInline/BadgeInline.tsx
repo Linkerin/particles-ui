@@ -15,7 +15,6 @@ const DEFAULT_ELEMENT = 'span';
 const _BadgeInline = forwardRef<HTMLSpanElement, BadgeInlineProps>(
   function _BadgeInline(
     {
-      children,
       className,
       content,
       maxChars,

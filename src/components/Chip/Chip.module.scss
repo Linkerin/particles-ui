@@ -16,7 +16,7 @@
     }
 
     &
-      > button:where([data-pui-component='close-btn'])
+      > button[data-pui-component='close-btn']
       > span:where([data-pui-component='btn-icon']) {
       font-size: map.get($label, 'font-size');
     }

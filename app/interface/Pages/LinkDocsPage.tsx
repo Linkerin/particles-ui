@@ -12,8 +12,6 @@ import { Link } from '@/src/components/Link/Link';
 import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 import { Text } from '@/src/components/Text/Text';
 
-import linkOverlayStyles from '../../../src/styles/util-classes/link-overlay.module.scss';
-
 function LinkDocsPage() {
   return (
     <DemoSection>
@@ -163,11 +161,7 @@ function LinkDocsPage() {
       </Text>
       <Divider />
       <Heading variant="h6">Overlay</Heading>
-      <Card
-        variant="elevated"
-        className={linkOverlayStyles.overlay}
-        interactiveStyle
-      >
+      <Card variant="elevated" className="pui-link-overlay" interactiveStyle>
         <CardHeader divider="middle">
           <Heading variant="subtitle-md">
             <Link href="/docs/components/card" overlay>

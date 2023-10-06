@@ -5,10 +5,6 @@ import { Box } from '../../Box/Box';
 import { CardBodyBaseProps, CardBodyProps } from './CardBody.types';
 import { createPolymorphicComponent } from '../../../services/createPolymorphicComponent';
 
-import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
-import flexDirectionStyles from '../../../styles/util-classes/flex-direction.module.scss';
-import gapStyles from '../../../styles/util-classes/gap.module.scss';
-import justifyContentStyles from '../../../styles/util-classes/justify-content.module.scss';
 import styles from './CardBody.module.scss';
 
 export type { CardBodyProps };
@@ -37,10 +33,10 @@ const _CardBody = forwardRef<HTMLDivElement, CardBodyProps>(function _CardBody(
       className={classNames(
         { [styles['no-padding']]: padding === false },
         styles['card-body'],
-        flexDirectionStyles[flexDirection],
-        alignItemsStyles[alignItems],
-        justifyContentStyles[`${justifyContent}`],
-        { [gapStyles[`${gap}`]]: !!gap },
+        `pui-flex-${flexDirection}`,
+        `pui-items-${alignItems}`,
+        { [`pui-justify-content-${justifyContent}`]: !!justifyContent },
+        { [`pui-gap-${gap}`]: !!gap },
         className
       )}
       style={style}

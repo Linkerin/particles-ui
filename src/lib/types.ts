@@ -7,7 +7,7 @@ export type PuiAlignItems = {
    */
   alignItems?: Extract<
     React.CSSProperties['alignItems'],
-    'center' | 'flex-start' | 'flex-end' | 'stretch'
+    'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline'
   >;
 };
 
@@ -57,6 +57,7 @@ export type PuiJustifyContent = {
     | 'center'
     | 'flex-start'
     | 'flex-end'
+    | 'stretch'
     | 'space-between'
     | 'space-around'
     | 'space-evenly'

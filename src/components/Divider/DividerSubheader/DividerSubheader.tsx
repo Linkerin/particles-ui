@@ -4,7 +4,7 @@ import { Heading, HeadingProps } from '../../Heading/Heading';
 
 import styles from './DividerSubheader.module.scss';
 
-export function DividerSubheader({
+function DividerSubheader({
   children,
   className,
   as = 'span',
@@ -17,6 +17,7 @@ export function DividerSubheader({
       as={as}
       variant={variant}
       className={classNames(styles['divider-subheader'], className)}
+      color={color}
       {...props}
     >
       {children}

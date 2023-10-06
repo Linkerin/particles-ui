@@ -1,3 +1,5 @@
+@use './util-classes' as utils;
+
 @layer pui-base, pui-components, pui-utils;
 
 @layer pui-base {
@@ -78,43 +80,32 @@
 }
 
 @layer pui-utils {
-  :where(.pui-radius-xs) {
-    --pui-curr-elem-radius: var(--pui-radius-xs, 0.25rem);
-    border-radius: var(--pui-radius-xs, 0.25rem);
-  }
+  @include utils.radius;
+  @include utils.align-items;
+  @include utils.justify-content;
+  @include utils.flex-direction;
+  @include utils.gap;
 
-  :where(.pui-radius-sm) {
-    --pui-curr-elem-radius: var(--pui-radius-sm, 0.5rem);
-    border-radius: var(--pui-radius-sm, 0.5rem);
-  }
+  .pui-link-overlay {
+    z-index: 0;
+    position: relative;
 
-  :where(.pui-radius-md) {
-    --pui-curr-elem-radius: var(--pui-radius-md, 0.75rem);
-    border-radius: var(--pui-radius-md, 0.75rem);
-  }
+    *[data-pui-component='overlay-link'] {
+      position: initial;
 
-  :where(.pui-radius-lg) {
-    --pui-curr-elem-radius: var(--pui-radius-lg, 1rem);
-    border-radius: var(--pui-radius-lg, 1rem);
-  }
+      &::before {
+        content: '';
+        cursor: inherit;
+        display: block;
+        position: absolute;
+        inset: 0; // top, left, right and bottom are equal to 0
+      }
+    }
 
-  :where(.pui-radius-xl) {
-    --pui-curr-elem-radius: var(--pui-radius-xl, 1.75rem);
-    border-radius: var(--pui-radius-xl, 1.75rem);
-  }
-
-  :where(.pui-radius-full) {
-    --pui-curr-elem-radius: var(--pui-radius-full, 3rem);
-    border-radius: var(--pui-radius-full, 3rem);
-  }
-
-  :where(.pui-radius-round) {
-    --pui-curr-elem-radius: var(--pui-radius-round, 50%);
-    border-radius: var(--pui-radius-round, 50%);
-  }
-
-  :where(.pui-radius-none) {
-    --pui-curr-elem-radius: var(--pui-radius-none, 0);
-    border-radius: var(--pui-radius-none, 0);
+    // Lets other links be clickable through the overlay
+    *[data-pui-component='link'] {
+      position: relative;
+      z-index: 1;
+    }
   }
 }

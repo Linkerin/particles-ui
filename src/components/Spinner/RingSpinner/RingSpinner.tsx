@@ -13,7 +13,7 @@ export type { SpinnerProps as RingSpinnerProps };
  * @see {@link https://particles.snipshot.dev/docs/components/spinner | Particles UI | Spinner}
  */
 export const RingSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
-  function RingSpinner({ className, style, speed, size = '', ...props }, ref) {
+  function RingSpinner({ className, speed, size = '', ...props }, ref) {
     const styleObj: StyleObj = {};
     if (speed) styleObj.animationDuration = speed;
 

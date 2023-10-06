@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import { SwitchProps } from './Switch.types';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
-import gapStyles from '../../styles/util-classes/gap.module.scss';
 import styles from './Switch.module.scss';
 
 export type { SwitchProps };
@@ -98,7 +97,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
       className={classNames(
         styles.label,
         styles[size],
-        gapStyles[labelGap],
+        `pui-gap-${labelGap}`,
         outlineDefaultClassName,
         { [styles.disabled]: disabled },
         { [styles['right-label']]: labelPosition === 'right' },

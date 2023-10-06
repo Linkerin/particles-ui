@@ -5,10 +5,6 @@ import { Box } from '../../Box/Box';
 import { CardFooterBaseProps, CardFooterProps } from './CardFooter.types';
 import { createPolymorphicComponent } from '../../../services/createPolymorphicComponent';
 
-import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
-import flexDirectionStyles from '../../../styles/util-classes/flex-direction.module.scss';
-import gapStyles from '../../../styles/util-classes/gap.module.scss';
-import justifyContentStyles from '../../../styles/util-classes/justify-content.module.scss';
 import styles from './CardFooter.module.scss';
 
 export type { CardFooterProps };
@@ -39,10 +35,10 @@ const _CardFooter = forwardRef<HTMLElement, CardFooterProps>(
         className={classNames(
           { [styles['no-padding']]: padding === false },
           styles['card-footer'],
-          alignItemsStyles[alignItems],
-          gapStyles[gap],
-          { [flexDirectionStyles[`${flexDirection}`]]: !!flexDirection },
-          { [justifyContentStyles[`${justifyContent}`]]: !!justifyContent },
+          `pui-items-${alignItems}`,
+          `pui-gap-${gap}`,
+          { [`pui-flex-${flexDirection}`]: !!flexDirection },
+          { [`pui-justify-content-${justifyContent}`]: !!justifyContent },
           { [styles[`divider-${divider}`]]: !!divider },
           className
         )}

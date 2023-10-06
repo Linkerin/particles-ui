@@ -32,7 +32,7 @@ function deepMerge<T extends Record<string, any>>(target: T, injection: T): T {
   }
 
   for (const key in injection) {
-    if (injection.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(injection, key)) {
       if (isObject(injection[key])) {
         // If the property is an object, recursively merge it
         if (!target[key]) {

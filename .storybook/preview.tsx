@@ -2,7 +2,7 @@ import React from 'react';
 
 import PuiTheme from '../src/theme/PuiTheme';
 
-import '../src/styles/pui-base.css';
+import '../src/styles/pui-base.scss';
 import './storybook.css';
 
 import type { Preview } from '@storybook/react';

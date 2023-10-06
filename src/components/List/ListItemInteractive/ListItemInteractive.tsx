@@ -10,7 +10,6 @@ import useInteractivityHandlers from '../../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../../hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../../hooks/useMergedRefs';
 
-import alignItemsStyles from '../../../styles/util-classes/align-items.module.scss';
 import styles from './ListItemInteractive.module.scss';
 
 export type { ListItemInteractiveProps };
@@ -111,7 +110,7 @@ export const ListItemInteractive = forwardRef<
         ref={mergedRef}
         className={classNames(
           styles['li-interactive'],
-          alignItemsStyles[alignItems],
+          `pui-items-${alignItems}`,
           outlineDefaultClassName,
           { [styles.disabled]: disabled },
           { [styles.selected]: selected }

@@ -90,7 +90,7 @@ const _Chip = forwardRef<HTMLDivElement, ChipProps>(function _Chip(
     >
       {!!leftIcon && <span data-pui-component="chip-icon">{leftIcon}</span>}
       {children}
-      {!!onDelete ? (
+      {onDelete ? (
         <CloseButton
           ref={deleteBtnRef}
           disabled={disabled}

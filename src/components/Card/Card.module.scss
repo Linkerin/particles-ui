@@ -1,10 +1,15 @@
 @use 'sass:map';
 
-@use '../../styles/theme-tokens/variables' as var;
+$card-padding: (
+  'none': 0rem,
+  'sm': 0.75rem,
+  'md': 1rem,
+  'lg': 1.5rem
+);
 
 @layer pui-components {
   :where(.card) {
-    --pui-card-padding: #{map.get(var.$card-padding, 'none')};
+    --pui-card-padding: #{map.get($card-padding, 'none')};
 
     display: flex;
     border-radius: var(--pui-radius-md);
@@ -72,7 +77,7 @@
   // Padding size variable for CardHeader, CardBody and CardFooter components
   @each $size in ('sm', 'md', 'lg') {
     :where(.#{$size}) {
-      $pd: map.get(var.$card-padding, $size);
+      $pd: map.get($card-padding, $size);
       --pui-card-padding: #{$pd};
     }
   }

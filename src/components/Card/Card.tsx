@@ -10,10 +10,6 @@ import useInteractivityHandlers from '../../hooks/useInteractivityHandlers';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 import useMergedRefs from '../../hooks/useMergedRefs';
 
-import alignItemsStyles from '../../styles/util-classes/align-items.module.scss';
-import flexDirectionStyles from '../../styles/util-classes/flex-direction.module.scss';
-import gapStyles from '../../styles/util-classes/gap.module.scss';
-import justifyContentStyles from '../../styles/util-classes/justify-content.module.scss';
 import styles from './Card.module.scss';
 
 export type { CardProps };
@@ -67,10 +63,10 @@ const _Card = forwardRef<HTMLElement, CardProps>(function _Card(
       ref={mergedRefs}
       as={as}
       className={classNames(
-        flexDirectionStyles[flexDirection],
-        { [alignItemsStyles[`${alignItems}`]]: !!alignItems },
-        { [gapStyles[`${gap}`]]: !!gap },
-        { [justifyContentStyles[`${justifyContent}`]]: !!justifyContent },
+        `pui-flex-${flexDirection}`,
+        { [`pui-items-${alignItems}`]: !!alignItems },
+        { [`pui-gap-${gap}`]: !!gap },
+        { [`pui-justify-content-${justifyContent}`]: !!justifyContent },
         styles.card,
         styles[variant],
         { [styles[size]]: padding },

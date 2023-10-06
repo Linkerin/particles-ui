@@ -7,7 +7,6 @@ import { Link } from '@/src/components/Link/Link';
 import { List } from '@/src/components/List/List';
 import { ListItemInteractive } from '@/src/components/List/ListItemInteractive/ListItemInteractive';
 
-import linkOverlayStyle from '../../../src/styles/util-classes/link-overlay.module.scss';
 import styles from './Nav.module.scss';
 
 const components = [
@@ -40,7 +39,7 @@ function Nav() {
     <nav className={styles.container}>
       <List dense>
         <ListItemInteractive
-          className={linkOverlayStyle.overlay}
+          className="pui-link-overlay"
           tabIndex={-1}
           selected={pathname === '/'}
         >
@@ -51,7 +50,7 @@ function Nav() {
         {components.map(component => (
           <ListItemInteractive
             key={component.link}
-            className={linkOverlayStyle.overlay}
+            className="pui-link-overlay"
             selected={pathname === `/demo/components/${component.link}`}
             tabIndex={-1}
           >

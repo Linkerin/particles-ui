@@ -13,8 +13,6 @@ import { ListItemInteractive } from '@/src/components/List/ListItemInteractive/L
 import { ListItemText } from '@/src/components/List/ListItemText/ListItemText';
 import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
-import linkOverlayStyles from '../../../src/styles/util-classes/link-overlay.module.scss';
-
 function ListDocsPage() {
   return (
     <DemoSection>
@@ -281,7 +279,7 @@ function ListDocsPage() {
       </List>
       <Heading variant="subtitle-md">With links</Heading>
       <List>
-        <ListItemInteractive className={linkOverlayStyles.overlay}>
+        <ListItemInteractive className="pui-link-overlay">
           <ListItemIcon>
             <GlobeIcon />
           </ListItemIcon>
@@ -289,7 +287,7 @@ function ListDocsPage() {
             Overlay link
           </Link>
         </ListItemInteractive>
-        <ListItemInteractive className={linkOverlayStyles.overlay}>
+        <ListItemInteractive className="pui-link-overlay">
           <ListItemIcon>
             <MaterialSymbolIcon icon="edit" />
           </ListItemIcon>
@@ -297,7 +295,7 @@ function ListDocsPage() {
             External link
           </Link>
         </ListItemInteractive>
-        <ListItemInteractive className={linkOverlayStyles.overlay}>
+        <ListItemInteractive className="pui-link-overlay">
           <ListItemIcon>
             <StackIcon />
           </ListItemIcon>
