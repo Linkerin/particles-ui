@@ -1,0 +1,45 @@
+@use '../../../styles/theme-tokens/mixins' as mx;
+
+@layer pui-components {
+  :where(.list-item) {
+    border-color: var(--pui-outline-variant);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: var(--pui-background);
+    cursor: default;
+    min-height: var(--pui-list-item-min-height);
+    min-width: min-content;
+    padding-block: var(--pui-list-item-pd-block);
+    padding-inline: var(--pui-list-item-pl) var(--pui-list-item-pr);
+    position: relative;
+  }
+
+  :where(.divider-full) {
+    $border: 1px solid var(--pui-outline-variant);
+
+    &:where(.bottom) {
+      border-bottom: $border;
+    }
+
+    &:where(.top) {
+      border-top: $border;
+    }
+  }
+
+  :where(.divider-middle) {
+    @include mx.pseudo-divider(
+      var(--pui-list-item-pl),
+      $pr: var(--pui-list-item-pr),
+      $separated: true
+    );
+  }
+
+  :where(.divider-inset) {
+    @include mx.pseudo-divider(
+      var(--pui-list-item-pl),
+      $pr: 0rem,
+      $separated: true
+    );
+  }
+}

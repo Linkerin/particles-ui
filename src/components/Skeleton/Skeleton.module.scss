@@ -1,0 +1,116 @@
+@layer pui-components {
+  :where(.skeleton) {
+    --pui-skeleton-base-color: var(--pui-background-container-high, #e8e8ed);
+    --pui-skeleton-wave-start-color: var(
+      --pui-background-container-low,
+      #f6f7f8
+    );
+    --pui-skeleton-wave-middle-color: var(
+      --pui-background-container-highest,
+      #e2e3e9
+    );
+
+    background-color: var(--pui-skeleton-base-color);
+    cursor: progress;
+    height: 1em;
+    width: 100%;
+    overflow: hidden;
+
+    * {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  :where(.loaded) {
+    cursor: default;
+    visibility: hidden;
+
+    * {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:where(.fade-animation) {
+      * {
+        transition: opacity 0.4s linear;
+      }
+    }
+  }
+
+  :where(.avatar) {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  :where(.image) {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  :where(.button) {
+    height: 2.5rem;
+    width: 6rem;
+  }
+
+  :where(.fit) {
+    height: fit-content;
+    width: fit-content;
+  }
+
+  // animations
+  :where(.pulse) {
+    animation: pulse 1.4s infinite linear;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  :where(.wave) {
+    animation: wave 3.2s infinite linear;
+    background-size: 300% 100%;
+    background-image: linear-gradient(
+      to right,
+      var(--pui-skeleton-wave-start-color) 0%,
+      var(--pui-skeleton-wave-middle-color) 50%,
+      var(--pui-skeleton-wave-start-color) 100%
+    );
+  }
+
+  @media (prefers-reduced-motion) {
+    :where(.pulse) {
+      animation-duration: 3s;
+    }
+
+    :where(.wave) {
+      animation-duration: 7s;
+    }
+
+    :where(.fade-animation) {
+      * {
+        transition-duration: 1.2s;
+      }
+    }
+  }
+
+  @keyframes wave {
+    from {
+      background-position-x: 300%;
+    }
+
+    to {
+      background-position-x: 0%;
+    }
+  }
+}

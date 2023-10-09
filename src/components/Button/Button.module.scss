@@ -1,0 +1,259 @@
+@use 'sass:map';
+
+@use '../../styles/theme-tokens/constants' as const;
+@use '../../styles/theme-tokens/variables' as var;
+
+@mixin size($size) {
+  $btn-typography: map.get(var.$typography, 'label', $size);
+
+  :where(.#{$size}) {
+    font-size: map.get($btn-typography, 'font-size');
+    font-weight: map.get($btn-typography, 'font-weight');
+    line-height: map.get($btn-typography, 'line-height');
+    letter-spacing: map.get($btn-typography, 'letter-spacing');
+
+    :where(span[data-pui-component='btn-icon']),
+    :where(span[data-pui-component='btn-load-spinner']) {
+      $icon-dimension: map.get($btn-typography, 'line-height');
+      font-size: calc($icon-dimension - 2px);
+    }
+  }
+}
+
+@function disabled-bg-color($color-name) {
+  @return (
+    rgb(var(--pui-#{$color-name}-channels) / var(--pui-state-disabled, 0.12))
+  );
+}
+
+@layer pui-components {
+  :where(.button) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pui-gap-md, 0.5rem);
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5625rem 1.714286em;
+    user-select: none;
+    height: fit-content;
+    width: fit-content;
+    white-space: nowrap;
+
+    & > :where(span[data-pui-component='btn-icon']) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      :where(svg) {
+        height: 1em;
+        min-width: 1em;
+        width: auto;
+      }
+    }
+
+    :where(span[data-pui-component='btn-load-spinner']) > span {
+      border-width: 1px;
+    }
+
+    &:disabled {
+      box-shadow: none;
+      color: rgb(
+        var(--pui-on-background-channels) /
+          var(--pui-state-disabled-content, 0.38)
+      );
+      cursor: not-allowed;
+    }
+
+    &.loading {
+      box-shadow: none;
+      cursor: not-allowed;
+      opacity: 50%;
+    }
+  }
+
+  :where(.leftIcon) {
+    padding-left: 1.14286em;
+  }
+
+  :where(.rightIcon) {
+    padding-right: 1.14286em;
+  }
+
+  :where(.dense) {
+    padding: 0.375rem 1em;
+
+    &:where(.leftIcon) {
+      padding-left: 0.75em;
+    }
+
+    &:where(.rightIcon) {
+      padding-right: 0.75em;
+    }
+  }
+
+  // colors
+  @each $color in const.$color-names {
+    :where(.#{$color}) {
+      --pui-btn-color: var(--pui-#{$color});
+      --pui-btn-color-channels: var(--pui-#{$color}-channels);
+      --pui-btn-on-color: var(--pui-on-#{$color});
+      --pui-btn-color-darker: var(--pui-#{$color}-darker);
+      --pui-btn-color-darker-channels: var(--pui-#{$color}-darker-channels);
+      --pui-btn-color-container-low: var(--pui-#{$color}-container-low);
+      --pui-btn-on-color-container: var(--pui-on-#{$color}-container);
+    }
+  }
+
+  :where(.filled),
+  :where(.elevated),
+  :where(.soft) {
+    &:disabled {
+      background-color: disabled-bg-color('on-background');
+    }
+  }
+
+  :where(.filled),
+  :where(.elevated) {
+    &:where(.shrink):active:not(:where(.loading)):not(:disabled) {
+      transform: scale(0.97);
+      transition: transform 100ms ease-out;
+    }
+  }
+
+  :where(.filled):not(:where(.uncolored)) {
+    background-color: var(--pui-btn-color);
+    color: var(--pui-btn-on-color);
+
+    &:where(.pressShadow):active:not(:where(.loading)):not(:disabled) {
+      box-shadow: inset -3px 3px 6px 3px rgb(0 0 0 / 0.2);
+      border-color: rgb(0 0 0 / 0.2);
+    }
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-btn-color-darker-channels) / 82%);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-btn-color),
+        var(--pui-black) var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-btn-color-darker-channels) / 86%);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-btn-color),
+        var(--pui-black) var(--pui-state-press, 0.12)
+      );
+    }
+  }
+
+  :where(.elevated) {
+    box-shadow: var(--pui-elevation-1);
+
+    &:not(:where(.uncolored)) {
+      background-color: var(--pui-background-container-low);
+      color: var(--pui-btn-color-darker);
+    }
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      box-shadow: var(--pui-elevation-2);
+      &:not(:where(.uncolored)) {
+        background-color: rgb(
+          var(--pui-btn-color-channels) / var(--pui-state-hover, 0.08)
+        );
+      }
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      box-shadow: var(--pui-elevation-1);
+
+      &:not(:where(.uncolored)) {
+        background-color: rgb(
+          var(--pui-btn-color-channels) / var(--pui-state-press, 0.12)
+        );
+      }
+    }
+  }
+
+  :where(.outlined):not(:where(.uncolored)) {
+    border: 1px solid var(--pui-btn-color);
+  }
+
+  :where(.outlined):disabled {
+    border-color: disabled-bg-color('outline');
+  }
+
+  :where(.outlined):not(:where(.uncolored)),
+  :where(.text):not(:where(.uncolored)) {
+    color: var(--pui-btn-color);
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      background-color: rgb(
+        var(--pui-btn-color-channels) / var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      background-color: rgb(
+        var(--pui-btn-color-channels) / var(--pui-state-press, 0.12)
+      );
+    }
+  }
+
+  :where(.text):not(:where(.dense)) {
+    padding-inline: 0.85714em;
+
+    &:where(.leftIcon) {
+      padding-right: 1.14286em;
+    }
+
+    &:where(.rightIcon) {
+      padding-left: 1.14286em;
+    }
+
+    &:where(.leftIcon.rightIcon) {
+      padding-inline: 0.85714em;
+    }
+  }
+
+  :where(.soft):not(:where(.uncolored)) {
+    background-color: var(--pui-btn-color-container-low);
+    color: var(--pui-btn-on-color-container);
+
+    &:hover:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-btn-color-channels) / 0.2);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-btn-color-container-low),
+        var(--pui-btn-color) var(--pui-state-hover, 0.08)
+      );
+    }
+
+    &:active:not(:where(.loading)):not(:disabled) {
+      // Fallback for color-mix()
+      background-color: rgb(var(--pui-btn-color-channels) / 0.24);
+
+      background-color: color-mix(
+        in oklab,
+        var(--pui-btn-color-container-low),
+        var(--pui-btn-color) var(--pui-state-press, 0.12)
+      );
+    }
+  }
+
+  // sizes
+  @each $size in const.$sizes {
+    @include size($size);
+  }
+}

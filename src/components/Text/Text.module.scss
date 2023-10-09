@@ -1,0 +1,79 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@use '../../styles/theme-tokens/variables' as var;
+
+@mixin variant($variant) {
+  @if list.index(('body', 'label'), $variant) == null {
+    @error "Invalid variant: '#{$variant}'. Only 'body' and 'label' are allowed";
+  }
+
+  :where(.#{$variant}) {
+    $typography: map.get(var.$typography, $variant);
+
+    @each $size, $properties in $typography {
+      &:where(.#{$size}) {
+        @each $property, $value in $properties {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+}
+
+@layer pui-components {
+  :where(.text) {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+
+    & > span:where([data-pui-component='material-icon']),
+    & > svg {
+      vertical-align: -12.5%;
+    }
+
+    & > svg {
+      display: inline-block;
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+  }
+
+  :where(.truncate) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  :where(code.text) {
+    font-family: monospace;
+    background-color: var(--pui-background-container-high);
+    border: 1px solid var(--pui-outline-variant);
+    border-radius: var(--pui-radius-xs);
+    padding: 0.5em 1em;
+  }
+
+  :where(mark.text) {
+    background-color: var(--pui-primary-container);
+  }
+
+  @include variant('body');
+  @include variant('label');
+
+  // base colors
+  :where(.on-background) {
+    color: var(--pui-on-background);
+  }
+
+  :where(.on-background-variant) {
+    color: var(--pui-on-background-variant);
+  }
+
+  :where(.on-background-low) {
+    color: var(--pui-on-background-low);
+  }
+}
