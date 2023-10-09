@@ -104,7 +104,7 @@ export const Clickable: Story = {
   args: {
     'aria-label': 'Go to sneakers page',
     variant: 'elevated',
-    onClick: e => console.log('Card clicked')
+    onClick: () => console.log('Card clicked')
   },
   render: args => (
     <Card {...args}>
@@ -116,7 +116,7 @@ export const Clickable: Story = {
       >
         <Image
           alt="Commom raven of North America in flight"
-          src={sneakersPng.src}
+          src={sneakersPng}
           fadeInAnimation={true}
           fallback={<ImageIconFallback icon="loading" color="primary" />}
           radius="md"

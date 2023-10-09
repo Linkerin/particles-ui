@@ -1,6 +1,7 @@
 .github
 .gitignore
 .vscode
+.storybook
 .eslintrc.cjs
 .eslintignore
 
@@ -18,3 +19,4 @@ public/
 site/
 src/
 temp/
+storybook-static/
