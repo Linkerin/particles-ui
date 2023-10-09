@@ -1,5 +1,5 @@
 {
-  "name": "particles",
+  "name": "@snipshot/particles",
   "version": "0.0.1",
   "description": "Particles UI: CSS oriented React components library",
   "type": "module",
@@ -15,7 +15,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "copy-dist": "rm -rf temp && mkdir temp && cp -r dist/* package.json README.md temp/",
-    "pack": "npm run copy-dist && cd temp && npm pack --pack-destination ~/Dev/npm-test/ && rm -rf ../temp"
+    "pack": "npm run copy-dist && cd temp && npm pack --pack-destination ~/Dev/npm-test/ && rm -rf ../temp",
+    "publish": "npm run copy-dist && cd temp && npm publish && rm -rf ../temp "
   },
   "repository": {
     "type": "git",
