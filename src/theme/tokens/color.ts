@@ -1,4 +1,4 @@
-import { darken } from '../utils';
+import darken from '../utils/darken';
 import { DefaultColor } from '../theme.types';
 import getSplitComplementary from '../spectrum/methods/getSplitComplementary';
 import setHsl from '../spectrum/methods/setHsl';

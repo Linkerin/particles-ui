@@ -23,7 +23,7 @@ export type CardContentProps = PuiAlignItems &
     padding?: boolean;
   };
 
-interface CardStaticProps extends CardContentProps {
+export interface CardStaticProps extends CardContentProps {
   /**
    * Disabled styling and behaviour
    */

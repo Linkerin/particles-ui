@@ -1,4 +1,4 @@
-import './styles/pui-base.css';
+import './styles/pui-base.scss';
 export * from './hooks';
 export * from './lib';
 export * from './services';

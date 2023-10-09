@@ -1,4 +1,4 @@
-import { getCssVars, getTheme, mergeThemes } from './utils';
+import { getCssVars, getTheme, mergeThemes } from './utils/theme';
 import { Theme, ThemeMainColors } from './theme.types';
 
 interface ThemeProps {
