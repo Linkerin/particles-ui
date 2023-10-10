@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { SvgIcon, SvgIconProps } from './SvgIcon';
 
-import atomSvg from '../../../.storybook/public/icons/atom.svg';
+import atomSvg from '../../../.storybook/sb-public/icons/atom.svg';
 
 const defaultProps: Partial<SvgIconProps> = {
   role: 'presentation',

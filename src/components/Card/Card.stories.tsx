@@ -13,7 +13,7 @@ import { Image } from '../Image/Image';
 import { ImageIconFallback } from '../ImageIconFallback/ImageIconFallback';
 import { Text } from '../Text/Text';
 
-import sneakersPng from '../../../.storybook/public/sneakers.png';
+import sneakersPng from '../../../.storybook/sb-public/sneakers.png';
 
 const defaultProps: Partial<CardProps> = {
   disabled: false,

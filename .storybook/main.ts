@@ -16,7 +16,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag'
   },
-  staticDirs: ['./public'],
+  staticDirs: ['./sb-public'],
   core: {
     disableTelemetry: true
   }
