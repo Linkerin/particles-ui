@@ -1,0 +1,31 @@
+@use '../../../styles/theme-tokens/mixins' as mx;
+
+@layer pui-components {
+  .no-padding {
+    --pui-card-padding: 0rem;
+  }
+
+  $pd: var(--pui-card-padding);
+
+  :where(.card-footer) {
+    border-color: var(--pui-outline-variant);
+    display: flex;
+    padding: 0 $pd $pd;
+    position: relative;
+  }
+
+  :where(.divider-full) {
+    padding-top: $pd;
+    border-top: 1px solid var(--pui-outline-variant);
+  }
+
+  :where(.divider-middle) {
+    padding-top: $pd;
+    @include mx.pseudo-divider($pd, 'top');
+  }
+
+  :where(.divider-inset) {
+    padding-top: $pd;
+    @include mx.pseudo-divider($pd, 'top', $pr: 0rem);
+  }
+}

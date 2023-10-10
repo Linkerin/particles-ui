@@ -1,0 +1,58 @@
+@use 'sass:map';
+
+@use '../../styles/theme-tokens/variables' as var;
+
+$md-text: map.get(var.$typography, 'body', 'md');
+$sm-text: map.get(var.$typography, 'body', 'sm');
+
+@layer pui-components {
+  :where(.list) {
+    --pui-list-icon-size: 1.5rem;
+    --pui-list-item-min-height: 3rem;
+    --pui-list-item-pd-block: 0.5rem;
+    --pui-list-item-pl: 1rem;
+    --pui-list-item-pr: 1.5rem;
+
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+
+  :where(.dense) {
+    --pui-list-icon-size: 1.25rem;
+    --pui-list-item-min-height: 2rem;
+    --pui-list-item-pd-block: 0.25rem;
+    --pui-list-item-pl: 0.75rem;
+    --pui-list-item-pr: 0.75rem;
+
+    & > li,
+    &
+      > li
+      > *[data-pui-component='li-text']
+      > *[data-pui-component='li-text-primary'],
+    &
+      > li[data-pui-component='li-interactive']
+      > div
+      > *[data-pui-component='li-text']
+      > *[data-pui-component='li-text-primary'] {
+      @each $property, $value in $md-text {
+        #{$property}: $value;
+      }
+    }
+
+    & > li,
+    & > li[data-pui-component='li-interactive'] > div {
+      &
+        > *[data-pui-component='li-text']
+        > *[data-pui-component='li-text-secondary'] {
+        @each $property, $value in $sm-text {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+
+  :where(.no-pd-inline) > li,
+  :where(.no-pd-inline) > li[data-pui-component='li-interactive'] > div {
+    padding-inline: 0;
+  }
+}

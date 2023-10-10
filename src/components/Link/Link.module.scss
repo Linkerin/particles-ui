@@ -1,0 +1,59 @@
+@layer pui-components {
+  :where(.link) {
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+    text-underline-position: under;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &,
+    &:visited {
+      color: inherit;
+    }
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+
+    & > span:where([data-pui-component='material-icon']),
+    & > svg {
+      display: inline-block;
+      vertical-align: -11.5%;
+    }
+
+    & > svg {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+
+    &.external > svg {
+      margin-left: 0.25em;
+    }
+  }
+
+  :where(.primary),
+  :where(.primary):visited {
+    color: var(--pui-primary);
+  }
+
+  :where(.primary):hover {
+    color: var(--pui-on-background-variant);
+  }
+
+  :where(.underline-hover):hover,
+  :where(.underline-always),
+  :where(.underline-always):hover,
+  :where(.underline-always):focus,
+  :where(.underline-always):active {
+    text-decoration: underline;
+  }
+}
