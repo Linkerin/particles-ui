@@ -1,201 +1,261 @@
-import { Button, ButtonProps } from '@snipshot/particles';
-import CloseIcon from '../../src/components/PuiIcons/CloseIcon/CloseIcon';
-import DemoContainer from '../interface/DemoContainer/DemoContainer';
-import { RingSpinner } from '../../src/components/Spinner/RingSpinner/RingSpinner';
-import UserIcon from '../../src/components/PuiIcons/UserIcon/UserIcon';
+import DocsSandpack, {
+  DocsSandPackProps
+} from '../interface/DocsSandpack/DocsSandpack';
 
-const variants: Array<ButtonProps['variant']> = [
-  'filled',
-  'outlined',
-  'text',
-  'soft',
-  'elevated'
-];
-
-const colors: Array<ButtonProps['color']> = [
-  'primary',
-  'secondary',
-  'tertiary',
-  'success',
-  'info',
-  'warning',
-  'error'
-];
-
-const radiuses: Array<ButtonProps['radius']> = [
-  'none',
-  'xs',
-  'sm',
-  'md',
-  'lg',
-  'xl',
-  'full',
-  'round'
-];
-
-const sizes: Array<ButtonProps['size']> = ['xs', 'sm', 'md', 'lg', 'xl'];
-
-export function ButtonDefault() {
-  return (
-    <DemoContainer>
-      <Button as="span">Confirm</Button>
-    </DemoContainer>
-  );
-}
-
-export function ButtonVariants() {
-  return (
-    <DemoContainer
-      style={{
+const styles = `{
         display: 'flex',
         flexDirection: 'row',
         gap: '0.5rem',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+      }`;
+
+type DemoProps = Pick<DocsSandPackProps, 'showCode' | 'showPreview'>;
+
+export function ButtonDefault(props: DemoProps) {
+  return (
+    <DocsSandpack
+      files={{
+        '/Button.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonDefault() {
+  return <Button>Confirm</Button>;
+}
+`
       }}
+      {...props}
+    />
+  );
+}
+
+export function ButtonVariants(props: DemoProps) {
+  return (
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonVariants() {
+  const variants = [
+    'filled',
+    'outlined',
+    'soft',
+    'text',
+    'elevated'
+  ];
+
+  return (
+    <div
+      style={${styles}}
     >
       {variants.map(variant => (
-        <Button as="div" key={variant} variant={variant}>
-          {variant}
+        <Button key={variant} variant={variant}>
+          {variant.at(0).toUpperCase() + variant.slice(1)}
         </Button>
       ))}
-    </DemoContainer>
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function ButtonColors() {
+export function ButtonColors(props: DemoProps) {
   return (
-    <DemoContainer
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonColors() {
+  const colors = [
+    'primary',
+    'secondary',
+    'tertiary',
+    'success',
+    'info',
+    'warning',
+    'error'
+  ];
+
+  return (
+    <div
+      style={${styles}}
     >
       {colors.map(color => (
-        <Button as="span" key={color} color={color}>
-          {color}
+        <Button key={color} color={color}>
+          {color.at(0).toUpperCase() + color.slice(1)}
         </Button>
       ))}
-    </DemoContainer>
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function ButtonRadiuses() {
+export function ButtonRadiuses(props: DemoProps) {
   return (
-    <DemoContainer
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonRadiuses() {
+  const radiuses = [
+    'none',
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+    'full',
+    'round'
+  ];
+
+  return (
+    <div
+      style={${styles}}
     >
       {radiuses.map(radius => (
-        <Button as="span" key={radius} radius={radius} color="secondary">
+        <Button key={radius} radius={radius} color="secondary">
           Radius: {radius}
         </Button>
       ))}
-    </DemoContainer>
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function ButtonSizes() {
+export function ButtonSizes(props: DemoProps) {
   return (
-    <DemoContainer
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonSizes() {
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+
+  return (
+    <div
+      style={${styles}}
     >
       {sizes.map(size => (
-        <Button as="span" key={size} size={size} color="tertiary">
+        <Button key={size} size={size} color="tertiary">
           Size: {size}
         </Button>
       ))}
-    </DemoContainer>
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function ButtonSizesDense() {
+export function ButtonSizesDense(props: DemoProps) {
   return (
-    <DemoContainer
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonSizesDense() {
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+
+  return (
+    <div
+      style={${styles}}
     >
       {sizes.map(size => (
-        <Button as="span" key={size} size={size} dense>
+        <Button key={size} size={size} dense>
           Size: {size}
         </Button>
       ))}
-    </DemoContainer>
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function ButtonWithIcons() {
+export function ButtonWithIcons(props: DemoProps) {
   return (
-    <DemoContainer
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button, CloseIcon, UserIcon } from '@snipshot/particles';
+
+export default function ButtonWithIcons() {
+  return (
+    <div
+      style={${styles}}
     >
-      <Button as="span" rightIcon={<UserIcon />}>
+      <Button rightIcon={<UserIcon />}>
         Profile
       </Button>
       <Button
-        as="span"
         leftIcon={<CloseIcon />}
         color="error"
         variant="outlined"
       >
         Remove
       </Button>
-    </DemoContainer>
+    </div>
   );
 }
-
-export function ButtonDisabled() {
-  return (
-    <DemoContainer>
-      <Button
-        disabled
-        style={{
-          padding: '0.5625rem 1.714286em',
-          fontSize: '0.875rem',
-          fontWeight: 500,
-          lineHeight: '1.25rem'
-        }}
-      >
-        Disabled
-      </Button>
-    </DemoContainer>
-  );
-}
-
-export function ButtonLoading() {
-  return (
-    <DemoContainer
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
+`
       }}
+      {...props}
+    />
+  );
+}
+
+export function ButtonDisabled(props: DemoProps) {
+  return (
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonDisabled() {
+  return (
+    <Button disabled>
+      I am disabled
+    </Button>
+  );
+}
+`
+      }}
+      {...props}
+    />
+  );
+}
+
+export function ButtonLoading(props: DemoProps) {
+  return (
+    <DocsSandpack
+      files={{
+        '/Buttons.jsx': `import { Button, RingSpinner } from '@snipshot/particles';
+
+export default function ButtonLoading() {
+  return (
+    <div
+      style={${styles}}
     >
-      <Button as="span" loadingText="Loading..." isLoading>
+      <Button loadingText="Loading..." isLoading>
         Send
       </Button>
       <Button
-        as="span"
         loadingElement={<RingSpinner size="xs" />}
         isLoading
         variant="elevated"
@@ -203,16 +263,28 @@ export function ButtonLoading() {
       >
         Ring spinner
       </Button>
-    </DemoContainer>
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function ButtonPolymorphic() {
+export function ButtonPolymorphic(props: DemoProps) {
   return (
-    <DemoContainer>
-      <Button as="a" style={{ color: 'var(--pui-btn-on-color)' }}>
-        I am a link
-      </Button>
-    </DemoContainer>
+    <DocsSandpack
+      files={{
+        '/Button.jsx': `import { Button } from '@snipshot/particles';
+
+export default function ButtonPolymorphic() {
+  return <Button as="a">I am a link</Button>;
+}
+`
+      }}
+      {...props}
+    />
   );
 }

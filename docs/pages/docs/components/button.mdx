@@ -3,8 +3,6 @@ title: Button
 description: Documentation for Button component from Particles UI library
 ---
 
-import { Tabs } from 'nextra/components';
-
 import {
   ButtonDefault,
   ButtonVariants,
@@ -35,46 +33,14 @@ operation.
 
 ### Basic usage
 
-<ButtonDefault />
-
-```jsx copy
-import { Button } from '@snipshot/particles';
-
-function MyComponent() {
-  return <Button>Confirm</Button>;
-}
-```
+<ButtonDefault showCode />
 
 ### Variants
 
 The `Button` component comes with five different variants: `filled`, `outlined`,
 `text`, `soft`, and `elevated`.
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><ButtonVariants /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Button, ButtonProps } from '@snipshot/particles';
-
-    const variants: Array<ButtonProps['variant']> = [
-      'filled',
-      'outlined',
-      'text',
-      'soft',
-      'elevated'
-    ];
-
-    function ButtonVariants() {
-      return variants.map(variant => (
-        <Button key={variant} variant={variant}>
-          {variant}
-        </Button>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<ButtonVariants showCode={false} />
 
 ### Colors
 
@@ -83,157 +49,37 @@ props valiue: `primary`, `secondary`, `tertiary`, `info`, `success`, `warning`,
 `error`.  
 If you need an unstyled button, pass the `uncolored` value.
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><ButtonColors /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Button, ButtonProps } from '@snipshot/particles';
-
-    const colors: Array<ButtonProps['color']> = [
-      'primary',
-      'secondary',
-      'tertiary',
-      'success',
-      'info',
-      'warning',
-      'error'
-    ];
-
-    function ButtonColors() {
-      return colors.map(color => (
-        <Button key={color} color={color}>
-          {color}
-        </Button>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<ButtonColors showCode={false} />
 
 ### Radiuses
 
 You can customize the border radius by providing a `radius` prop value.
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><ButtonRadiuses /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Button, ButtonProps } from '@snipshot/particles';
-
-    const radiuses: Array<ButtonProps['radius']> = [
-      'none',
-      'xs',
-      'sm',
-      'md',
-      'lg',
-      'xl',
-      'full',
-      'round'
-    ];
-
-    function ButtonColors() {
-      return radiuses.map(radius => (
-        <Button key={radius} radius={radius} color="secondary">
-          Radius: {radius}
-        </Button>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<ButtonRadiuses showCode={false} />
 
 ### Sizes
 
 To make a button smaller or larger use the `size` props with the following
 values: `xs`, `sm`, `md`, `lg`, `xl`.
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><ButtonSizes /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Button, ButtonProps } from '@snipshot/particles';
-
-    const sizes: Array<ButtonProps['size']> = ['xs', 'sm', 'md', 'lg', 'xl'];
-
-    function ButtonColors() {
-      return sizes.map(size => (
-        <Button key={size} size={size} color="tertiary">
-          Size: {size}
-        </Button>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<ButtonSizes showCode={false} />
 
 You can also use a `dense` property to reduce paddings:
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><ButtonSizesDense /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Button, ButtonProps } from '@snipshot/particles';
-
-    const sizes: Array<ButtonProps['size']> = ['xs', 'sm', 'md', 'lg', 'xl'];
-
-    function ButtonColors() {
-      return sizes.map(size => (
-        <Button key={size} size={size} dense>
-          Size: {size}
-        </Button>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<ButtonSizesDense showCode={false} />
 
 ### Icons
 
 You can add icons to the `Button` component using `leftIcon` and `rightIcon`
 props.
 
-<Tabs items={['Preview', 'Code']}>
-<Tabs.Tab><ButtonWithIcons /></Tabs.Tab>
-    <Tabs.Tab>
-      ```jsx copy
-      import { Button, ButtonProps, CloseIcon, UserIcon } from '@snipshot/particles';
-
-      function ButtonWithIcons() {
-        return (
-          <Button rightIcon={<UserIcon />}>
-              Profile
-          </Button>
-          <Button leftIcon={<CloseIcon />} color="error" variant="outlined">
-              Remove
-          </Button>
-        );
-      }
-      ```
-    </Tabs.Tab>
-
-</Tabs>
+<ButtonWithIcons showCode={false} />
 
 ### Disabled state
 
 The component supports accessible disabled state with the `disabled` prop.
 
-<Tabs items={['Preview', 'Code']}>
-<Tabs.Tab><ButtonDisabled /></Tabs.Tab>
-    <Tabs.Tab>
-      ```jsx copy
-      import { Button } from '@snipshot/particles';
-
-      function MyComponent() {
-        return <Button disabled>Confirm</Button>;
-      }
-      ```
-    </Tabs.Tab>
-
-</Tabs>
+<ButtonDisabled showCode={false} />
 
 ### Loading state
 
@@ -241,31 +87,15 @@ The Button component supports a loading state with a loading spinner (or a
 custom loading element) and optional loading text using `isLoading`,
 `loadingText`, and `loadingElement` props.
 
-<Tabs items={['Preview', 'Code']}>
-<Tabs.Tab><ButtonLoading /></Tabs.Tab>
-    <Tabs.Tab>
-      ```jsx copy
-      import { Button, RingSpinner } from '@snipshot/particles';
+<ButtonLoading showCode={false} />
 
-      function ButtonLoading() {
-        return (
-          <Button loadingText="Loading..." isLoading>
-            Send
-          </Button>
-          <Button
-            loadingElement={<RingSpinner size="xs" />}
-            isLoading
-            variant="elevated"
-            color="secondary"
-          >
-            Ring spinner
-          </Button>
-        );
-      }
-      ```
-    </Tabs.Tab>
+## Polymorphic component
 
-</Tabs>
+`Button` is a polymorphic component. It means that using the `as` prop you can
+pass any valid HTML element as a `string` or a React component and it will be
+used a rendering base instead of a default `<button>` element.
+
+<ButtonPolymorphic showCode={false} />
 
 ## Accessibility
 
@@ -274,26 +104,6 @@ The Button component follows
 ensure accessibility for all users. It includes semantic `<button>` element and
 appropriate ARIA attributes to enhance compatibility with screen readers and
 assistive technologies.
-
-## Polymorphic component
-
-`Button` is a polymorphic component. It means that using the `as` prop you can
-pass any valid HTML element as a `string` or a React component and it will be
-used a rendering base instead of a default `<button>` element.
-
-<Tabs items={['Preview', 'Code']}>
-<Tabs.Tab><ButtonPolymorphic /></Tabs.Tab>
-    <Tabs.Tab>
-      ```jsx copy
-      import { Button } from '@snipshot/particles';
-
-      function MyComponent() {
-        return <Button as="a">I am a link</Button>;
-      }
-      ```
-    </Tabs.Tab>
-
-</Tabs>
 
 ## API Reference
 

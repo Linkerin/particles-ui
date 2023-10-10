@@ -1,6 +1,6 @@
 {
   "name": "particles-ui-demo",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^2.9.0",
+    "@codesandbox/sandpack-themes": "^2.0.21",
     "@snipshot/particles": "^0.0.1",
     "@tabler/icons-react": "2.32.0",
     "@types/node": "20.5.3",
@@ -16,9 +18,11 @@
     "@types/react-dom": "18.2.7",
     "classnames": "2.3.2",
     "eslint": "8.45.0",
+    "install": "^0.13.0",
     "next": "^13.5.4",
     "nextra": "^2.13.1",
     "nextra-theme-docs": "^2.13.1",
+    "npm": "^10.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.6",

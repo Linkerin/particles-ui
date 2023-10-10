@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { Box, BoxProps } from '../../../src/components/Box/Box';
+import { Box, BoxProps } from '@snipshot/particles';
 
 import styles from './DemoContainer.module.css';
 

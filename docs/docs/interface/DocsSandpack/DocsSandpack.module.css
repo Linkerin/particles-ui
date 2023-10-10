@@ -1,0 +1,15 @@
+.button {
+  background-color: var(--sp-colors-surface2);
+  border: 1px solid var(--sp-colors-surface3);
+  border-radius: 10rem;
+  color: var(--sp-colors-clickable);
+  height: var(--sp-space-7);
+  padding-inline: var(--sp-space-3);
+  transition: color var(--sp-transitions-default),
+    background var(--sp-transitions-default);
+}
+
+.button:hover {
+  background-color: var(--sp-colors-surface3);
+  color: var(--sp-colors-hover);
+}

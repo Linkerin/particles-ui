@@ -1,5 +1,4 @@
-import { Link } from '../../../src/components/Link/Link';
-import { Text } from '../../../src/components/Text/Text';
+import { Link, Text } from '@snipshot/particles';
 
 import styles from './Footer.module.css';
 

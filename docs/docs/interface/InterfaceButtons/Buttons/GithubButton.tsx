@@ -11,7 +11,7 @@ function GithubButton({ link, ...props }: GithubButtonProps) {
   return (
     <Button
       as={Link}
-      href={`https://github.com/Linkerin/particles-ui/src/components/${link}`}
+      href={`https://github.com/Linkerin/particles-ui/tree/main/src/components/${link}`}
       isExternal
       externalIcon={false}
       leftIcon={<IconBrandGithubFilled />}
