@@ -8,26 +8,9 @@ import {
 } from '@codesandbox/sandpack-react';
 import { atomDark } from '@codesandbox/sandpack-themes';
 
+import { getSandpackData } from './utils';
+
 import styles from './DocsSandpack.module.css';
-
-/**
- * Extracts filename from the relative url
- *
- * @returns {string | null} File name or null if no match
- * @example
- * const filename = getFileName('./button.tsx');
- * console.log(filename) // 'button'
- */
-function getFileName(file: string): string | null {
-  // matches strings like './button.tsx'
-  const matches = file.match(/\/([^\/]+)\.\w+$/);
-
-  return matches ? matches[1] : null;
-}
-
-function capitalise([first, ...rest]: string) {
-  return first.toUpperCase() + rest.join('');
-}
 
 export interface DocsSandPackProps {
   files: SandpackProviderProps['files'];
@@ -42,29 +25,13 @@ function DocsSandpack({
   showCode = true,
   showPreview = true
 }: DocsSandPackProps) {
-  if (files === undefined) throw new Error('DocsSandPack: files is obligatory');
-
   const [isCodeVisible, setIsCodeVisible] = useState(showCode);
 
   const codeVisibilityHandler = () => {
     setIsCodeVisible(prevState => !prevState);
   };
 
-  const filesUrl = Object.keys(files);
-  const fileNames = filesUrl.map(file => {
-    const fileName = getFileName(file);
-    if (!fileName) throw new Error(`Invalid files key: ${file}`);
-    const componentName = capitalise(fileName);
-
-    return [componentName, file];
-  });
-
-  let imports = '';
-  let content = '';
-  fileNames.forEach((name, index) => {
-    imports += `import ${name.at(0)} from '.${name.at(1)}';\n`;
-    content += `<${name.at(0)} />${index !== fileNames.length - 1 ? '\n' : ''}`;
-  });
+  const { content, imports, filesUrl } = getSandpackData(files);
 
   return (
     <SandpackProvider
