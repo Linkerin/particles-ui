@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-import PuiTheme from '../src/theme/PuiTheme';
+import { PuiTheme } from '@snipshot/particles';
 
 export default function Document() {
   return (

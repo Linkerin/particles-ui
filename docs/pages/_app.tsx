@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import { Manrope } from 'next/font/google';
 
-import '../src/styles/pui-base.scss';
+import '@snipshot/particles/style.css';
 
 const manrope = Manrope({ subsets: ['latin'] });
 

@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '../../src/components/Button/Button';
+import { Button, ButtonProps } from '@snipshot/particles';
 import CloseIcon from '../../src/components/PuiIcons/CloseIcon/CloseIcon';
 import DemoContainer from '../interface/DemoContainer/DemoContainer';
 import { RingSpinner } from '../../src/components/Spinner/RingSpinner/RingSpinner';
