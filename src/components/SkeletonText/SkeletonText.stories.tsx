@@ -14,7 +14,14 @@ const meta = {
   title: 'Components/Skeleton/SkeletonText',
   component: SkeletonText,
   tags: ['autodocs'],
-  args: { ...defaultProps }
+  args: { ...defaultProps },
+  decorators: [
+    Story => (
+      <div style={{ width: 'min(250px, 50vw)' }}>
+        <Story />
+      </div>
+    )
+  ]
 } satisfies Meta<typeof SkeletonText>;
 
 export default meta;

@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    src: atomSvg.src,
+    src: atomSvg,
     id: 'atom'
   }
 };
