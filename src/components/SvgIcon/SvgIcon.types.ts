@@ -24,7 +24,7 @@ export interface SvgIconProps
   /**
    * SVG icon URL
    */
-  src: any;
+  src: unknown;
   /**
    * `stroke-width` attribute value
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width | MDN | stroke-width - SVG}

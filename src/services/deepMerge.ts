@@ -26,6 +26,7 @@ function isObject(element: unknown): boolean {
  * @returns {T} - The merged object with the properties from both target and injection.
  * @throws {Error} - If either target or injection arguments are not objects.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function deepMerge<T extends Record<string, any>>(target: T, injection: T): T {
   if (typeof target !== 'object' || typeof injection !== 'object') {
     throw new Error('Both target and injection arguments must be objects');

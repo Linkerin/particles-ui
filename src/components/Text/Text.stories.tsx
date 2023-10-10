@@ -58,7 +58,7 @@ export const RenderingElements: Story = {
   },
   render: ({ as, ...args }) => (
     <div style={{ display: 'flex', flexDirection: 'column', width: '20vw' }}>
-      <Text {...args} as="p">
+      <Text {...args} as={as}>
         Paragraph
       </Text>
       <Text {...args} as="span">

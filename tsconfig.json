@@ -19,6 +19,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    "noImplicitThis": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     "types": ["vitest/globals"]
   },
   "include": ["src", ".storybook", "site"],
