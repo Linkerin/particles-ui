@@ -1,0 +1,47 @@
+@use 'sass:list';
+
+/// Creates a class for middle divider base on `::after` pseudo element
+///
+/// @param {string} $pl Left padding value for the divider
+///
+/// @param {string} $position ['bottom'] Divider position. Possible values: 'bottom' or 'top'
+///
+/// @param {string} $pr [$pl] Right padding value for the divider
+///
+@mixin pseudo-divider($pl, $position: 'bottom', $pr: $pl, $separated: false) {
+  $position-values: ('bottom', 'top');
+  @if not $pl {
+    @error "Padding value for middle divider has to be provided";
+  }
+
+  @if (list.index($position-values, $position) == null) {
+    @error "#{$position} is an incorrect value. Only 'top' and 'bottom' are allowed";
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: $pl;
+    width: calc(100% - ($pl + $pr));
+
+    @if ($separated == false) {
+      #{$position}: 0;
+      border-#{$position}: 1px solid;
+      border-color: inherit;
+    }
+  }
+
+  @if ($separated == true) {
+    &:where(.bottom)::after {
+      bottom: 0;
+      border-bottom: 1px solid;
+      border-color: inherit;
+    }
+
+    &:where(.top)::after {
+      top: 0;
+      border-top: 1px solid;
+      border-color: inherit;
+    }
+  }
+}

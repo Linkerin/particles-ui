@@ -1,0 +1,85 @@
+$radiuses: (
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 0.75rem,
+  'lg': 1rem,
+  'xl': 1.75rem,
+  'full': 3rem,
+  'round': 50%,
+  'none': 0
+) !default;
+
+/// Adds classes for the following 'radius' properties support:
+/// 'none', 'xs', 'sm', 'md', 'lg', 'xl', 'full', 'round'
+///
+@mixin radius {
+  @each $radius, $value in $radiuses {
+    :where(.pui-radius-#{$radius}) {
+      --pui-curr-elem-radius: var(--pui-radius-#{$radius}, #{$value});
+      border-radius: var(--pui-radius-#{$radius}, $value);
+    }
+  }
+}
+
+/// Adds classes for the following 'align-items' properties support:
+/// 'center', 'flex-start', 'flex-end', 'stretch', 'baseline'
+///
+@mixin align-items {
+  @each $value in (center, flex-start, flex-end, stretch, baseline) {
+    :where(.pui-items-#{$value}) {
+      align-items: $value;
+    }
+  }
+}
+
+/// Adds classes for the following 'flex-direction' properties support:
+/// 'column', 'column-reverse', 'row', 'row-reverse'
+///
+@mixin flex-direction {
+  @each $value in (column, column-reverse, row, row-reverse) {
+    :where(.pui-flex-#{$value}) {
+      flex-direction: $value;
+    }
+  }
+}
+
+$gap: (
+  'xs': 0.125rem,
+  'sm': 0.25rem,
+  'md': 0.5rem,
+  'lg': 0.75rem,
+  'xl': 1rem
+);
+
+/// Adds classes for the following 'gap' properties support:
+/// 'xs', 'sm', 'md', 'lg', 'xl'
+///
+@mixin gap {
+  @each $size, $value in $gap {
+    :where(.pui-gap-#{$size}) {
+      gap: var(--pui-gap-#{$size}, $value);
+    }
+  }
+}
+
+/// Adds classes for the following 'justify-content' properties support:
+/// 'center', 'flex-start', 'flex-end', 'stretch',
+/// 'space-between', 'space-around', 'space-evenly'
+///
+@mixin justify-content {
+  @each $value
+    in (
+      center,
+      flex-start,
+      flex-end,
+      stretch,
+      space-between,
+      space-around,
+      space-evenly
+    )
+  {
+    :where(.pui-justify-content-#{$value}) {
+      justify-content: $value;
+    }
+  }
+}

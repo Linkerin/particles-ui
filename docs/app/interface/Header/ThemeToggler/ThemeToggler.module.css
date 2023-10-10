@@ -1,0 +1,21 @@
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.group > button {
+  border-radius: var(--pui-radius-none);
+  /* border-inline: 0px; */
+}
+
+.group > button:first-of-type {
+  border-radius: var(--pui-radius-md) 0 0 var(--pui-radius-md);
+  /* border-inline: 1px solid inherit; */
+}
+
+.group > button:last-of-type {
+  border-radius: 0 var(--pui-radius-md) var(--pui-radius-md) 0;
+  /* border-inline: 1px solid; */
+}

@@ -1,0 +1,277 @@
+---
+title: Alert
+description: Documentation for Alert component from Particles UI library
+---
+
+import { Tabs } from 'nextra/components';
+
+import {
+  AlertDefault,
+  AlertColors,
+  AlertVariants,
+  AlertRadiuses,
+  AlertActionElement,
+  AlertWithEmoji
+} from '../../../docs/components/Alerts';
+import InterfaceButtons from '../../../docs/interface/InterfaceButtons/InterfaceButtons';
+
+# Alert
+
+<InterfaceButtons
+  githubLink="Alert/Alert.tsx"
+  storybookLink="components-alert--docs"
+  w3cLink="https://www.w3.org/WAI/ARIA/apg/patterns/alert/"
+/>
+
+The `Alert` component displays a short message that attracts user's attention.
+
+## Usage
+
+### Basic Usage
+
+<AlertDefault />
+
+```jsx copy
+import { Alert } from '@snipshot/particles';
+
+function MyComponent() {
+  return (
+    <Alert
+      heading="Message sent"
+      closeButtonLabel="Close alert"
+      onClose={e => console.log('Close alert')}
+    >
+      Thank you, we will reply to you soon!
+    </Alert>
+  );
+}
+```
+
+### Colors
+
+The color scheme of the Alert component also affects the default icon. There are
+four status colors: `success`, `info`, `warning`, and `error`, each of which has
+a corresponding informational icon.  
+ In addition to these status colors, there are three base colors: `primary`, `secondary`,
+and `tertiary`. These last three color options use the `info` icon by default.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab><AlertColors /></Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy
+    import { Alert, AlertProps } from '@snipshot/particles';
+
+    const colors: Array<AlertProps['color']> = [
+      'success',
+      'info',
+      'warning',
+      'error',
+      'primary',
+      'secondary',
+      'tertiary'
+    ];
+
+    function AlertColors() {
+      return colors.map(color => (
+        <Alert
+          key={color}
+          heading={`Color: '${color}'`}
+          closeButtonLabel="Close alert"
+          onClose={e => console.log('Close alert')}
+          color={color}
+        >
+          Thank you, we will reply to you soon!
+        </Alert>
+      ));
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Variants
+
+The Alert component comes with several variants to suit your design needs. Pass
+the `variant` prop with one of the values: `'filled'`, `'outlined'`, `'soft'`,
+or `'minimal'`
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab><AlertVariants /></Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy
+    import { Alert, AlertProps } from '@snipshot/particles';
+
+    const variants: Array<AlertProps['variant']> = [
+      'filled',
+      'outlined',
+      'soft',
+      'minimal'
+    ];
+
+    function AlertVariants() {
+      return variants.map(variant => (
+        <Alert
+          key={variant}
+          heading={`Variant: ${variant}`}
+          closeButtonLabel="Close alert"
+          onClose={e => console.log('Close alert')}
+          variant={variant}
+        >
+          Thank you, we will reply to you soon!
+        </Alert>
+      ));
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Radiuses
+
+You can choose from a one of the predefined border radius values by providing a
+`radius` prop value.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab><AlertRadiuses /></Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy
+    import { Alert, AlertProps } from '@snipshot/particles';
+
+    const radiuses: Array<AlertProps['radius']> = [
+      'none',
+      'xs',
+      'sm',
+      'md',
+      'lg',
+      'xl',
+      'full'
+    ];
+
+    function AlertRadiuses() {
+      return radiuses.map(radius => (
+        <Alert
+          key={radius}
+          heading={`Radius: ${radius}`}
+          closeButtonLabel="Close alert"
+          variant="outlined"
+          color="primary"
+          radius={radius}
+        >
+          Thank you, we will reply to you soon!
+        </Alert>
+      ));
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Action elements
+
+In addition to the close button (or without it by default), you have the
+flexibility to include custom action elements on the right side of the Alert
+component:
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab><AlertActionElement /></Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy
+    import { Alert } from '@snipshot/particles';
+
+    function AlertActionElement() {
+      return (
+        <Alert
+          actionElement={
+            <Button
+              color="info"
+              size="sm"
+              variant="soft"
+              dense
+            >
+              Undo
+            </Button>
+          }
+          closeButtonLabel="Close alert"
+          color="info"
+          onClose={e => console.log('Close alert')}
+        >
+          You have submitted the form
+        </Alert>
+      );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Custom icons
+
+The `icon` property lets ypu insert any icon or even emojis on the left side of
+the alert:
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab><AlertWithEmoji /></Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy
+    import { Alert } from '@snipshot/particles';
+
+    function AlertWithEmoji() {
+      return (
+        <Alert
+          actionElement={
+            <Button
+              color="secondary"
+              style={{ marginLeft: '0.5rem' }}
+              variant="filled"
+            >
+              Accept
+            </Button>
+          }
+          closeButtonLabel="Close alert"
+          color="secondary"
+          heading="We use cookies"
+          icon="🍪"
+        >
+          Accept out Privacy and Cookie Policy
+        </Alert>
+      );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Accessibility
+
+The `Alert` component prioritizes accessibility and adheres to
+[best practices](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) to ensure that
+it can be used by all users. It achieves accessibility through the following key
+features:
+
+- **Semantic HTML**: The component is built using semantically structured HTML
+  elements to ensure compatibility with screen readers and assistive
+  technologies.
+- **Role Attribute**: By default, the `role` attribute is set to `alert`.
+- **aria-labelledby**: The `aria-labelledby` attribute is utilized, referencing
+  the Alert component's heading.
+- **aria-describedby**: The `aria-describedby` attribute has a value of the
+  Alert component's message text. This attribute offers additional context and
+  information to assistive technologies.
+
+## API Reference
+
+`Alert` component extends default `<section>` element props with the following
+props:
+
+| Prop             | Type                                                                                    | Default                 | Description                                     |
+| :--------------- | :-------------------------------------------------------------------------------------- | :---------------------- | :---------------------------------------------- |
+| actionElement    | `React.ReactNode`                                                                       | `undefined`             | Interactive component on the right              |
+| closeButtonLabel | `string`                                                                                | `'Close alert message'` | `aria-label` value for a close button           |
+| color            | `'success' \| 'info' \| 'warning' \| 'error' \| 'primary' \| 'secondary' \| 'tertiary'` | `'success'`             | Alert's color scheme                            |
+| heading          | `string \| React.ReactNode`                                                             | `undefined`             | Alert's message heading                         |
+| headingProps     | [`TextProps`](/docs/text)                                                               | `undefined`             | `Text` component properties for alert's heading |
+| icon             | `React.ReactNode \| boolean`                                                            | `true`                  | Icon component on the left                      |
+| onClose          | `() => void`                                                                            | `undefined`             | `onClick` handler for a close button            |
+| radius           | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'full' \| 'round' \| 'none'`                   | `'sm'`                  | Border radius value                             |
+| textProps        | [`TextProps`](/docs/text)                                                               | `undefined`             | `Text` component properties for alert's message |
+| variant          | `'filled' \| 'outlined' \| 'soft' \| 'minimal'`                                         | `'soft'`                | Styling variant                                 |
