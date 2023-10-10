@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 
 import { Kbd } from './Kbd';
 
 import styles from './Kbd.module.scss';
+import textStyles from '../Text/Text.module.scss';
 
 describe('Kbd', () => {
   it('renders Kbd component with default props', () => {
@@ -14,7 +14,12 @@ describe('Kbd', () => {
     expect(kbdElement).toBeInTheDocument();
     expect(kbdElement).toHaveClass(styles.kbd);
     expect(kbdElement).toHaveClass(styles.flat);
-    expect(kbdElement).toHaveClass('md text body on-background-variant');
+    expect(kbdElement).toHaveClass(
+      textStyles.text,
+      textStyles.md,
+      textStyles.body,
+      textStyles['on-background-variant']
+    );
   });
 
   it('renders Kbd component with `command` glyph prop', () => {
@@ -104,11 +109,11 @@ describe('Kbd', () => {
 
     expect(kbdElement).toBeInTheDocument();
     expect(kbdElement).toHaveClass(styles.kbd);
-    expect(kbdElement).toHaveClass('on-background-low');
+    expect(kbdElement).toHaveClass(textStyles['on-background-low']);
   });
 
-  it('renders Kbd component with variant prop set to inherit', () => {
-    const style = { color: 'green' };
+  it('renders Kbd component with a custom styleh', () => {
+    const style = { color: '#00ff00' };
     const { getByText } = render(<Kbd style={style}>Alt</Kbd>);
 
     const kbdElement = getByText('Alt');

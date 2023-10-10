@@ -1,8 +1,9 @@
 import { createRef } from 'react';
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 import { DualSpinner } from './DualSpinner';
+
+import styles from './DualSpinner.module.scss';
 
 describe('DualSpinner', () => {
   it('renders default component', () => {
@@ -10,7 +11,7 @@ describe('DualSpinner', () => {
 
     const spinner = screen.getByRole('status');
 
-    expect(spinner).toHaveClass('dual-spinner');
+    expect(spinner).toHaveClass(styles['dual-spinner']);
   });
 
   it('renders in xl size', () => {
@@ -18,7 +19,7 @@ describe('DualSpinner', () => {
 
     const spinner = screen.getByRole('status');
 
-    expect(spinner).toHaveClass('dual-spinner xl');
+    expect(spinner).toHaveClass(styles['dual-spinner'], styles['xl']);
   });
 
   it('renders with custom classNames', () => {
@@ -39,11 +40,12 @@ describe('DualSpinner', () => {
   });
 
   it('applies additional inline style', () => {
-    render(<DualSpinner style={{ color: 'green' }} />);
+    const style = { color: '#00ff00' };
+    render(<DualSpinner style={style} />);
 
     const spinner = screen.getByRole('status');
 
-    expect(spinner.children[0]).toHaveStyle('color: green');
+    expect(spinner.children[0]).toHaveStyle(style);
   });
 
   it('forwards ref to the underlying span element', () => {

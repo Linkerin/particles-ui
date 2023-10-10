@@ -1,8 +1,8 @@
 import { createRef } from 'react';
-import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { Divider } from './Divider';
+import styles from './DividerHr/DividerHr.module.scss';
 
 describe('DualSpinner', () => {
   it('applies the horizontal orientation by default', () => {
@@ -10,8 +10,8 @@ describe('DualSpinner', () => {
 
     const divider = screen.getByRole('separator');
 
-    expect(divider).toHaveClass('horizontal');
-    expect(divider).not.toHaveClass('vertical');
+    expect(divider).toHaveClass(styles.horizontal);
+    expect(divider).not.toHaveClass(styles.vertical);
     expect(divider).toHaveAttribute('aria-orientation', 'horizontal');
   });
 
@@ -20,8 +20,8 @@ describe('DualSpinner', () => {
 
     const divider = screen.getByRole('separator');
 
-    expect(divider).toHaveClass('vertical');
-    expect(divider).not.toHaveClass('horizontal');
+    expect(divider).toHaveClass(styles.vertical);
+    expect(divider).not.toHaveClass(styles.horizontal);
     expect(divider).toHaveAttribute('aria-orientation', 'vertical');
     expect(divider).toHaveAttribute('aria-orientation', 'vertical');
   });
@@ -31,8 +31,8 @@ describe('DualSpinner', () => {
 
     const divider = screen.getByRole('separator');
 
-    expect(divider).toHaveClass('inset');
-    expect(divider).not.toHaveClass('middle');
+    expect(divider).toHaveClass(styles.inset);
+    expect(divider).not.toHaveClass(styles.middle);
   });
 
   it('applies the middle variant for vertical orientation', () => {
@@ -40,8 +40,8 @@ describe('DualSpinner', () => {
 
     const divider = screen.getByRole('separator');
 
-    expect(divider).toHaveClass('middle vertical');
-    expect(divider).not.toHaveClass('inset');
+    expect(divider).toHaveClass(styles.middle, styles.vertical);
+    expect(divider).not.toHaveClass(styles.inset);
   });
 
   it('renders with custom classNames', () => {

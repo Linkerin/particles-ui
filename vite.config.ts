@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
@@ -33,5 +36,11 @@ export default defineConfig({
       plugins: [preserveDirectives()]
     },
     copyPublicDir: false
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    css: true,
+    setupFiles: './src/test/setup.ts'
   }
 });

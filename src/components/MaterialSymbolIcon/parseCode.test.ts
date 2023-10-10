@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom';
-
 import parseCode from './parseCode';
 
 describe('parseCode', () => {

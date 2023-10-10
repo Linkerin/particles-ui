@@ -1,7 +1,8 @@
-import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { Button } from './Button';
+import styles from './Button.module.scss';
 
 const tests = describe('Button component', () => {
   it('renders default button', () => {
@@ -10,7 +11,7 @@ const tests = describe('Button component', () => {
     const btn = screen.getByRole('button', { name: /Test rendering/ });
 
     expect(btn).toBeInTheDocument();
-    expect(btn).toHaveClass('filled md');
+    expect(btn).toHaveClass(styles.filled, styles.md);
   });
 
   it('applies loading attributes "isLoading" prop is true', () => {
@@ -22,7 +23,7 @@ const tests = describe('Button component', () => {
 
     const btn = screen.getByText('Loading...');
 
-    expect(btn).toHaveClass('loading leftIcon');
+    expect(btn).toHaveClass(styles.loading, styles.leftIcon);
     expect(btn).toHaveAttribute('aria-disabled', 'true');
     expect(btn.childNodes).toHaveLength(2);
   });
@@ -36,7 +37,7 @@ const tests = describe('Button component', () => {
 
     const btn = screen.getByText('Loading...');
 
-    expect(btn).toHaveClass('loading');
+    expect(btn).toHaveClass(styles.loading);
     expect(btn.childNodes).toHaveLength(1);
   });
 
@@ -54,11 +55,11 @@ const tests = describe('Button component', () => {
 
     const btn = screen.getByText('Small Button');
 
-    expect(btn).toHaveClass('sm');
+    expect(btn).toHaveClass(styles.sm);
   });
 
   it('calls the onClick handler when the button is clicked', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     render(<Button onClick={onClickMock}>Click Me</Button>);
 
     const btn = screen.getByText('Click Me');
@@ -68,7 +69,7 @@ const tests = describe('Button component', () => {
   });
 
   it('does not call the onClick handler when the button is disabled and clicked', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     render(
       <Button disabled onClick={onClickMock}>
         Disabled Button
@@ -81,7 +82,7 @@ const tests = describe('Button component', () => {
   });
 
   it('does not call the onClick handler when the button is in loading state and clicked', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     render(
       <Button isLoading loadingText="Loading..." onClick={onClickMock}>
         Loading Button
@@ -95,7 +96,7 @@ const tests = describe('Button component', () => {
   });
 
   it('applies custom styles when style prop is provided', () => {
-    const customStyle = { backgroundColor: 'blue', color: 'white' };
+    const customStyle = { backgroundColor: '#0ff', color: '#fff' };
     render(<Button style={customStyle}>Custom Styled Button</Button>);
     const buttonElement = screen.getByText('Custom Styled Button');
     expect(buttonElement).toHaveStyle(customStyle);

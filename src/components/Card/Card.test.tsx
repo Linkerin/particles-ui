@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 import { Button } from '../Button/Button';
@@ -7,10 +6,12 @@ import { CardHeader } from './CardHeader/CardHeader';
 import { CardBody } from './CardBody/CardBody';
 import { CardFooter } from './CardFooter/CardFooter';
 
+import styles from './Card.module.scss';
+
 const tests = describe('Card component', () => {
   const ClickableCard = () => (
     <Card
-      onClick={e => {
+      onClick={() => {
         console.log('Filled card clicked');
       }}
       aria-label="Filled action card"
@@ -41,7 +42,7 @@ const tests = describe('Card component', () => {
     const card = screen.getByTestId('clickable-card');
 
     expect(card).toBeInTheDocument();
-    expect(card).toHaveClass('card md');
+    expect(card).toHaveClass(styles.card, styles.md);
   });
 });
 

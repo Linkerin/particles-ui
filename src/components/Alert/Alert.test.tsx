@@ -1,10 +1,11 @@
-import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { Alert, AlertProps } from './Alert';
 import { Button } from '../Button/Button';
 
 import styles from './Alert.module.scss';
+import buttonStyles from '../Button/Button.module.scss';
 
 const alertData = {
   heading: 'We use cookies',
@@ -107,7 +108,7 @@ const tests = describe('Alert component', () => {
   });
 
   it('render alert with CloseButton', () => {
-    const onCloseMock = jest.fn();
+    const onCloseMock = vi.fn();
 
     const { getByLabelText } = render(
       <Alert heading={alertData.heading} onClose={onCloseMock}>
@@ -120,7 +121,12 @@ const tests = describe('Alert component', () => {
 
     const closeButton = getByLabelText('Close alert message');
     expect(closeButton).toBeInTheDocument();
-    expect(closeButton).toHaveClass('pui-radius-round button text success');
+    expect(closeButton).toHaveClass(
+      'pui-radius-round',
+      buttonStyles.button,
+      buttonStyles.text,
+      buttonStyles.success
+    );
     fireEvent.click(closeButton);
     expect(onCloseMock).toHaveBeenCalledTimes(1);
   });
@@ -151,7 +157,7 @@ const tests = describe('Alert component', () => {
   });
 
   it('should render Alert component with custom action element', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
 
     const { queryByLabelText, getByRole, getByText } = render(
       <Alert
@@ -174,8 +180,8 @@ const tests = describe('Alert component', () => {
   });
 
   it('should render Alert component with custom action element and CloseButton', () => {
-    const onClickMock = jest.fn();
-    const onCloseMock = jest.fn();
+    const onClickMock = vi.fn();
+    const onCloseMock = vi.fn();
 
     const { queryByLabelText, getByRole, getByText } = render(
       <Alert
