@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 
 import { COLOR_MODES } from '../lib/constants';
 import { PuiColorMode } from '../lib/types';
@@ -49,7 +50,7 @@ export const ThemeSetModeContext = createContext<ThemeSetModeContextValue>(
 );
 
 interface ThemeProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   withLocalStorage?: boolean;
 }
 

@@ -4,20 +4,22 @@ import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
+import { ButtonBaseProps, ButtonProps } from './Button.types';
+import { buttonDefaultProps, getButtonColorVars } from './Button.defaults';
 import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
+import shallowMerge from '../../services/shallowMerge';
 import useKeyboardFocusOutline from '../../hooks/useKeyboardFocusOutline';
 
 import styles from './Button.module.scss';
 
-import { ButtonBaseProps, ButtonProps } from './Button.types';
-
 export type { ButtonProps };
 
-const DEFAULT_ELEMENT = 'button';
-
 const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
-  {
+  props,
+  ref
+) {
+  const {
     children,
     className,
     style,
@@ -27,39 +29,37 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
     leftIcon,
     rightIcon,
     loadingElement,
-    title,
-    as = DEFAULT_ELEMENT,
-    color = 'primary',
-    dense = false,
-    disabled = false,
-    isLoading = false,
-    loadingText = '',
-    loadingSpinner = true,
-    radius = 'md',
-    shadowOnPress = false,
-    shrinkOnPress = false,
-    size = 'md',
-    variant = 'filled',
-    ...props
-  },
-  ref
-) {
+    as,
+    color,
+    dense,
+    disabled,
+    isLoading,
+    loadingText,
+    loadingSpinner,
+    radius,
+    shadowOnPress,
+    shrinkOnPress,
+    size,
+    variant,
+    ...restProps
+  }: ButtonProps = shallowMerge(buttonDefaultProps, props);
+
   const { onBlurHandler, onKeyUpHandler, outlineDefaultClassName } =
     useKeyboardFocusOutline({
       onBlur,
       onKeyUp
     });
 
+  const colorVars = color !== 'primary' ? getButtonColorVars(color) : {};
+
   return (
     <Box
       ref={ref}
       as={as}
-      title={title}
       className={classNames(
         styles.button,
-        styles[variant],
-        styles[color],
-        styles[size],
+        styles[`${variant}`],
+        styles[`${size}`],
         `pui-radius-${radius}`,
         outlineDefaultClassName,
         { [styles.dense]: dense },
@@ -73,28 +73,37 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
         { [styles.pressShadow]: shadowOnPress },
         className
       )}
-      style={style}
+      style={{ ...colorVars, ...style }}
       disabled={disabled}
       aria-disabled={disabled || isLoading}
       onClick={isLoading ? undefined : onClick}
       onBlur={onBlurHandler}
       onKeyUp={onKeyUpHandler}
-      {...props}
+      {...restProps}
     >
       {isLoading ? (
         <>
           {loadingSpinner && !loadingElement && (
-            <DualSpinner data-pui-component="btn-load-spinner" />
+            <DualSpinner
+              className={styles['btn-load-spinner']}
+              data-pui-component="btn-load-spinner"
+            />
           )}
           {!!loadingElement && loadingElement}
           {loadingText || children}
         </>
       ) : (
         <>
-          {!!leftIcon && <span data-pui-component="btn-icon">{leftIcon}</span>}
+          {!!leftIcon && (
+            <span className={styles['btn-icon']} data-pui-component="btn-icon">
+              {leftIcon}
+            </span>
+          )}
           {children}
           {!!rightIcon && (
-            <span data-pui-component="btn-icon">{rightIcon}</span>
+            <span className={styles['btn-icon']} data-pui-component="btn-icon">
+              {rightIcon}
+            </span>
           )}
         </>
       )}
@@ -111,6 +120,6 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
  * @see {@link https://particles.snipshot.dev/docs/components/button | Particles UI | Button}
  */
 export const Button = createPolymorphicComponent<
-  typeof DEFAULT_ELEMENT,
+  typeof buttonDefaultProps.as,
   ButtonBaseProps
 >(_Button);

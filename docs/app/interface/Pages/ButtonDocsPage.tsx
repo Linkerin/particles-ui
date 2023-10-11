@@ -2,13 +2,10 @@
 
 import { IconDeviceFloppy as SaveIcon } from '@tabler/icons-react';
 
-import { Button } from '@/src/components/Button/Button';
+import { Button, Divider, Heading, MaterialSymbolIcon } from '../../../../src';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
 import GlobeIcon from '../GlobeIcon';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function ButtonDocsPage() {
   return (
@@ -26,7 +23,9 @@ function ButtonDocsPage() {
         >
           Filled
         </Button>
-        <Button variant="outlined">Outlined</Button>
+        <Button variant={undefined} color={undefined}>
+          Outlined
+        </Button>
         <Button variant="text">Text</Button>
         <Button variant="soft">Soft</Button>
         <Button variant="elevated">Elevated</Button>
@@ -338,6 +337,9 @@ function ButtonDocsPage() {
         </Button>
       </DemoContainer>
       <DemoContainer>
+        <Button size="xs" isLoading loadingText="X-small..." variant="elevated">
+          X-small
+        </Button>
         <Button size="sm" isLoading loadingText="Small..." variant="elevated">
           Small
         </Button>

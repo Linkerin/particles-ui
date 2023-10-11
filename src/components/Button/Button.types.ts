@@ -1,15 +1,17 @@
+import type { ButtonColorCssVars } from './Button.defaults';
 import {
   PuiAsProp,
   PuiColorNames,
   PuiRadius,
   PuiSize,
+  PuiStyleProp,
   PuiStyleVariant
 } from '../../lib/types';
 
 /**
  * Common props for Button-like components
  */
-export interface ButtonCommonProps {
+export interface ButtonCommonProps extends PuiStyleProp<ButtonColorCssVars> {
   /**
    * Button's main color
    */

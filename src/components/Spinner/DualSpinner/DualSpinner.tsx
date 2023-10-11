@@ -28,7 +28,7 @@ export const DualSpinner = forwardRef<HTMLSpanElement, SpinnerProps>(
         role="status"
         {...props}
       >
-        <span style={{ ...styleObj, ...style }} {...props} />
+        <span style={{ ...styleObj, ...style }} />
       </span>
     );
   }

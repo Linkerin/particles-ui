@@ -1,23 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconHeart, IconSend, IconTrash } from '@tabler/icons-react';
 
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
+import { buttonDefaultProps } from './Button.defaults';
 import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
 import { RingSpinner } from '../Spinner/RingSpinner/RingSpinner';
-
-const defaultProps: ButtonProps = {
-  color: 'primary',
-  dense: false,
-  disabled: false,
-  isLoading: false,
-  loadingText: '',
-  loadingSpinner: true,
-  radius: 'md',
-  shadowOnPress: false,
-  shrinkOnPress: false,
-  size: 'md',
-  variant: 'filled'
-};
 
 const spinners = {
   dual: <DualSpinner data-pui-component="btn-load-spinner" />,
@@ -40,7 +27,7 @@ const meta = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
-  args: { ...defaultProps },
+  args: { ...buttonDefaultProps },
   argTypes: {
     leftIcon: iconControls,
     rightIcon: iconControls,

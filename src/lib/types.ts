@@ -75,6 +75,13 @@ export type PuiRadius = PuiSize | 'full' | 'round' | 'none';
 export type PuiSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 /**
+ * HTML `style` value with PUI CSS variables support
+ */
+export type PuiStyleProp<T extends string> = {
+  style?: Partial<Record<T, string>> & React.CSSProperties;
+};
+
+/**
  * Base values for the most 'variant' props
  */
 export type PuiStyleVariant = 'filled' | 'outlined' | 'elevated' | 'soft';

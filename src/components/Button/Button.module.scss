@@ -12,11 +12,8 @@
     line-height: map.get($btn-typography, 'line-height');
     letter-spacing: map.get($btn-typography, 'letter-spacing');
 
-    :where(span[data-pui-component='btn-icon']),
-    :where(span[data-pui-component='btn-load-spinner']) {
-      $icon-dimension: map.get($btn-typography, 'line-height');
-      font-size: calc($icon-dimension - 2px);
-    }
+    $icon-dimension: map.get($btn-typography, 'line-height');
+    --pui-btn-icon-size: calc(#{$icon-dimension} - 2px);
   }
 }
 
@@ -28,6 +25,16 @@
 
 @layer pui-components {
   :where(.button) {
+    --pui-btn-color: var(--pui-primary);
+    --pui-btn-color-channels: var(--pui-primary-channels);
+    --pui-btn-on-color: var(--pui-on-primary);
+    --pui-btn-color-darker: var(--pui-primary-darker);
+    --pui-btn-color-darker-channels: var(--pui-primary-darker-channels);
+    --pui-btn-color-container-low: var(--pui-primary-container-low);
+    --pui-btn-on-color-container: var(--pui-on-primary-container);
+
+    --pui-btn-icon-size: 1.125rem;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,22 +50,6 @@
     width: fit-content;
     white-space: nowrap;
 
-    & > :where(span[data-pui-component='btn-icon']) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      :where(svg) {
-        height: 1em;
-        min-width: 1em;
-        width: auto;
-      }
-    }
-
-    :where(span[data-pui-component='btn-load-spinner']) > span {
-      border-width: 1px;
-    }
-
     &:disabled {
       box-shadow: none;
       color: rgb(
@@ -72,6 +63,26 @@
       box-shadow: none;
       cursor: not-allowed;
       opacity: 50%;
+    }
+  }
+
+  :where(.btn-icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--pui-btn-icon-size);
+
+    :where(svg) {
+      height: 1em;
+      min-width: 1em;
+      width: auto;
+    }
+  }
+
+  :where(.btn-load-spinner) {
+    font-size: var(--pui-btn-icon-size);
+    & > span {
+      border-width: 1px;
     }
   }
 
@@ -92,19 +103,6 @@
 
     &:where(.rightIcon) {
       padding-right: 0.75em;
-    }
-  }
-
-  // colors
-  @each $color in const.$color-names {
-    :where(.#{$color}) {
-      --pui-btn-color: var(--pui-#{$color});
-      --pui-btn-color-channels: var(--pui-#{$color}-channels);
-      --pui-btn-on-color: var(--pui-on-#{$color});
-      --pui-btn-color-darker: var(--pui-#{$color}-darker);
-      --pui-btn-color-darker-channels: var(--pui-#{$color}-darker-channels);
-      --pui-btn-color-container-low: var(--pui-#{$color}-container-low);
-      --pui-btn-on-color-container: var(--pui-on-#{$color}-container);
     }
   }
 

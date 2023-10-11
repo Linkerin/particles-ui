@@ -3,11 +3,11 @@ import { Manrope } from 'next/font/google';
 
 import Header from './interface/Header/Header';
 import Nav from './interface/Nav/Nav';
-import Spectrum from '../src/theme/spectrum/spectrum';
-import PuiTheme from '../src/theme/PuiTheme';
-import ThemeProvider from '../src/theme/ThemeContext';
+import { PuiTheme } from '../../src';
+import Spectrum from '../../src/theme/spectrum/spectrum';
+import ThemeProvider from '../../src/theme/ThemeContext';
 
-import '../src/styles/pui-base.scss';
+import '../../src/styles/pui-base.scss';
 import './material-symbols.css';
 import styles from './layout.module.css';
 

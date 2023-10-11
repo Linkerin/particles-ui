@@ -24,5 +24,5 @@ const _Box = forwardRef<HTMLDivElement, BoxProps>(function _Box(
  */
 export const Box = createPolymorphicComponent<
   typeof DEFAULT_ELEMENT,
-  Record<string, never>
+  Record<string, unknown>
 >(_Box);
