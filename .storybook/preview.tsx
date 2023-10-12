@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 import { PuiTheme } from '../src';
 
@@ -23,8 +24,27 @@ const preview: Preview = {
         <PuiTheme />
         <Story />
       </>
-    )
+    ),
+    withThemeByDataAttribute({
+      themes: {
+        light: 'light',
+        dark: 'dark'
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-pui-mode'
+    })
   ]
 };
+
+// export const decorators = [
+//   withThemeByDataAttribute({
+//     themes: {
+//       light: 'light',
+//       dark: 'dark'
+//     },
+//     defaultTheme: 'light',
+//     attributeName: 'data-pui-mode'
+//   })
+// ];
 
 export default preview;
