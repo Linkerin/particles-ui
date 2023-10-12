@@ -2,17 +2,16 @@
 
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
-import { Image } from '@/src/components/Image/Image';
+import {
+  Divider,
+  Heading,
+  Image,
+  ImageIconFallback,
+  ImageIconFallbackProps,
+  ImageSkeletonFallback
+} from '../../../../src';
 
 import avatar from '@/public/avatar.jpg';
-
-import {
-  ImageIconFallback,
-  ImageIconFallbackProps
-} from '@/src/components/ImageIconFallback/ImageIconFallback';
-import { ImageSkeletonFallback } from '@/src/components/ImageSkeletonFallback/ImageSkeletonFallback';
 
 const colors: Array<ImageIconFallbackProps['color']> = [
   'primary',

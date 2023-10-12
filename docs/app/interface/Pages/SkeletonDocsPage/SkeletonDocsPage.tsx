@@ -1,9 +1,6 @@
 import DemoContainer from '../../DemoContainer';
 import DemoSection from '../../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
-import { Skeleton } from '@/src/components/Skeleton/Skeleton';
-import { SkeletonText } from '@/src/components/SkeletonText/SkeletonText';
+import { Divider, Heading, Skeleton, SkeletonText } from '../../../../../src';
 import SkeletonWrapper from './SkeletonWrapper';
 
 import styles from './SkeletonDocsPage.module.scss';

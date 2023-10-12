@@ -69,7 +69,7 @@ export const Alert = forwardRef<HTMLElement, AlertProps>(function Alert(
             id={titleId}
             as="strong"
             variant="label"
-            size="lg"
+            size="xl"
             truncate
             {...headingProps}
           >

@@ -1,8 +1,6 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
-import { SvgIcon } from '@/src/components/SvgIcon/SvgIcon';
+import { Divider, Heading, SvgIcon } from '../../../../src';
 
 import AtomIcon from '@/public/atom.svg';
 

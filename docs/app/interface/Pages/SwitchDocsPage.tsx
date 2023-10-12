@@ -1,15 +1,18 @@
 'use client';
 import { useState } from 'react';
+import { IconCheck, IconX } from '@tabler/icons-react';
 
-import CloseIcon from '@/src/components/PuiIcons/CloseIcon/CloseIcon';
+import { CloseIcon } from '@snipshot/particles';
+import {
+  Divider,
+  Heading,
+  MaterialSymbolIcon,
+  Switch,
+  SwitchProps,
+  SvgIcon
+} from '../../../../src';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconCheck, IconX } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import { SvgIcon } from '@/src/components/SvgIcon/SvgIcon';
-import { Switch, SwitchProps } from '@/src/components/Switch/Switch';
 
 import TickSvg from '@/public/tick.svg';
 

@@ -3,9 +3,7 @@
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Link } from '@/src/components/Link/Link';
-import { List } from '@/src/components/List/List';
-import { ListItemInteractive } from '@/src/components/List/ListItemInteractive/ListItemInteractive';
+import { Link, List, ListItemInteractive } from '../../../../src';
 
 import styles from './Nav.module.scss';
 
@@ -14,8 +12,8 @@ const components = [
   { name: 'Avatar', link: 'avatar' },
   { name: 'Badge', link: 'badge' },
   { name: 'Button', link: 'button' },
-  { name: 'Chip', link: 'chip' },
   { name: 'Card', link: 'card' },
+  { name: 'Chip', link: 'chip' },
   { name: 'Divider', link: 'divider' },
   { name: 'FloatingButton', link: 'floating-button' },
   { name: 'Heading', link: 'heading' },

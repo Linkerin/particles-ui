@@ -1,8 +1,6 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Heading } from '@/src/components/Heading/Heading';
-import { Kbd } from '@/src/components/Kbd/Kbd';
-import { Text } from '@/src/components/Text/Text';
+import { Heading, Kbd, Text } from '../../../../src';
 
 function KbdDocsPage() {
   return (

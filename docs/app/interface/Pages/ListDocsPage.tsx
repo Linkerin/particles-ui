@@ -1,17 +1,20 @@
 'use client';
 
-import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
 import { IconStack2 as StackIcon } from '@tabler/icons-react';
-import { Link } from '@/src/components/Link/Link';
-import { List } from '@/src/components/List/List';
-import { ListItem } from '@/src/components/List/ListItem/ListItem';
-import { ListItemIcon } from '@/src/components/List/ListItemIcon/ListItemIcon';
-import { ListItemInteractive } from '@/src/components/List/ListItemInteractive/ListItemInteractive';
-import { ListItemText } from '@/src/components/List/ListItemText/ListItemText';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
+
+import DemoSection from '../DemoSection';
+import {
+  Divider,
+  Heading,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemInteractive,
+  ListItemText,
+  MaterialSymbolIcon
+} from '../../../../src';
+import GlobeIcon from '../GlobeIcon';
 
 function ListDocsPage() {
   return (

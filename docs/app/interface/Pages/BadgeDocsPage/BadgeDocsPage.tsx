@@ -1,16 +1,20 @@
-import { Avatar } from '@/src/components/Avatar/Avatar';
-import { Badge, BadgeProps } from '@/src/components/Badge/Badge';
-import { BadgeInline } from '@/src/components/BadgeInline/BadgeInline';
+import { IconBell } from '@tabler/icons-react';
+
+import {
+  Avatar,
+  Badge,
+  BadgeProps,
+  BadgeInline,
+  Button,
+  Chip,
+  Divider,
+  Heading,
+  MaterialSymbolIcon
+} from '../../../../../src';
 import BadgeInvisible from './BadgeInvisible';
-import { Button } from '@/src/components/Button/Button';
-import { Chip } from '@/src/components/Chip/Chip';
 import DemoContainer from '../../DemoContainer';
 import DemoSection from '../../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
 import GlobeIcon from '../../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconBell } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 import avatar2 from '@/public/avatar-2.jpeg';
 import avatar4 from '@/public/avatar-4.jpeg';

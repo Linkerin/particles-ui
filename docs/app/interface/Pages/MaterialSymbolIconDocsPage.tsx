@@ -1,9 +1,6 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import { Text } from '@/src/components/Text/Text';
+import { Divider, Heading, MaterialSymbolIcon, Text } from '../../../../src';
 
 function SvgDemoContainer({
   children,

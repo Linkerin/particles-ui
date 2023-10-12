@@ -1,14 +1,19 @@
 'use client';
 
-import { Alert, AlertProps } from '@/src/components/Alert/Alert';
-import { Button, ButtonProps } from '@/src/components/Button/Button';
+import { IconHeart } from '@tabler/icons-react';
+
+import {
+  Alert,
+  AlertProps,
+  Button,
+  ButtonProps,
+  Divider,
+  Heading,
+  MaterialSymbolIcon
+} from '../../../../src';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconHeart } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 const colors: Array<AlertProps['color']> = [
   'success',

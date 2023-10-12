@@ -11,7 +11,11 @@ const tests = describe('Button component', () => {
     const btn = screen.getByRole('button', { name: /Test rendering/ });
 
     expect(btn).toBeInTheDocument();
-    expect(btn).toHaveClass(styles.filled, styles.md);
+    expect(btn).toHaveClass(
+      styles.filled,
+      styles.button,
+      'pui-radius-md pui-outline-default'
+    );
   });
 
   it('applies loading attributes "isLoading" prop is true', () => {
@@ -55,7 +59,9 @@ const tests = describe('Button component', () => {
 
     const btn = screen.getByText('Small Button');
 
-    expect(btn).toHaveClass(styles.sm);
+    expect(btn).toHaveStyle({
+      '--pui-btn-font-size': 'var(--pui-label-size-sm)'
+    });
   });
 
   it('calls the onClick handler when the button is clicked', () => {

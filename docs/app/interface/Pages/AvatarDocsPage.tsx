@@ -1,16 +1,19 @@
 'use client';
 
 import { Fragment } from 'react';
+import { IconUser } from '@tabler/icons-react';
 
-import { Avatar, AvatarProps } from '@/src/components/Avatar/Avatar';
-import { AvatarGroup } from '@/src/components/AvatarGroup/AvatarGroup';
+import {
+  Avatar,
+  AvatarProps,
+  AvatarGroup,
+  Divider,
+  Heading,
+  MaterialSymbolIcon
+} from '../../../../src';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconUser } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 import avatar1 from '@/public/avatar.jpg';
 import avatar2 from '@/public/avatar-2.jpeg';

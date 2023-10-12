@@ -14,12 +14,12 @@ describe('Kbd', () => {
     expect(kbdElement).toBeInTheDocument();
     expect(kbdElement).toHaveClass(styles.kbd);
     expect(kbdElement).toHaveClass(styles.flat);
-    expect(kbdElement).toHaveClass(
-      textStyles.text,
-      textStyles.md,
-      textStyles.body,
-      textStyles['on-background-variant']
-    );
+    expect(kbdElement).toHaveClass(textStyles.text);
+    expect(kbdElement).toHaveStyle({
+      '--pui-text-color': 'var(--pui-on-background-variant)',
+      '--pui-text-font-size': 'var(--pui-text-size-md)',
+      '--pui-text-line-height': 'var(--pui-text-height-md)'
+    });
   });
 
   it('renders Kbd component with `command` glyph prop', () => {
@@ -109,7 +109,9 @@ describe('Kbd', () => {
 
     expect(kbdElement).toBeInTheDocument();
     expect(kbdElement).toHaveClass(styles.kbd);
-    expect(kbdElement).toHaveClass(textStyles['on-background-low']);
+    expect(kbdElement).toHaveStyle({
+      '--pui-text-color': 'var(--pui-on-background-low)'
+    });
   });
 
   it('renders Kbd component with a custom styleh', () => {

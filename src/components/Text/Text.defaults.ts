@@ -56,7 +56,7 @@ export function getTextCssVars({
         break;
 
       case 'label':
-        styleObj['--pui-label-font-weight'] = 'var(--pui-font-weight-medium)';
+        styleObj['--pui-text-font-weight'] = 'var(--pui-font-weight-medium)';
         styleObj[
           '--pui-text-font-size'
         ] = `var(--pui-label-size-${labelSizeMapping.size[size]})`;

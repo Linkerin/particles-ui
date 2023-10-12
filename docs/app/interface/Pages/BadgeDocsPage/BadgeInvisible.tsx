@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 
-import { Avatar } from '@/src/components/Avatar/Avatar';
-import { Badge } from '@/src/components/Badge/Badge';
-import { BadgeInline } from '@/src/components/BadgeInline/BadgeInline';
-import { Button } from '@/src/components/Button/Button';
+import {
+  Avatar,
+  Badge,
+  BadgeInline,
+  Button,
+  Heading
+} from '../../../../../src';
 import DemoContainer from '../../DemoContainer';
-import { Heading } from '@/src/components/Heading/Heading';
 
 import avatar2 from '@/public/avatar-2.jpeg';
 

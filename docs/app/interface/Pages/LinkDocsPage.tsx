@@ -1,16 +1,18 @@
-import { Card } from '@/src/components/Card/Card';
-import { CardBody } from '@/src/components/Card/CardBody/CardBody';
-import { CardFooter } from '@/src/components/Card/CardFooter/CardFooter';
-import { CardHeader } from '@/src/components/Card/CardHeader/CardHeader';
+import { IconExternalLinkOff } from '@tabler/icons-react';
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Divider,
+  Heading,
+  Link,
+  MaterialSymbolIcon,
+  Text
+} from '../../../../src';
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconExternalLinkOff } from '@tabler/icons-react';
 import GlobeIcon from '../GlobeIcon';
-import { Link } from '@/src/components/Link/Link';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import { Text } from '@/src/components/Text/Text';
 
 function LinkDocsPage() {
   return (

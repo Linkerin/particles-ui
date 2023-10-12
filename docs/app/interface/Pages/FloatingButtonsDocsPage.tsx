@@ -1,13 +1,16 @@
 'use client';
 
+import { IconMessage } from '@tabler/icons-react';
+
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
-import { FloatingButton } from '@/src/components/FloatingButton/FloatingButton';
+import {
+  Divider,
+  FloatingButton,
+  Heading,
+  MaterialSymbolIcon
+} from '../../../../src';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconMessage } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function FloatingButtonsDocsPage() {
   return (

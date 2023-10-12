@@ -1,6 +1,5 @@
 import DemoContainer from '../../../DemoContainer';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconButton } from '@/src/components/IconButton/IconButton';
+import { Heading, IconButton } from '../../../../../../src';
 import GlobeIcon from '../../../GlobeIcon';
 
 function IconButtonStandard() {

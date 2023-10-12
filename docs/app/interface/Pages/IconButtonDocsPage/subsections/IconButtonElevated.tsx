@@ -1,7 +1,5 @@
 import DemoContainer from '../../../DemoContainer';
-import { Heading } from '@/src/components/Heading/Heading';
-import { IconButton } from '@/src/components/IconButton/IconButton';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
+import { Heading, IconButton, MaterialSymbolIcon } from '../../../../../../src';
 
 function IconButtonElevated() {
   return (
