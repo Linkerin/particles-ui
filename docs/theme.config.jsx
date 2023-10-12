@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Logo from './app/interface/Logo/Logo';
+import Logo from './src/interface/Logo/Logo';
 import Footer from './src/interface/Footer/Footer';
 
 const nextraThemeConfig = {

@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 
-import Header from './interface/Header/Header';
-import Nav from './interface/Nav/Nav';
 import { PuiTheme, ThemeProvider } from '../../src';
 import Spectrum from '../../src/theme/spectrum/spectrum';
 
 import '../../src/styles/pui-base.scss';
-import './material-symbols.css';
 import styles from './layout.module.css';
 
 const manrope = Manrope({ subsets: ['latin'] });
@@ -30,10 +27,8 @@ export default function RootLayout({
       <body className={manrope.className}>
         <PuiTheme mainColors={{ light: { secondary, tertiary } }} />
         <ThemeProvider>
-          <Header />
           <div className={styles.container}>
-            <Nav />
-            <main style={{ padding: '1rem 1.5rem' }}>{children}</main>
+            <main>{children}</main>
           </div>
         </ThemeProvider>
       </body>
