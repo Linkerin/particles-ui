@@ -5,24 +5,18 @@ import {
   IconBrandJavascript
 } from '@tabler/icons-react';
 
-import { List, ListProps } from './List';
+import { List } from './List';
+import { listDefaultProps } from './List.defaults';
 import { ListItem } from './ListItem/ListItem';
 import { ListItemInteractive } from './ListItemInteractive/ListItemInteractive';
 import { ListItemIcon } from './ListItemIcon/ListItemIcon';
 import { ListItemText } from './ListItemText/ListItemText';
 
-const defaultProps: ListProps = {
-  as: 'ol',
-  dense: false,
-  pdInline: true,
-  role: 'list'
-};
-
 const meta = {
   title: 'Components/List',
   component: List,
   tags: ['autodocs'],
-  args: { ...defaultProps, style: { width: '25vw' } }
+  args: { ...listDefaultProps, style: { width: 'max(100px, 25vw)' } }
 } satisfies Meta<typeof List>;
 
 export default meta;

@@ -3,38 +3,39 @@ import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
+import { getListCssVars, listDefaultProps } from './List.defaults';
 import { ListBaseProps, ListProps } from './List.types';
+import shallowMerge from '../../services/shallowMerge';
 
 import styles from './List.module.scss';
 
 export type { ListProps };
 
-const DEFAULT_ELEMENT = 'ul';
-
 const _List = forwardRef<HTMLUListElement, ListProps>(function _List(
-  {
-    children,
-    className,
-    as = DEFAULT_ELEMENT,
-    dense = false,
-    pdInline = true,
-    role = 'list',
-    ...props
-  },
+  props,
   ref
 ) {
+  const {
+    children,
+    className,
+    style,
+    as,
+    dense,
+    pdInline,
+    role,
+    ...restProps
+  }: ListProps = shallowMerge(listDefaultProps, props);
+
+  const listCssVars = getListCssVars(pdInline);
+
   return (
     <Box
       ref={ref}
       as={as}
-      className={classNames(
-        styles.list,
-        { [styles.dense]: dense },
-        { [styles['no-pd-inline']]: !pdInline },
-        className
-      )}
+      className={classNames(styles.list, { [styles.dense]: dense }, className)}
       role={role}
-      {...props}
+      style={{ ...listCssVars, ...style }}
+      {...restProps}
     >
       {children}
     </Box>
@@ -50,6 +51,6 @@ const _List = forwardRef<HTMLUListElement, ListProps>(function _List(
  * @see {@link https://particles.snipshot.dev/docs/components/list | Particles UI | List}
  */
 export const List = createPolymorphicComponent<
-  typeof DEFAULT_ELEMENT,
+  typeof listDefaultProps.as,
   ListBaseProps
 >(_List);
