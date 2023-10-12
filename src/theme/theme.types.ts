@@ -2,8 +2,10 @@ import type Spectrum from './spectrum/spectrum';
 import type { COLOR_NAMES } from '../lib/constants';
 import type elevation from './tokens/elevation';
 import type gap from './tokens/gap';
+import { RecursivePartial } from '../lib/types';
 import type radius from './tokens/radius';
 import type state from './tokens/state';
+import type typography from './tokens/typography';
 
 /**
  * Valid color names for theme generation
@@ -62,6 +64,7 @@ export interface Theme {
   gap?: Partial<typeof gap>;
   radius?: Partial<typeof radius>;
   state?: Partial<typeof state>;
+  typography?: RecursivePartial<typeof typography>;
 }
 
 /**

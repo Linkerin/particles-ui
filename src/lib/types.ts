@@ -76,6 +76,9 @@ export type PuiSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 /**
  * HTML `style` value with PUI CSS variables support
+ * @see {@link https://particles.snipshot.dev/docs/styling | Particles UI | Styling}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style | MDN | style - HTML}
+ *
  */
 export type PuiStyleProp<T extends string> = {
   style?: Partial<Record<T, string>> & React.CSSProperties;
@@ -85,3 +88,12 @@ export type PuiStyleProp<T extends string> = {
  * Base values for the most 'variant' props
  */
 export type PuiStyleVariant = 'filled' | 'outlined' | 'elevated' | 'soft';
+
+/**
+ * Recursively makes all the properties of an object `Partial`
+ */
+export type RecursivePartial<T> = {
+  [P in keyof T]?: T[P] extends object | undefined
+    ? RecursivePartial<T[P]>
+    : Partial<T[P]>;
+};

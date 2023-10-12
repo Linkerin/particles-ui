@@ -23,7 +23,7 @@ function ButtonDocsPage() {
         >
           Filled
         </Button>
-        <Button variant={undefined} color={undefined}>
+        <Button variant="outlined" color={undefined}>
           Outlined
         </Button>
         <Button variant="text">Text</Button>
@@ -470,7 +470,7 @@ function ButtonDocsPage() {
       </DemoContainer>
       <DemoContainer>
         <Button leftIcon={<GlobeIcon />} size="xs">
-          Small
+          X-small
         </Button>
         <Button leftIcon={<GlobeIcon />} size="sm">
           Small
@@ -513,7 +513,7 @@ function ButtonDocsPage() {
           variant="elevated"
           dense
         >
-          Small
+          X-small
         </Button>
         <Button
           leftIcon={<GlobeIcon />}
@@ -560,7 +560,7 @@ function ButtonDocsPage() {
           variant="text"
           dense
         >
-          Small
+          X-small
         </Button>
         <Button
           leftIcon={<GlobeIcon />}
@@ -606,6 +606,13 @@ function ButtonDocsPage() {
         <Button
           leftIcon={<MaterialSymbolIcon icon="search" />}
           variant="elevated"
+          size="xs"
+        >
+          X-small
+        </Button>
+        <Button
+          leftIcon={<MaterialSymbolIcon icon="search" />}
+          variant="elevated"
           size="sm"
         >
           Small
@@ -637,6 +644,14 @@ function ButtonDocsPage() {
           leftIcon={<MaterialSymbolIcon icon="search" />}
           variant="elevated"
           color="secondary"
+          size="xs"
+        >
+          X-small
+        </Button>
+        <Button
+          leftIcon={<MaterialSymbolIcon icon="search" />}
+          variant="elevated"
+          color="secondary"
           size="sm"
         >
           Small
@@ -667,6 +682,14 @@ function ButtonDocsPage() {
         </Button>
       </DemoContainer>
       <DemoContainer>
+        <Button
+          leftIcon={<MaterialSymbolIcon icon="search" />}
+          variant="elevated"
+          color="tertiary"
+          size="xs"
+        >
+          X-small
+        </Button>
         <Button
           leftIcon={<MaterialSymbolIcon icon="search" />}
           variant="elevated"
@@ -705,7 +728,7 @@ function ButtonDocsPage() {
       </Heading>
       <DemoContainer>
         <Button leftIcon={<SaveIcon />} variant="elevated" size="xs">
-          Small
+          X-small
         </Button>
         <Button leftIcon={<SaveIcon />} variant="elevated" size="sm">
           Small
@@ -727,7 +750,7 @@ function ButtonDocsPage() {
           color="secondary"
           size="xs"
         >
-          Small
+          X-small
         </Button>
         <Button
           leftIcon={<SaveIcon />}
@@ -769,7 +792,7 @@ function ButtonDocsPage() {
           color="tertiary"
           size="xs"
         >
-          Small
+          X-small
         </Button>
         <Button
           leftIcon={<SaveIcon />}

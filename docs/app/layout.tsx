@@ -31,6 +31,7 @@ export default function RootLayout({
       <body className={manrope.className}>
         <PuiTheme mainColors={{ light: { secondary, tertiary } }} />
         <ThemeProvider>
+          size
           <Header />
           <div className={styles.container}>
             <Nav />

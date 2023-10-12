@@ -1,4 +1,4 @@
-export { COLOR_MODES, COLOR_NAMES, HEADING_ELEMENTS } from './constants';
+export { COLOR_NAMES, HEADING_ELEMENTS } from './constants';
 
 export type {
   PuiAlignItems,

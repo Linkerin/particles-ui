@@ -1,10 +1,8 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
+import { Divider, Heading, MaterialSymbolIcon } from '../../../../src';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
 import { IconBrandJavascript as JSIcon } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
 
 function HeadingDocsPage() {
   return (
@@ -155,6 +153,9 @@ function HeadingDocsPage() {
         </Heading>
         <Heading as="span" color="on-background-variant">
           <GlobeIcon /> On background variant
+        </Heading>
+        <Heading as="span" color="on-background-low">
+          <GlobeIcon /> On background low
         </Heading>
       </>
     </DemoSection>

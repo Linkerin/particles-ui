@@ -19,6 +19,7 @@ import getSplitComplementary from '../spectrum/methods/getSplitComplementary';
 import radius from '../tokens/radius';
 import Spectrum from '../spectrum/spectrum';
 import state from '../tokens/state';
+import typography from '../tokens/typography';
 
 /**
  * Converts the color values in the provided `colors` object to the appropriate format.
@@ -209,7 +210,7 @@ function generateColorTheme(
  */
 export function getTheme(customColors?: ThemeMainColors) {
   const color = generateColorTheme(customColors);
-  const theme = { elevation, color, gap, radius, state };
+  const theme = { elevation, color, gap, radius, state, typography };
 
   return theme;
 }
@@ -248,6 +249,7 @@ export function mergeThemes(
  */
 export function getCssVars(theme: Theme) {
   const commonKeys = ['gap', 'radius', 'state'];
+  const modeKeys = ['color', 'elevation'];
   const cssVars = {
     common: '',
     light: '',
@@ -259,7 +261,9 @@ export function getCssVars(theme: Theme) {
       for (const [propKey, propValue] of Object.entries(value)) {
         cssVars.common += `  --pui-${key}-${propKey}: ${propValue};\n`;
       }
-    } else {
+    }
+
+    if (modeKeys.includes(key)) {
       for (const [modeKey, modeValues] of Object.entries(value)) {
         if (!modeValues || typeof modeValues !== 'object') break;
         const mode = modeKey as Exclude<keyof typeof cssVars, 'common'>;
@@ -274,8 +278,31 @@ export function getCssVars(theme: Theme) {
               const { r, g, b } = propValue.rgb;
               cssVars[mode] += `  --pui-${propKey}: ${propValue.hex};\n`;
               cssVars[mode] += `  --pui-${propKey}-channels: ${r} ${g} ${b};\n`;
+              cssVars[mode] += `  --pui-${key}-${propKey}: ${propValue.hex};\n`;
+              cssVars[
+                mode
+              ] += `  --pui-${key}-${propKey}-channels: ${r} ${g} ${b};\n`;
               break;
             }
+          }
+        }
+      }
+    }
+
+    if (key === 'typography') {
+      const typographyKeys = ['heading', 'text', 'label'];
+
+      for (const [fontKey, fontValue] of Object.entries(value)) {
+        if (!fontValue || typeof fontValue !== 'object') break;
+        if (typographyKeys.includes(fontKey)) {
+          for (const [styleKey, styleValues] of Object.entries(fontValue)) {
+            for (const [propKey, propValue] of Object.entries(styleValues)) {
+              cssVars.common += `  --pui-${fontKey}-${styleKey}-${propKey}: ${propValue};\n`;
+            }
+          }
+        } else {
+          for (const [propKey, propValue] of Object.entries(fontValue)) {
+            cssVars.common += `  --pui-${fontKey}-${propKey}: ${propValue};\n`;
           }
         }
       }

@@ -1,4 +1,3 @@
-import type { ButtonColorCssVars } from './Button.defaults';
 import {
   PuiAsProp,
   PuiColorNames,
@@ -8,10 +7,27 @@ import {
   PuiStyleVariant
 } from '../../lib/types';
 
+type ButtonColorCssVars =
+  | '--pui-btn-color'
+  | '--pui-btn-color-channels'
+  | '--pui-btn-on-color'
+  | '--pui-btn-color-darker'
+  | '--pui-btn-color-darker-channels'
+  | '--pui-btn-color-container-low'
+  | '--pui-btn-on-color-container';
+
+type ButtonSizeCssVars =
+  | '--pui-btn-icon-size'
+  | '--pui-btn-font-size'
+  | '--pui-btn-font-weight'
+  | '--pui-btn-line-height'
+  | '--pui-btn-letter-spacing';
+
 /**
  * Common props for Button-like components
  */
-export interface ButtonCommonProps extends PuiStyleProp<ButtonColorCssVars> {
+export interface ButtonCommonProps
+  extends PuiStyleProp<ButtonColorCssVars | ButtonSizeCssVars> {
   /**
    * Button's main color
    */

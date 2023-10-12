@@ -1,22 +1,3 @@
-@use 'sass:map';
-
-@use '../../styles/theme-tokens/constants' as const;
-@use '../../styles/theme-tokens/variables' as var;
-
-@mixin size($size) {
-  $btn-typography: map.get(var.$typography, 'label', $size);
-
-  :where(.#{$size}) {
-    font-size: map.get($btn-typography, 'font-size');
-    font-weight: map.get($btn-typography, 'font-weight');
-    line-height: map.get($btn-typography, 'line-height');
-    letter-spacing: map.get($btn-typography, 'letter-spacing');
-
-    $icon-dimension: map.get($btn-typography, 'line-height');
-    --pui-btn-icon-size: calc(#{$icon-dimension} - 2px);
-  }
-}
-
 @function disabled-bg-color($color-name) {
   @return (
     rgb(var(--pui-#{$color-name}-channels) / var(--pui-state-disabled, 0.12))
@@ -33,7 +14,11 @@
     --pui-btn-color-container-low: var(--pui-primary-container-low);
     --pui-btn-on-color-container: var(--pui-on-primary-container);
 
-    --pui-btn-icon-size: 1.125rem;
+    --pui-btn-font-size: var(--pui-label-size-md);
+    --pui-btn-font-weight: var(--pui-font-weight-medium);
+    --pui-btn-line-height: var(--pui-label-height-md);
+    --pui-btn-letter-spacing: var(--pui-letter-spacing-sm);
+    --pui-btn-icon-size: calc(var(--pui-btn-line-height) - 2px);
 
     display: flex;
     flex-direction: row;
@@ -43,6 +28,10 @@
     background: none;
     border: 1px solid transparent;
     cursor: pointer;
+    font-size: var(--pui-btn-font-size);
+    font-weight: var(--pui-btn-font-weight);
+    line-height: var(--pui-btn-line-height);
+    letter-spacing: var(--pui-btn-letter-spacing);
     text-align: center;
     padding: 0.5625rem 1.714286em;
     user-select: none;
@@ -248,10 +237,5 @@
         var(--pui-btn-color) var(--pui-state-press, 0.12)
       );
     }
-  }
-
-  // sizes
-  @each $size in const.$sizes {
-    @include size($size);
   }
 }

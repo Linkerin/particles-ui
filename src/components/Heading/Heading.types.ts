@@ -1,9 +1,16 @@
 import { HEADING_ELEMENTS } from '../../lib/constants';
-import { PuiAsProp } from '../../lib/types';
+import { PuiAsProp, PuiStyleProp } from '../../lib/types';
 
+type HeadingCssVars =
+  | '--pui-text-color'
+  | '--pui-text-font-size'
+  | '--pui-text-font-weight'
+  | '--pui-text-letter-spacing'
+  | '--pui-text-line-height'
+  | '--pui-text-text-align';
 type HeadingElements = (typeof HEADING_ELEMENTS)[number];
 
-export interface HeadingBaseProps {
+export interface HeadingBaseProps extends PuiStyleProp<HeadingCssVars> {
   /**
    * Font color
    */

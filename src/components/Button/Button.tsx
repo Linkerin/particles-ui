@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
 import { ButtonBaseProps, ButtonProps } from './Button.types';
-import { buttonDefaultProps, getButtonColorVars } from './Button.defaults';
+import { buttonDefaultProps, getButtonCssVars } from './Button.defaults';
 import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
 import { DualSpinner } from '../Spinner/DualSpinner/DualSpinner';
 import shallowMerge from '../../services/shallowMerge';
@@ -50,7 +50,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
       onKeyUp
     });
 
-  const colorVars = color !== 'primary' ? getButtonColorVars(color) : {};
+  const buttonCssVars = getButtonCssVars({ color, size });
 
   return (
     <Box
@@ -59,7 +59,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
       className={classNames(
         styles.button,
         styles[`${variant}`],
-        styles[`${size}`],
+        // styles[`${size}`],
         `pui-radius-${radius}`,
         outlineDefaultClassName,
         { [styles.dense]: dense },
@@ -73,7 +73,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(function _Button(
         { [styles.pressShadow]: shadowOnPress },
         className
       )}
-      style={{ ...colorVars, ...style }}
+      style={{ ...buttonCssVars, ...style }}
       disabled={disabled}
       aria-disabled={disabled || isLoading}
       onClick={isLoading ? undefined : onClick}

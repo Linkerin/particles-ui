@@ -3,40 +3,39 @@ import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
+import shallowMerge from '../../services/shallowMerge';
 import { TextBaseProps, TextProps } from './Text.types';
+import { textDefaultProps, getTextCssVars } from './Text.defaults';
 
 import styles from './Text.module.scss';
 
 export type { TextProps };
 
-const DEFAULT_ELEMENT = 'p';
-
-const _Text = forwardRef<HTMLElement, TextProps>(function _Text(
-  {
+const _Text = forwardRef<HTMLElement, TextProps>(function _Text(props, ref) {
+  const {
     children,
     className,
-    as = DEFAULT_ELEMENT,
-    color = 'inherit',
-    size = 'md',
-    truncate = false,
-    variant = 'body',
-    ...props
-  },
-  ref
-) {
+    style,
+    as,
+    color,
+    size,
+    truncate,
+    variant,
+    ...restProps
+  } = shallowMerge(textDefaultProps, props);
+  const textCssVars = getTextCssVars({ color, size, variant });
+
   return (
     <Box
       ref={ref}
       as={as}
       className={classNames(
         styles.text,
-        styles[size],
         { [styles.truncate]: truncate },
-        { [styles[variant]]: variant !== 'inherit' },
-        { [styles[color]]: color !== 'inherit' },
         className
       )}
-      {...props}
+      style={{ ...textCssVars, ...style }}
+      {...restProps}
     >
       {children}
     </Box>
@@ -51,6 +50,6 @@ const _Text = forwardRef<HTMLElement, TextProps>(function _Text(
  * @see {@link https://particles.snipshot.dev/docs/components/text | Particles UI | Text}
  */
 export const Text = createPolymorphicComponent<
-  typeof DEFAULT_ELEMENT,
+  typeof textDefaultProps.as,
   TextBaseProps
 >(_Text);

@@ -1,21 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconSearch } from '@tabler/icons-react';
 
-import { Text, TextProps } from './Text';
-
-const defaultProps: TextProps = {
-  as: 'p',
-  color: 'inherit',
-  size: 'md',
-  truncate: false,
-  variant: 'body'
-};
+import { Text } from './Text';
+import { textDefaultProps } from './Text.defaults';
 
 const meta = {
   title: 'Components/Text',
   component: Text,
   tags: ['autodocs'],
-  args: { ...defaultProps }
+  args: { ...textDefaultProps }
 } satisfies Meta<typeof Text>;
 
 export default meta;

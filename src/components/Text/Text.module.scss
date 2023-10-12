@@ -1,34 +1,19 @@
-@use 'sass:list';
-@use 'sass:map';
-
-@use '../../styles/theme-tokens/variables' as var;
-
-@mixin variant($variant) {
-  @if list.index(('body', 'label'), $variant) == null {
-    @error "Invalid variant: '#{$variant}'. Only 'body' and 'label' are allowed";
-  }
-
-  :where(.#{$variant}) {
-    $typography: map.get(var.$typography, $variant);
-
-    @each $size, $properties in $typography {
-      &:where(.#{$size}) {
-        @each $property, $value in $properties {
-          #{$property}: $value;
-        }
-      }
-    }
-  }
-}
-
 @layer pui-components {
   :where(.text) {
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    font-weight: inherit;
-    text-align: inherit;
+    --pui-text-color: inherit;
+
+    --pui-text-font-size: inherit;
+    --pui-text-font-weight: inherit;
+    --pui-text-letter-spacing: inherit;
+    --pui-text-line-height: inherit;
+    --pui-text-text-align: inherit;
+
+    color: var(--pui-text-color);
+    font-size: var(--pui-text-font-size);
+    font-weight: var(--pui-text-font-weight);
+    letter-spacing: var(--pui-text-letter-spacing);
+    line-height: var(--pui-text-line-height);
+    text-align: var(--pui-text-text-align);
 
     & > span:where([data-pui-component='material-icon']),
     & > svg {
@@ -59,21 +44,5 @@
 
   :where(mark.text) {
     background-color: var(--pui-primary-container);
-  }
-
-  @include variant('body');
-  @include variant('label');
-
-  // base colors
-  :where(.on-background) {
-    color: var(--pui-on-background);
-  }
-
-  :where(.on-background-variant) {
-    color: var(--pui-on-background-variant);
-  }
-
-  :where(.on-background-low) {
-    color: var(--pui-on-background-low);
   }
 }

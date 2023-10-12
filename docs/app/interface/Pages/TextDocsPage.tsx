@@ -1,11 +1,8 @@
 import DemoContainer from '../DemoContainer';
 import DemoSection from '../DemoSection';
-import { Divider } from '@/src/components/Divider/Divider';
+import { Divider, Heading, MaterialSymbolIcon, Text } from '../../../../src';
 import GlobeIcon from '../GlobeIcon';
-import { Heading } from '@/src/components/Heading/Heading';
 import { IconArticleFilledFilled as ArticleIcon } from '@tabler/icons-react';
-import { MaterialSymbolIcon } from '@/src/components/MaterialSymbolIcon/MaterialSymbolIcon';
-import { Text } from '@/src/components/Text/Text';
 
 function TextDocsPage() {
   return (
@@ -29,12 +26,16 @@ function TextDocsPage() {
           <Text variant="label" size="xl">
             Label text, xl font size.
           </Text>
+          <Text variant="label" size="xxl">
+            Label text, xxl font size.
+          </Text>
         </div>
         <div>
           <Text size="sm">Body text, sm font size.</Text>
           <Text size="md">Body text, md font size.</Text>
           <Text size="lg">Body text, lg font size.</Text>
           <Text size="xl">Body text, xl font size.</Text>
+          <Text size="xxl">Body text, xxl font size.</Text>
         </div>
       </DemoContainer>
       <Divider />
@@ -171,6 +172,9 @@ function TextDocsPage() {
         </Text>
         <Text size="lg" color="on-background-variant">
           <GlobeIcon /> On background variant
+        </Text>
+        <Text size="lg" color="on-background-low">
+          <GlobeIcon /> On background low
         </Text>
       </>
       <Divider />

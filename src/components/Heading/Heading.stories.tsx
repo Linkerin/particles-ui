@@ -1,19 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconHighlight } from '@tabler/icons-react';
 
-import { Heading, HeadingProps } from './Heading';
-
-const defaultProps: HeadingProps = {
-  as: 'h2',
-  color: 'on-background',
-  truncate: false
-};
+import { Heading } from './Heading';
+import { headingDefaultProps } from './Heading.defaults';
 
 const meta = {
   title: 'Components/Heading',
   component: Heading,
   tags: ['autodocs'],
-  args: { ...defaultProps }
+  args: { ...headingDefaultProps }
 } satisfies Meta<typeof Heading>;
 
 export default meta;

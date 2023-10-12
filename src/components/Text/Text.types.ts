@@ -1,6 +1,14 @@
-import { PuiAsProp, PuiSize } from '../../lib/types';
+import { PuiAsProp, PuiSize, PuiStyleProp } from '../../lib/types';
 
-export interface TextBaseProps {
+type TextCssVars =
+  | '--pui-text-color'
+  | '--pui-text-font-size'
+  | '--pui-text-font-weight'
+  | '--pui-text-letter-spacing'
+  | '--pui-text-line-height'
+  | '--pui-text-text-align';
+
+export interface TextBaseProps extends PuiStyleProp<TextCssVars> {
   /**
    * Font color
    */
@@ -12,7 +20,7 @@ export interface TextBaseProps {
   /**
    * Size value
    */
-  size?: Exclude<PuiSize, 'xs'>;
+  size?: Exclude<PuiSize, 'xs'> | 'xxl';
   /**
    * Show ellipsis instead of hidden overflow content
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow | MDN | text-overflow - CSS}

@@ -1,15 +1,19 @@
-@use 'sass:map';
-
-@use '../../styles/theme-tokens/variables' as var;
-
 @layer pui-components {
   :where(.heading) {
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    font-weight: inherit;
-    text-align: inherit;
+    --pui-heading-color: inherit;
+
+    --pui-heading-font-size: inherit;
+    --pui-heading-font-weight: inherit;
+    --pui-heading-letter-spacing: inherit;
+    --pui-heading-line-height: inherit;
+    --pui-heading-text-align: inherit;
+
+    color: var(--pui-heading-color);
+    font-size: var(--pui-heading-font-size);
+    font-weight: var(--pui-heading-font-weight);
+    letter-spacing: var(--pui-heading-letter-spacing);
+    line-height: var(--pui-heading-line-height);
+    text-align: var(--pui-heading-text-align);
     margin: 0;
     padding: 0;
 
@@ -30,39 +34,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  @each $heading in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6') {
-    $heading-typography: map.get(var.$typography, 'heading', $heading);
-
-    :where(.#{$heading}) {
-      @each $property, $value in $heading-typography {
-        #{$property}: $value;
-      }
-    }
-  }
-
-  // subtitle styles
-  @each $size in ('sm', 'md', 'lg') {
-    $subtitle-typography: map.get(var.$typography, 'subtitle', $size);
-
-    :where(.subtitle-#{$size}) {
-      @each $property, $value in $subtitle-typography {
-        #{$property}: $value;
-      }
-    }
-  }
-
-  // base colors
-  :where(.on-background) {
-    color: var(--pui-on-background);
-  }
-
-  :where(.on-background-variant) {
-    color: var(--pui-on-background-variant);
-  }
-
-  :where(.on-background-low) {
-    color: var(--pui-on-background-low);
   }
 }

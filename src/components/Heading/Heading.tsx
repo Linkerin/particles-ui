@@ -3,31 +3,36 @@ import classNames from 'classnames';
 
 import { Box } from '../Box/Box';
 import { createPolymorphicComponent } from '../../services/createPolymorphicComponent';
+import { headingDefaultProps, getHeadingCssVars } from './Heading.defaults';
 import { HEADING_ELEMENTS } from '../../lib/constants';
 import { HeadingBaseProps, HeadingProps } from './Heading.types';
+import shallowMerge from '../../services/shallowMerge';
 
 import styles from './Heading.module.scss';
 
 export type { HeadingProps };
 
-const DEFAULT_ELEMENT = 'h2';
-
 const _Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function _Heading(
-  {
-    children,
-    className,
-    as = DEFAULT_ELEMENT,
-    color = 'on-background',
-    truncate = false,
-    variant,
-    ...props
-  },
+  props,
   ref
 ) {
+  const {
+    children,
+    className,
+    style,
+    as,
+    color,
+    truncate,
+    variant,
+    ...restProps
+  } = shallowMerge(headingDefaultProps, props);
+
   let headingVariant = variant ?? 'subtitle-md';
   if (!variant && HEADING_ELEMENTS.findIndex(elem => elem === as) !== -1) {
     headingVariant = as as (typeof HEADING_ELEMENTS)[number];
   }
+
+  const headingCssVars = getHeadingCssVars({ color, headingVariant });
 
   return (
     <Box
@@ -36,11 +41,10 @@ const _Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function _Heading(
       className={classNames(
         styles.heading,
         { [styles.truncate]: truncate },
-        { [styles[headingVariant]]: headingVariant !== 'inherit' },
-        { [styles[color]]: color !== 'inherit' },
         className
       )}
-      {...props}
+      style={{ ...headingCssVars, ...style }}
+      {...restProps}
     >
       {children}
     </Box>
@@ -57,6 +61,6 @@ const _Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function _Heading(
  * @see {@link https://particles.snipshot.dev/docs/components/heading | Particles UI | Heading}
  */
 export const Heading = createPolymorphicComponent<
-  typeof DEFAULT_ELEMENT,
+  typeof headingDefaultProps.as,
   HeadingBaseProps
 >(_Heading);
