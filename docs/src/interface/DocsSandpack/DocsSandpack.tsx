@@ -4,7 +4,8 @@ import {
   SandpackLayout,
   SandpackPreview,
   SandpackProvider,
-  SandpackProviderProps
+  SandpackProviderProps,
+  SandpackLayoutProps
 } from '@codesandbox/sandpack-react';
 import { atomDark } from '@codesandbox/sandpack-themes';
 
@@ -17,10 +18,16 @@ export interface DocsSandPackProps {
   showAllFiles?: boolean;
   showCode?: boolean;
   showPreview?: boolean;
+  layoutStyle?: SandpackLayoutProps['style'];
+  previewStyle?: SandpackLayoutProps['style'];
+  codeStyle?: SandpackLayoutProps['style'];
 }
 
 function DocsSandpack({
   files,
+  codeStyle,
+  layoutStyle,
+  previewStyle,
   showAllFiles = false,
   showCode = true,
   showPreview = true
@@ -81,7 +88,7 @@ export default function App() {
         ...files
       }}
     >
-      <SandpackLayout>
+      <SandpackLayout style={layoutStyle}>
         {showPreview && (
           <SandpackPreview
             actionsChildren={
@@ -89,9 +96,10 @@ export default function App() {
                 {isCodeVisible ? 'Hide' : 'Show'} code
               </button>
             }
+            style={previewStyle}
           />
         )}
-        {isCodeVisible && <SandpackCodeEditor showTabs />}
+        {isCodeVisible && <SandpackCodeEditor style={codeStyle} showTabs />}
       </SandpackLayout>
     </SandpackProvider>
   );

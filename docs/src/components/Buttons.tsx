@@ -9,7 +9,7 @@ const styles = `{
         flexWrap: 'wrap',
       }`;
 
-type DemoProps = Pick<DocsSandPackProps, 'showCode' | 'showPreview'>;
+type DemoProps = Omit<DocsSandPackProps, 'files'>;
 
 export function ButtonDefault(props: DemoProps) {
   return (

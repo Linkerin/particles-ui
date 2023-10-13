@@ -1,104 +1,179 @@
-import { Alert, AlertProps, Button } from '@snipshot/particles';
-import DemoContainer from '../interface/DemoContainer/DemoContainer';
+import DocsSandpack, {
+  DocsSandPackProps
+} from '../interface/DocsSandpack/DocsSandpack';
 
-const variants: Array<AlertProps['variant']> = [
-  'filled',
-  'outlined',
-  'soft',
-  'minimal'
-];
+type DemoProps = Omit<DocsSandPackProps, 'files'>;
 
-const colors: Array<AlertProps['color']> = [
-  'success',
-  'info',
-  'warning',
-  'error',
-  'primary',
-  'secondary',
-  'tertiary'
-];
-
-const radiuses: Array<AlertProps['radius']> = [
-  'none',
-  'xs',
-  'sm',
-  'md',
-  'lg',
-  'xl',
-  'full'
-];
-
-export function AlertDefault() {
+const styles = `{
+        display: 'flex',
+        alignSelf: 'flex-start',
+        flexDirection: 'column',
+        gap: '0.5rem',
+      }`;
+export function AlertDefault(props: DemoProps) {
   return (
-    <DemoContainer>
-      <Alert
-        heading="Message sent"
-        closeButtonLabel="Close alert"
-        onClose={e => console.log('Close alert')}
-      >
-        Thank you, we will reply to you soon!
-      </Alert>
-    </DemoContainer>
+    <DocsSandpack
+      files={{
+        '/Alert.jsx': `import { Alert } from '@snipshot/particles';
+
+export default function AlertDefault() {
+  return (
+    <Alert
+      heading="Message sent"
+      closeButtonLabel="Close alert"
+      onClose={() => console.log('Close alert')}
+    >
+      Thank you, we will reply to you soon!
+    </Alert>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }
 
-export function AlertColors() {
-  return colors.map(color => (
-    <DemoContainer key={color}>
-      <Alert
-        heading={`Color: '${color}'`}
-        closeButtonLabel="Close alert"
-        onClose={e => console.log('Close alert')}
-        color={color}
-      >
-        Thank you, we will reply to you soon!
-      </Alert>
-    </DemoContainer>
-  ));
+export function AlertColors(props: DemoProps) {
+  return (
+    <DocsSandpack
+      previewStyle={{ minHeight: '570px' }}
+      codeStyle={{ minHeight: '570px' }}
+      files={{
+        '/Alert.jsx': `import { Alert } from '@snipshot/particles';
+
+export default function AlertColors() {
+  const colors = [
+    'success',
+    'info',
+    'warning',
+    'error',
+    'primary',
+    'secondary',
+    'tertiary'
+  ];
+
+  return (
+    <div
+      style={${styles}}
+    >
+      {colors.map(color => (
+        <Alert
+          key={color}
+          heading={\`Color: \${color}\`}
+          closeButtonLabel="Close alert"
+          onClose={() => console.log('Close alert')}
+          color={color}
+        >
+          Thank you, we will reply to you soon!
+        </Alert>
+      ))}
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
+  );
 }
 
-export function AlertVariants() {
-  return variants.map(variant => (
-    <DemoContainer key={variant}>
-      <Alert
-        heading={`Variant: ${variant}`}
-        closeButtonLabel="Close alert"
-        onClose={e => console.log('Close alert')}
-        variant={variant}
-      >
-        Thank you, we will reply to you soon!
-      </Alert>
-    </DemoContainer>
-  ));
+export function AlertVariants(props: DemoProps) {
+  return (
+    <DocsSandpack
+      previewStyle={{ minHeight: '350px' }}
+      codeStyle={{ minHeight: '350px' }}
+      files={{
+        '/Alert.jsx': `import { Alert } from '@snipshot/particles';
+
+export default function AlertVariants() {
+  const variants = [
+    'filled',
+    'outlined',
+    'soft',
+    'minimal'
+  ];
+
+  return (
+    <div
+      style={${styles}}
+    >
+      {variants.map(variant => (
+        <Alert
+          key={variant}
+          heading={\`Variant: \${variant}\`}
+          closeButtonLabel="Close alert"
+          onClose={() => console.log('Close alert')}
+          variant={variant}
+        >
+          Thank you, we will reply to you soon!
+        </Alert>
+      ))}
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
+  );
 }
 
-export function AlertRadiuses() {
-  return radiuses.map(radius => (
-    <DemoContainer key={radius}>
-      <Alert
-        heading={`Radius: ${radius}`}
-        closeButtonLabel="Close alert"
-        variant="outlined"
-        color="primary"
-        radius={radius}
-      >
-        Thank you, we will reply to you soon!
-      </Alert>
-    </DemoContainer>
-  ));
+export function AlertRadiuses(props: DemoProps) {
+  return (
+    <DocsSandpack
+      previewStyle={{ minHeight: '570px' }}
+      codeStyle={{ minHeight: '570px' }}
+      files={{
+        '/Alert.jsx': `import { Alert } from '@snipshot/particles';
+
+export default function AlertRadiuses() {
+  const radiuses = [
+    'none',
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+    'full'
+  ];
+
+  return (
+    <div
+      style={${styles}}
+    >
+      {radiuses.map(radius => (
+        <Alert
+          key={radius}
+          heading={\`Radius: \${radius}\`}
+          variant="outlined"
+          color="primary"
+          radius={radius}
+        >
+          Thank you, we will reply to you soon!
+        </Alert>
+      ))}
+    </div>
+  );
+}
+`
+      }}
+      {...props}
+    />
+  );
 }
 
-export function AlertActionElement() {
+export function AlertActionElement(props: DemoProps) {
+  return (
+    <DocsSandpack
+      files={{
+        '/Alert.jsx': `import { Alert, Button } from '@snipshot/particles';
+
+export default function AlertActionElement() {
   return (
     <Alert
       actionElement={
         <Button
-          style={{
-            fontSize: '0.75rem',
-            fontWeight: 500,
-            lineHeight: '1rem',
-            padding: '0.375rem 1em'
-          }}
           color="info"
           size="sm"
           variant="soft"
@@ -109,37 +184,47 @@ export function AlertActionElement() {
       }
       closeButtonLabel="Close alert"
       color="info"
-      onClose={e => console.log('Close alert')}
+      onClose={() => console.log('Close alert')}
     >
       You have submitted the form
     </Alert>
   );
 }
+`
+      }}
+      {...props}
+    />
+  );
+}
 
-export function AlertWithEmoji() {
+export function AlertWithEmoji(props: DemoProps) {
+  return (
+    <DocsSandpack
+      files={{
+        '/Alert.jsx': `import { Alert, Button } from '@snipshot/particles';
+
+export default function AlertWithEmoji() {
   return (
     <Alert
       actionElement={
         <Button
           color="secondary"
           variant="filled"
-          style={{
-            fontSize: '0.875rem',
-            fontWeight: 500,
-            lineHeight: '1.25rem',
-            marginLeft: '0.5rem',
-            padding: '0.5625rem 1.714286em'
-          }}
         >
           Accept
         </Button>
       }
-      closeButtonLabel="Close alert"
       color="secondary"
       heading="We use cookies"
       icon="🍪"
     >
       Accept out Privacy and Cookie Policy
     </Alert>
+  );
+}
+`
+      }}
+      {...props}
+    />
   );
 }

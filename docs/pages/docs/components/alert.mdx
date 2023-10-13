@@ -29,23 +29,7 @@ The `Alert` component displays a short message that attracts user's attention.
 
 ### Basic Usage
 
-<AlertDefault />
-
-```jsx copy
-import { Alert } from '@snipshot/particles';
-
-function MyComponent() {
-  return (
-    <Alert
-      heading="Message sent"
-      closeButtonLabel="Close alert"
-      onClose={e => console.log('Close alert')}
-    >
-      Thank you, we will reply to you soon!
-    </Alert>
-  );
-}
-```
+<AlertDefault showCode />
 
 ### Colors
 
@@ -55,39 +39,7 @@ a corresponding informational icon.
  In addition to these status colors, there are three base colors: `primary`, `secondary`,
 and `tertiary`. These last three color options use the `info` icon by default.
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><AlertColors /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Alert, AlertProps } from '@snipshot/particles';
-
-    const colors: Array<AlertProps['color']> = [
-      'success',
-      'info',
-      'warning',
-      'error',
-      'primary',
-      'secondary',
-      'tertiary'
-    ];
-
-    function AlertColors() {
-      return colors.map(color => (
-        <Alert
-          key={color}
-          heading={`Color: '${color}'`}
-          closeButtonLabel="Close alert"
-          onClose={e => console.log('Close alert')}
-          color={color}
-        >
-          Thank you, we will reply to you soon!
-        </Alert>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<AlertColors showCode={false} />
 
 ### Variants
 
@@ -95,76 +47,14 @@ The Alert component comes with several variants to suit your design needs. Pass
 the `variant` prop with one of the values: `'filled'`, `'outlined'`, `'soft'`,
 or `'minimal'`
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><AlertVariants /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Alert, AlertProps } from '@snipshot/particles';
-
-    const variants: Array<AlertProps['variant']> = [
-      'filled',
-      'outlined',
-      'soft',
-      'minimal'
-    ];
-
-    function AlertVariants() {
-      return variants.map(variant => (
-        <Alert
-          key={variant}
-          heading={`Variant: ${variant}`}
-          closeButtonLabel="Close alert"
-          onClose={e => console.log('Close alert')}
-          variant={variant}
-        >
-          Thank you, we will reply to you soon!
-        </Alert>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<AlertVariants showCode={false} />
 
 ### Radiuses
 
 You can choose from a one of the predefined border radius values by providing a
 `radius` prop value.
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><AlertRadiuses /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Alert, AlertProps } from '@snipshot/particles';
-
-    const radiuses: Array<AlertProps['radius']> = [
-      'none',
-      'xs',
-      'sm',
-      'md',
-      'lg',
-      'xl',
-      'full'
-    ];
-
-    function AlertRadiuses() {
-      return radiuses.map(radius => (
-        <Alert
-          key={radius}
-          heading={`Radius: ${radius}`}
-          closeButtonLabel="Close alert"
-          variant="outlined"
-          color="primary"
-          radius={radius}
-        >
-          Thank you, we will reply to you soon!
-        </Alert>
-      ));
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<AlertRadiuses showCode={false} />
 
 ### Action elements
 
@@ -172,74 +62,14 @@ In addition to the close button (or without it by default), you have the
 flexibility to include custom action elements on the right side of the Alert
 component:
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><AlertActionElement /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Alert } from '@snipshot/particles';
-
-    function AlertActionElement() {
-      return (
-        <Alert
-          actionElement={
-            <Button
-              color="info"
-              size="sm"
-              variant="soft"
-              dense
-            >
-              Undo
-            </Button>
-          }
-          closeButtonLabel="Close alert"
-          color="info"
-          onClose={e => console.log('Close alert')}
-        >
-          You have submitted the form
-        </Alert>
-      );
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<AlertActionElement showCode={false} />
 
 ### Custom icons
 
 The `icon` property lets ypu insert any icon or even emojis on the left side of
 the alert:
 
-<Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab><AlertWithEmoji /></Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy
-    import { Alert } from '@snipshot/particles';
-
-    function AlertWithEmoji() {
-      return (
-        <Alert
-          actionElement={
-            <Button
-              color="secondary"
-              style={{ marginLeft: '0.5rem' }}
-              variant="filled"
-            >
-              Accept
-            </Button>
-          }
-          closeButtonLabel="Close alert"
-          color="secondary"
-          heading="We use cookies"
-          icon="🍪"
-        >
-          Accept out Privacy and Cookie Policy
-        </Alert>
-      );
-    }
-    ```
-
-  </Tabs.Tab>
-</Tabs>
+<AlertWithEmoji showCode={false} />
 
 ## Accessibility
 
