@@ -1,6 +1,6 @@
 {
   "name": "@snipshot/particles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Particles UI: CSS oriented React components library",
   "type": "module",
   "main": "index.js",
@@ -12,7 +12,7 @@
   "scripts": {
     "test": "vitest",
     "dev": "vite",
-    "build": "tsc -p ./tsconfig.build.json && vite build",
+    "build": "npm run lint && tsc -p ./tsconfig.build.json && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
     "preview": "vite preview",

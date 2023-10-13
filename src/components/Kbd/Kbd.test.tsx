@@ -16,7 +16,7 @@ describe('Kbd', () => {
     expect(kbdElement).toHaveClass(styles.flat);
     expect(kbdElement).toHaveClass(textStyles.text);
     expect(kbdElement).toHaveStyle({
-      '--pui-text-color': 'var(--pui-on-background-variant)',
+      '--pui-text-color': 'var(--pui-color-qon-background-variant)',
       '--pui-text-font-size': 'var(--pui-text-size-md)',
       '--pui-text-line-height': 'var(--pui-text-height-md)'
     });
@@ -110,7 +110,7 @@ describe('Kbd', () => {
     expect(kbdElement).toBeInTheDocument();
     expect(kbdElement).toHaveClass(styles.kbd);
     expect(kbdElement).toHaveStyle({
-      '--pui-text-color': 'var(--pui-on-background-low)'
+      '--pui-text-color': 'var(--pui-color-on-background-low)'
     });
   });
 

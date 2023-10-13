@@ -124,3 +124,23 @@ assistive technologies.
 | shrinkOnPress  | `boolean`                                                                              | `false`     | Makes the button a bit smaller on press                                          |
 | size           | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`                                                 | `'md'`      | Button's size value                                                              |
 | variant        | `'filled' \| 'outlined' \| 'text' \| 'soft' \| 'elevated'`                             | `'filled'`  | Styling variant                                                                  |
+
+## CSS custom properties (variables)
+
+The `Button` component provides several CSS variables that can be used for
+styling via CSS modules or using a `style` attribute of the `Button` component.
+
+| Property                          | Description                                                                                                                                                         |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--pui-btn-font-size`             | `font-size` value                                                                                                                                                   |
+| `--pui-btn-font-weight`           | `font-weight` value                                                                                                                                                 |
+| `--pui-btn-line-height`           | `line-height` value                                                                                                                                                 |
+| `--pui-btn-letter-spacing`        | `letter-spacing` value                                                                                                                                              |
+| `--pui-btn-icon-size`             | Size of the `.btn-icon` and `.btn-load-spinner` elements                                                                                                            |
+| `--pui-btn-color`                 | Main button's color. If used, `--pui-btn-color-channels` has to be provided either                                                                                  |
+| `--pui-btn-color-channels`        | RGB channels of the main color (`--pui-btn-color`) represented as an rray of three numbers like `255 0 0`                                                           |
+| `--pui-btn-on-color`              | Color that is used on the main color (e.g. font color).                                                                                                             |
+| `--pui-btn-color-darker`          | Darker version of the main (`--pui-btn-color`) color. In some cases necessary for hover effects. If used, `pui-btn-color-darker-channels` has to be provided either |
+| `--pui-btn-color-darker-channels` | RGB channels of the darker main color (`--pui-btn-color-darker`) represented as an array of three numbers like `255 0 0`                                            |
+| `--pui-btn-color-container-low`   | Lighter version of the main (`--pui-btn-color`) color, used for `background-color` in the `soft` variant                                                            |
+| `--pui-btn-on-color-container`    | Color that is used on the `--pui-btn-color-container-low` color.                                                                                                    |
