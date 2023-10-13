@@ -6,9 +6,7 @@ const withNextra = require('nextra')({
 });
 
 const nextConfig = {
-  experimental: {
-    externalDir: process.env.NODE_ENV == 'development' ? true : false
-  }
+  experimental: { externalDir: true }
 };
 
 module.exports = withNextra(nextConfig);
