@@ -41,7 +41,7 @@ export function getTextCssVars({
   const styleObj: Record<string, string> = {};
 
   if (color !== 'inherit') {
-    styleObj['--pui-text-color'] = `var(--pui-${color})`;
+    styleObj['--pui-text-color'] = `var(--pui-color-${color})`;
   }
 
   if (size) {

@@ -36,13 +36,13 @@
 
   :where(code.text) {
     font-family: monospace;
-    background-color: var(--pui-background-container-high);
-    border: 1px solid var(--pui-outline-variant);
+    background-color: var(--pui-color-background-container-high);
+    border: 1px solid var(--pui-color-outline-variant);
     border-radius: var(--pui-radius-xs);
     padding: 0.5em 1em;
   }
 
   :where(mark.text) {
-    background-color: var(--pui-primary-container);
+    background-color: var(--pui-color-primary-container);
   }
 }

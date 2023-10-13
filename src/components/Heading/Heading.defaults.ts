@@ -25,7 +25,7 @@ export function getHeadingCssVars({
   const styleObj: Record<string, string> = {};
 
   if (color !== 'inherit') {
-    styleObj['--pui-heading-color'] = `var(--pui-${color})`;
+    styleObj['--pui-heading-color'] = `var(--pui-color-${color})`;
   }
 
   if (HEADING_ELEMENTS.findIndex(elem => elem === headingVariant) !== -1) {

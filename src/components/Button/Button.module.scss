@@ -1,18 +1,20 @@
 @function disabled-bg-color($color-name) {
   @return (
-    rgb(var(--pui-#{$color-name}-channels) / var(--pui-state-disabled, 0.12))
+    rgb(
+      var(--pui-color-#{$color-name}-channels) / var(--pui-state-disabled, 0.12)
+    )
   );
 }
 
 @layer pui-components {
   :where(.button) {
-    --pui-btn-color: var(--pui-primary);
-    --pui-btn-color-channels: var(--pui-primary-channels);
-    --pui-btn-on-color: var(--pui-on-primary);
-    --pui-btn-color-darker: var(--pui-primary-darker);
-    --pui-btn-color-darker-channels: var(--pui-primary-darker-channels);
-    --pui-btn-color-container-low: var(--pui-primary-container-low);
-    --pui-btn-on-color-container: var(--pui-on-primary-container);
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-color-channels: var(--pui-color-primary-channels);
+    --pui-btn-on-color: var(--pui-color-on-primary);
+    --pui-btn-color-darker: var(--pui-color-primary-darker);
+    --pui-btn-color-darker-channels: var(--pui-color-primary-darker-channels);
+    --pui-btn-color-container-low: var(--pui-color-primary-container-low);
+    --pui-btn-on-color-container: var(--pui-color-on-primary-container);
 
     --pui-btn-font-size: var(--pui-label-size-md);
     --pui-btn-font-weight: var(--pui-font-weight-medium);
@@ -42,7 +44,7 @@
     &:disabled {
       box-shadow: none;
       color: rgb(
-        var(--pui-on-background-channels) /
+        var(--pui-color-on-background-channels) /
           var(--pui-state-disabled-content, 0.38)
       );
       cursor: not-allowed;
@@ -127,7 +129,7 @@
       background-color: color-mix(
         in oklab,
         var(--pui-btn-color),
-        var(--pui-black) var(--pui-state-hover, 0.08)
+        var(--pui-color-black) var(--pui-state-hover, 0.08)
       );
     }
 
@@ -138,7 +140,7 @@
       background-color: color-mix(
         in oklab,
         var(--pui-btn-color),
-        var(--pui-black) var(--pui-state-press, 0.12)
+        var(--pui-color-black) var(--pui-state-press, 0.12)
       );
     }
   }
@@ -147,7 +149,7 @@
     box-shadow: var(--pui-elevation-1);
 
     &:not(:where(.uncolored)) {
-      background-color: var(--pui-background-container-low);
+      background-color: var(--pui-color-background-container-low);
       color: var(--pui-btn-color-darker);
     }
 

@@ -36,15 +36,4 @@ const preview: Preview = {
   ]
 };
 
-// export const decorators = [
-//   withThemeByDataAttribute({
-//     themes: {
-//       light: 'light',
-//       dark: 'dark'
-//     },
-//     defaultTheme: 'light',
-//     attributeName: 'data-pui-mode'
-//   })
-// ];
-
 export default preview;

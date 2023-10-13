@@ -31,13 +31,13 @@ export function getButtonCssVars({
     !color || color === buttonDefaultProps.color
       ? {}
       : {
-          '--pui-btn-color': `var(--pui-${color})`,
-          '--pui-btn-color-channels': `var(--pui-${color}-channels)`,
-          '--pui-btn-on-color': `var(--pui-on-${color})`,
-          '--pui-btn-color-darker': `var(--pui-${color}-darker)`,
-          '--pui-btn-color-darker-channels': `var(--pui-${color}-darker-channels)`,
-          '--pui-btn-color-container-low': `var(--pui-${color}-container-low)`,
-          '--pui-btn-on-color-container': `var(--pui-on-${color}-container)`
+          '--pui-btn-color': `var(--pui-color-${color})`,
+          '--pui-btn-color-channels': `var(--pui-color-${color}-channels)`,
+          '--pui-btn-on-color': `var(--pui-color-on-${color})`,
+          '--pui-btn-color-darker': `var(--pui-color-${color}-darker)`,
+          '--pui-btn-color-darker-channels': `var(--pui-color-${color}-darker-channels)`,
+          '--pui-btn-color-container-low': `var(--pui-color-${color}-container-low)`,
+          '--pui-btn-on-color-container': `var(--pui-color-on-${color}-container)`
         };
 
   const sizeVars =
