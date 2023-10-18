@@ -27,7 +27,6 @@ function SuspensedUserIcon(props: UserIconProps) {
 
 const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
   {
-    alt,
     src,
     bordered,
     disabled,
@@ -62,7 +61,6 @@ const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
       ref={ref}
       as={as}
       wrapperProps={imageWrapperProps}
-      alt={alt}
       wrapperClassName={classNames(
         styles.avatar,
         styles[size],
@@ -91,7 +89,6 @@ const _Avatar = forwardRef<HTMLDivElement, AvatarProps>(function _Avatar(
  * Always add `alt` description with `src` provided image
  * and `iconLabel` description with `icon`.
  *
- * @see {@link https://www.w3.org/WAI/ARIA/apg/patterns/button | WAI-ARIA | Button Pattern}
  * @see {@link https://particles.snipshot.dev/docs/components/avatar | Particles UI | Avatar}
  */
 export const Avatar = createPolymorphicComponent<

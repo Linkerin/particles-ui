@@ -1,0 +1,158 @@
+---
+title: Avatar
+description: Documentation for the Avatar component from Particles UI library
+---
+
+import {
+  AvatarDefault,
+  AvatarName,
+  AvatarBordered,
+  AvatarColors,
+  AvatarSizes,
+  AvatarRadiuses,
+  AvatarDisabled,
+  AvatarIcon,
+  AvatarGroup,
+  AvatarPolymorphic
+} from '../../../src/components/Avatars';
+import InterfaceButtons from '../../../src/interface/InterfaceButtons/InterfaceButtons';
+
+# Avatar
+
+<InterfaceButtons
+  githubLink="Avatar/Avatar.tsx"
+  storybookLink="components-avatar--docs"
+  w3cLink="https://www.w3.org/WAI/ARIA/apg/patterns/button/"
+/>
+
+The `Avatar` component is used to display a user's profile image, initials, or a
+fallback icon.
+
+## Usage
+
+### Basic usage
+
+<AvatarDefault showCode />
+
+### Name initials
+
+With the `name` prop you can specify the user's full name and automatically have
+generated initials to display as a fallback when the avatar image is not
+available. Here is the example for `Maria Guzman`:
+
+<AvatarName showCode={false} />
+
+### Bordered Styling
+
+To add a border to the avatar image, you can use the bordered prop:
+
+<AvatarBordered showCode={false} />
+
+With `bordered` prop you can choose from predefined color options by setting the
+`color` prop. The available color options are: `primary`, `secondary`,
+`tertiary`, `info`, `success`, `warning`, `error`.
+
+<AvatarColors showCode={false} />
+
+### Sizes
+
+You can also customize the size of the avatar using the size prop. Available
+size options are: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`.
+
+<AvatarSizes showCode={false} />
+
+### Radiuses
+
+You can customize the border radius by providing a `radius` prop value.
+
+<AvatarRadiuses showCode={false} />
+
+### Disabled State
+
+You can apply a disabled styling to the avatar by setting the `disabled` prop to
+`true`. This reduces opacity and provides visual feedback that the avatar is
+disabled.
+
+<AvatarDisabled showCode={false} />
+
+### Icons
+
+In cases when you want to use an icon as an avatar image or when the avatar
+image is not available, you can specify a fallback icon instead of initials.
+Pass your icon component to the `icon` prop or use the `'default'` value.
+
+<AvatarIcon showCode={false} />
+
+## Avatar group
+
+The `AvatarGroup` allows you to display multiple avatars within a unified group.
+
+You can easily control the maximum number of avatars to display within the group
+using the `max` prop. If the number of avatars exceeds this limit, the component
+will automatically handle the overflow, ensuring a clean and organized
+presentation. You can provide props to the "counter" avatar with the
+`counterAvatarProps` prop.
+
+<AvatarGroup showCode={false} />
+
+## Polymorphic component
+
+The `Avatar` is a polymorphic component, which means that you can use the `as`
+prop to specify any valid HTML element as a string or a React component. This
+chosen element will serve as the base for rendering the Button component,
+replacing the default `<img>` element.  
+The avatar below is rendered as a `<span>` element:
+
+<AvatarPolymorphic showCode={false} />
+
+## Accessibility
+
+- Always include a meaningful `alt` description when providing an `src` image.
+- In cases where the `icon` prop is used, provide an `iconLabel` description.
+
+## API Reference
+
+### `Avatar` component
+
+| Prop              | Type                                                                                   | Default     | Description                                                                                          |
+| :---------------- | :------------------------------------------------------------------------------------- | :---------- | :--------------------------------------------------------------------------------------------------- |
+| alt               | `ImageProps['alt']`                                                                    | `undefined` | HTML `<img>` element's `src` attribute value                                                         |
+| bordered          | `boolean`                                                                              | `false`     | Sets border of avatar's image wrapper                                                                |
+| color             | `'primary' \| 'secondary' \| 'tertiary' \|'success' \| 'info' \| 'warning' \| 'error'` | `'primary'` | Avatar's color scheme                                                                                |
+| disabled          | `boolean`                                                                              | `false`     | Avatar's disabled styling                                                                            |
+| fallback          | `ImageProps['fallback']`                                                               | `undefined` | Fallback React element that is displayed during image loading and in case of errors.                 |
+| fallbackClassName | `string`                                                                               | `undefined` | Class name for the fallback element's container.                                                     |
+| icon              | `React.ReactNode \| 'default'`                                                         | `'default'` | Icon element displayed as an avatar. Overrides `fallback` and `fallbackSrc` prop values              |
+| name              | `string`                                                                               | `undefined` | Name that is used to generate initials for a fallback                                                |
+| radius            | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`                                                 | `'md'`      | Border radius value                                                                                  |
+| size              | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl'`                                        | `'md'`      | Avatar's size value                                                                                  |
+| src               | `ImageProps['src']`                                                                    | `undefined` | HTML `<img>` element's `src` attribute value. Defining `src` is not allowed when `icon` prop is used |
+| wrapperProps      | `React.HTMLAttributes<HTMLDivElement>`                                                 | `undefined` | Additional props for the image wrapper div                                                           |
+
+### `AvatarGroup` component
+
+| Prop               | Type             | Default     | Description                                                          |
+| :----------------- | :--------------- | :---------- | :------------------------------------------------------------------- |
+| counterAvatarProps | `AvatarProps`    | `undefined` | Props to customize the avatar element that displays overflow counter |
+| direction          | `'ltr' \| 'rtl'` | `'ltr'`     | Layout direction for the avatars within `AvatarGroup`                |
+| max                | `number`         | `undefined` | Maximum number of displayed avatars                                  |
+
+## CSS custom properties
+
+The `Avatar` and `AvatarGroup` components provide several CSS variables that can
+be used for styling via CSS modules or using a `style` attribute of the
+component.
+
+### `Avatar`
+
+| Property                          | Description                                     |
+| :-------------------------------- | :---------------------------------------------- |
+| `--pui-avatar-color`              | Avatar's `border-color` value                   |
+| `--pui-avatar-on-color-container` | `color` value used for initials and icons color |
+| `--pui-avatar-color-container`    | `background-color` value                        |
+
+### `AvatarGroup`
+
+| Property                    | Description                                   |
+| :-------------------------- | :-------------------------------------------- |
+| `--pui-avatar-group-offset` | Margin offset for all the avatar except first |

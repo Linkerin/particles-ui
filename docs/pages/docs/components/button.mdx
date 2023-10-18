@@ -1,6 +1,6 @@
 ---
 title: Button
-description: Documentation for Button component from Particles UI library
+description: Documentation for the Button component from Particles UI library
 ---
 
 import {
@@ -22,7 +22,6 @@ import InterfaceButtons from '../../../src/interface/InterfaceButtons/InterfaceB
 <InterfaceButtons
   githubLink="Button/Button.tsx"
   storybookLink="components-button--docs"
-  w3cLink="https://www.w3.org/WAI/ARIA/apg/patterns/button/"
 />
 
 The `Button` component allows users to trigger an action or event, such as
@@ -45,7 +44,7 @@ The `Button` component comes with five different variants: `filled`, `outlined`,
 ### Colors
 
 You can choose from one of the predefined color options by passing a `color`
-props valiue: `primary`, `secondary`, `tertiary`, `info`, `success`, `warning`,
+props value: `primary`, `secondary`, `tertiary`, `info`, `success`, `warning`,
 `error`.  
 If you need an unstyled button, pass the `uncolored` value.
 
@@ -91,9 +90,10 @@ custom loading element) and optional loading text using `isLoading`,
 
 ## Polymorphic component
 
-`Button` is a polymorphic component. It means that using the `as` prop you can
-pass any valid HTML element as a `string` or a React component and it will be
-used a rendering base instead of a default `<button>` element.
+The `Button` is a polymorphic component, which means that you can use the `as`
+prop to specify any valid HTML element as a string or a React component. This
+chosen element will serve as the base for rendering the Button component,
+replacing the default `<button>` element.
 
 <ButtonPolymorphic showCode={false} />
 
@@ -128,7 +128,7 @@ assistive technologies.
 ## CSS custom properties
 
 The `Button` component provides several CSS variables that can be used for
-styling via CSS modules or using a `style` attribute of the `Button` component.
+styling via CSS modules or using a `style` attribute of the component.
 
 | Property                          | Description                                                                                                                                                         |
 | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
